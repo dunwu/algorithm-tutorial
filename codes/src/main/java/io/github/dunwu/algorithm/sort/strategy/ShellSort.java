@@ -3,6 +3,10 @@ package io.github.dunwu.algorithm.sort.strategy;
 import io.github.dunwu.algorithm.sort.ArrayUtil;
 import io.github.dunwu.algorithm.sort.Sort;
 
+/**
+ * 希尔排序算法
+ * @author Zhang Peng
+ */
 public class ShellSort implements Sort {
     @Override
     public void sort(int[] list) {
@@ -21,8 +25,7 @@ public class ShellSort implements Sort {
                 list[j + gap] = temp;
             }
 
-            System.out.format("gap = %d:\n", gap);
-            ArrayUtil.printArray(list, 0, list.length - 1);
+            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("gap = %d:", gap));
             // 减小增量
             gap = gap / 2;
         }

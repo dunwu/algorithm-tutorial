@@ -1,21 +1,24 @@
 package io.github.dunwu.algorithm.sort;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 使用策略模式，对算法进行包装
  * @author Zhang Peng
  */
 public class SortStrategy {
     private Sort sort;
+    private static final Logger logger = LoggerFactory.getLogger(SortStrategy.class);
 
     public SortStrategy(Sort sort) {
         this.sort = sort;
     }
 
     public void sort(int[] list) {
-        System.out.print("排序前:\n");
-        ArrayUtil.printArray(list, 0, list.length - 1);
+        logger.info(this.sort.getClass().getSimpleName() + " 排序开始：");
+        logger.info("排序前: {}", ArrayUtil.getArrayString(list, 0, list.length - 1));
         this.sort.sort(list);
-        System.out.print("排序后:\n");
-        ArrayUtil.printArray(list, 0, list.length - 1);
+        logger.info("排序后: {}", ArrayUtil.getArrayString(list, 0, list.length - 1));
     }
 }

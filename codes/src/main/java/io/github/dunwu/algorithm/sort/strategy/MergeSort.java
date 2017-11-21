@@ -66,8 +66,7 @@ public class MergeSort implements Sort {
     public void sort(int[] list) {
         for (int gap = 1; gap < list.length; gap = 2 * gap) {
             mergepass(list, gap, list.length);
-            System.out.print("gap = " + gap + ":\n");
-            ArrayUtil.printArray(list, 0, list.length - 1);
+            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("gap = %d", gap));
         }
     }
 

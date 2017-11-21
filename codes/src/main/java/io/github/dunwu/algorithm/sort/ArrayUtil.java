@@ -1,36 +1,52 @@
 package io.github.dunwu.algorithm.sort;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Random;
 
 /**
  * @author Zhang Peng
  */
 public class ArrayUtil {
-    public static void printArray(int[] list, int begin, int end) {
+    private static final Logger logger = LoggerFactory.getLogger(ArrayUtil.class);
+
+    public static void debugLogArray(int[] list, int begin, int end, String tip) {
+        String content = tip + getArrayString(list, begin, end);
+        if (logger.isDebugEnabled()) {
+            logger.debug(content);
+        }
+    }
+
+    public static String getArrayString(int[] list, int begin, int end) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
         for (int i = 0; i < begin; i++) {
-            System.out.print("\t");
+            sb.append("\t");
         }
         int count = 0;
         for (int i = begin; i <= end; i++) {
-            System.out.print(list[i] + "\t");
+            sb.append(list[i] + "\t");
             if (++count == 10) {
-                System.out.println();
+                sb.append("\n");
                 count = 0;
             }
         }
-        System.out.println();
+
+        return sb.toString();
     }
 
     /**
-     * 随机指定范围内N个不重复的数 在初始化的无重复待选数组中随机产生一个数放入结果中， 将待选数组被随机到的数，用待选数组(len-1)下标对应的数替换
-     * 然后从len-2里随机产生下一个随机数，如此类推
-     * 
-     * @param max 指定范围最大值
+     * 随机指定范围内N个不重复的数。
+     * <p>在初始化的无重复待选数组中随机产生一个数放入结果中，</p>
+     * <p>将待选数组被随机到的数，用待选数组(len-1)下标对应的数替换，</p>
+     * <p>然后从len-2里随机产生下一个随机数，如此类推</p>
      * @param min 指定范围最小值
+     * @param max 指定范围最大值
      * @param length 随机数个数
      * @return int[] 随机数结果集
      */
-    public static int[] randomArray(int min, int max, int length) {
+    public static int[] randomNoRepeatArray(int min, int max, int length) {
         int len = max - min + 1;
 
         if (max < min || length > len) {
@@ -53,6 +69,27 @@ public class ArrayUtil {
             result[i] = source[index];
             // 将待选数组中被随机到的数，用待选数组(len-1)下标对应的数替换
             source[index] = source[len];
+        }
+        return result;
+    }
+
+    /**
+     * 随机指定范围内N个重复的数。
+     * @param min 指定范围最小值
+     * @param max 指定范围最大值
+     * @param length 随机数个数
+     * @return 随机数结果集
+     */
+    public static int[] randomRepeatArray(int min, int max, int length) {
+        int len = max - min + 1;
+
+        if (max < min || length > len) {
+            return null;
+        }
+
+        int[] result = new int[length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = (int) (Math.random() * max);
         }
         return result;
     }

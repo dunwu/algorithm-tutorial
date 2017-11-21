@@ -3,6 +3,10 @@ package io.github.dunwu.algorithm.sort.strategy;
 import io.github.dunwu.algorithm.sort.ArrayUtil;
 import io.github.dunwu.algorithm.sort.Sort;
 
+/**
+ * 堆排序算法
+ * @author Zhang Peng
+ */
 public class HeapSort implements Sort {
     private static void heapadjust(int[] array, int parent, int length) {
         // temp保存当前父节点
@@ -48,8 +52,8 @@ public class HeapSort implements Sort {
 
             // 筛选 R[0] 结点，得到i-1个结点的堆
             heapadjust(list, 0, i);
-            System.out.format("第 %d 趟: \n", list.length - i);
-            ArrayUtil.printArray(list, 0, list.length - 1);
+
+            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("第 %d 趟：", list.length - i));
         }
     }
 }

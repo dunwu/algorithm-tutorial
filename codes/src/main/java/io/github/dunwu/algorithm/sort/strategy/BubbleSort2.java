@@ -5,7 +5,6 @@ import io.github.dunwu.algorithm.sort.Sort;
 
 /**
  * 冒泡排序的优化算法
- * 
  * @author Zhang Peng
  */
 public class BubbleSort2 implements Sort {
@@ -35,8 +34,7 @@ public class BubbleSort2 implements Sort {
                 break;
             }
 
-            System.out.format("第 %d 趟：\n", i);
-            ArrayUtil.printArray(list, 0, list.length - 1);
+            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("第 %d 趟：", i + 1));
         }
     }
 }

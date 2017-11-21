@@ -2,18 +2,21 @@ package io.github.dunwu.algorithm.sort.strategy;
 
 import io.github.dunwu.algorithm.sort.Sort;
 
+/**
+ * 基数排序算法
+ * @author Zhang Peng
+ */
 public class RadixSort implements Sort {
 
     /**
      * 获取x这个数的d位数上的数字，比如获取123的1位数，结果返回3
-     * 
      * @param x
      * @param d
      * @return
      */
     private int getDigit(int x, int d) {
         // 本实例中的最大数是百位数，所以只要到100就可以了
-        int[] a = {1, 1, 10, 100};
+        int[] a = { 1, 1, 10, 100 };
         return ((x / a[d]) % 10);
     }
 
