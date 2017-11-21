@@ -48,7 +48,7 @@ public class MergeSort implements Sort {
         }
     }
 
-    private void mergepass(int[] array, int gap, int length) {
+    private void mergeSort(int[] array, int gap, int length) {
         int i = 0;
 
         // 归并gap长度的两个相邻子表
@@ -65,7 +65,7 @@ public class MergeSort implements Sort {
     @Override
     public void sort(int[] list) {
         for (int gap = 1; gap < list.length; gap = 2 * gap) {
-            mergepass(list, gap, list.length);
+            mergeSort(list, gap, list.length);
             ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("gap = %d", gap));
         }
     }

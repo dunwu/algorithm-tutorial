@@ -8,7 +8,7 @@ import io.github.dunwu.algorithm.sort.Sort;
  * @author Zhang Peng
  */
 public class HeapSort implements Sort {
-    private static void heapadjust(int[] array, int parent, int length) {
+    private static void adjustHeat(int[] array, int parent, int length) {
         // temp保存当前父节点
         int temp = array[parent];
         // 先获得左孩子
@@ -40,7 +40,7 @@ public class HeapSort implements Sort {
     public void sort(int[] list) {
         // 循环建立初始堆
         for (int i = list.length / 2; i >= 0; i--) {
-            heapadjust(list, i, list.length);
+            adjustHeat(list, i, list.length);
         }
 
         // 进行n-1次循环，完成排序
@@ -51,7 +51,7 @@ public class HeapSort implements Sort {
             list[0] = temp;
 
             // 筛选 R[0] 结点，得到i-1个结点的堆
-            heapadjust(list, 0, i);
+            adjustHeat(list, 0, i);
 
             ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("第 %d 趟：", list.length - i));
         }
