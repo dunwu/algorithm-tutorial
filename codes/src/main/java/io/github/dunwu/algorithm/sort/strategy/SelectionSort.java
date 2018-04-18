@@ -1,6 +1,6 @@
 package io.github.dunwu.algorithm.sort.strategy;
 
-import io.github.dunwu.algorithm.sort.ArrayUtil;
+import io.github.dunwu.algorithm.util.ArrayUtil;
 import io.github.dunwu.algorithm.sort.Sort;
 
 /**

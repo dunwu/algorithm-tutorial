@@ -1,14 +1,5 @@
 package io.github.dunwu.algorithm.sort;
 
-import java.util.Arrays;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
-
 import io.github.dunwu.algorithm.sort.strategy.BubbleSort;
 import io.github.dunwu.algorithm.sort.strategy.BubbleSort2;
 import io.github.dunwu.algorithm.sort.strategy.HeapSort;
@@ -18,16 +9,26 @@ import io.github.dunwu.algorithm.sort.strategy.QuickSort;
 import io.github.dunwu.algorithm.sort.strategy.RadixSort;
 import io.github.dunwu.algorithm.sort.strategy.SelectionSort;
 import io.github.dunwu.algorithm.sort.strategy.ShellSort;
+import io.github.dunwu.algorithm.util.ArrayUtil;
+import java.util.Arrays;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 /**
  * 排序算法单元测试
  * 如果需要打印每趟排序的结果，可以修改 logback.xml 中
  * <logger name="io.github.dunwu" level="INFO" additivity="false"> 的 level 级别，改为 DEBUG，
  * 日志就会打印 debug 信息。
+ *
  * @author Zhang Peng
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SortStrategyTest {
+
     /**
      * 随机样本一
      */
@@ -136,7 +137,6 @@ public class SortStrategyTest {
 
     /**
      * 注入 SortStrategy，执行对三个样本的排序测试
-     * @param strategy
      */
     private void executeSort(SortStrategy strategy) {
         strategy.sort(target01);
