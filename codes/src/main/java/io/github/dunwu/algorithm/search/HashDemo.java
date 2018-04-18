@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.hash;
+package io.github.dunwu.algorithm.search;
 
 /**
  * 为了精简示例代码，所有参数都用 public
