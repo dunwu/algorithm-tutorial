@@ -1,6 +1,8 @@
 # Summary
 
 * [自述](README.md)
+* [查找](search/README.md)
+  * [哈希表的查找](search/hash-search.md)
 * [排序](sort/README.md)
   * [冒泡排序](sort/bubble-sort.md)
   * [快速排序](sort/quick-sort.md)
