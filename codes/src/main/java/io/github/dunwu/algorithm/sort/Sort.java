@@ -6,7 +6,7 @@ package io.github.dunwu.algorithm.sort;
 public interface Sort {
     /**
      * 排序接口
-     * @param list 数组
+     * @param list 要排序的数组
      */
-    void sort(int[] list);
+    <T extends Comparable<T>> void sort(T[] list);
 }

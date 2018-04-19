@@ -5,8 +5,9 @@ package io.github.dunwu.algorithm.search;
  */
 public interface Search {
     /**
-     * 排序接口
-     * @param list 数组
+     * @param array 要查找的数组
+     * @param key 要查找的 key
+     * @return 返回第一个匹配 key 值的数组元素所在位置
      */
-    int search(int[] list, int key);
+    <T extends Comparable<T>> int find(T array[], T key);
 }

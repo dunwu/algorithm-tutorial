@@ -4,7 +4,7 @@ import io.github.dunwu.algorithm.util.ArrayUtil;
 import io.github.dunwu.algorithm.sort.Sort;
 
 public class MergeSort implements Sort {
-    private void merge(int[] array, int low, int mid, int high) {
+    private <T extends Comparable<T>> void merge(T[] array, int low, int mid, int high) {
         // i是第一段序列的下标
         int i = low;
         // j是第二段序列的下标
@@ -12,12 +12,12 @@ public class MergeSort implements Sort {
         // k是临时存放合并序列的下标
         int k = 0;
         // array2是临时合并序列
-        int[] array2 = new int[high - low + 1];
+        T[] array2 = (T[]) new Comparable[high - low + 1];
 
         // 扫描第一段和第二段序列，直到有一个扫描结束
         while (i <= mid && j <= high) {
             // 判断第一段和第二段取出的数哪个更小，将其存入合并序列，并继续向下扫描
-            if (array[i] <= array[j]) {
+            if (array[i].compareTo(array[j]) <= 0) {
                 array2[k] = array[i];
                 i++;
                 k++;
@@ -48,7 +48,7 @@ public class MergeSort implements Sort {
         }
     }
 
-    private void mergeSort(int[] array, int gap, int length) {
+    private <T extends Comparable<T>> void mergeSort(T[] array, int gap, int length) {
         int i = 0;
 
         // 归并gap长度的两个相邻子表
@@ -63,7 +63,7 @@ public class MergeSort implements Sort {
     }
 
     @Override
-    public void sort(int[] list) {
+    public <T extends Comparable<T>> void sort(T[] list) {
         for (int gap = 1; gap < list.length; gap = 2 * gap) {
             mergeSort(list, gap, list.length);
             ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("gap = %d", gap));

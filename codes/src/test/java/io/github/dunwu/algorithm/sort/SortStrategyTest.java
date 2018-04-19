@@ -6,7 +6,6 @@ import io.github.dunwu.algorithm.sort.strategy.HeapSort;
 import io.github.dunwu.algorithm.sort.strategy.InsertSort;
 import io.github.dunwu.algorithm.sort.strategy.MergeSort;
 import io.github.dunwu.algorithm.sort.strategy.QuickSort;
-import io.github.dunwu.algorithm.sort.strategy.RadixSort;
 import io.github.dunwu.algorithm.sort.strategy.SelectionSort;
 import io.github.dunwu.algorithm.sort.strategy.ShellSort;
 import io.github.dunwu.algorithm.util.ArrayUtil;
@@ -32,23 +31,23 @@ public class SortStrategyTest {
     /**
      * 随机样本一
      */
-    private static int[] origin01;
-    private static int[] target01;
-    private static int[] expected01;
+    private static Integer[] origin01;
+    private static Integer[] target01;
+    private static Integer[] expected01;
 
     /**
      * 随机样本二
      */
-    private static int[] origin02;
-    private static int[] target02;
-    private static int[] expected02;
+    private static Integer[] origin02;
+    private static Integer[] target02;
+    private static Integer[] expected02;
 
     /**
      * 随机样本三
      */
-    private static int[] origin03;
-    private static int[] target03;
-    private static int[] expected03;
+    private static Integer[] origin03;
+    private static Integer[] target03;
+    private static Integer[] expected03;
 
     /**
      * 生成随机数组样本，并调用 JDK api 生成期望的有序数组
@@ -56,17 +55,17 @@ public class SortStrategyTest {
     @BeforeClass
     public static void beforeClass() {
         // 在 [0, 100] 间生成长度为 10 的存在重复的随机数组
-        origin01 = ArrayUtil.randomRepeatArray(0, 10, 9);
+        origin01 = ArrayUtil.randomRepeatIntegerArray(0, 10, 9);
         expected01 = Arrays.copyOf(origin01, origin01.length);
         Arrays.sort(expected01);
 
         // 在 [0, 100] 间生成长度为 17 的不重复的随机数组
-        origin02 = ArrayUtil.randomNoRepeatArray(0, 100, 17);
+        origin02 = ArrayUtil.randomNoRepeatIntegerArray(0, 100, 17);
         expected02 = Arrays.copyOf(origin02, origin02.length);
         Arrays.sort(expected02);
 
         // 在 [0, 100] 间生成长度为 100 的不重复的随机数组
-        origin03 = ArrayUtil.randomNoRepeatArray(0, 100, 100);
+        origin03 = ArrayUtil.randomNoRepeatIntegerArray(0, 100, 100);
         expected03 = Arrays.copyOf(origin03, origin03.length);
         Arrays.sort(expected03);
     }
@@ -126,12 +125,6 @@ public class SortStrategyTest {
     @Test
     public void testMergeSort() {
         SortStrategy strategy = new SortStrategy(new MergeSort());
-        executeSort(strategy);
-    }
-
-    @Test
-    public void testRadixSort() {
-        SortStrategy strategy = new SortStrategy(new RadixSort());
         executeSort(strategy);
     }
 

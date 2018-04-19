@@ -9,19 +9,19 @@ import io.github.dunwu.algorithm.sort.Sort;
  */
 public class QuickSort implements Sort {
 
-    private int division(int[] list, int left, int right) {
+    private <T extends Comparable<T>> int division(T[] list, int left, int right) {
         // 以最左边的数(left)为基准
-        int base = list[left];
+        T base = list[left];
         while (left < right) {
             // 从序列右端开始，向左遍历，直到找到小于base的数
-            while (left < right && list[right] >= base) {
+            while (left < right && list[right].compareTo(base) >= 0) {
                 right--;
             }
             // 找到了比base小的元素，将这个元素放到最左边的位置
             list[left] = list[right];
 
             // 从序列左端开始，向右遍历，直到找到大于base的数
-            while (left < right && list[left] <= base) {
+            while (left < right && list[left].compareTo(base) <= 0) {
                 left++;
             }
             // 找到了比base大的元素，将这个元素放到最右边的位置
@@ -34,7 +34,7 @@ public class QuickSort implements Sort {
         return left;
     }
 
-    private void quickSort(int[] list, int left, int right) {
+    private <T extends Comparable<T>> void quickSort(T[] list, int left, int right) {
 
         // 左下标一定小于右下标，否则就越界了
         if (left < right) {
@@ -52,7 +52,7 @@ public class QuickSort implements Sort {
     }
 
     @Override
-    public void sort(int[] list) {
+    public <T extends Comparable<T>> void sort(T[] list) {
         quickSort(list, 0, list.length - 1);
     }
 }

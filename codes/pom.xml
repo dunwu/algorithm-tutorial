@@ -59,7 +59,7 @@
   <!-- [Part 3] PROJECT INFO BEGIN -->
   <name>${artifactId}</name>
   <description>算法+数据结构学习笔记</description>
-  <url>https://github.com/dunwu/algorithms-notes</url>
+  <url>https://github.com/dunwu/algorithms</url>
   <inceptionYear>2016-2017</inceptionYear>
   <licenses>
     <license>
@@ -82,12 +82,12 @@
   <!-- [Part 4] ENVIRONMENT SETTINGS BEGIN -->
   <issueManagement>
     <system>Github</system>
-    <url>https://github.com/dunwu/algorithms-notes/issues</url>
+    <url>https://github.com/dunwu/algorithms/issues</url>
   </issueManagement>
   <scm>
-    <url>https://github.com/dunwu/algorithms-notes</url>
-    <connection>scm:git:git://github.com/dunwu/algorithms-notes.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:dunwu/algorithms-notes.git</developerConnection>
+    <url>https://github.com/dunwu/algorithms</url>
+    <connection>scm:git:git://github.com/dunwu/algorithms.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:dunwu/algorithms.git</developerConnection>
   </scm>
   <!-- [Part 4] ENVIRONMENT SETTINGS END -->
 

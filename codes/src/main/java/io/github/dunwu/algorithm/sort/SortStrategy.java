@@ -16,7 +16,7 @@ public class SortStrategy {
         this.sort = sort;
     }
 
-    public void sort(int[] list) {
+    public void sort(Integer[] list) {
         logger.info(this.sort.getClass().getSimpleName() + " 排序开始：");
         logger.info("排序前: {}", ArrayUtil.getArrayString(list, 0, list.length - 1));
         this.sort.sort(list);

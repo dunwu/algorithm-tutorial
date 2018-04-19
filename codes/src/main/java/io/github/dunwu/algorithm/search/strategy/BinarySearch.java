@@ -3,24 +3,50 @@ package io.github.dunwu.algorithm.search.strategy;
 import io.github.dunwu.algorithm.search.Search;
 
 /**
+ * 二分查找又称折半查找，它是一种效率较高的查找方法。
+ * 二分查找需要两个前提：(1) 必须是顺序存储结构。(2) 必须是有序的表。
+ * 算法：
+ * 从数据结构线形表的一端开始，顺序扫描，依次将扫描到的结点关键字与给定值k相比较，若相等则表示查找成功；
+ * 若扫描结束仍没有找到等于关键字的结点，表示查找失败。
+ * 算法分析：
+ * 最坏情况	O(log n)
+ * 最好情况	O(1)
+ * 平均情况	O(log n)
+ * 最坏情况下的空间复杂性 O(1)
+ *
  * @author Zhang Peng
- * @date 2018/4/18
  */
 public class BinarySearch implements Search {
 
+    /**
+     * 查找方法
+     *
+     * @param array 被查找的线性表
+     * @param key 被查找的 key
+     * @return 成功返回 key 的位置；失败返回 -1
+     */
     @Override
-    public int search(int[] list, int key) {
-        int low = 0, mid = 0, high = list.length - 1;
-        while (low <= high) {
-            mid = (low + high) / 2;
-            if (list[mid] == key) {
-                return mid; // 查找成功，直接返回位置
-            } else if (list[mid] < key) {
-                low = mid + 1; // 关键字大于中间位置的值，则在大值区间[mid+1, high]继续查找
-            } else {
-                high = mid - 1; // 关键字小于中间位置的值，则在小值区间[low, mid-1]继续查找
-            }
+    public <T extends Comparable<T>> int find(T array[], T key) {
+        return search(array, key, 0, array.length);
+    }
+
+    private <T extends Comparable<T>> int search(T array[], T key, int left, int right) {
+        // this means that the key not found
+        if (right < left) {
+            return -1;
         }
-        return -1;
+
+        int mid = (left + right) >>> 1;
+        int comp = key.compareTo(array[mid]);
+
+        if (comp < 0) {
+            return search(array, key, left, mid - 1);
+        }
+
+        if (comp > 0) {
+            return search(array, key, mid + 1, right);
+        }
+
+        return mid;
     }
 }
