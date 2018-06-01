@@ -1,13 +1,13 @@
 {
   "gitbook": "3.2.2",
-  "title": "algorithm-notes",
-  "description": "算法+数据结构学习笔记",
+  "title": "algorithm",
+  "description": "算法+数据结构",
   "author": "Zhang Peng",
   "language": "zh-hans",
-  "root": "./docs",
+  "root": ".",
   "links": {
     "sidebar": {
-      "algorithm-notes": "https://github.com/dunwu/algorithm-notes"
+      "algorithm": "https://github.com/dunwu/algorithm"
     }
   },
   "plugins": [
@@ -45,7 +45,7 @@
       }
     },
     "edit-link": {
-      "base": "https://github.com/dunwu/algorithm-notes/blob/master/docs/",
+      "base": "https://github.com/dunwu/algorithm/blob/master/docs/",
       "label": "编辑此页面"
     },
     "github": {
@@ -62,7 +62,7 @@
       ]
     },
     "tbfed-pagefooter": {
-      "copyright": "Copyright © Zhang Peng 2016-2017",
+      "copyright": "Copyright © Zhang Peng 2016-2018",
       "modify_label": "该文件上次修订时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     }
