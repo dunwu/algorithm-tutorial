@@ -1,14 +1,16 @@
-# algorithm-notes
+# Algorithm
 
-<p align="center">
-  :book: 算法+数据结构学习笔记
-</p>
+> Java 实现算法
 
-<p align="center">
-  <img src="http://upload-images.jianshu.io/upload_images/3101171-978babefd01de63e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Blog" width="640">
-</p>
-
-<p align="center">
-  <a href="https://dunwu.gitbooks.io/algorithm-notes/" target="_blank">:point_right: 查看算法+数据结构学习笔记</a>
-</p>
-
+* [查找](docs/search/README.md)
+  * [线性表的查找](docs/search/linear-list-search.md)
+  * [哈希表的查找](docs/search/hash-search.md)
+* [排序](docs/sort/README.md)
+  * [冒泡排序](docs/sort/bubble-sort.md)
+  * [快速排序](docs/sort/quick-sort.md)
+  * [直接插入排序](docs/sort/insert-sort.md)
+  * [希尔排序](docs/sort/shell-sort.md)
+  * [简单选择排序](docs/sort/selection-sort.md)
+  * [堆排序](docs/sort/heap-sort.md)
+  * [归并排序](docs/sort/merge-sort.md)
+  * [基数排序](docs/sort/radix-sort.md)
