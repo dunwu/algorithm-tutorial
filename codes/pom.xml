@@ -4,63 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-
-  <!-- [Part 1] BASIC SETTINGS BEGIN -->
-
-  <!-- MAVEN COORDINATE BEGIN -->
-  <groupId>io.github.dunwu</groupId>
-  <artifactId>algorithms</artifactId>
+  <groupId>io.github.dunwu.algorithm</groupId>
+  <artifactId>algorithm</artifactId>
   <version>1.0.1</version>
-  <packaging>jar</packaging>
-  <!-- MAVEN COORDINATE END -->
+  <packaging>pom</packaging>
+  <name>Algorithm</name>
+  <description>数据结构</description>
 
-  <!-- RELATIONSHIP SETTINGS BEGIN -->
-  <dependencies>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.25</version>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>1.1.3</version>
-    </dependency>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>1.1.3</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <!-- RELATIONSHIP SETTINGS END -->
+  <modules>
+    <module>algorithm</module>
+    <module>data-structure</module>
+  </modules>
 
-  <!-- PROPERTIES BEGIN -->
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>1.8</java.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
-  </properties>
-  <!-- PROPERTIES END -->
-
-  <!-- [Part 1] BASIC SETTINGS END -->
-
-
-  <!-- [Part 2] BUILD SETTINGS BEGIN -->
-  <!-- [Part 2] BUILD SETTINGS END -->
-
-
-  <!-- [Part 3] PROJECT INFO BEGIN -->
-  <name>${artifactId}</name>
-  <description>算法+数据结构学习笔记</description>
-  <url>https://github.com/dunwu/algorithms</url>
-  <inceptionYear>2016-2017</inceptionYear>
+  <url>https://github.com/dunwu/algorithm</url>
+  <inceptionYear>2016-2018</inceptionYear>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -76,20 +33,13 @@
       <timezone>+8</timezone>
     </developer>
   </developers>
-  <!-- [Part 3] PROJECT INFO END -->
-
-
-  <!-- [Part 4] ENVIRONMENT SETTINGS BEGIN -->
   <issueManagement>
     <system>Github</system>
-    <url>https://github.com/dunwu/algorithms/issues</url>
+    <url>https://github.com/dunwu/algorithm/issues</url>
   </issueManagement>
   <scm>
-    <url>https://github.com/dunwu/algorithms</url>
-    <connection>scm:git:git://github.com/dunwu/algorithms.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:dunwu/algorithms.git</developerConnection>
+    <url>https://github.com/dunwu/algorithm</url>
+    <connection>scm:git:git://github.com/dunwu/algorithm.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:dunwu/algorithm.git</developerConnection>
   </scm>
-  <!-- [Part 4] ENVIRONMENT SETTINGS END -->
-
-
 </project>
