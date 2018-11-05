@@ -27,7 +27,7 @@ import io.github.dunwu.ds.util.ArrayUtil;
  * @date 2018-11-04
  */
 public class PlusOne {
-    private static int[] plusOne(int[] digits) {
+    public static int[] plusOne(int[] digits) {
         int n = digits.length;
         for (int i = n - 1; i >= 0; i--) {
             if (digits[i] < 9) {
@@ -42,28 +42,5 @@ public class PlusOne {
         newNumber[0] = 1;
 
         return newNumber;
-    }
-
-    private static String getArrayString(int[] array) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < array.length - 1; i++) {
-            sb.append(array[i] + ", ");
-        }
-        sb.append(array[array.length - 1]);
-        return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        int[] nums1 = {1, 2, 3};
-        int[] nums2 = {4, 3, 2, 1};
-        int[] nums3 = {9, 9, 9, 9};
-
-        int[] result1 = plusOne(nums1);
-        int[] result2 = plusOne(nums2);
-        int[] result3 = plusOne(nums3);
-
-        System.out.println("nums1 = [" + ArrayUtil.getArrayString(result1, 0, result1.length - 1) + "]");
-        System.out.println("nums2 = [" + ArrayUtil.getArrayString(result2, 0, result2.length - 1) + "]");
-        System.out.println("nums3 = [" + ArrayUtil.getArrayString(result3, 0, result3.length - 1) + "]");
     }
 }

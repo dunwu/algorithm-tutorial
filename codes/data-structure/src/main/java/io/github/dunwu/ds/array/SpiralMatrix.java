@@ -33,7 +33,7 @@ import java.util.List;
  * @date 2018-11-04
  */
 public class SpiralMatrix {
-    private static List<Integer> spiralOrder(int[][] matrix) {
+    public static List<Integer> spiralOrder(int[][] matrix) {
         ArrayList<Integer> list = new ArrayList<>();
         if (matrix.length == 0) {
             return list;

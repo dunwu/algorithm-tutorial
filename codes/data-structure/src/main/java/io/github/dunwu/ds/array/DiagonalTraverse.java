@@ -26,7 +26,7 @@ package io.github.dunwu.ds.array;
  */
 public class DiagonalTraverse {
 
-    private static int[] findDiagonalOrder(int[][] matrix) {
+    public static int[] findDiagonalOrder(int[][] matrix) {
         if (matrix.length == 0) {
             return new int[0];
         }
@@ -58,10 +58,5 @@ public class DiagonalTraverse {
             }
         }
         return arr;
-    }
-
-    public static void main(String[] args) {
-        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        int[] results = findDiagonalOrder(matrix);
     }
 }

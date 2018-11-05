@@ -30,7 +30,7 @@ import java.util.List;
  */
 public class PascalsTriangle {
 
-    private static List<List<Integer>> generate(int numRows) {
+    public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<>();
 
         if (numRows <= 0) {
@@ -62,23 +62,5 @@ public class PascalsTriangle {
         }
 
         return result;
-    }
-
-    private static void printPascalsTriangle(int level) {
-        System.out.printf("【%d层杨辉三角】\n", level);
-        List<List<Integer>> lists = generate(level);
-        for (List<Integer> list : lists) {
-            for (Integer num : list) {
-                System.out.print(num + "\t");
-            }
-            System.out.println();
-        }
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        for (int i = 1; i <= 5; i++) {
-            printPascalsTriangle(i);
-        }
     }
 }

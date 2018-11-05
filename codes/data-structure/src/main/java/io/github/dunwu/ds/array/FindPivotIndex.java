@@ -34,7 +34,7 @@ package io.github.dunwu.ds.array;
  * @date 2018-11-04
  */
 public class FindPivotIndex {
-    public int pivotIndex(int[] nums) {
+    public static int pivotIndex(int[] nums) {
         int result = 0;
         for (int i = 0; i < nums.length; i++) {
             int sum1 = 0;
@@ -54,13 +54,5 @@ public class FindPivotIndex {
             result++;
         }
         return -1;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 7, 3, 6, 5, 6};
-
-        FindPivotIndex demo = new FindPivotIndex();
-        int result = demo.pivotIndex(nums);
-        System.out.println("result = [" + result + "]");
     }
 }

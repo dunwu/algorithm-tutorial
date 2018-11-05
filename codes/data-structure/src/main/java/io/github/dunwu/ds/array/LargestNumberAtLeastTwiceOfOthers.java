@@ -34,7 +34,7 @@ package io.github.dunwu.ds.array;
  * @date 2018-11-04
  */
 public class LargestNumberAtLeastTwiceOfOthers {
-    private static int dominantIndex(int[] nums) {
+    public static int dominantIndex(int[] nums) {
         int index = 0;
         while (index < nums.length) {
             boolean isMatch = true;
@@ -52,13 +52,5 @@ public class LargestNumberAtLeastTwiceOfOthers {
             }
         }
         return -1;
-    }
-
-    public static void main(String[] args) {
-        int[] nums1 = {3, 6, 1, 0};
-        int[] nums2 = {1, 2, 3, 4};
-
-        System.out.println("result1 = [" + dominantIndex(nums1) + "]");
-        System.out.println("result2 = [" + dominantIndex(nums2) + "]");
     }
 }
