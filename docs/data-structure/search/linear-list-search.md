@@ -1,3 +1,10 @@
+---
+title: 线性表的查找
+date: 2015-03-10 18:29
+categories: ['algorithm','data-structure']
+tags: ['data-structure', 'search']
+---
+
 # 线性表的查找
 
 ## 概念
@@ -22,7 +29,7 @@
 
 由于查找算法的主要运算是关键字的比较过程，所以通常把查找过程中对关键字需要执行的**平均比较长度**（也称为**平均比较次数**）作为衡量一个查找算法效率优劣的比较标准。
 
-![image.gif](https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip)
+<div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip"/></div>
 
 **选取查找算法的因素**
 
@@ -64,9 +71,9 @@ public int orderSearch(int[] list, int length, int key) {
 
 **算法分析**
 
-顺序查找算法**最好的情况**是，第一个记录即匹配关键字，则需要比较 **1** 次；
+顺序查找算法**最好的情况**是，第一个记录即匹配关键字，则需要比较 **1** 次；
 
-**最坏的情况**是，最后一个记录匹配关键字，则需要比较 **N** 次。
+**最坏的情况**是，最后一个记录匹配关键字，则需要比较 **N** 次。
 
 所以，顺序查找算法的平均查找长度为
 
@@ -150,7 +157,7 @@ public int binarySearch(int[] list, int length, int key) {
 
 下图就是一个分块查找表的存储结构示意图
 
-![image.png](https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div>
 
 **基本思想**
 
@@ -168,7 +175,7 @@ public int binarySearch(int[] list, int length, int key) {
 
 **代码范例**
 
-![image](http://upload-images.jianshu.io/upload_images/3101171-2737612c781e66e8.gif?imageMogr2/auto-orient/strip)
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2737612c781e66e8.gif?imageMogr2/auto-orient/strip"/></div>
 
 ```java
 class BlockSearch {
@@ -273,14 +280,14 @@ class BlockSearch {
 **运行结果**
 
 ```
-线性表: 8 14 6 9 10 22 34 18 19 31 40 38 54 66 46 71 78 68 80 85 
+线性表: 8 14 6 9 10 22 34 18 19 31 40 38 54 66 46 71 78 68 80 85 
 构造索引表如下：
-key = 14, link = 0
-key = 34, link = 5
-key = 66, link = 10
-key = 85, link = 15
+key = 14, link = 0
+key = 34, link = 5
+key = 66, link = 10
+key = 85, link = 15
 
-查找key = 85成功，位置为19
+查找key = 85成功，位置为19
 ```
 
 **算法分析**
