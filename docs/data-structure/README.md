@@ -18,5 +18,5 @@ tags: ['hide']
   - [堆](heap.md)
   - [散列表](hash.md)
 - **结构算法**
-  - [查找](search)
+  - [查找](../algorithm/search)
   - [排序](sort) - [冒泡排序](sort/bubble-sort.md)、[快速排序](sort/quick-sort.md)、[直接插入排序](sort/insert-sort.md)、[希尔排序](sort/shell-sort.md)、[简单选择排序](sort/selection-sort.md)、[堆排序](sort/heap-sort.md)、[归并排序](sort/merge-sort.md)、[基数排序](sort/radix-sort.md)
