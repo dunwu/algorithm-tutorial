@@ -1,32 +1,19 @@
----
-tags: ['hide']
----
-
 # 算法和数据结构
 
 > :dart: 所有配套源码整理归档在 [**algorithm-tutorial**](https://github.com/dunwu/algorithm-tutorial) 项目中。
 
 ## :memo: 知识点
 
-### 数据结构
-
-> `数据结构` 是指相互之间存在着一种或多种关系的数据元素的集合和该集合中数据元素之间的关系组成。
->
-> 记为：`Data_Structure=(D,R)`。其中 D 是数据元素的集合，R 是该集合中所有元素之间的关系的有限集合。
-
-- **:one: 数据结构**
+- [**:one: 数据结构**](data-structure/README.md)
   - [数组](data-structure/array.md)
   - [栈](data-structure/stack.md)
   - [队列](data-structure/queue.md)
   - [链表](data-structure/list.md)
-  - [树](data-structure/tree)
-    - [树](data-structure/tree/tree.md)
-    - [二叉树](data-structure/tree/binary-tree.md)
-    - [红黑树](data-structure/tree/red-black-tree.md)
+  - [树](data-structure/tree/README.md)
   - [图](data-structure/graph.md)
   - [堆](data-structure/heap.md)
   - [散列表](data-structure/hash.md)
-- **:two: 算法**
+- [**:two: 算法**](algorithm/README.md)
   - [查找算法](algorithm/search)
   - [排序算法](algorithm/sort.md)
 
