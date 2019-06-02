@@ -1,3 +1,0 @@
-- [树](tree.md)
-- [二叉树](binary-tree.md)
-- [红黑树](red-black-tree.md)

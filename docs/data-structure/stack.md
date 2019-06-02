@@ -1,17 +1,10 @@
----
-title: 堆栈
-date: 2014-01-25 16:46
-categories: ['algorithm','data-structure']
-tags: ['data-structure', 'stack']
----
-
 # 堆栈
 
 > 堆栈（英语：stack）又称为栈或堆叠，是计算机科学中一种特殊的串列形式的抽象数据类型，其特殊之处在于只能允许在链表或数组的一端（称为堆栈顶端指针，英语：top）进行加入数据（英语：push）和输出数据（英语：pop）的运算。另外堆栈也可以用一维数组或链表的形式来完成。堆栈的另外一个相对的操作方式称为队列。
 >
 > 由于堆栈数据结构只允许在一端进行操作，因而按照后进先出（LIFO, Last In First Out）的原理运作。
 
-<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/stack/stack.png"/></div>
+<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/data-structure/stack/stack.png"/></div>
 
 <!-- TOC depthFrom:2 depthTo:2 -->
 

@@ -1,10 +1,3 @@
----
-title: 队列
-date: 2014-06-11 22:01
-categories: ['algorithm','data-structure']
-tags: ['data-structure', 'queue']
----
-
 # 队列
 
 队列是元素的集合，其包含了两个基本操作：入队（enqueue） 操作可以用于将元素插入到队列中，而出队（dequeue）操作则是将元素从队列中移除。

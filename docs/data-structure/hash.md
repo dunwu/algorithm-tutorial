@@ -1,10 +1,3 @@
----
-title: 哈希表
-date: 2015-03-16 14:19
-categories: ['algorithm','data-structure']
-tags: ['data-structure', 'hash']
----
-
 # 哈希表
 
 > 关键词： hash, 哈希表, 哈希函数
@@ -43,7 +36,7 @@ tags: ['data-structure', 'hash']
 
 ### 哈希函数示例
 
-<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/hash/哈希函数.png"/></div>
+<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/data-structure/hash/哈希函数.png"/></div>
 
 在示例中，我们使用 y = x ％ 5 作为哈希函数。让我们使用这个例子来完成插入和搜索策略：
 
@@ -63,7 +56,7 @@ tags: ['data-structure', 'hash']
 
 下面是一些哈希函数的示例：
 
-<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/hash/哈希函数示例.png"/></div>
+<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/data-structure/hash/哈希函数示例.png"/></div>
 
 哈希函数的设计是一个开放的问题。其思想是尽可能将键分配到桶中，理想情况下，完美的哈希函数将是键和桶之间的一对一映射。然而，在大多数情况下，哈希函数并不完美，它需要在桶的数量和桶的容量之间进行权衡。
 

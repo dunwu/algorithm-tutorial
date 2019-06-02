@@ -1,10 +1,3 @@
----
-title: Hash 表的查找
-date: 2015-03-16 14:19
-categories: ['algorithm','data-structure']
-tags: ['data-structure', 'search']
----
-
 # Hash 表的查找
 
 ## 要点

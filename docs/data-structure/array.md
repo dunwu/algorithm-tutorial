@@ -1,10 +1,3 @@
----
-title: 数组
-date: 2015-04-10 18:46
-categories: ['algorithm','data-structure']
-tags: ['data-structure', 'array']
----
-
 # 数组
 
 > 所谓数组，是有序的元素序列。若将有限个类型相同的变量的集合命名，那么这个名称为数组名。组成数组的各个变量称为数组的分量，也称为数组的元素，有时也称为下标变量。用于区分数组的各个元素的数字编号称为下标。数组是在程序设计中，为了处理方便， 把具有相同类型的若干元素按无序的形式组织起来的一种形式。这些无序排列的同类数据元素的集合称为数组。
@@ -33,7 +26,7 @@ tags: ['data-structure', 'array']
 
 这里有一个例子：
 
-<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/array/一维数组.png"/></div>
+<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/data-structure/array/一维数组.png"/></div>
 
 在上面的例子中，数组 A 中有 6 个元素。也就是说，A 的长度是 6 。我们可以使用 A[0] 来表示数组中的第一个元素。因此，A[0] = 6 。类似地，A[1] = 3，A[2] = 8，依此类推。
 
@@ -49,7 +42,7 @@ tags: ['data-structure', 'array']
 
 下图显示了*大小为 M \* N 的数组 A* 的实际结构：
 
-<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/array/C++二维数组.png"/></div>
+<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/data-structure/array/C++二维数组.png"/></div>
 
 因此，如果我们将 A 定义为也包含 _M \* N_ 个元素的一维数组，那么实际上 A[i][j] 就等于 A[i * N + j]。
 
@@ -57,7 +50,7 @@ tags: ['data-structure', 'array']
 
 下图显示了 Java 中二维数组 A 的实际结构：
 
-<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/array/JAVA二维数组.png"/></div>
+<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/data-structure/array/JAVA二维数组.png"/></div>
 
 二维数组示例：
 
