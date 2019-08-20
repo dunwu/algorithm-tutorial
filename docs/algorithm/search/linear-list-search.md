@@ -150,7 +150,7 @@ public int binarySearch(int[] list, int length, int key) {
 
 下图就是一个分块查找表的存储结构示意图
 
-<div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div>
+<div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png"/></div>
 
 **基本思想**
 

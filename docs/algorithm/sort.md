@@ -66,7 +66,7 @@
 
 假设有一个大小为 N 的无序序列。冒泡排序就是要每趟排序过程中通过两两比较，找到第 i 个小（大）的元素，将其往上排。
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/bubble-sort.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/bubble-sort.png!zp"/></div>
 
 以上图为例，演示一下冒泡排序的实际流程：
 
@@ -209,7 +209,7 @@ public void bubbleSort_2(int[] list) {
 
 详细的图解往往比大堆的文字更有说明力，所以直接上图：
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/quick-sort.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/quick-sort.png!zp"/></div>
 
 上图中，演示了快速排序的处理过程：
 
@@ -314,7 +314,7 @@ private void quickSort(int[] list, int left, int right) {
 
 在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/insert-sort.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/insert-sort.png!zp"/></div>
 
 - 先拿一张 5 在手里，
 - 再摸到一张 4，比 5 小，插到 5 前面，
@@ -414,7 +414,7 @@ public void insertSort(int[] list) {
 
 我们来通过演示图，更深入的理解一下这个过程。
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/shell-sort.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/shell-sort.png!zp"/></div>
 
 在上面这幅图中：
 
@@ -520,7 +520,7 @@ Donald Shell 最初建议步长选择为 N/2 并且对步长取半直到步长�
 
 **核心代码**
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/selection-sort.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/selection-sort.png!zp"/></div>
 
 ### 算法分析
 
@@ -574,7 +574,7 @@ Donald Shell 最初建议步长选择为 N/2 并且对步长取半直到步长�
 
 其中 i=1,2,…,n/2 向下取整;
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/heap-sort.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/heap-sort.png!zp"/></div>
 
 如上图所示，序列 R{3, 8,15, 31, 25} 是一个典型的小根堆。
 
@@ -608,13 +608,13 @@ Donald Shell 最初建议步长选择为 N/2 并且对步长取半直到步长�
 
 设有一个无序序列 { 1, 3,4, 5, 2, 6, 9, 7, 8, 0 }。
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/heap-sort-02.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/heap-sort-02.png!zp"/></div>
 
 构造了初始堆后，我们来看一下完整的堆排序处理：
 
 还是针对前面提到的无序序列 { 1,3, 4, 5, 2, 6, 9, 7, 8, 0 } 来加以说明。
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/heap-sort-03.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/heap-sort-03.png!zp"/></div>
 
 相信，通过以上两幅图，应该能很直观的演示堆排序的操作处理。
 
@@ -783,7 +783,7 @@ public void Merge(int[] array, int low, int mid, int high) {
 
 掌握了合并的方法，接下来，让我们来了解**如何分解**。
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/merge-sort.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/merge-sort.png!zp"/></div>
 
 在某趟归并中，设各子表的长度为 **gap**，则归并前 R[0...n-1] 中共有 **n/gap** 个有序的子表：`R[0...gap-1]`, `R[gap...2*gap-1]`, ... , `R[(n/gap)*gap ... n-1]`。
 
@@ -877,7 +877,7 @@ public int[] sort(int[] list) {
 
 我们先根据序列的个位数的数字来进行分类，将其分到指定的桶中。例如：R[0] = 50，个位数上是 0，将这个数存入编号为 0 的桶中。
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/algorithm/sort/radix-sort.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/images/algorithm/sort/radix-sort.png!zp"/></div>
 
 分类后，我们在从各个桶中，将这些数按照从编号 0 到编号 9 的顺序依次将所有数取出来。
 

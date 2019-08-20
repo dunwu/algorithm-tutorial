@@ -1,6 +1,8 @@
-# 算法和数据结构
+# Algorithm Ttutorial
 
-> :dart: 所有配套源码整理归档在 [**algorithm-tutorial**](https://github.com/dunwu/algorithm-tutorial) 项目中。
+> :keyboard: 项目同步维护在 [github](https://github.com/dunwu/algorithm-tutorial) | [gitee](https://gitee.com/turnon/algorithm-tutorial)
+>
+> :book: [电子书](https://dunwu.github.io/algorithm-tutorial/) | [电子书（国内）](http://turnon.gitee.io/algorithm-tutorial/)
 
 ## 📝 知识点
 
