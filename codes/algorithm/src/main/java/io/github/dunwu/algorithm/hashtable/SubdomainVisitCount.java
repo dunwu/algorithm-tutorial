@@ -47,38 +47,40 @@ The answer output can be returned in any order.
 */
 public class SubdomainVisitCount {
 
-    public List<String> subdomainVisits(String[] cpdomains) {
-        List<String> result = new ArrayList<>();
-        Map<String, Integer> map = new HashMap<>(); // key: subdomain, value: frequency
-        StringBuilder resultStringBuilder = new StringBuilder();
+	public static void main(String[] args) {
+		SubdomainVisitCount tmpl = new SubdomainVisitCount();
 
-        for (String cpdomain : cpdomains) {
-            int indexSpace = cpdomain.indexOf(' ');
-            int numClicks = Integer.parseInt(cpdomain.substring(0, indexSpace));
-            String domain = cpdomain.substring(indexSpace + 1);
-            resultStringBuilder.setLength(0);
-            resultStringBuilder.append(domain);
-            while (true) {
-                map.put(resultStringBuilder.toString(), map.getOrDefault(resultStringBuilder.toString(), 0) + numClicks);
-                int dotPosition = resultStringBuilder.indexOf(".");
-                if (dotPosition == -1)
-                    break;
-                resultStringBuilder.delete(0, dotPosition + 1);
-            }
-        }
+		String[] s1 = new String[] { "9001 discuss.leetcode.com" };
+		String[] s2 = new String[] { "900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org" };
+		tmpl.subdomainVisits(s1);
+		tmpl.subdomainVisits(s2);
+	}
 
-        for (String domain : map.keySet())
-            result.add(map.get(domain) + " " + domain);
+	public List<String> subdomainVisits(String[] cpdomains) {
+		List<String> result = new ArrayList<>();
+		Map<String, Integer> map = new HashMap<>(); // key: subdomain, value: frequency
+		StringBuilder resultStringBuilder = new StringBuilder();
 
-        return result;
-    }
+		for (String cpdomain : cpdomains) {
+			int indexSpace = cpdomain.indexOf(' ');
+			int numClicks = Integer.parseInt(cpdomain.substring(0, indexSpace));
+			String domain = cpdomain.substring(indexSpace + 1);
+			resultStringBuilder.setLength(0);
+			resultStringBuilder.append(domain);
+			while (true) {
+				map.put(resultStringBuilder.toString(),
+						map.getOrDefault(resultStringBuilder.toString(), 0) + numClicks);
+				int dotPosition = resultStringBuilder.indexOf(".");
+				if (dotPosition == -1)
+					break;
+				resultStringBuilder.delete(0, dotPosition + 1);
+			}
+		}
 
-    public static void main(String[] args) {
-        SubdomainVisitCount tmpl = new SubdomainVisitCount();
+		for (String domain : map.keySet())
+			result.add(map.get(domain) + " " + domain);
 
-        String[] s1 = new String[]{"9001 discuss.leetcode.com"};
-        String[] s2 = new String[]{"900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"};
-        tmpl.subdomainVisits(s1);
-        tmpl.subdomainVisits(s2);
-    }
+		return result;
+	}
+
 }

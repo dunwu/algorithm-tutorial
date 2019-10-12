@@ -1,6 +1,7 @@
 package io.github.dunwu.ds.array;
 
 //    【寻找数组的中心索引】
+
 //
 //    给定一个整数类型的数组 nums，请编写一个能够返回数组“中心索引”的方法。
 //
@@ -28,31 +29,32 @@ package io.github.dunwu.ds.array;
 //    nums 的长度范围为 [0, 10000]。
 //    任何一个 nums[i] 将会是一个范围在 [-1000, 1000]的整数。
 
-
 /**
  * @author Zhang Peng
  * @date 2018-11-04
  */
 public class FindPivotIndex {
-    public static int pivotIndex(int[] nums) {
-        int result = 0;
-        for (int i = 0; i < nums.length; i++) {
-            int sum1 = 0;
-            int sum2 = 0;
-            for (int a = 0; a < result; a++) {
-                sum1 += nums[a];
-            }
 
-            for (int b = result + 1; b < nums.length; b++) {
-                sum2 += nums[b];
-            }
+	public static int pivotIndex(int[] nums) {
+		int result = 0;
+		for (int i = 0; i < nums.length; i++) {
+			int sum1 = 0;
+			int sum2 = 0;
+			for (int a = 0; a < result; a++) {
+				sum1 += nums[a];
+			}
 
-            if (sum1 == sum2) {
-                return result;
-            }
+			for (int b = result + 1; b < nums.length; b++) {
+				sum2 += nums[b];
+			}
 
-            result++;
-        }
-        return -1;
-    }
+			if (sum1 == sum2) {
+				return result;
+			}
+
+			result++;
+		}
+		return -1;
+	}
+
 }

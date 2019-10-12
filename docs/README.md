@@ -2,7 +2,7 @@
 
 > :keyboard: 项目同步维护在 [github](https://github.com/dunwu/algorithm-tutorial) | [gitee](https://gitee.com/turnon/algorithm-tutorial)
 >
-> :book: [电子书](https://dunwu.github.io/algorithm-tutorial/) | [电子书（国内）](http://turnon.gitee.io/algorithm-tutorial/)
+> 📖 [电子书](https://dunwu.github.io/algorithm-tutorial/) | [电子书（国内）](http://turnon.gitee.io/algorithm-tutorial/)
 
 ## 📝 知识点
 

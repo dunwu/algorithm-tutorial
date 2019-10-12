@@ -1,6 +1,7 @@
 package io.github.dunwu.ds.hash;
 
 //    【设计哈希集合】
+
 //
 //    不使用任何内建的哈希表库设计一个哈希集合
 //
@@ -28,45 +29,48 @@ package io.github.dunwu.ds.hash;
 //    操作的总数目在[1, 10000]范围内。
 //    不要使用内建的哈希集合库。
 
-
 class DesignHashset {
-    private int buckets = 1000;
-    private int itemsPerBucket = 1001;
-    private boolean[][] table;
 
-    /** Initialize your data structure here. */
-    public DesignHashset() {
-        table = new boolean[buckets][];
-    }
+	private int buckets = 1000;
 
-    public int hash(int key) {
-        return key % buckets;
-    }
+	private int itemsPerBucket = 1001;
 
-    public int pos(int key) {
-        return key / buckets;
-    }
+	private boolean[][] table;
 
-    public void add(int key) {
-        int hashkey = hash(key);
+	/** Initialize your data structure here. */
+	public DesignHashset() {
+		table = new boolean[buckets][];
+	}
 
-        if (table[hashkey] == null) {
-            table[hashkey] = new boolean[itemsPerBucket];
-        }
-        table[hashkey][pos(key)] = true;
-    }
+	public int hash(int key) {
+		return key % buckets;
+	}
 
-    public void remove(int key) {
-        int hashkey = hash(key);
+	public int pos(int key) {
+		return key / buckets;
+	}
 
-        if (table[hashkey] != null) {
-            table[hashkey][pos(key)] = false;
-        }
-    }
+	public void add(int key) {
+		int hashkey = hash(key);
 
-    /** Returns true if this set did not already contain the specified element */
-    public boolean contains(int key) {
-        int hashkey = hash(key);
-        return table[hashkey] != null && table[hashkey][pos(key)];
-    }
+		if (table[hashkey] == null) {
+			table[hashkey] = new boolean[itemsPerBucket];
+		}
+		table[hashkey][pos(key)] = true;
+	}
+
+	public void remove(int key) {
+		int hashkey = hash(key);
+
+		if (table[hashkey] != null) {
+			table[hashkey][pos(key)] = false;
+		}
+	}
+
+	/** Returns true if this set did not already contain the specified element */
+	public boolean contains(int key) {
+		int hashkey = hash(key);
+		return table[hashkey] != null && table[hashkey][pos(key)];
+	}
+
 }

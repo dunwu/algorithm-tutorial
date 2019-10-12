@@ -1,6 +1,7 @@
 package io.github.dunwu.ds.array;
 
 //    【删除排序数组中的重复项】
+
 //
 //    给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
 //
@@ -37,33 +38,34 @@ package io.github.dunwu.ds.array;
 //    print(nums[i]);
 //    }
 
-
 /**
  * @author Zhang Peng
  * @date 2018-11-05
  */
 public class RemoveDuplicatesFromSortedArray {
-    private static void remove(int[] nums, int pos) {
-        for (int i = pos; i < nums.length - 1; i++) {
-            nums[i] = nums[i + 1];
-        }
-    }
 
-    public static int removeDuplicates(int[] nums) {
-        int left = 0;
-        int right = nums.length - 1;
+	private static void remove(int[] nums, int pos) {
+		for (int i = pos; i < nums.length - 1; i++) {
+			nums[i] = nums[i + 1];
+		}
+	}
 
-        while (left <= right) {
-            for (int i = left + 1; i <= right; i++) {
-                if (nums[i] == nums[left]) {
-                    remove(nums, i);
-                    right--;
-                    i--;
-                }
-            }
-            left++;
-        }
+	public static int removeDuplicates(int[] nums) {
+		int left = 0;
+		int right = nums.length - 1;
 
-        return right + 1;
-    }
+		while (left <= right) {
+			for (int i = left + 1; i <= right; i++) {
+				if (nums[i] == nums[left]) {
+					remove(nums, i);
+					right--;
+					i--;
+				}
+			}
+			left++;
+		}
+
+		return right + 1;
+	}
+
 }

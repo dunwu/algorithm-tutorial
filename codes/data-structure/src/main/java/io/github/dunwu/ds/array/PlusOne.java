@@ -1,6 +1,7 @@
 package io.github.dunwu.ds.array;
 
 //    【加一】
+
 //
 //    给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
 //
@@ -20,27 +21,27 @@ package io.github.dunwu.ds.array;
 //    解释: 输入数组表示数字 4321。
 
 
-import io.github.dunwu.ds.util.ArrayUtil;
-
 /**
  * @author Zhang Peng
  * @date 2018-11-04
  */
 public class PlusOne {
-    public static int[] plusOne(int[] digits) {
-        int n = digits.length;
-        for (int i = n - 1; i >= 0; i--) {
-            if (digits[i] < 9) {
-                digits[i]++;
-                return digits;
-            }
 
-            digits[i] = 0;
-        }
+	public static int[] plusOne(int[] digits) {
+		int n = digits.length;
+		for (int i = n - 1; i >= 0; i--) {
+			if (digits[i] < 9) {
+				digits[i]++;
+				return digits;
+			}
 
-        int[] newNumber = new int[n + 1];
-        newNumber[0] = 1;
+			digits[i] = 0;
+		}
 
-        return newNumber;
-    }
+		int[] newNumber = new int[n + 1];
+		newNumber[0] = 1;
+
+		return newNumber;
+	}
+
 }

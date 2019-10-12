@@ -1,6 +1,7 @@
 package io.github.dunwu.ds.array;
 
 //    【移除元素】
+
 //
 //    给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
 //
@@ -41,21 +42,22 @@ package io.github.dunwu.ds.array;
 //    print(nums[i]);
 //    }
 
-
 /**
  * @author Zhang Peng
  * @date 2018-11-05
  */
 public class RemoveElement {
-    public static int removeElement(int[] nums, int val) {
-        int end = 0;
-        final int n = nums.length;
-        for (int i = 0; i < n; i++) {
-            if (nums[i] != val) {
-                nums[end] = nums[i];
-                end++;
-            }
-        }
-        return end;
-    }
+
+	public static int removeElement(int[] nums, int val) {
+		int end = 0;
+		final int n = nums.length;
+		for (int i = 0; i < n; i++) {
+			if (nums[i] != val) {
+				nums[end] = nums[i];
+				end++;
+			}
+		}
+		return end;
+	}
+
 }

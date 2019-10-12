@@ -1,6 +1,7 @@
 package io.github.dunwu.ds.array;
 
 //    【至少是其他数字两倍的最大数】
+
 //
 //    在一个给定的数组nums中，总是存在一个最大元素 。
 //
@@ -28,29 +29,31 @@ package io.github.dunwu.ds.array;
 //    nums 的长度范围在[1, 50].
 //    每个 nums[i] 的整数范围在 [0, 99].
 
-
 /**
  * @author Zhang Peng
  * @date 2018-11-04
  */
 public class LargestNumberAtLeastTwiceOfOthers {
-    public static int dominantIndex(int[] nums) {
-        int index = 0;
-        while (index < nums.length) {
-            boolean isMatch = true;
-            int max = nums[index];
-            for (int i = 0; i < nums.length; i++) {
-                if (index != i && max < nums[i] * 2) {
-                    isMatch = false;
-                    break;
-                }
-            }
-            if (isMatch) {
-                return index;
-            } else {
-                index++;
-            }
-        }
-        return -1;
-    }
+
+	public static int dominantIndex(int[] nums) {
+		int index = 0;
+		while (index < nums.length) {
+			boolean isMatch = true;
+			int max = nums[index];
+			for (int i = 0; i < nums.length; i++) {
+				if (index != i && max < nums[i] * 2) {
+					isMatch = false;
+					break;
+				}
+			}
+			if (isMatch) {
+				return index;
+			}
+			else {
+				index++;
+			}
+		}
+		return -1;
+	}
+
 }

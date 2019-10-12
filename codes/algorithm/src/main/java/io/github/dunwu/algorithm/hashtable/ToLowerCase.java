@@ -22,21 +22,24 @@ Output: "lovely"
 
  */
 public class ToLowerCase {
-    public String toLowerCase(String str) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
-                sb.append((char) (str.charAt(i) + 32));
-            } else {
-                sb.append(str.charAt(i));
-            }
-        }
-        return sb.toString();
-    }
 
-    public static void main(String[] args) {
-        ToLowerCase tmpl = new ToLowerCase();
-        String result = tmpl.toLowerCase("Hello");
-        System.out.println("result = [" + result + "]");
-    }
+	public static void main(String[] args) {
+		ToLowerCase tmpl = new ToLowerCase();
+		String result = tmpl.toLowerCase("Hello");
+		System.out.println("result = [" + result + "]");
+	}
+
+	public String toLowerCase(String str) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
+				sb.append((char) (str.charAt(i) + 32));
+			}
+			else {
+				sb.append(str.charAt(i));
+			}
+		}
+		return sb.toString();
+	}
+
 }

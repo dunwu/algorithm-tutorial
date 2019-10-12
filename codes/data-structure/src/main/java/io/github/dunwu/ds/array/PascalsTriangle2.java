@@ -18,44 +18,49 @@ import java.util.List;
 //
 //    你可以优化你的算法到 O(k) 空间复杂度吗？
 
-
 /**
  * @author Zhang Peng
  * @date 2018-11-05
  */
 public class PascalsTriangle2 {
-    public static List<Integer> getRow(int rowIndex) {
-        List<List<Integer>> result = new ArrayList<>();
 
-        int rows = rowIndex + 1;
-        if (rows <= 0) {
+	public static List<Integer> getRow(int rowIndex) {
+		List<List<Integer>> result = new ArrayList<>();
 
-        } else if (rows == 1) {
-            result.add(Arrays.asList(1));
-        } else if (rows == 2) {
-            result.add(Arrays.asList(1));
-            result.add(Arrays.asList(1, 1));
-        } else {
-            result.add(Arrays.asList(1));
-            result.add(Arrays.asList(1, 1));
-            for (int i = 2; i < rows; i++) {
-                List<Integer> current = result.get(i - 1);
-                List<Integer> next = new ArrayList<>();
+		int rows = rowIndex + 1;
+		if (rows <= 0) {
 
-                for (int j = 0; j <= i; j++) {
-                    if (j == 0 || j == i) {
-                        next.add(1);
-                    } else {
-                        int x = current.get(j - 1);
-                        int y = current.get(j);
-                        next.add(x + y);
-                    }
-                }
+		}
+		else if (rows == 1) {
+			result.add(Arrays.asList(1));
+		}
+		else if (rows == 2) {
+			result.add(Arrays.asList(1));
+			result.add(Arrays.asList(1, 1));
+		}
+		else {
+			result.add(Arrays.asList(1));
+			result.add(Arrays.asList(1, 1));
+			for (int i = 2; i < rows; i++) {
+				List<Integer> current = result.get(i - 1);
+				List<Integer> next = new ArrayList<>();
 
-                result.add(next);
-            }
-        }
+				for (int j = 0; j <= i; j++) {
+					if (j == 0 || j == i) {
+						next.add(1);
+					}
+					else {
+						int x = current.get(j - 1);
+						int y = current.get(j);
+						next.add(x + y);
+					}
+				}
 
-        return result.get(rowIndex);
-    }
+				result.add(next);
+			}
+		}
+
+		return result.get(rowIndex);
+	}
+
 }
