@@ -18,7 +18,7 @@ package io.github.dunwu.ds.str;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class ReverseWordsInAString {
 
@@ -36,6 +36,15 @@ public class ReverseWordsInAString {
 		reverseWords(a, n);
 		// step 3. clean up spaces
 		return cleanSpaces(a, n);
+	}
+
+	// reverse a[] from a[i] to a[j]
+	private static void reverse(char[] a, int i, int j) {
+		while (i < j) {
+			char t = a[i];
+			a[i++] = a[j];
+			a[j--] = t;
+		}
 	}
 
 	private static void reverseWords(char[] a, int n) {
@@ -73,15 +82,6 @@ public class ReverseWordsInAString {
 		}
 
 		return new String(a).substring(0, i);
-	}
-
-	// reverse a[] from a[i] to a[j]
-	private static void reverse(char[] a, int i, int j) {
-		while (i < j) {
-			char t = a[i];
-			a[i++] = a[j];
-			a[j--] = t;
-		}
 	}
 
 }

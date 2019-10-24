@@ -3,7 +3,6 @@ package io.github.dunwu.ds.search;
 import io.github.dunwu.ds.search.strategy.BinarySearch;
 import io.github.dunwu.ds.search.strategy.OrderSearch;
 import io.github.dunwu.ds.util.ArrayUtil;
-import org.junit.*;
 import org.junit.runners.MethodSorters;
 
 import java.util.Random;
@@ -72,12 +71,6 @@ public class SearchStrategyTest {
 		executeSearch(strategy);
 	}
 
-	@Test
-	public void testBinarySearch() {
-		SearchStrategy strategy = new SearchStrategy(new BinarySearch());
-		executeSearch(strategy);
-	}
-
 	/**
 	 * 注入 BinarySearch，执行对三个样本的排序测试
 	 */
@@ -90,6 +83,12 @@ public class SearchStrategyTest {
 
 		int target03 = strategy.find(origin03, origin03[expected03]);
 		Assert.assertEquals(expected03, target03);
+	}
+
+	@Test
+	public void testBinarySearch() {
+		SearchStrategy strategy = new SearchStrategy(new BinarySearch());
+		executeSearch(strategy);
 	}
 
 }

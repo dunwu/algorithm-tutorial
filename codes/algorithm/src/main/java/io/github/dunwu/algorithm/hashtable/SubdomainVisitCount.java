@@ -50,8 +50,8 @@ public class SubdomainVisitCount {
 	public static void main(String[] args) {
 		SubdomainVisitCount tmpl = new SubdomainVisitCount();
 
-		String[] s1 = new String[] { "9001 discuss.leetcode.com" };
-		String[] s2 = new String[] { "900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org" };
+		String[] s1 = new String[] {"9001 discuss.leetcode.com"}
+		String[] s2 = new String[] {"900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"}
 		tmpl.subdomainVisits(s1);
 		tmpl.subdomainVisits(s2);
 	}
@@ -69,10 +69,9 @@ public class SubdomainVisitCount {
 			resultStringBuilder.append(domain);
 			while (true) {
 				map.put(resultStringBuilder.toString(),
-						map.getOrDefault(resultStringBuilder.toString(), 0) + numClicks);
+					map.getOrDefault(resultStringBuilder.toString(), 0) + numClicks);
 				int dotPosition = resultStringBuilder.indexOf(".");
-				if (dotPosition == -1)
-					break;
+				if (dotPosition == -1) { break; }
 				resultStringBuilder.delete(0, dotPosition + 1);
 			}
 		}

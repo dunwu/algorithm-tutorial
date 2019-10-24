@@ -34,8 +34,7 @@ public class ToLowerCase {
 		for (int i = 0; i < str.length(); i++) {
 			if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
 				sb.append((char) (str.charAt(i) + 32));
-			}
-			else {
+			} else {
 				sb.append(str.charAt(i));
 			}
 		}

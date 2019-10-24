@@ -10,6 +10,27 @@ import io.github.dunwu.ds.util.ArrayUtil;
  */
 public class HeapSort implements Sort {
 
+	@Override
+	public <T extends Comparable<T>> void sort(T[] list) {
+		// 循环建立初始堆
+		for (int i = list.length / 2; i >= 0; i--) {
+			adjustHeat(list, i, list.length);
+		}
+
+		// 进行n-1次循环，完成排序
+		for (int i = list.length - 1; i > 0; i--) {
+			// 最后一个元素和第一元素进行交换
+			T temp = list[i];
+			list[i] = list[0];
+			list[0] = temp;
+
+			// 筛选 R[0] 结点，得到i-1个结点的堆
+			adjustHeat(list, 0, i);
+
+			ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("第 %d 趟：", list.length - i));
+		}
+	}
+
 	private static <T extends Comparable<T>> void adjustHeat(T[] array, int parent, int length) {
 		// temp保存当前父节点
 		T temp = array[parent];
@@ -36,27 +57,6 @@ public class HeapSort implements Sort {
 		}
 
 		array[parent] = temp;
-	}
-
-	@Override
-	public <T extends Comparable<T>> void sort(T[] list) {
-		// 循环建立初始堆
-		for (int i = list.length / 2; i >= 0; i--) {
-			adjustHeat(list, i, list.length);
-		}
-
-		// 进行n-1次循环，完成排序
-		for (int i = list.length - 1; i > 0; i--) {
-			// 最后一个元素和第一元素进行交换
-			T temp = list[i];
-			list[i] = list[0];
-			list[0] = temp;
-
-			// 筛选 R[0] 结点，得到i-1个结点的堆
-			adjustHeat(list, 0, i);
-
-			ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("第 %d 趟：", list.length - i));
-		}
 	}
 
 }

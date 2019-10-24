@@ -20,7 +20,7 @@ package io.github.dunwu.ds.str;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class ImplementStrstr {
 
@@ -47,12 +47,10 @@ public class ImplementStrstr {
 		while (i < haystack.length() && begin < haystack.length()) {
 			if (j == needle.length()) {
 				return begin;
-			}
-			else if (haystack.charAt(i) == needle.charAt(j)) {
+			} else if (haystack.charAt(i) == needle.charAt(j)) {
 				i++;
 				j++;
-			}
-			else {
+			} else {
 				j = 0;
 				begin++;
 				i = begin;

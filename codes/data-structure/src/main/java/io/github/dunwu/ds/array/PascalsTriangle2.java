@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class PascalsTriangle2 {
 
@@ -30,15 +30,12 @@ public class PascalsTriangle2 {
 		int rows = rowIndex + 1;
 		if (rows <= 0) {
 
-		}
-		else if (rows == 1) {
+		} else if (rows == 1) {
 			result.add(Arrays.asList(1));
-		}
-		else if (rows == 2) {
+		} else if (rows == 2) {
 			result.add(Arrays.asList(1));
 			result.add(Arrays.asList(1, 1));
-		}
-		else {
+		} else {
 			result.add(Arrays.asList(1));
 			result.add(Arrays.asList(1, 1));
 			for (int i = 2; i < rows; i++) {
@@ -48,8 +45,7 @@ public class PascalsTriangle2 {
 				for (int j = 0; j <= i; j++) {
 					if (j == 0 || j == i) {
 						next.add(1);
-					}
-					else {
+					} else {
 						int x = current.get(j - 1);
 						int y = current.get(j);
 						next.add(x + y);

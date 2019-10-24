@@ -5,6 +5,28 @@ import io.github.dunwu.ds.util.ArrayUtil;
 
 public class MergeSort implements Sort {
 
+	@Override
+	public <T extends Comparable<T>> void sort(T[] list) {
+		for (int gap = 1; gap < list.length; gap = 2 * gap) {
+			mergeSort(list, gap, list.length);
+			ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("gap = %d", gap));
+		}
+	}
+
+	private <T extends Comparable<T>> void mergeSort(T[] array, int gap, int length) {
+		int i = 0;
+
+		// 归并gap长度的两个相邻子表
+		for (i = 0; i + 2 * gap - 1 < length; i = i + 2 * gap) {
+			merge(array, i, i + gap - 1, i + 2 * gap - 1);
+		}
+
+		// 余下两个子表，后者长度小于gap
+		if (i + gap - 1 < length) {
+			merge(array, i, i + gap - 1, length - 1);
+		}
+	}
+
 	private <T extends Comparable<T>> void merge(T[] array, int low, int mid, int high) {
 		// i是第一段序列的下标
 		int i = low;
@@ -22,8 +44,7 @@ public class MergeSort implements Sort {
 				array2[k] = array[i];
 				i++;
 				k++;
-			}
-			else {
+			} else {
 				array2[k] = array[j];
 				j++;
 				k++;
@@ -47,28 +68,6 @@ public class MergeSort implements Sort {
 		// 将合并序列复制到原始序列中
 		for (k = 0, i = low; i <= high; i++, k++) {
 			array[i] = array2[k];
-		}
-	}
-
-	private <T extends Comparable<T>> void mergeSort(T[] array, int gap, int length) {
-		int i = 0;
-
-		// 归并gap长度的两个相邻子表
-		for (i = 0; i + 2 * gap - 1 < length; i = i + 2 * gap) {
-			merge(array, i, i + gap - 1, i + 2 * gap - 1);
-		}
-
-		// 余下两个子表，后者长度小于gap
-		if (i + gap - 1 < length) {
-			merge(array, i, i + gap - 1, length - 1);
-		}
-	}
-
-	@Override
-	public <T extends Comparable<T>> void sort(T[] list) {
-		for (int gap = 1; gap < list.length; gap = 2 * gap) {
-			mergeSort(list, gap, list.length);
-			ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("gap = %d", gap));
 		}
 	}
 

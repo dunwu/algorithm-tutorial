@@ -17,7 +17,7 @@ package io.github.dunwu.ds.array;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class MaxConsecutiveOnes {
 
@@ -27,8 +27,7 @@ public class MaxConsecutiveOnes {
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] == 1) {
 				count++;
-			}
-			else {
+			} else {
 				if (count > max) {
 					max = count;
 				}

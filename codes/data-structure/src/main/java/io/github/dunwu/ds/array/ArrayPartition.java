@@ -20,7 +20,7 @@ import java.util.Arrays;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class ArrayPartition {
 

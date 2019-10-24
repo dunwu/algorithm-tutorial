@@ -3,10 +3,10 @@ package io.github.dunwu.ds.common;
 public class SuffixTreeTest {
 
 	/**
-	 * In computer science, a suffix tree (also called PAT tree or, in an earlier form,
-	 * position tree) is a compressed trie containing all the suffixes of the given text
-	 * as their keys and positions in the text as their values. Suffix trees allow
-	 * particularly fast implementations of many important string operations.
+	 * In computer science, a suffix tree (also called PAT tree or, in an earlier form, position tree) is a compressed
+	 * trie containing all the suffixes of the given text as their keys and positions in the text as their values.
+	 * Suffix trees allow particularly fast implementations of many important string operations.
+	 *
 	 * @param tree Suffix tree to test.
 	 * @param test String to use in testing the suffix tree.
 	 * @return True if the suffix tree passes it's invariants tests.

@@ -1,8 +1,8 @@
 package io.github.dunwu.ds.common;
 
 /**
- * A list or sequence is an abstract data type that implements an ordered collection of
- * values, where the same value may occur more than once.
+ * A list or sequence is an abstract data type that implements an ordered collection of values, where the same value may
+ * occur more than once.
  * <p>
  *
  * @author Justin Wetherell <phishman3579@gmail.com>
@@ -12,6 +12,7 @@ public interface IList<T> {
 
 	/**
 	 * Add value to list.
+	 *
 	 * @param value to add.
 	 * @return True if added.
 	 */
@@ -19,6 +20,7 @@ public interface IList<T> {
 
 	/**
 	 * Remove value from list.
+	 *
 	 * @param value to remove.
 	 * @return True if removed.
 	 */
@@ -31,6 +33,7 @@ public interface IList<T> {
 
 	/**
 	 * Does the list contain value.
+	 *
 	 * @param value to search list for.
 	 * @return True if list contains value.
 	 */
@@ -38,24 +41,28 @@ public interface IList<T> {
 
 	/**
 	 * Size of the list.
+	 *
 	 * @return size of the list.
 	 */
 	public int size();
 
 	/**
 	 * Validate the list according to the invariants.
+	 *
 	 * @return True if the list is valid.
 	 */
 	public boolean validate();
 
 	/**
 	 * Get this List as a Java compatible List
+	 *
 	 * @return Java compatible List
 	 */
 	public java.util.List<T> toList();
 
 	/**
 	 * Get this List as a Java compatible Collection
+	 *
 	 * @return Java compatible Collection
 	 */
 	public java.util.Collection<T> toCollection();

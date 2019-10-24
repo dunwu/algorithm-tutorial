@@ -2,7 +2,6 @@ package io.github.dunwu.ds.sort;
 
 import io.github.dunwu.ds.sort.strategy.*;
 import io.github.dunwu.ds.util.ArrayUtil;
-import org.junit.*;
 import org.junit.runners.MethodSorters;
 
 import java.util.Arrays;
@@ -81,6 +80,18 @@ public class SortStrategyTest {
 		executeSort(strategy);
 	}
 
+	/**
+	 * 注入 SortStrategy，执行对三个样本的排序测试
+	 */
+	private void executeSort(SortStrategy strategy) {
+		strategy.sort(target01);
+		Assert.assertArrayEquals(expected01, target01);
+		strategy.sort(target02);
+		Assert.assertArrayEquals(expected02, target02);
+		strategy.sort(target03);
+		Assert.assertArrayEquals(expected03, target03);
+	}
+
 	@Test
 	public void testBubbleSort2() {
 		SortStrategy strategy = new SortStrategy(new BubbleSort2());
@@ -121,18 +132,6 @@ public class SortStrategyTest {
 	public void testMergeSort() {
 		SortStrategy strategy = new SortStrategy(new MergeSort());
 		executeSort(strategy);
-	}
-
-	/**
-	 * 注入 SortStrategy，执行对三个样本的排序测试
-	 */
-	private void executeSort(SortStrategy strategy) {
-		strategy.sort(target01);
-		Assert.assertArrayEquals(expected01, target01);
-		strategy.sort(target02);
-		Assert.assertArrayEquals(expected02, target02);
-		strategy.sort(target03);
-		Assert.assertArrayEquals(expected03, target03);
 	}
 
 }

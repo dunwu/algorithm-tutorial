@@ -44,7 +44,7 @@ package io.github.dunwu.ds.array;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class RemoveElement {
 

@@ -18,7 +18,7 @@ package io.github.dunwu.ds.str;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-04
+ * @since 2018-11-04
  */
 public class AddBinary {
 

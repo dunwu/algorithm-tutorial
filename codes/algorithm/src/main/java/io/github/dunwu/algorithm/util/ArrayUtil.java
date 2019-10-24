@@ -48,8 +48,9 @@ public class ArrayUtil {
 	 * <p>
 	 * 然后从len-2里随机产生下一个随机数，如此类推
 	 * </p>
-	 * @param min 指定范围最小值
-	 * @param max 指定范围最大值
+	 *
+	 * @param min    指定范围最小值
+	 * @param max    指定范围最大值
 	 * @param length 随机数个数
 	 * @return int[] 随机数结果集
 	 */
@@ -82,8 +83,9 @@ public class ArrayUtil {
 
 	/**
 	 * 随机指定范围内N个重复的Int数组。
-	 * @param min 指定范围最小值
-	 * @param max 指定范围最大值
+	 *
+	 * @param min    指定范围最小值
+	 * @param max    指定范围最大值
 	 * @param length 随机数个数
 	 * @return 随机数结果集
 	 */
@@ -112,8 +114,9 @@ public class ArrayUtil {
 	 * <p>
 	 * 然后从len-2里随机产生下一个随机数，如此类推
 	 * </p>
-	 * @param min 指定范围最小值
-	 * @param max 指定范围最大值
+	 *
+	 * @param min    指定范围最小值
+	 * @param max    指定范围最大值
 	 * @param length 随机数个数
 	 * @return int[] 随机数结果集
 	 */
@@ -146,8 +149,9 @@ public class ArrayUtil {
 
 	/**
 	 * 随机指定范围内N个重复的Integer数组。
-	 * @param min 指定范围最小值
-	 * @param max 指定范围最大值
+	 *
+	 * @param min    指定范围最小值
+	 * @param max    指定范围最大值
 	 * @param length 随机数个数
 	 * @return 随机数结果集
 	 */

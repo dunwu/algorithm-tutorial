@@ -37,17 +37,11 @@ class DesignHashset {
 
 	private boolean[][] table;
 
-	/** Initialize your data structure here. */
+	/**
+	 * Initialize your data structure here.
+	 */
 	public DesignHashset() {
 		table = new boolean[buckets][];
-	}
-
-	public int hash(int key) {
-		return key % buckets;
-	}
-
-	public int pos(int key) {
-		return key / buckets;
 	}
 
 	public void add(int key) {
@@ -59,6 +53,14 @@ class DesignHashset {
 		table[hashkey][pos(key)] = true;
 	}
 
+	public int hash(int key) {
+		return key % buckets;
+	}
+
+	public int pos(int key) {
+		return key / buckets;
+	}
+
 	public void remove(int key) {
 		int hashkey = hash(key);
 
@@ -67,7 +69,9 @@ class DesignHashset {
 		}
 	}
 
-	/** Returns true if this set did not already contain the specified element */
+	/**
+	 * Returns true if this set did not already contain the specified element
+	 */
 	public boolean contains(int key) {
 		int hashkey = hash(key);
 		return table[hashkey] != null && table[hashkey][pos(key)];

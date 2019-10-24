@@ -20,10 +20,9 @@ package io.github.dunwu.ds.array;
 //    输出: [4,3,2,2]
 //    解释: 输入数组表示数字 4321。
 
-
 /**
  * @author Zhang Peng
- * @date 2018-11-04
+ * @since 2018-11-04
  */
 public class PlusOne {
 

@@ -42,8 +42,8 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 	}
 
 	/**
-	 * Constructor for B-Tree of ordered parameter. Order here means minimum number of
-	 * keys in a non-root node.
+	 * Constructor for B-Tree of ordered parameter. Order here means minimum number of keys in a non-root node.
+	 *
 	 * @param order of the B-Tree.
 	 */
 	public BinaryTree(int order) {
@@ -61,8 +61,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 		if (root == null) {
 			root = new Node<T>(null, maxKeySize, maxChildrenSize);
 			root.addKey(value);
-		}
-		else {
+		} else {
 			Node<T> node = root;
 			while (node != null) {
 				if (node.numberOfChildren() == 0) {
@@ -112,6 +111,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * The node's key size is greater than maxKeySize, split down the middle.
+	 *
 	 * @param nodeToSplit to split.
 	 */
 	private void split(Node<T> nodeToSplit) {
@@ -151,8 +151,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			node = root;
 			node.addChild(left);
 			node.addChild(right);
-		}
-		else {
+		} else {
 			// Move the median value up to the parent
 			Node<T> parent = node.parent;
 			parent.addKey(medianValue);
@@ -179,8 +178,9 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * Remove the value from the Node and check invariants
+	 *
 	 * @param value T to remove from the tree
-	 * @param node Node to remove value from
+	 * @param node  Node to remove value from
 	 * @return True if value was removed from the tree.
 	 */
 	private T remove(T value, Node<T> node) {
@@ -195,13 +195,11 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			// leaf node
 			if (node.parent != null && node.numberOfKeys() < minKeySize) {
 				this.combined(node);
-			}
-			else if (node.parent == null && node.numberOfKeys() == 0) {
+			} else if (node.parent == null && node.numberOfKeys() == 0) {
 				// Removing root node with no keys or children
 				root = null;
 			}
-		}
-		else {
+		} else {
 			// internal node
 			Node<T> lesser = node.getChild(index);
 			Node<T> greatest = this.getGreatestNode(lesser);
@@ -222,6 +220,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * Remove greatest valued key from node.
+	 *
 	 * @param node to remove greatest value from.
 	 * @return value removed;
 	 */
@@ -253,6 +252,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * Get the node with value.
+	 *
 	 * @param value to find in the tree.
 	 * @return Node<T> with value.
 	 */
@@ -263,8 +263,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			if (value.compareTo(lesser) < 0) {
 				if (node.numberOfChildren() > 0) {
 					node = node.getChild(0);
-				}
-				else {
+				} else {
 					node = null;
 				}
 				continue;
@@ -276,8 +275,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			if (value.compareTo(greater) > 0) {
 				if (node.numberOfChildren() > numberOfKeys) {
 					node = node.getChild(numberOfKeys);
-				}
-				else {
+				} else {
 					node = null;
 				}
 				continue;
@@ -307,6 +305,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * Get the greatest valued child from node.
+	 *
 	 * @param nodeToGet child with the greatest value.
 	 * @return Node<T> child with greatest value.
 	 */
@@ -320,6 +319,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * Combined children keys with parent when size is less than minKeySize.
+	 *
 	 * @param node with children to combined.
 	 * @return True if combined successfully.
 	 */
@@ -348,8 +348,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			if (rightNeighbor.numberOfChildren() > 0) {
 				node.addChild(rightNeighbor.removeChild(0));
 			}
-		}
-		else {
+		} else {
 			Node<T> leftNeighbor = null;
 			int leftNeighborSize = -minChildrenSize;
 			if (indexOfLeftNeighbor >= 0) {
@@ -368,8 +367,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 				if (leftNeighbor.numberOfChildren() > 0) {
 					node.addChild(leftNeighbor.removeChild(leftNeighbor.numberOfChildren() - 1));
 				}
-			}
-			else if (rightNeighbor != null && parent.numberOfKeys() > 0) {
+			} else if (rightNeighbor != null && parent.numberOfKeys() > 0) {
 				// Can't borrow from neighbors, try to combined with right neighbor
 				T removeValue = rightNeighbor.getKey(0);
 				int prev = getIndexOfPreviousValue(parent, removeValue);
@@ -388,15 +386,13 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 				if (parent.parent != null && parent.numberOfKeys() < minKeySize) {
 					// removing key made parent too small, combined up tree
 					this.combined(parent);
-				}
-				else if (parent.numberOfKeys() == 0) {
+				} else if (parent.numberOfKeys() == 0) {
 					// parent no longer has keys, make this node the new root
 					// which decreases the height of the tree
 					node.parent = null;
 					root = node;
 				}
-			}
-			else if (leftNeighbor != null && parent.numberOfKeys() > 0) {
+			} else if (leftNeighbor != null && parent.numberOfKeys() > 0) {
 				// Can't borrow from neighbors, try to combined with left neighbor
 				T removeValue = leftNeighbor.getKey(leftNeighbor.numberOfKeys() - 1);
 				int prev = getIndexOfNextValue(parent, removeValue);
@@ -415,8 +411,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 				if (parent.parent != null && parent.numberOfKeys() < minKeySize) {
 					// removing key made parent too small, combined up tree
 					this.combined(parent);
-				}
-				else if (parent.numberOfKeys() == 0) {
+				} else if (parent.numberOfKeys() == 0) {
 					// parent no longer has keys, make this node the new root
 					// which decreases the height of the tree
 					node.parent = null;
@@ -430,7 +425,8 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * Get the index of previous key in node.
-	 * @param node to find the previous key in.
+	 *
+	 * @param node  to find the previous key in.
 	 * @param value to find a previous value for.
 	 * @return index of previous key or -1 if not found.
 	 */
@@ -446,7 +442,8 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * Get the index of next key in node.
-	 * @param node to find the next key in.
+	 *
+	 * @param node  to find the next key in.
 	 * @param value to find a next value for.
 	 * @return index of next key or -1 if not found.
 	 */
@@ -481,6 +478,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 	/**
 	 * Validate the node according to the B-Tree invariants.
+	 *
 	 * @param node to validate.
 	 * @return True if valid.
 	 */
@@ -502,39 +500,30 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			if (keySize > maxKeySize) {
 				// check max key size. root does not have a min key size
 				return false;
-			}
-			else if (childrenSize == 0) {
+			} else if (childrenSize == 0) {
 				// if root, no children, and keys are valid
 				return true;
-			}
-			else if (childrenSize < minChildrenSize) {
+			} else if (childrenSize < minChildrenSize) {
 				// root should have zero or at least two children
 				return false;
-			}
-			else if (childrenSize > maxChildrenSize) {
+			} else if (childrenSize > maxChildrenSize) {
 				return false;
 			}
-		}
-		else {
+		} else {
 			// non-root
 			if (keySize < minKeySize) {
 				return false;
-			}
-			else if (keySize > maxKeySize) {
+			} else if (keySize > maxKeySize) {
 				return false;
-			}
-			else if (childrenSize == 0) {
+			} else if (childrenSize == 0) {
 				return true;
-			}
-			else if (keySize != (childrenSize - 1)) {
+			} else if (keySize != (childrenSize - 1)) {
 				// If there are chilren, there should be one more child then
 				// keys
 				return false;
-			}
-			else if (childrenSize < minChildrenSize) {
+			} else if (childrenSize < minChildrenSize) {
 				return false;
-			}
-			else if (childrenSize > maxChildrenSize) {
+			} else if (childrenSize > maxChildrenSize) {
 				return false;
 			}
 		}
@@ -594,16 +583,21 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 	private static class Node<T extends Comparable<T>> {
 
 		protected Node<T> parent = null;
+
 		private T[] keys = null;
+
 		private int keysSize = 0;
+
 		private Node<T>[] children = null;
+
 		private int childrenSize = 0;
+
 		private Comparator<Node<T>> comparator = new Comparator<Node<T>>() {
 			@Override
 			public int compare(Node<T> arg0, Node<T> arg1) {
 				return arg0.getKey(0).compareTo(arg1.getKey(0));
 			}
-		};
+		}
 
 		private Node(Node<T> parent, int maxKeySize, int maxChildrenSize) {
 			this.parent = parent;
@@ -611,10 +605,6 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			this.keysSize = 0;
 			this.children = new Node[maxChildrenSize + 1];
 			this.childrenSize = 0;
-		}
-
-		private T getKey(int index) {
-			return keys[index];
 		}
 
 		private int indexOf(T value) {
@@ -641,8 +631,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 				if (keys[i].equals(value)) {
 					found = true;
 					removed = keys[i];
-				}
-				else if (found) {
+				} else if (found) {
 					// shift the rest of the keys down
 					keys[i - 1] = keys[i];
 				}
@@ -666,10 +655,6 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			keysSize--;
 			keys[keysSize] = null;
 			return value;
-		}
-
-		private int numberOfKeys() {
-			return keysSize;
 		}
 
 		private Node<T> getChild(int index) {
@@ -703,8 +688,7 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			for (int i = 0; i < childrenSize; i++) {
 				if (children[i].equals(child)) {
 					found = true;
-				}
-				else if (found) {
+				} else if (found) {
 					// shift the rest of the keys down
 					children[i - 1] = children[i];
 				}
@@ -729,10 +713,6 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 			childrenSize--;
 			children[childrenSize] = null;
 			return value;
-		}
-
-		private int numberOfChildren() {
-			return childrenSize;
 		}
 
 		/**
@@ -766,10 +746,22 @@ public class BinaryTree<T extends Comparable<T>> implements ITree<T> {
 
 			if (children != null) {
 				builder.append("keySize=").append(numberOfKeys()).append(" children=").append(numberOfChildren())
-						.append("\n");
+					.append("\n");
 			}
 
 			return builder.toString();
+		}
+
+		private int numberOfKeys() {
+			return keysSize;
+		}
+
+		private T getKey(int index) {
+			return keys[index];
+		}
+
+		private int numberOfChildren() {
+			return childrenSize;
 		}
 
 	}

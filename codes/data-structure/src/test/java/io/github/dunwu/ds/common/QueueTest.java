@@ -117,8 +117,7 @@ public class QueueTest {
 			int idx = i;
 			if (idx < changeOver) {
 				idx = quarter + i;
-			}
-			else if (idx >= changeOver && idx < half) {
+			} else if (idx >= changeOver && idx < half) {
 				idx = i - changeOver;
 			}
 			T correct = data[idx];

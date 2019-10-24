@@ -22,7 +22,7 @@ package io.github.dunwu.ds.array;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-04
+ * @since 2018-11-04
  */
 public class DiagonalTraverse {
 
@@ -40,23 +40,18 @@ public class DiagonalTraverse {
 			if ((x + y) % 2 == 0) {
 				if (y == N - 1) {
 					x++;
-				}
-				else if (x == 0) {
+				} else if (x == 0) {
 					y++;
-				}
-				else {
+				} else {
 					x--;
 					y++;
 				}
-			}
-			else {
+			} else {
 				if (x == M - 1) {
 					y++;
-				}
-				else if (y == 0) {
+				} else if (y == 0) {
 					x++;
-				}
-				else {
+				} else {
 					x++;
 					y--;
 				}

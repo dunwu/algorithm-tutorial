@@ -4,7 +4,7 @@ public class MapTest {
 
 	@SuppressWarnings("unchecked")
 	public static <K, V, T extends Comparable<T>> boolean testMap(IMap<K, V> map, Class<T> type, String name,
-			Integer[] data, Integer _invalid) {
+		Integer[] data, Integer _invalid) {
 		for (int i = 0; i < data.length; i++) {
 			Integer item = data[i];
 			K k = null;
@@ -12,8 +12,7 @@ public class MapTest {
 			if (type.isAssignableFrom(Integer.class)) {
 				k = (K) item;
 				v = (V) Utils.parseT(item, type);
-			}
-			else if (type.isAssignableFrom(String.class)) {
+			} else if (type.isAssignableFrom(String.class)) {
 				k = (K) Utils.parseT(item, type);
 				v = (V) item;
 			}
@@ -33,8 +32,7 @@ public class MapTest {
 		K invalidKey = null;
 		if (type.isAssignableFrom(Integer.class)) {
 			invalidKey = (K) Utils.parseT(_invalid, type);
-		}
-		else if (type.isAssignableFrom(String.class)) {
+		} else if (type.isAssignableFrom(String.class)) {
 			invalidKey = (K) Utils.parseT(_invalid, type);
 		}
 		boolean contains = map.contains(invalidKey);
@@ -50,8 +48,7 @@ public class MapTest {
 			K k = null;
 			if (type.isAssignableFrom(Integer.class)) {
 				k = (K) item;
-			}
-			else if (type.isAssignableFrom(String.class)) {
+			} else if (type.isAssignableFrom(String.class)) {
 				k = (K) Utils.parseT(item, type);
 			}
 			removed = map.remove(k);
@@ -77,8 +74,7 @@ public class MapTest {
 			if (type.isAssignableFrom(Integer.class)) {
 				k = (K) item;
 				v = (V) Utils.parseT(item, type);
-			}
-			else if (type.isAssignableFrom(String.class)) {
+			} else if (type.isAssignableFrom(String.class)) {
 				k = (K) Utils.parseT(item, type);
 				v = (V) item;
 			}
@@ -99,8 +95,7 @@ public class MapTest {
 			K k = null;
 			if (type.isAssignableFrom(Integer.class)) {
 				k = (K) item;
-			}
-			else if (type.isAssignableFrom(String.class)) {
+			} else if (type.isAssignableFrom(String.class)) {
 				k = (K) Utils.parseT(item, type);
 			}
 			removed = map.remove(k);
@@ -122,8 +117,7 @@ public class MapTest {
 			if (type.isAssignableFrom(Integer.class)) {
 				k = (K) item;
 				v = (V) Utils.parseT(item, type);
-			}
-			else if (type.isAssignableFrom(String.class)) {
+			} else if (type.isAssignableFrom(String.class)) {
 				k = (K) Utils.parseT(item, type);
 				v = (V) item;
 			}
@@ -144,8 +138,7 @@ public class MapTest {
 			K k = null;
 			if (type.isAssignableFrom(Integer.class)) {
 				k = (K) item;
-			}
-			else if (type.isAssignableFrom(String.class)) {
+			} else if (type.isAssignableFrom(String.class)) {
 				k = (K) Utils.parseT(item, type);
 			}
 			removed = map.remove(k);

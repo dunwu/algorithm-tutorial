@@ -16,17 +16,9 @@ package io.github.dunwu.ds.array;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class MoveZeros {
-
-	private static void move(int[] nums, int pos) {
-		int temp = nums[pos];
-		for (int i = pos; i < nums.length - 1; i++) {
-			nums[i] = nums[i + 1];
-		}
-		nums[nums.length - 1] = temp;
-	}
 
 	public static void moveZeroes(int[] nums) {
 		int i = 0;
@@ -35,11 +27,18 @@ public class MoveZeros {
 			if (nums[i] == 0) {
 				move(nums, i);
 				right--;
-			}
-			else {
+			} else {
 				i++;
 			}
 		}
+	}
+
+	private static void move(int[] nums, int pos) {
+		int temp = nums[pos];
+		for (int i = pos; i < nums.length - 1; i++) {
+			nums[i] = nums[i + 1];
+		}
+		nums[nums.length - 1] = temp;
 	}
 
 }

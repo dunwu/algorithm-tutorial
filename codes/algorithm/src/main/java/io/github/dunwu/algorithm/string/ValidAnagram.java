@@ -24,13 +24,19 @@ What if the inputs contain unicode characters? How would you adapt your solution
 */
 public class ValidAnagram {
 
+	public static void main(String[] args) {
+		boolean result1 = isAnagram("anagram", "nagaram");
+		boolean result2 = isAnagram("rat", "car");
+		boolean result3 = isAnagram("a", "ab");
+		System.out.println("result:" + result1);
+		System.out.println("result:" + result2);
+		System.out.println("result:" + result3);
+	}
+
 	public static boolean isAnagram(String s, String t) {
-		if (s == null && t == null)
-			return true;
-		else if (s == null || t == null)
+		if (s == null && t == null) { return true; } else if (s == null || t == null) {
 			return false;
-		else if (s.length() != t.length())
-			return false;
+		} else if (s.length() != t.length()) { return false; }
 
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
 		for (int i = 0; i < s.length(); i++) {
@@ -39,8 +45,7 @@ public class ValidAnagram {
 				++count;
 				map.remove(s.charAt(i));
 				map.put(s.charAt(i), count);
-			}
-			else {
+			} else {
 				map.put(s.charAt(i), 1);
 			}
 		}
@@ -52,8 +57,7 @@ public class ValidAnagram {
 				++count;
 				map2.remove(t.charAt(j));
 				map2.put(t.charAt(j), count);
-			}
-			else {
+			} else {
 				map2.put(t.charAt(j), 1);
 			}
 		}
@@ -70,15 +74,6 @@ public class ValidAnagram {
 			}
 		}
 		return true;
-	}
-
-	public static void main(String[] args) {
-		boolean result1 = isAnagram("anagram", "nagaram");
-		boolean result2 = isAnagram("rat", "car");
-		boolean result3 = isAnagram("a", "ab");
-		System.out.println("result:" + result1);
-		System.out.println("result:" + result2);
-		System.out.println("result:" + result3);
 	}
 
 }

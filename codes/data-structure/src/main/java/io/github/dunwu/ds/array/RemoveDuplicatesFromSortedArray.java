@@ -40,15 +40,9 @@ package io.github.dunwu.ds.array;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class RemoveDuplicatesFromSortedArray {
-
-	private static void remove(int[] nums, int pos) {
-		for (int i = pos; i < nums.length - 1; i++) {
-			nums[i] = nums[i + 1];
-		}
-	}
 
 	public static int removeDuplicates(int[] nums) {
 		int left = 0;
@@ -66,6 +60,12 @@ public class RemoveDuplicatesFromSortedArray {
 		}
 
 		return right + 1;
+	}
+
+	private static void remove(int[] nums, int pos) {
+		for (int i = pos; i < nums.length - 1; i++) {
+			nums[i] = nums[i + 1];
+		}
 	}
 
 }

@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 public class SearchStrategy {
 
 	private static final Logger logger = LoggerFactory.getLogger(SearchStrategy.class);
+
 	private Search search;
 
 	public SearchStrategy(Search search) {

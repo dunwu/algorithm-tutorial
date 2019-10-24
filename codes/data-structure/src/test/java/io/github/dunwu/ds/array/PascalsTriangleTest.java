@@ -6,9 +6,15 @@ import java.util.List;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class PascalsTriangleTest {
+
+	@Test
+	public void test() {
+		List<List<Integer>> lists = PascalsTriangle.generate(5);
+		printPascalsTriangle(lists);
+	}
 
 	void printPascalsTriangle(List<List<Integer>> lists) {
 		System.out.printf("【%d层杨辉三角】\n", lists.size());
@@ -19,12 +25,6 @@ public class PascalsTriangleTest {
 			System.out.println();
 		}
 		System.out.println();
-	}
-
-	@Test
-	public void test() {
-		List<List<Integer>> lists = PascalsTriangle.generate(5);
-		printPascalsTriangle(lists);
 	}
 
 }

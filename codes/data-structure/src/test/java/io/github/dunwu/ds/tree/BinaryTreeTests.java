@@ -21,7 +21,7 @@ public class BinaryTreeTests {
 
 		assertTrue(TreeTest.testTree(bst, Integer.class, bstName, data.unsorted, data.invalid));
 		assertTrue(JavaCollectionTest.testCollection(bstCollection, Integer.class, bstName, data.unsorted, data.sorted,
-				data.invalid));
+			data.invalid));
 	}
 
 }

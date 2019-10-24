@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 public class SortStrategy {
 
 	private static final Logger logger = LoggerFactory.getLogger(SortStrategy.class);
+
 	private Sort sort;
 
 	public SortStrategy(Sort sort) {

@@ -6,13 +6,12 @@ import java.util.NoSuchElementException;
 public class ListIteratorTest {
 
 	public static <T extends Comparable<T>> boolean testListIterator(ListIterator<T> iter, Class<T> type,
-			Integer[] data, int size) {
+		Integer[] data, int size) {
 		// Make sure you catch going prev at the start
 		boolean exceptionThrown = false;
 		try {
 			iter.previous();
-		}
-		catch (NoSuchElementException e) {
+		} catch (NoSuchElementException e) {
 			exceptionThrown = true;
 		}
 		if (!exceptionThrown) {
@@ -25,8 +24,7 @@ public class ListIteratorTest {
 			T item = Utils.parseT(value, type);
 			iter.add(item);
 		}
-		while (iter.hasPrevious())
-			iter.previous();
+		while (iter.hasPrevious()) { iter.previous(); }
 
 		int i = 0;
 		while (iter.hasNext()) {
@@ -46,8 +44,7 @@ public class ListIteratorTest {
 		exceptionThrown = false;
 		try {
 			iter.next();
-		}
-		catch (NoSuchElementException e) {
+		} catch (NoSuchElementException e) {
 			exceptionThrown = true;
 		}
 		if (!exceptionThrown) {
@@ -81,8 +78,7 @@ public class ListIteratorTest {
 		exceptionThrown = false;
 		try {
 			iter.previous();
-		}
-		catch (NoSuchElementException e) {
+		} catch (NoSuchElementException e) {
 			exceptionThrown = true;
 		}
 		if (!exceptionThrown) {

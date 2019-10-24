@@ -3,7 +3,7 @@ package io.github.dunwu.ds.common;
 public class TreeTest {
 
 	public static <T extends Comparable<T>> boolean testTree(ITree<T> tree, Class<T> type, String name, Integer[] data,
-			Integer _invalid) {
+		Integer _invalid) {
 		for (int i = 0; i < data.length; i++) {
 			Integer value = data[i];
 			T item = Utils.parseT(value, type);

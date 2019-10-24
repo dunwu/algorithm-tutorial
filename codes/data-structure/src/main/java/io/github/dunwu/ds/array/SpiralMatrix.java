@@ -28,9 +28,18 @@ import java.util.List;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-04
+ * @since 2018-11-04
  */
 public class SpiralMatrix {
+
+	public static void main(String[] args) {
+		int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+		int[][] matrix2 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}
+		List<Integer> results = spiralOrder(matrix);
+		System.out.println();
+		System.out.println();
+		List<Integer> results2 = spiralOrder(matrix2);
+	}
 
 	public static List<Integer> spiralOrder(int[][] matrix) {
 		ArrayList<Integer> list = new ArrayList<>();
@@ -49,17 +58,13 @@ public class SpiralMatrix {
 
 			if (x == XMIN && y != YMAX) {
 				y++;
-			}
-			else if (y == YMAX && x != XMAX) {
+			} else if (y == YMAX && x != XMAX) {
 				x++;
-			}
-			else if (x == XMAX && y != YMIN) {
+			} else if (x == XMAX && y != YMIN) {
 				y--;
-			}
-			else if (y == YMIN && x != XMIN + 1) {
+			} else if (y == YMIN && x != XMIN + 1) {
 				x--;
-			}
-			else if (x == XMIN + 1 && y == YMIN) {
+			} else if (x == XMIN + 1 && y == YMIN) {
 				XMIN = XMIN + 1;
 				YMIN = YMIN + 1;
 				XMAX = XMAX - 1;
@@ -70,15 +75,6 @@ public class SpiralMatrix {
 		}
 
 		return list;
-	}
-
-	public static void main(String[] args) {
-		int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-		int[][] matrix2 = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
-		List<Integer> results = spiralOrder(matrix);
-		System.out.println();
-		System.out.println();
-		List<Integer> results2 = spiralOrder(matrix2);
 	}
 
 }

@@ -19,7 +19,7 @@ package io.github.dunwu.ds.array;
 
 /**
  * @author Zhang Peng
- * @date 2018-11-05
+ * @since 2018-11-05
  */
 public class TwoSum2InputArrayIsSorted {
 
@@ -36,11 +36,9 @@ public class TwoSum2InputArrayIsSorted {
 				indice[0] = left + 1;
 				indice[1] = right + 1;
 				break;
-			}
-			else if (v > target) {
+			} else if (v > target) {
 				right--;
-			}
-			else {
+			} else {
 				left++;
 			}
 		}
