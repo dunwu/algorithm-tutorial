@@ -2,7 +2,7 @@
 
 > :notebook: 本文已归档到：「[blog](https://github.com/dunwu/blog/tree/master/source/_posts/algorithm)」
 >
-> :keyboard: 本文中的示例代码已归档到：「[algorithm-tutorial](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java)」
+> 🔁 本文中的示例代码已归档到：「[algorithm-tutorial](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java)」
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
