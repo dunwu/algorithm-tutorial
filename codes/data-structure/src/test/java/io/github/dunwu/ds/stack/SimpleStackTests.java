@@ -6,7 +6,7 @@ import org.junit.Test;
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-01-18
  */
-public class SimpleStackTest {
+public class SimpleStackTests {
 
     @Test
     public void test() {
