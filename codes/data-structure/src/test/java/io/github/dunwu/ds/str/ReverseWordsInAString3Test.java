@@ -9,10 +9,10 @@ import org.junit.Test;
  */
 public class ReverseWordsInAString3Test {
 
-	@Test
-	public void test() {
-		Assert.assertEquals("s'teL ekat edoCteeL tsetnoc",
-			ReverseWordsInAString3.reverseWords("Let's take LeetCode contest"));
-	}
+    @Test
+    public void test() {
+        Assert.assertEquals("s'teL ekat edoCteeL tsetnoc",
+            ReverseWordsInAString3.reverseWords("Let's take LeetCode contest"));
+    }
 
 }

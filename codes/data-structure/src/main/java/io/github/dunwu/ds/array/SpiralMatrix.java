@@ -32,49 +32,49 @@ import java.util.List;
  */
 public class SpiralMatrix {
 
-	public static void main(String[] args) {
-		int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
-		int[][] matrix2 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}
-		List<Integer> results = spiralOrder(matrix);
-		System.out.println();
-		System.out.println();
-		List<Integer> results2 = spiralOrder(matrix2);
-	}
+    public static void main(String[] args) {
+        int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        int[][] matrix2 = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+        List<Integer> results = spiralOrder(matrix);
+        System.out.println();
+        System.out.println();
+        List<Integer> results2 = spiralOrder(matrix2);
+    }
 
-	public static List<Integer> spiralOrder(int[][] matrix) {
-		ArrayList<Integer> list = new ArrayList<>();
-		if (matrix.length == 0) {
-			return list;
-		}
+    public static List<Integer> spiralOrder(int[][] matrix) {
+        ArrayList<Integer> list = new ArrayList<>();
+        if (matrix.length == 0) {
+            return list;
+        }
 
-		final int M = matrix.length;
-		final int N = matrix[0].length;
-		final int MAX = M * N;
-		int x = 0, y = 0;
-		int XMIN = 0, YMIN = 0;
-		int XMAX = M - 1, YMAX = N - 1;
-		for (int index = 0; index < MAX; index++) {
-			list.add(matrix[x][y]);
+        final int M = matrix.length;
+        final int N = matrix[0].length;
+        final int MAX = M * N;
+        int x = 0, y = 0;
+        int XMIN = 0, YMIN = 0;
+        int XMAX = M - 1, YMAX = N - 1;
+        for (int index = 0; index < MAX; index++) {
+            list.add(matrix[x][y]);
 
-			if (x == XMIN && y != YMAX) {
-				y++;
-			} else if (y == YMAX && x != XMAX) {
-				x++;
-			} else if (x == XMAX && y != YMIN) {
-				y--;
-			} else if (y == YMIN && x != XMIN + 1) {
-				x--;
-			} else if (x == XMIN + 1 && y == YMIN) {
-				XMIN = XMIN + 1;
-				YMIN = YMIN + 1;
-				XMAX = XMAX - 1;
-				YMAX = YMAX - 1;
-				x = XMIN;
-				y = YMIN;
-			}
-		}
+            if (x == XMIN && y != YMAX) {
+                y++;
+            } else if (y == YMAX && x != XMAX) {
+                x++;
+            } else if (x == XMAX && y != YMIN) {
+                y--;
+            } else if (y == YMIN && x != XMIN + 1) {
+                x--;
+            } else if (x == XMIN + 1 && y == YMIN) {
+                XMIN = XMIN + 1;
+                YMIN = YMIN + 1;
+                XMAX = XMAX - 1;
+                YMAX = YMAX - 1;
+                x = XMIN;
+                y = YMIN;
+            }
+        }
 
-		return list;
-	}
+        return list;
+    }
 
 }

@@ -9,11 +9,11 @@ import org.junit.Test;
  */
 public class ReverseStringTest {
 
-	@Test
-	public void test() {
-		Assert.assertEquals("olleh", ReverseString.reverseString("hello"));
-		Assert.assertEquals("amanaP :lanac a ,nalp a ,nam A",
-			ReverseString.reverseString("A man, a plan, a canal: Panama"));
-	}
+    @Test
+    public void test() {
+        Assert.assertEquals("olleh", ReverseString.reverseString("hello"));
+        Assert.assertEquals("amanaP :lanac a ,nalp a ,nam A",
+            ReverseString.reverseString("A man, a plan, a canal: Panama"));
+    }
 
 }

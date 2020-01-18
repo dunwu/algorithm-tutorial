@@ -48,16 +48,16 @@ package io.github.dunwu.ds.array;
  */
 public class RemoveElement {
 
-	public static int removeElement(int[] nums, int val) {
-		int end = 0;
-		final int n = nums.length;
-		for (int i = 0; i < n; i++) {
-			if (nums[i] != val) {
-				nums[end] = nums[i];
-				end++;
-			}
-		}
-		return end;
-	}
+    public static int removeElement(int[] nums, int val) {
+        int end = 0;
+        final int n = nums.length;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != val) {
+                nums[end] = nums[i];
+                end++;
+            }
+        }
+        return end;
+    }
 
 }

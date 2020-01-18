@@ -35,24 +35,24 @@ package io.github.dunwu.ds.array;
  */
 public class LargestNumberAtLeastTwiceOfOthers {
 
-	public static int dominantIndex(int[] nums) {
-		int index = 0;
-		while (index < nums.length) {
-			boolean isMatch = true;
-			int max = nums[index];
-			for (int i = 0; i < nums.length; i++) {
-				if (index != i && max < nums[i] * 2) {
-					isMatch = false;
-					break;
-				}
-			}
-			if (isMatch) {
-				return index;
-			} else {
-				index++;
-			}
-		}
-		return -1;
-	}
+    public static int dominantIndex(int[] nums) {
+        int index = 0;
+        while (index < nums.length) {
+            boolean isMatch = true;
+            int max = nums[index];
+            for (int i = 0; i < nums.length; i++) {
+                if (index != i && max < nums[i] * 2) {
+                    isMatch = false;
+                    break;
+                }
+            }
+            if (isMatch) {
+                return index;
+            } else {
+                index++;
+            }
+        }
+        return -1;
+    }
 
 }

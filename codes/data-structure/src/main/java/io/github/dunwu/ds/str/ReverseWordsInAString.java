@@ -22,66 +22,66 @@ package io.github.dunwu.ds.str;
  */
 public class ReverseWordsInAString {
 
-	public static String reverseWords(String s) {
-		if (s == null) {
-			return null;
-		}
+    public static String reverseWords(String s) {
+        if (s == null) {
+            return null;
+        }
 
-		char[] a = s.toCharArray();
-		int n = a.length;
+        char[] a = s.toCharArray();
+        int n = a.length;
 
-		// step 1. reverse the whole string
-		reverse(a, 0, n - 1);
-		// step 2. reverse each word
-		reverseWords(a, n);
-		// step 3. clean up spaces
-		return cleanSpaces(a, n);
-	}
+        // step 1. reverse the whole string
+        reverse(a, 0, n - 1);
+        // step 2. reverse each word
+        reverseWords(a, n);
+        // step 3. clean up spaces
+        return cleanSpaces(a, n);
+    }
 
-	// reverse a[] from a[i] to a[j]
-	private static void reverse(char[] a, int i, int j) {
-		while (i < j) {
-			char t = a[i];
-			a[i++] = a[j];
-			a[j--] = t;
-		}
-	}
+    // reverse a[] from a[i] to a[j]
+    private static void reverse(char[] a, int i, int j) {
+        while (i < j) {
+            char t = a[i];
+            a[i++] = a[j];
+            a[j--] = t;
+        }
+    }
 
-	private static void reverseWords(char[] a, int n) {
-		int i = 0, j = 0;
+    private static void reverseWords(char[] a, int n) {
+        int i = 0, j = 0;
 
-		while (i < n) {
-			while (i < j || i < n && a[i] == ' ') {
-				i++; // skip spaces
-			}
-			while (j < i || j < n && a[j] != ' ') {
-				j++; // skip non spaces
-			}
-			// reverse the word
-			reverse(a, i, j - 1);
-		}
-	}
+        while (i < n) {
+            while (i < j || i < n && a[i] == ' ') {
+                i++; // skip spaces
+            }
+            while (j < i || j < n && a[j] != ' ') {
+                j++; // skip non spaces
+            }
+            // reverse the word
+            reverse(a, i, j - 1);
+        }
+    }
 
-	// trim leading, trailing and multiple spaces
-	private static String cleanSpaces(char[] a, int n) {
-		int i = 0, j = 0;
+    // trim leading, trailing and multiple spaces
+    private static String cleanSpaces(char[] a, int n) {
+        int i = 0, j = 0;
 
-		while (j < n) {
-			while (j < n && a[j] == ' ') {
-				j++; // skip spaces
-			}
-			while (j < n && a[j] != ' ') {
-				a[i++] = a[j++]; // keep non spaces
-			}
-			while (j < n && a[j] == ' ') {
-				j++; // skip spaces
-			}
-			if (j < n) {
-				a[i++] = ' '; // keep only one space
-			}
-		}
+        while (j < n) {
+            while (j < n && a[j] == ' ') {
+                j++; // skip spaces
+            }
+            while (j < n && a[j] != ' ') {
+                a[i++] = a[j++]; // keep non spaces
+            }
+            while (j < n && a[j] == ' ') {
+                j++; // skip spaces
+            }
+            if (j < n) {
+                a[i++] = ' '; // keep only one space
+            }
+        }
 
-		return new String(a).substring(0, i);
-	}
+        return new String(a).substring(0, i);
+    }
 
 }

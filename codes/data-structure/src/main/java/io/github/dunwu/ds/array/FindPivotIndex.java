@@ -35,26 +35,26 @@ package io.github.dunwu.ds.array;
  */
 public class FindPivotIndex {
 
-	public static int pivotIndex(int[] nums) {
-		int result = 0;
-		for (int i = 0; i < nums.length; i++) {
-			int sum1 = 0;
-			int sum2 = 0;
-			for (int a = 0; a < result; a++) {
-				sum1 += nums[a];
-			}
+    public static int pivotIndex(int[] nums) {
+        int result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int sum1 = 0;
+            int sum2 = 0;
+            for (int a = 0; a < result; a++) {
+                sum1 += nums[a];
+            }
 
-			for (int b = result + 1; b < nums.length; b++) {
-				sum2 += nums[b];
-			}
+            for (int b = result + 1; b < nums.length; b++) {
+                sum2 += nums[b];
+            }
 
-			if (sum1 == sum2) {
-				return result;
-			}
+            if (sum1 == sum2) {
+                return result;
+            }
 
-			result++;
-		}
-		return -1;
-	}
+            result++;
+        }
+        return -1;
+    }
 
 }

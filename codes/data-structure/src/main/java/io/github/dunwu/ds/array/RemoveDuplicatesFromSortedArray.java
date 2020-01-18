@@ -44,28 +44,28 @@ package io.github.dunwu.ds.array;
  */
 public class RemoveDuplicatesFromSortedArray {
 
-	public static int removeDuplicates(int[] nums) {
-		int left = 0;
-		int right = nums.length - 1;
+    public static int removeDuplicates(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
 
-		while (left <= right) {
-			for (int i = left + 1; i <= right; i++) {
-				if (nums[i] == nums[left]) {
-					remove(nums, i);
-					right--;
-					i--;
-				}
-			}
-			left++;
-		}
+        while (left <= right) {
+            for (int i = left + 1; i <= right; i++) {
+                if (nums[i] == nums[left]) {
+                    remove(nums, i);
+                    right--;
+                    i--;
+                }
+            }
+            left++;
+        }
 
-		return right + 1;
-	}
+        return right + 1;
+    }
 
-	private static void remove(int[] nums, int pos) {
-		for (int i = pos; i < nums.length - 1; i++) {
-			nums[i] = nums[i + 1];
-		}
-	}
+    private static void remove(int[] nums, int pos) {
+        for (int i = pos; i < nums.length - 1; i++) {
+            nums[i] = nums[i + 1];
+        }
+    }
 
 }

@@ -26,36 +26,36 @@ package io.github.dunwu.ds.str;
  */
 public class LongestCommonPrefix {
 
-	public static String longestCommonPrefix(String[] strs) {
-		if (strs == null || strs.length == 0) {
-			return "";
-		}
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
 
-		int index = 0;
-		StringBuilder sb = new StringBuilder();
+        int index = 0;
+        StringBuilder sb = new StringBuilder();
 
-		while (index < strs[0].length()) {
-			char c = strs[0].charAt(index);
-			boolean flag = true;
-			for (String str : strs) {
-				if (index >= str.length()) {
-					flag = false;
-					break;
-				}
-				if (str.charAt(index) != c) {
-					flag = false;
-					break;
-				}
-			}
+        while (index < strs[0].length()) {
+            char c = strs[0].charAt(index);
+            boolean flag = true;
+            for (String str : strs) {
+                if (index >= str.length()) {
+                    flag = false;
+                    break;
+                }
+                if (str.charAt(index) != c) {
+                    flag = false;
+                    break;
+                }
+            }
 
-			if (flag) {
-				sb.append(c);
-				index++;
-			} else {
-				break;
-			}
-		}
-		return sb.toString();
-	}
+            if (flag) {
+                sb.append(c);
+                index++;
+            } else {
+                break;
+            }
+        }
+        return sb.toString();
+    }
 
 }

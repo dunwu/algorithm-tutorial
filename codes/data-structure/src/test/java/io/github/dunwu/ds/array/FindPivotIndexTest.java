@@ -9,10 +9,10 @@ import org.junit.Test;
  */
 public class FindPivotIndexTest {
 
-	@Test
-	public void test() {
-		Assert.assertEquals(3, FindPivotIndex.pivotIndex(new int[] {1, 7, 3, 6, 5, 6}));
-		Assert.assertEquals(-1, FindPivotIndex.pivotIndex(new int[] {1, 2, 3}));
-	}
+    @Test
+    public void test() {
+        Assert.assertEquals(3, FindPivotIndex.pivotIndex(new int[] { 1, 7, 3, 6, 5, 6 }));
+        Assert.assertEquals(-1, FindPivotIndex.pivotIndex(new int[] { 1, 2, 3 }));
+    }
 
 }

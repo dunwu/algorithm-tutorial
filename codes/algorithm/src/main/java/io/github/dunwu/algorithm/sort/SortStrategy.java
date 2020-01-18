@@ -1,6 +1,6 @@
-package io.github.dunwu.ds.sort;
+package io.github.dunwu.algorithm.sort;
 
-import io.github.dunwu.ds.util.ArrayUtil;
+import io.github.dunwu.algorithm.util.ArrayUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,19 +11,19 @@ import org.slf4j.LoggerFactory;
  */
 public class SortStrategy {
 
-	private static final Logger logger = LoggerFactory.getLogger(SortStrategy.class);
+    private static final Logger logger = LoggerFactory.getLogger(SortStrategy.class);
 
-	private Sort sort;
+    private Sort sort;
 
-	public SortStrategy(Sort sort) {
-		this.sort = sort;
-	}
+    public SortStrategy(Sort sort) {
+        this.sort = sort;
+    }
 
-	public void sort(Integer[] list) {
-		logger.info(this.sort.getClass().getSimpleName() + " 排序开始：");
-		logger.info("排序前: {}", ArrayUtil.getArrayString(list, 0, list.length - 1));
-		this.sort.sort(list);
-		logger.info("排序后: {}", ArrayUtil.getArrayString(list, 0, list.length - 1));
-	}
+    public void sort(Integer[] list) {
+        logger.info(this.sort.getClass().getSimpleName() + " 排序开始：");
+        logger.info("排序前: {}", ArrayUtil.getArrayString(list, 0, list.length - 1));
+        this.sort.sort(list);
+        logger.info("排序后: {}", ArrayUtil.getArrayString(list, 0, list.length - 1));
+    }
 
 }

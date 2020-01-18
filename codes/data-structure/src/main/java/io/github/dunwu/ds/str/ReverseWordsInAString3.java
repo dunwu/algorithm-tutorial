@@ -17,27 +17,27 @@ package io.github.dunwu.ds.str;
  */
 public class ReverseWordsInAString3 {
 
-	public static String reverseWords(String s) {
-		StringBuilder sb = new StringBuilder();
-		String[] strs = s.split(" ");
-		for (int index = 0; index < strs.length; index++) {
-			int i = 0;
-			int j = strs[index].length() - 1;
+    public static String reverseWords(String s) {
+        StringBuilder sb = new StringBuilder();
+        String[] strs = s.split(" ");
+        for (int index = 0; index < strs.length; index++) {
+            int i = 0;
+            int j = strs[index].length() - 1;
 
-			char[] a = strs[index].toCharArray();
-			while (i < j) {
-				char t = a[i];
-				a[i++] = a[j];
-				a[j--] = t;
-			}
+            char[] a = strs[index].toCharArray();
+            while (i < j) {
+                char t = a[i];
+                a[i++] = a[j];
+                a[j--] = t;
+            }
 
-			sb.append(a);
-			if (index != strs.length - 1) {
-				sb.append(" ");
-			}
-		}
+            sb.append(a);
+            if (index != strs.length - 1) {
+                sb.append(" ");
+            }
+        }
 
-		return sb.toString();
-	}
+        return sb.toString();
+    }
 
 }

@@ -11,7 +11,7 @@
 - 每一个非根节点有且只有一个父节点；
 - 除了根节点外，每个子节点可以分为多个不相交的子树；
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/cs/data-structure/tree/tree.png!zp"/></div>
+![img](http://dunwu.test.upcdn.net/cs/data-structure/tree/tree.png!zp)
 
 ### 树的术语
 

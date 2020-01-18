@@ -9,10 +9,10 @@ import org.junit.Test;
  */
 public class ArrayPartitionTest {
 
-	@Test
-	public void test() {
-		int[] nums1 = {1, 4, 3, 2}
-		Assert.assertEquals(4, ArrayPartition.arrayPairSum(nums1));
-	}
+    @Test
+    public void test() {
+        int[] nums1 = { 1, 4, 3, 2 };
+        Assert.assertEquals(4, ArrayPartition.arrayPairSum(nums1));
+    }
 
 }

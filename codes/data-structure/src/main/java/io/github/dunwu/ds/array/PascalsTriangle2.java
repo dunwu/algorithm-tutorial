@@ -24,39 +24,39 @@ import java.util.List;
  */
 public class PascalsTriangle2 {
 
-	public static List<Integer> getRow(int rowIndex) {
-		List<List<Integer>> result = new ArrayList<>();
+    public static List<Integer> getRow(int rowIndex) {
+        List<List<Integer>> result = new ArrayList<>();
 
-		int rows = rowIndex + 1;
-		if (rows <= 0) {
+        int rows = rowIndex + 1;
+        if (rows <= 0) {
 
-		} else if (rows == 1) {
-			result.add(Arrays.asList(1));
-		} else if (rows == 2) {
-			result.add(Arrays.asList(1));
-			result.add(Arrays.asList(1, 1));
-		} else {
-			result.add(Arrays.asList(1));
-			result.add(Arrays.asList(1, 1));
-			for (int i = 2; i < rows; i++) {
-				List<Integer> current = result.get(i - 1);
-				List<Integer> next = new ArrayList<>();
+        } else if (rows == 1) {
+            result.add(Arrays.asList(1));
+        } else if (rows == 2) {
+            result.add(Arrays.asList(1));
+            result.add(Arrays.asList(1, 1));
+        } else {
+            result.add(Arrays.asList(1));
+            result.add(Arrays.asList(1, 1));
+            for (int i = 2; i < rows; i++) {
+                List<Integer> current = result.get(i - 1);
+                List<Integer> next = new ArrayList<>();
 
-				for (int j = 0; j <= i; j++) {
-					if (j == 0 || j == i) {
-						next.add(1);
-					} else {
-						int x = current.get(j - 1);
-						int y = current.get(j);
-						next.add(x + y);
-					}
-				}
+                for (int j = 0; j <= i; j++) {
+                    if (j == 0 || j == i) {
+                        next.add(1);
+                    } else {
+                        int x = current.get(j - 1);
+                        int y = current.get(j);
+                        next.add(x + y);
+                    }
+                }
 
-				result.add(next);
-			}
-		}
+                result.add(next);
+            }
+        }
 
-		return result.get(rowIndex);
-	}
+        return result.get(rowIndex);
+    }
 
 }

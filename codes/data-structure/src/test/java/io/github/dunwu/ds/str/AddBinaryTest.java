@@ -9,10 +9,10 @@ import org.junit.Test;
  */
 public class AddBinaryTest {
 
-	@Test
-	public void test() {
-		Assert.assertEquals("100", AddBinary.addBinary("11", "1"));
-		Assert.assertEquals("10101", AddBinary.addBinary("1010", "1011"));
-	}
+    @Test
+    public void test() {
+        Assert.assertEquals("100", AddBinary.addBinary("11", "1"));
+        Assert.assertEquals("10101", AddBinary.addBinary("1010", "1011"));
+    }
 
 }

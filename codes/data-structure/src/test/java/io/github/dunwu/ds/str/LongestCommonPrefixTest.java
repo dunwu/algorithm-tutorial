@@ -9,13 +9,13 @@ import org.junit.Test;
  */
 public class LongestCommonPrefixTest {
 
-	@Test
-	public void test() {
-		String[] strs1 = {"flower", "flow", "flight"}
-		String[] strs2 = {"dog", "racecar", "car"}
+    @Test
+    public void test() {
+        String[] strs1 = { "flower", "flow", "flight" };
+        String[] strs2 = { "dog", "racecar", "car" };
 
-		Assert.assertEquals("fl", LongestCommonPrefix.longestCommonPrefix(strs1));
-		Assert.assertEquals("", LongestCommonPrefix.longestCommonPrefix(strs2));
-	}
+        Assert.assertEquals("fl", LongestCommonPrefix.longestCommonPrefix(strs1));
+        Assert.assertEquals("", LongestCommonPrefix.longestCommonPrefix(strs2));
+    }
 
 }

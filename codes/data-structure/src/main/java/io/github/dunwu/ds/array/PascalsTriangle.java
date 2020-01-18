@@ -28,38 +28,38 @@ import java.util.List;
  */
 public class PascalsTriangle {
 
-	public static List<List<Integer>> generate(int numRows) {
-		List<List<Integer>> result = new ArrayList<>();
+    public static List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result = new ArrayList<>();
 
-		if (numRows <= 0) {
+        if (numRows <= 0) {
 
-		} else if (numRows == 1) {
-			result.add(Arrays.asList(1));
-		} else if (numRows == 2) {
-			result.add(Arrays.asList(1));
-			result.add(Arrays.asList(1, 1));
-		} else {
-			result.add(Arrays.asList(1));
-			result.add(Arrays.asList(1, 1));
-			for (int i = 2; i < numRows; i++) {
-				List<Integer> current = result.get(i - 1);
-				List<Integer> next = new ArrayList<>();
+        } else if (numRows == 1) {
+            result.add(Arrays.asList(1));
+        } else if (numRows == 2) {
+            result.add(Arrays.asList(1));
+            result.add(Arrays.asList(1, 1));
+        } else {
+            result.add(Arrays.asList(1));
+            result.add(Arrays.asList(1, 1));
+            for (int i = 2; i < numRows; i++) {
+                List<Integer> current = result.get(i - 1);
+                List<Integer> next = new ArrayList<>();
 
-				for (int j = 0; j <= i; j++) {
-					if (j == 0 || j == i) {
-						next.add(1);
-					} else {
-						int x = current.get(j - 1);
-						int y = current.get(j);
-						next.add(x + y);
-					}
-				}
+                for (int j = 0; j <= i; j++) {
+                    if (j == 0 || j == i) {
+                        next.add(1);
+                    } else {
+                        int x = current.get(j - 1);
+                        int y = current.get(j);
+                        next.add(x + y);
+                    }
+                }
 
-				result.add(next);
-			}
-		}
+                result.add(next);
+            }
+        }
 
-		return result;
-	}
+        return result;
+    }
 
 }

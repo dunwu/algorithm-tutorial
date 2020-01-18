@@ -1,4 +1,4 @@
-package io.github.dunwu.ds.hashtable;
+package io.github.dunwu.algorithm.hashtable;
 
 import java.util.HashSet;
 
@@ -26,29 +26,29 @@ The characters in J are distinct.
 */
 public class JewelsAndStones {
 
-	public static void main(String[] args) {
-		JewelsAndStones tmpl = new JewelsAndStones();
+    public static void main(String[] args) {
+        JewelsAndStones tmpl = new JewelsAndStones();
 
-		int result1 = tmpl.numJewelsInStones("aA", "aAAbbbb");
-		System.out.println("result1 = [" + result1 + "]");
+        int result1 = tmpl.numJewelsInStones("aA", "aAAbbbb");
+        System.out.println("result1 = [" + result1 + "]");
 
-		int result2 = tmpl.numJewelsInStones("z", "ZZ");
-		System.out.println("result1 = [" + result2 + "]");
-	}
+        int result2 = tmpl.numJewelsInStones("z", "ZZ");
+        System.out.println("result1 = [" + result2 + "]");
+    }
 
-	public int numJewelsInStones(String J, String S) {
-		HashSet set = new HashSet();
-		for (int i = 0; i < J.length(); i++) {
-			set.add(J.charAt(i));
-		}
+    public int numJewelsInStones(String J, String S) {
+        HashSet set = new HashSet();
+        for (int i = 0; i < J.length(); i++) {
+            set.add(J.charAt(i));
+        }
 
-		int count = 0;
-		for (int i = 0; i < S.length(); i++) {
-			if (set.contains(S.charAt(i))) {
-				count++;
-			}
-		}
-		return count;
-	}
+        int count = 0;
+        for (int i = 0; i < S.length(); i++) {
+            if (set.contains(S.charAt(i))) {
+                count++;
+            }
+        }
+        return count;
+    }
 
 }

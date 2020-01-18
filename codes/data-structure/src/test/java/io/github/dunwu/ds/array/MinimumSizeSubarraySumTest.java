@@ -8,10 +8,10 @@ import org.junit.Test;
  */
 public class MinimumSizeSubarraySumTest {
 
-	@Test
-	public void test() {
-		MinimumSizeSubarraySum.minSubArrayLen(7, new int[] {2, 3, 1, 2, 4, 3});
-		MinimumSizeSubarraySum.minSubArrayLen(11, new int[] {2, 3, 1, 2, 4, 3});
-	}
+    @Test
+    public void test() {
+        MinimumSizeSubarraySum.minSubArrayLen(7, new int[] { 2, 3, 1, 2, 4, 3 });
+        MinimumSizeSubarraySum.minSubArrayLen(11, new int[] { 2, 3, 1, 2, 4, 3 });
+    }
 
 }

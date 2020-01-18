@@ -4,7 +4,7 @@
 >
 > 由于堆栈数据结构只允许在一端进行操作，因而按照后进先出（LIFO, Last In First Out）的原理运作。
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/cs/data-structure/stack/stack.png!zp"/></div>
+![img](http://dunwu.test.upcdn.net/cs/data-structure/stack/stack.png!zp)
 
 <!-- TOC depthFrom:2 depthTo:2 -->
 

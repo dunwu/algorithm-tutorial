@@ -11,10 +11,10 @@ import java.util.List;
  */
 public class PascalsTriangle2Test {
 
-	@Test
-	public void test() {
-		List<Integer> list = PascalsTriangle2.getRow(3);
-		System.out.println(ArrayUtil.getArrayString(list.toArray(), 0, list.size() - 1));
-	}
+    @Test
+    public void test() {
+        List<Integer> list = PascalsTriangle2.getRow(3);
+        System.out.println(ArrayUtil.getArrayString(list.toArray(), 0, list.size() - 1));
+    }
 
 }

@@ -13,68 +13,68 @@ package io.github.dunwu.ds.common;
  */
 public interface IHeap<T> {
 
-	/**
-	 * Add value to the heap.
-	 *
-	 * @param value to add to the heap.
-	 * @return True if added to the heap.
-	 */
-	public boolean add(T value);
+    /**
+     * Add value to the heap.
+     *
+     * @param value to add to the heap.
+     * @return True if added to the heap.
+     */
+    boolean add(T value);
 
-	/**
-	 * Get the value of the head node from the heap.
-	 *
-	 * @return value of the head node.
-	 */
-	public T getHeadValue();
+    /**
+     * Get the value of the head node from the heap.
+     *
+     * @return value of the head node.
+     */
+    T getHeadValue();
 
-	/**
-	 * Remove the head node from the heap.
-	 *
-	 * @return value of the head node.
-	 */
-	public T removeHead();
+    /**
+     * Remove the head node from the heap.
+     *
+     * @return value of the head node.
+     */
+    T removeHead();
 
-	/**
-	 * Remove the value from the heap.
-	 *
-	 * @param value to remove from heap.
-	 * @return True if value was removed form the heap;
-	 */
-	public T remove(T value);
+    /**
+     * Remove the value from the heap.
+     *
+     * @param value to remove from heap.
+     * @return True if value was removed form the heap;
+     */
+    T remove(T value);
 
-	/**
-	 * Clear the entire heap.
-	 */
-	public void clear();
+    /**
+     * Clear the entire heap.
+     */
+    void clear();
 
-	/**
-	 * Does the value exist in the heap. Warning this is a O(n) operation.
-	 *
-	 * @param value to locate in the heap.
-	 * @return True if the value is in heap.
-	 */
-	public boolean contains(T value);
+    /**
+     * Does the value exist in the heap. Warning this is a O(n) operation.
+     *
+     * @param value to locate in the heap.
+     * @return True if the value is in heap.
+     */
+    boolean contains(T value);
 
-	/**
-	 * Get size of the heap.
-	 *
-	 * @return size of the heap.
-	 */
-	public int size();
+    /**
+     * Get size of the heap.
+     *
+     * @return size of the heap.
+     */
+    int size();
 
-	/**
-	 * Validate the heap according to the invariants.
-	 *
-	 * @return True if the heap is valid.
-	 */
-	public boolean validate();
+    /**
+     * Validate the heap according to the invariants.
+     *
+     * @return True if the heap is valid.
+     */
+    boolean validate();
 
-	/**
-	 * Get this Heap as a Java compatible Collection
-	 *
-	 * @return Java compatible Collection
-	 */
-	public java.util.Collection<T> toCollection();
+    /**
+     * Get this Heap as a Java compatible Collection
+     *
+     * @return Java compatible Collection
+     */
+    java.util.Collection<T> toCollection();
 
 }

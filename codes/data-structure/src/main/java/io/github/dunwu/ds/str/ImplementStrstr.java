@@ -24,43 +24,43 @@ package io.github.dunwu.ds.str;
  */
 public class ImplementStrstr {
 
-	public static int strStr(String haystack, String needle) {
-		if (haystack.equals(needle)) {
-			return 0;
-		}
+    public static int strStr(String haystack, String needle) {
+        if (haystack.equals(needle)) {
+            return 0;
+        }
 
-		if (haystack == null || haystack.length() == 0) {
-			return -1;
-		}
+        if (haystack == null || haystack.length() == 0) {
+            return -1;
+        }
 
-		if (needle == null || needle.length() == 0) {
-			return 0;
-		}
+        if (needle == null || needle.length() == 0) {
+            return 0;
+        }
 
-		if (haystack.length() < needle.length()) {
-			return -1;
-		}
+        if (haystack.length() < needle.length()) {
+            return -1;
+        }
 
-		int begin = 0;
-		int i = 0;
-		int j = 0;
-		while (i < haystack.length() && begin < haystack.length()) {
-			if (j == needle.length()) {
-				return begin;
-			} else if (haystack.charAt(i) == needle.charAt(j)) {
-				i++;
-				j++;
-			} else {
-				j = 0;
-				begin++;
-				i = begin;
-			}
-		}
+        int begin = 0;
+        int i = 0;
+        int j = 0;
+        while (i < haystack.length() && begin < haystack.length()) {
+            if (j == needle.length()) {
+                return begin;
+            } else if (haystack.charAt(i) == needle.charAt(j)) {
+                i++;
+                j++;
+            } else {
+                j = 0;
+                begin++;
+                i = begin;
+            }
+        }
 
-		if (i == haystack.length() && j == needle.length()) {
-			return begin;
-		}
-		return -1;
-	}
+        if (i == haystack.length() && j == needle.length()) {
+            return begin;
+        }
+        return -1;
+    }
 
 }

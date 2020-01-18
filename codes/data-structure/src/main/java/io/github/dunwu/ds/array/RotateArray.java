@@ -31,19 +31,19 @@ package io.github.dunwu.ds.array;
  */
 public class RotateArray {
 
-	public static void rotate(int[] nums, int k) {
-		int i = 0;
-		while (i < k) {
-			int j = nums.length - 1;
-			int temp = nums[nums.length - 1];
-			while (j > 0) {
-				nums[j] = nums[j - 1];
-				j--;
-			}
-			nums[0] = temp;
-			// System.out.println(ArrayUtil.getArrayString(nums, 0, nums.length - 1));
-			i++;
-		}
-	}
+    public static void rotate(int[] nums, int k) {
+        int i = 0;
+        while (i < k) {
+            int j = nums.length - 1;
+            int temp = nums[nums.length - 1];
+            while (j > 0) {
+                nums[j] = nums[j - 1];
+                j--;
+            }
+            nums[0] = temp;
+            // System.out.println(ArrayUtil.getArrayString(nums, 0, nums.length - 1));
+            i++;
+        }
+    }
 
 }
