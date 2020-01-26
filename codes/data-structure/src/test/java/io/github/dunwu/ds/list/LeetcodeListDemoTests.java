@@ -3,7 +3,6 @@ package io.github.dunwu.ds.list;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -97,4 +96,19 @@ public class LeetcodeListDemoTests {
         System.out.println("result: " + list);
     }
 
+    @Test
+    public void sortListTest() {
+        LeetcodeListDemo.ListNode list = new LeetcodeListDemo.ListNode(4);
+        list.next = new LeetcodeListDemo.ListNode(2);
+        list.next.next = new LeetcodeListDemo.ListNode(1);
+        list.next.next.next = new LeetcodeListDemo.ListNode(3);
+
+        // print
+        LeetcodeListDemo.printList(list);
+
+        LeetcodeListDemo.ListNode result = LeetcodeListDemo.sortList(list);
+
+        // print
+        LeetcodeListDemo.printList(result);
+    }
 }

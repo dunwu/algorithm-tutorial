@@ -184,6 +184,94 @@ public class LeetcodeListDemo {
         return resultHead.next;
     }
 
+    /**
+     * <code>排序链表</code> 算法实现
+     * <p>
+     * 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
+     * <p>
+     * 示例 1:
+     *
+     * <pre>
+     * 输入: 4->2->1->3
+     * 输出: 1->2->3->4
+     * </pre>
+     * <p>
+     * 示例 2:
+     *
+     * <pre>
+     * 输入: -1->5->3->4->0
+     * 输出: -1->0->3->4->5
+     * </pre>
+     *
+     * @see <a href="https://leetcode-cn.com/explore/featured/card/bytedance/244/linked-list-and-tree/1040/">排序链表</a>
+     */
+    public static ListNode sortList(ListNode head) {
+        if (head == null) {return head;}
+        return mergeSort(head);
+    }
+
+    public static ListNode mergeSort(ListNode head) {
+        //回归条件
+        if (head.next == null) {
+            return head;
+        }
+        //快指针,考虑到链表为2时的情况，fast比slow早一格
+        ListNode fast = head.next;
+        //慢指针
+        ListNode slow = head;
+        //快慢指针开跑
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        //找到右子链表头元素，复用fast引用
+        fast = slow.next;
+        //将中点后续置空，切割为两个子链表
+        slow.next = null;
+        //递归分解左子链表,得到新链表起点
+        head = mergeSort(head);
+        //递归分解右子链表,得到新链表起点
+        fast = mergeSort(fast);
+        //并归两个子链表
+        ListNode newHead = merge(head, fast);
+        return newHead;
+    }
+
+    public static ListNode merge(ListNode left, ListNode right) {
+        //维护临时序列的头元素
+        ListNode head;
+        if (left.val <= right.val) {
+            head = left;
+            left = left.next;
+        } else {
+            head = right;
+            right = right.next;
+        }
+        //两个子链表均存在剩余元素
+        ListNode temp = head;
+        while (left != null && right != null) {
+            //将较小的元素加入临时序列
+            if (left.val <= right.val) {
+                temp.next = left;
+                left = left.next;
+                temp = temp.next;
+            } else {
+                temp.next = right;
+                right = right.next;
+                temp = temp.next;
+            }
+        }
+        //左子序列用完将右子序列余下元素加入临时序列
+        if (left == null) {
+            temp.next = right;
+        }
+        //右子序列用完将左子序列余下元素加入临时序列
+        if (right == null) {
+            temp.next = left;
+        }
+        return head;
+    }
+
     public static List<Integer> getValues(ListNode listNode) {
         List<Integer> list = new ArrayList<>();
         ListNode item = listNode;

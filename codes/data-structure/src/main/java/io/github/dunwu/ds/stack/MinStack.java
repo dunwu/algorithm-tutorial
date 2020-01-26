@@ -10,10 +10,10 @@ import java.util.Queue;
 public class MinStack {
 
     // 数据栈
-    private Queue<Integer> data;
+    private LinkedList<Integer> data;
 
     // 辅助栈
-    private Queue<Integer> helper;
+    private LinkedList<Integer> helper;
 
     /**
      * initialize your data structure here.
@@ -26,19 +26,19 @@ public class MinStack {
     // 思路 1：数据栈和辅助栈在任何时候都同步
     public void push(int x) {
         // 数据栈和辅助栈一定会增加元素
-        data.add(x);
+        data.push(x);
         if (helper.isEmpty() || helper.peek() >= x) {
-            helper.add(x);
+            helper.push(x);
         } else {
-            helper.add(helper.peek());
+            helper.push(helper.peek());
         }
     }
 
     public void pop() {
         // 两个栈都得 pop
         if (!data.isEmpty()) {
-            helper.poll();
-            data.poll();
+            helper.pop();
+            data.pop();
         }
     }
 

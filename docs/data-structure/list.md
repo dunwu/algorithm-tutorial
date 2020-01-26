@@ -37,6 +37,5 @@
 ## 参考资料
 
 - [数据结构：链表](https://www.jianshu.com/p/73d56c3d228c)
-
 - [leetcode 链表题库](https://leetcode-cn.com/tag/linked-list/)
 
