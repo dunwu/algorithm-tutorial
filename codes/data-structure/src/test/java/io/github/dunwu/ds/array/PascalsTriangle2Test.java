@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.array;
 
 import io.github.dunwu.ds.util.ArrayUtil;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

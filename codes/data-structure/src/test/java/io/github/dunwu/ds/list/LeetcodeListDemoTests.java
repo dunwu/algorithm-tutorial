@@ -1,114 +1,180 @@
 package io.github.dunwu.ds.list;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-/**
- * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @since 2020-01-18
- */
+@DisplayName("Leetcode 单链表测试例")
 public class LeetcodeListDemoTests {
 
     @Test
+    @DisplayName("141. 环形链表")
+    public void hasCycleTest() {
+        LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(3, 2, 0, -4);
+        Assertions.assertFalse(LeetcodeListDemo.hasCycle(head));
+
+        head = LeetcodeListDemo.buildCycleList(1, new int[] { 3, 2, 0, -4 });
+        Assertions.assertTrue(LeetcodeListDemo.hasCycle(head));
+
+        head = LeetcodeListDemo.buildCycleList(0, new int[] { 1, 2 });
+        Assertions.assertTrue(LeetcodeListDemo.hasCycle(head));
+    }
+
+    @Test
+    @DisplayName("21. 合并两个有序链表")
     public void mergeTwoListsTest() {
-        LeetcodeListDemo.ListNode l1 = new LeetcodeListDemo.ListNode(1);
-        l1.next = new LeetcodeListDemo.ListNode(2);
-        l1.next.next = new LeetcodeListDemo.ListNode(4);
-
-        LeetcodeListDemo.ListNode l2 = new LeetcodeListDemo.ListNode(1);
-        l2.next = new LeetcodeListDemo.ListNode(3);
-        l2.next.next = new LeetcodeListDemo.ListNode(4);
-
-        LeetcodeListDemo.ListNode result = LeetcodeListDemo.mergeTwoLists(l1, l2);
-
-        // print
-        LeetcodeListDemo.printList(result);
+        LeetcodeListDemo.ListNode head1 = LeetcodeListDemo.buildList(1, 2, 4);
+        LeetcodeListDemo.ListNode head2 = LeetcodeListDemo.buildList(1, 3, 4);
+        LeetcodeListDemo.ListNode result = LeetcodeListDemo.mergeTwoLists(head1, head2);
+        List<Integer> list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 1, 1, 2, 3, 4, 4 }, list.toArray(new Integer[0]));
     }
 
     @Test
+    @DisplayName("23. 合并K个排序链表<")
     public void mergeKListsTest() {
-        LeetcodeListDemo.ListNode l1 = new LeetcodeListDemo.ListNode(1);
-        l1.next = new LeetcodeListDemo.ListNode(4);
-        l1.next.next = new LeetcodeListDemo.ListNode(5);
-
-        LeetcodeListDemo.ListNode l2 = new LeetcodeListDemo.ListNode(1);
-        l2.next = new LeetcodeListDemo.ListNode(3);
-        l2.next.next = new LeetcodeListDemo.ListNode(4);
-
-        LeetcodeListDemo.ListNode l3 = new LeetcodeListDemo.ListNode(2);
-        l3.next = new LeetcodeListDemo.ListNode(6);
-
-        LeetcodeListDemo.ListNode[] array = new LeetcodeListDemo.ListNode[] { l1, l2, l3 };
+        LeetcodeListDemo.ListNode head1 = LeetcodeListDemo.buildList(1, 4, 5);
+        LeetcodeListDemo.ListNode head2 = LeetcodeListDemo.buildList(1, 3, 4);
+        LeetcodeListDemo.ListNode head3 = LeetcodeListDemo.buildList(2, 6);
+        LeetcodeListDemo.ListNode[] array = new LeetcodeListDemo.ListNode[] { head1, head2, head3 };
         LeetcodeListDemo.ListNode result = LeetcodeListDemo.mergeKLists2(array);
-
-        List<Integer> list = LeetcodeListDemo.getValues(result);
-        Assert.assertEquals("[1, 1, 2, 3, 4, 4, 5, 6]", list.toString());
-        System.out.println("result: " + list);
+        List<Integer> list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 1, 1, 2, 3, 4, 4, 5, 6 }, list.toArray(new Integer[0]));
     }
 
     @Test
+    @DisplayName("206. 反转链表")
     public void reverseListTest() {
-        LeetcodeListDemo.ListNode list = new LeetcodeListDemo.ListNode(1);
-        list.next = new LeetcodeListDemo.ListNode(2);
-        list.next.next = new LeetcodeListDemo.ListNode(4);
-
-        // print
-        LeetcodeListDemo.printList(list);
-
-        LeetcodeListDemo.ListNode result = LeetcodeListDemo.reverseList(list);
-
-        // print
-        LeetcodeListDemo.printList(result);
+        LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(1, 2, 4);
+        System.out.println(LeetcodeListDemo.toList(head));
+        LeetcodeListDemo.ListNode result = LeetcodeListDemo.reverseList(head);
+        List<Integer> list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 4, 2, 1 }, list.toArray(new Integer[0]));
     }
 
     @Test
+    @DisplayName("2. 两数相加")
     public void addTwoNumbersTest() {
-        LeetcodeListDemo.ListNode l1 = new LeetcodeListDemo.ListNode(2);
-        l1.next = new LeetcodeListDemo.ListNode(4);
-        l1.next.next = new LeetcodeListDemo.ListNode(3);
-        LeetcodeListDemo.printList(l1);
+        LeetcodeListDemo.ListNode head1 = LeetcodeListDemo.buildList(2, 4, 3);
+        LeetcodeListDemo.ListNode head2 = LeetcodeListDemo.buildList(5, 6, 4);
+        LeetcodeListDemo.ListNode result = LeetcodeListDemo.addTwoNumbers(head1, head2);
+        LeetcodeListDemo.toList(head1);
+        LeetcodeListDemo.toList(head2);
+        List<Integer> list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 7, 0, 8 }, list.toArray());
 
-        LeetcodeListDemo.ListNode l2 = new LeetcodeListDemo.ListNode(5);
-        l2.next = new LeetcodeListDemo.ListNode(6);
-        l2.next.next = new LeetcodeListDemo.ListNode(4);
-        LeetcodeListDemo.printList(l2);
-
-        LeetcodeListDemo.ListNode result = LeetcodeListDemo.addTwoNumbers(l1, l2);
-        List<Integer> list = LeetcodeListDemo.getValues(result);
-        Assert.assertEquals("[7, 0, 8]", list.toString());
-        System.out.println("result: " + list);
+        head1 = new LeetcodeListDemo.ListNode(1);
+        head2 = LeetcodeListDemo.buildList(9, 9);
+        result = LeetcodeListDemo.addTwoNumbers(head1, head2);
+        LeetcodeListDemo.toList(head1);
+        LeetcodeListDemo.toList(head2);
+        list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 0, 0, 1 }, list.toArray());
     }
 
     @Test
-    public void addTwoNumbersTest2() {
-        LeetcodeListDemo.ListNode l1 = new LeetcodeListDemo.ListNode(1);
-        LeetcodeListDemo.printList(l1);
-
-        LeetcodeListDemo.ListNode l2 = new LeetcodeListDemo.ListNode(9);
-        l2.next = new LeetcodeListDemo.ListNode(9);
-        LeetcodeListDemo.printList(l2);
-
-        LeetcodeListDemo.ListNode result = LeetcodeListDemo.addTwoNumbers(l1, l2);
-        List<Integer> list = LeetcodeListDemo.getValues(result);
-        Assert.assertEquals("[0, 0, 1]", list.toString());
-        System.out.println("result: " + list);
-    }
-
-    @Test
+    @DisplayName("148. 排序链表")
     public void sortListTest() {
-        LeetcodeListDemo.ListNode list = new LeetcodeListDemo.ListNode(4);
-        list.next = new LeetcodeListDemo.ListNode(2);
-        list.next.next = new LeetcodeListDemo.ListNode(1);
-        list.next.next.next = new LeetcodeListDemo.ListNode(3);
+        LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(4, 2, 1, 3);
+        System.out.println(LeetcodeListDemo.toList(head));
+        LeetcodeListDemo.ListNode result = LeetcodeListDemo.sortList(head);
+        List<Integer> list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 1, 2, 3, 4 }, list.toArray(new Integer[0]));
 
-        // print
-        LeetcodeListDemo.printList(list);
-
-        LeetcodeListDemo.ListNode result = LeetcodeListDemo.sortList(list);
-
-        // print
-        LeetcodeListDemo.printList(result);
+        head = LeetcodeListDemo.buildList(-1, 5, 3, 4, 0);
+        System.out.println(LeetcodeListDemo.toList(head));
+        result = LeetcodeListDemo.sortList(head);
+        list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { -1, 0, 3, 4, 5 }, list.toArray(new Integer[0]));
     }
+
+    @Test
+    @DisplayName("83. 删除排序链表中的重复元素")
+    public void deleteDuplicatesTest() {
+        LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(1, 1, 2);
+
+        System.out.println(LeetcodeListDemo.toList(head));
+        LeetcodeListDemo.ListNode result = LeetcodeListDemo.deleteDuplicates(head);
+        List<Integer> list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 1, 2 }, list.toArray(new Integer[0]));
+    }
+
+    @Test
+    @DisplayName("203. 移除链表元素")
+    public void removeElementsTest() {
+        LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(1, 2);
+        System.out.println(LeetcodeListDemo.toList(head));
+        LeetcodeListDemo.ListNode result = LeetcodeListDemo.removeElements(head, 1);
+        List<Integer> list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 2 }, list.toArray(new Integer[0]));
+
+        head = new LeetcodeListDemo.ListNode(1);
+        System.out.println(LeetcodeListDemo.toList(head));
+        result = LeetcodeListDemo.removeElements(head, 1);
+        list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] {}, list.toArray(new Integer[0]));
+
+        head = LeetcodeListDemo.buildList(1, 1);
+        System.out.println(LeetcodeListDemo.toList(head));
+        result = LeetcodeListDemo.removeElements(head, 1);
+        list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] {}, list.toArray(new Integer[0]));
+    }
+
+    @Test
+    @DisplayName("876. 链表的中间结点")
+    public void middleNodeTest() {
+        LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(1, 2, 3, 4, 5, 6);
+        System.out.println(LeetcodeListDemo.toList(head));
+        LeetcodeListDemo.ListNode result = LeetcodeListDemo.middleNode(head);
+        List<Integer> list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 4, 5, 6 }, list.toArray(new Integer[0]));
+
+        head = LeetcodeListDemo.buildList(1, 2, 3, 4, 5);
+
+        System.out.println(LeetcodeListDemo.toList(head));
+        result = LeetcodeListDemo.middleNode(head);
+        list = LeetcodeListDemo.toList(result);
+        System.out.println(list);
+        Assertions.assertArrayEquals(new Integer[] { 3, 4, 5 }, list.toArray(new Integer[0]));
+    }
+
+    @Test
+    @DisplayName("1290. 二进制链表转整数")
+    public void getDecimalValueTest() {
+        LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(1, 0, 1);
+        System.out.println(LeetcodeListDemo.toList(head));
+        int result = LeetcodeListDemo.getDecimalValue(head);
+        Assertions.assertEquals(5, result);
+
+        head = new LeetcodeListDemo.ListNode(0);
+        System.out.println(LeetcodeListDemo.toList(head));
+        result = LeetcodeListDemo.getDecimalValue(head);
+        Assertions.assertEquals(0, result);
+
+        head = new LeetcodeListDemo.ListNode(1);
+        System.out.println(LeetcodeListDemo.toList(head));
+        result = LeetcodeListDemo.getDecimalValue(head);
+        Assertions.assertEquals(1, result);
+
+        head = LeetcodeListDemo.buildList(1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0);
+        System.out.println(LeetcodeListDemo.toList(head));
+        result = LeetcodeListDemo.getDecimalValue(head);
+        Assertions.assertEquals(18880, result);
+    }
+
 }

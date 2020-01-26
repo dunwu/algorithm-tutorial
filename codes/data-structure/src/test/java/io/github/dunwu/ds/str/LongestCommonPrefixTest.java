@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.str;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -14,8 +14,8 @@ public class LongestCommonPrefixTest {
         String[] strs1 = { "flower", "flow", "flight" };
         String[] strs2 = { "dog", "racecar", "car" };
 
-        Assert.assertEquals("fl", LongestCommonPrefix.longestCommonPrefix(strs1));
-        Assert.assertEquals("", LongestCommonPrefix.longestCommonPrefix(strs2));
+        Assertions.assertEquals("fl", LongestCommonPrefix.longestCommonPrefix(strs1));
+        Assertions.assertEquals("", LongestCommonPrefix.longestCommonPrefix(strs2));
     }
 
 }

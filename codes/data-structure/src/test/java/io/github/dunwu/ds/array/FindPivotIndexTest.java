@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -11,8 +11,8 @@ public class FindPivotIndexTest {
 
     @Test
     public void test() {
-        Assert.assertEquals(3, FindPivotIndex.pivotIndex(new int[] { 1, 7, 3, 6, 5, 6 }));
-        Assert.assertEquals(-1, FindPivotIndex.pivotIndex(new int[] { 1, 2, 3 }));
+        Assertions.assertEquals(3, FindPivotIndex.pivotIndex(new int[] { 1, 7, 3, 6, 5, 6 }));
+        Assertions.assertEquals(-1, FindPivotIndex.pivotIndex(new int[] { 1, 2, 3 }));
     }
 
 }

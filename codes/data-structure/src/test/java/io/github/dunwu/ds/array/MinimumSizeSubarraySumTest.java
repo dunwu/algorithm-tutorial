@@ -1,6 +1,6 @@
 package io.github.dunwu.ds.array;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng

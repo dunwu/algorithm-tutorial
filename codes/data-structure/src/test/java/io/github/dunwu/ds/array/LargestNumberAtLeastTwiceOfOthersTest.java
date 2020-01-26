@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -14,8 +14,8 @@ public class LargestNumberAtLeastTwiceOfOthersTest {
         int[] nums1 = { 3, 6, 1, 0 };
         int[] nums2 = { 1, 2, 3, 4 };
 
-        Assert.assertEquals(1, LargestNumberAtLeastTwiceOfOthers.dominantIndex(nums1));
-        Assert.assertEquals(-1, LargestNumberAtLeastTwiceOfOthers.dominantIndex(nums2));
+        Assertions.assertEquals(1, LargestNumberAtLeastTwiceOfOthers.dominantIndex(nums1));
+        Assertions.assertEquals(-1, LargestNumberAtLeastTwiceOfOthers.dominantIndex(nums2));
     }
 
 }

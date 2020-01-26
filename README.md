@@ -83,6 +83,7 @@
     - 《Algorithms on Strings,Trees and Sequences》
     - 《Advanced Data Structures》 - 各种诡异高级的数据结构和算法 如元胞自动机、斐波纳契堆、线段树 600 块
 - 参考链接和学习网站
+  - https://github.com/TheAlgorithms/Java
   - https://github.com/nonstriater/Learn-Algorithms
   - https://github.com/trekhleb/javascript-algorithms
   - https://github.com/kdn251/interviews/blob/master/README-zh-cn.md#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84
@@ -99,7 +100,7 @@
   - <http://sjjg.js.zwu.edu.cn/SFXX/sf1/sfys.html>
   - <http://www.cs.usfca.edu/\~galles/visualization/Algorithms.html>
 - 编程网站
-  - [leetcode](http://leetcode.com/)
+  - [leetcode](http://leetcode-cn.com/)
   - [openjudge](http://openjudge.cn/)
 - 其它
   - [高级数据结构和算法](https://www.coursera.org/learn/gaoji-shuju-jiegou/) 北大教授张铭老师在 coursera 上的课程。完成这门课之时，你将掌握多维数组、广义表、Trie 树、AVL 树、伸展树等高级数据结构，并结合内排序、外排序、检索、索引有关的算法，高效地解决现实生活中一些比较复杂的应用问题。当然 coursera 上也还有很多其它算法方面的视频课程。

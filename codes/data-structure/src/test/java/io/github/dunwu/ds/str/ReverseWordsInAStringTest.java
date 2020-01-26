@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.str;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -11,9 +11,9 @@ public class ReverseWordsInAStringTest {
 
     @Test
     public void test() {
-        Assert.assertEquals("blue is sky the", ReverseWordsInAString.reverseWords("the sky is blue"));
-        Assert.assertEquals("  ", ReverseWordsInAString.reverseWords("  "));
-        Assert.assertEquals("1", ReverseWordsInAString.reverseWords("1 "));
+        Assertions.assertEquals("blue is sky the", ReverseWordsInAString.reverseWords("the sky is blue"));
+        Assertions.assertEquals("  ", ReverseWordsInAString.reverseWords("  "));
+        Assertions.assertEquals("1", ReverseWordsInAString.reverseWords("1 "));
     }
 
 }

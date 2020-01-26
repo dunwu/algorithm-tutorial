@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -12,7 +12,7 @@ public class RemoveElementTest {
     @Test
     public void test() {
         int[] nums1 = { 3, 2, 2, 3 };
-        Assert.assertEquals(2, RemoveElement.removeElement(nums1, 3));
+        Assertions.assertEquals(2, RemoveElement.removeElement(nums1, 3));
     }
 
 }

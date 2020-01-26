@@ -2,8 +2,10 @@ package io.github.dunwu.algorithm.sort;
 
 import io.github.dunwu.algorithm.sort.strategy.*;
 import io.github.dunwu.algorithm.util.ArrayUtil;
-import org.junit.*;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
@@ -14,7 +16,6 @@ import java.util.Arrays;
  *
  * @author Zhang Peng
  */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SortStrategyTest {
 
     /**
@@ -47,7 +48,7 @@ public class SortStrategyTest {
     /**
      * 生成随机数组样本，并调用 JDK api 生成期望的有序数组
      */
-    @BeforeClass
+    @BeforeAll
     public static void beforeClass() {
         // 在 [0, 100] 间生成长度为 10 的存在重复的随机数组
         origin01 = ArrayUtil.randomRepeatIntegerArray(0, 10, 9);
@@ -68,7 +69,7 @@ public class SortStrategyTest {
     /**
      * 每次执行 @Test 前都使用生成的随机样本初始化实际用于排序的数组
      */
-    @Before
+    @BeforeEach
     public void before() {
         target01 = Arrays.copyOf(origin01, origin01.length);
         target02 = Arrays.copyOf(origin02, origin02.length);
@@ -86,11 +87,11 @@ public class SortStrategyTest {
      */
     private void executeSort(SortStrategy strategy) {
         strategy.sort(target01);
-        Assert.assertArrayEquals(expected01, target01);
+        Assertions.assertArrayEquals(expected01, target01);
         strategy.sort(target02);
-        Assert.assertArrayEquals(expected02, target02);
+        Assertions.assertArrayEquals(expected02, target02);
         strategy.sort(target03);
-        Assert.assertArrayEquals(expected03, target03);
+        Assertions.assertArrayEquals(expected03, target03);
     }
 
     @Test

@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -22,8 +22,8 @@ public class SpiralMatrixTest {
         List<Integer> results = SpiralMatrix.spiralOrder(matrix);
         List<Integer> results2 = SpiralMatrix.spiralOrder(matrix2);
 
-        Assert.assertArrayEquals(expected, results.toArray());
-        Assert.assertArrayEquals(expected2, results2.toArray());
+        Assertions.assertArrayEquals(expected, results.toArray());
+        Assertions.assertArrayEquals(expected2, results2.toArray());
     }
 
 }

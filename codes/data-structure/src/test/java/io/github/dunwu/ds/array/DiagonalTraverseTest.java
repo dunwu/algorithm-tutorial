@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -13,7 +13,7 @@ public class DiagonalTraverseTest {
     public void test() {
         int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
         int[] expected = { 1, 2, 4, 7, 5, 3, 6, 8, 9 };
-        Assert.assertArrayEquals(expected, DiagonalTraverse.findDiagonalOrder(matrix));
+        Assertions.assertArrayEquals(expected, DiagonalTraverse.findDiagonalOrder(matrix));
     }
 
 }

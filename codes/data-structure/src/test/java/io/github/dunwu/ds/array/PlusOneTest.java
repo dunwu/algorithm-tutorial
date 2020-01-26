@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -19,9 +19,9 @@ public class PlusOneTest {
         int[] expected2 = { 4, 3, 2, 2 };
         int[] expected3 = { 1, 0, 0, 0, 0 };
 
-        Assert.assertArrayEquals(expected1, PlusOne.plusOne(nums1));
-        Assert.assertArrayEquals(expected2, PlusOne.plusOne(nums2));
-        Assert.assertArrayEquals(expected3, PlusOne.plusOne(nums3));
+        Assertions.assertArrayEquals(expected1, PlusOne.plusOne(nums1));
+        Assertions.assertArrayEquals(expected2, PlusOne.plusOne(nums2));
+        Assertions.assertArrayEquals(expected3, PlusOne.plusOne(nums3));
     }
 
 }

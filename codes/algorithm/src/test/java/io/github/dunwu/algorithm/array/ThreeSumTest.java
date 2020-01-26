@@ -1,7 +1,7 @@
 package io.github.dunwu.algorithm.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,8 +15,8 @@ public class ThreeSumTest {
     @Test
     public void threeSumTest() {
         List<List<Integer>> list = ThreeSum.threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
-        Assert.assertEquals(Arrays.asList(-1, 0, 1), list.get(1));
-        Assert.assertEquals(Arrays.asList(-1, -1, 2), list.get(0));
+        Assertions.assertEquals(Arrays.asList(-1, 0, 1), list.get(1));
+        Assertions.assertEquals(Arrays.asList(-1, -1, 2), list.get(0));
     }
 
 }

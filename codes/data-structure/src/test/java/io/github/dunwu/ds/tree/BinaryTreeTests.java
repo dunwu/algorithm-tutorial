@@ -3,11 +3,11 @@ package io.github.dunwu.ds.tree;
 import io.github.dunwu.ds.common.JavaCollectionTest;
 import io.github.dunwu.ds.common.TreeTest;
 import io.github.dunwu.ds.common.Utils;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BinaryTreeTests {
 

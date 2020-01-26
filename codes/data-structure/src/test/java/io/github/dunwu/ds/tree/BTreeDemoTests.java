@@ -1,6 +1,6 @@
 package io.github.dunwu.ds.tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>

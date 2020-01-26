@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.str;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -11,8 +11,8 @@ public class ReverseStringTest {
 
     @Test
     public void test() {
-        Assert.assertEquals("olleh", ReverseString.reverseString("hello"));
-        Assert.assertEquals("amanaP :lanac a ,nalp a ,nam A",
+        Assertions.assertEquals("olleh", ReverseString.reverseString("hello"));
+        Assertions.assertEquals("amanaP :lanac a ,nalp a ,nam A",
             ReverseString.reverseString("A man, a plan, a canal: Panama"));
     }
 

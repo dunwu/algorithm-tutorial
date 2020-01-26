@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.str;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -11,8 +11,8 @@ public class AddBinaryTest {
 
     @Test
     public void test() {
-        Assert.assertEquals("100", AddBinary.addBinary("11", "1"));
-        Assert.assertEquals("10101", AddBinary.addBinary("1010", "1011"));
+        Assertions.assertEquals("100", AddBinary.addBinary("11", "1"));
+        Assertions.assertEquals("10101", AddBinary.addBinary("1010", "1011"));
     }
 
 }

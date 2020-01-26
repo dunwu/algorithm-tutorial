@@ -1,6 +1,6 @@
 package io.github.dunwu.ds.tree;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 

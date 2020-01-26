@@ -1,7 +1,7 @@
 package io.github.dunwu.algorithm.string;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
@@ -12,85 +12,85 @@ public class StringAlgorithmTest {
     @Test
     public void lengthOfLongestSubstring() {
         int len = StringAlgorithm.lengthOfLongestSubstring("abcabcbb");
-        Assert.assertEquals(3, len);
+        Assertions.assertEquals(3, len);
 
         len = StringAlgorithm.lengthOfLongestSubstring("bbbbb");
-        Assert.assertEquals(1, len);
+        Assertions.assertEquals(1, len);
 
         len = StringAlgorithm.lengthOfLongestSubstring("pwwkew");
-        Assert.assertEquals(3, len);
+        Assertions.assertEquals(3, len);
     }
 
     @Test
     public void longestCommonPrefix() {
         String str = StringAlgorithm.longestCommonPrefix(new String[] { "flower", "flow", "flight" });
-        Assert.assertEquals("fl", str);
+        Assertions.assertEquals("fl", str);
 
         str = StringAlgorithm.longestCommonPrefix(new String[] { "dog", "racecar", "car" });
-        Assert.assertEquals("", str);
+        Assertions.assertEquals("", str);
     }
 
     @Test
     public void checkInclusion() {
         boolean result = StringAlgorithm.checkInclusion("ab", "eidbaooo");
-        Assert.assertEquals(true, result);
+        Assertions.assertEquals(true, result);
 
         result = StringAlgorithm.checkInclusion("ab", "eidboaoo");
-        Assert.assertEquals(false, result);
+        Assertions.assertEquals(false, result);
     }
 
     @Test
     public void multiply() {
         String result = StringAlgorithm.multiply("2", "3");
-        Assert.assertEquals("6", result);
+        Assertions.assertEquals("6", result);
 
         result = StringAlgorithm.multiply("333", "2");
-        Assert.assertEquals("666", result);
+        Assertions.assertEquals("666", result);
 
         result = StringAlgorithm.multiply("123", "456");
-        Assert.assertEquals("56088", result);
+        Assertions.assertEquals("56088", result);
 
         result = StringAlgorithm.multiply("123456789", "987654321");
-        Assert.assertEquals("121932631112635269", result);
+        Assertions.assertEquals("121932631112635269", result);
 
         result = StringAlgorithm.multiply("498828660196", "840477629533");
-        Assert.assertEquals("419254329864656431168468", result);
+        Assertions.assertEquals("419254329864656431168468", result);
     }
 
     @Test
     public void add() {
         String result = StringAlgorithm.add("100000000000000000000", "8888");
-        Assert.assertEquals("100000000000000008888", result);
+        Assertions.assertEquals("100000000000000008888", result);
 
         result = StringAlgorithm.add("1368", "9120");
-        Assert.assertEquals("10488", result);
+        Assertions.assertEquals("10488", result);
     }
 
     @Test
     public void reverseWords() {
         String result = StringAlgorithm.reverseWords("the sky is blue");
-        Assert.assertEquals("blue is sky the", result);
+        Assertions.assertEquals("blue is sky the", result);
 
         result = StringAlgorithm.reverseWords("  hello world!  ");
-        Assert.assertEquals("world! hello", result);
+        Assertions.assertEquals("world! hello", result);
 
         result = StringAlgorithm.reverseWords("a good   example");
-        Assert.assertEquals("example good a", result);
+        Assertions.assertEquals("example good a", result);
     }
 
     @Test
     public void simplifyPath() {
         String result = StringAlgorithm.simplifyPath("/home/");
-        Assert.assertEquals("/home", result);
+        Assertions.assertEquals("/home", result);
 
         result = StringAlgorithm.simplifyPath("/../");
-        Assert.assertEquals("/", result);
+        Assertions.assertEquals("/", result);
 
         result = StringAlgorithm.simplifyPath("/home//foo/");
-        Assert.assertEquals("/home/foo", result);
+        Assertions.assertEquals("/home/foo", result);
 
         result = StringAlgorithm.simplifyPath("/a/./b/../../c/");
-        Assert.assertEquals("/c", result);
+        Assertions.assertEquals("/c", result);
     }
 
 }

@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.str;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -11,13 +11,13 @@ public class ImplementStrstrTest {
 
     @Test
     public void test() {
-        Assert.assertEquals(0, ImplementStrstr.strStr("", ""));
-        Assert.assertEquals(-1, ImplementStrstr.strStr("aaa", "aaaa"));
-        Assert.assertEquals(0, ImplementStrstr.strStr("aaa", ""));
-        Assert.assertEquals(2, ImplementStrstr.strStr("hello", "ll"));
-        Assert.assertEquals(-1, ImplementStrstr.strStr("aaaaa", "bba"));
-        Assert.assertEquals(1, ImplementStrstr.strStr("mississippi", "issi"));
-        Assert.assertEquals(9, ImplementStrstr.strStr("mississippi", "pi"));
+        Assertions.assertEquals(0, ImplementStrstr.strStr("", ""));
+        Assertions.assertEquals(-1, ImplementStrstr.strStr("aaa", "aaaa"));
+        Assertions.assertEquals(0, ImplementStrstr.strStr("aaa", ""));
+        Assertions.assertEquals(2, ImplementStrstr.strStr("hello", "ll"));
+        Assertions.assertEquals(-1, ImplementStrstr.strStr("aaaaa", "bba"));
+        Assertions.assertEquals(1, ImplementStrstr.strStr("mississippi", "issi"));
+        Assertions.assertEquals(9, ImplementStrstr.strStr("mississippi", "pi"));
     }
 
 }

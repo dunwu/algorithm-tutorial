@@ -1,7 +1,7 @@
 package io.github.dunwu.ds.array;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Zhang Peng
@@ -12,7 +12,7 @@ public class ArrayPartitionTest {
     @Test
     public void test() {
         int[] nums1 = { 1, 4, 3, 2 };
-        Assert.assertEquals(4, ArrayPartition.arrayPairSum(nums1));
+        Assertions.assertEquals(4, ArrayPartition.arrayPairSum(nums1));
     }
 
 }

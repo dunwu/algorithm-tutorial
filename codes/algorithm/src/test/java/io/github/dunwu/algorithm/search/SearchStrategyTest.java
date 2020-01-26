@@ -3,8 +3,10 @@ package io.github.dunwu.algorithm.search;
 import io.github.dunwu.algorithm.search.strategy.BinarySearch;
 import io.github.dunwu.algorithm.search.strategy.OrderSearch;
 import io.github.dunwu.algorithm.util.ArrayUtil;
-import org.junit.*;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
@@ -15,7 +17,6 @@ import java.util.Random;
  *
  * @author Zhang Peng
  */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SearchStrategyTest {
 
     /**
@@ -42,7 +43,7 @@ public class SearchStrategyTest {
     /**
      * 生成随机数组样本，并调用 JDK api 生成期望的有序数组
      */
-    @BeforeClass
+    @BeforeAll
     public static void beforeClass() {
         Random random = new Random();
 
@@ -62,7 +63,7 @@ public class SearchStrategyTest {
     /**
      * 每次执行 @Test 前都使用生成的随机样本初始化实际用于排序的数组
      */
-    @Before
+    @BeforeEach
     public void before() {
     }
 
@@ -77,13 +78,13 @@ public class SearchStrategyTest {
      */
     private void executeSearch(SearchStrategy strategy) {
         int target01 = strategy.find(origin01, origin01[expected01]);
-        Assert.assertEquals(expected01, target01);
+        Assertions.assertEquals(expected01, target01);
 
         int target02 = strategy.find(origin02, origin02[expected02]);
-        Assert.assertEquals(expected02, target02);
+        Assertions.assertEquals(expected02, target02);
 
         int target03 = strategy.find(origin03, origin03[expected03]);
-        Assert.assertEquals(expected03, target03);
+        Assertions.assertEquals(expected03, target03);
     }
 
     @Test
