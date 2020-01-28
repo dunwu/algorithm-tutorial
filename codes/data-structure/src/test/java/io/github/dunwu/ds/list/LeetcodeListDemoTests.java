@@ -10,6 +10,16 @@ import java.util.List;
 public class LeetcodeListDemoTests {
 
     @Test
+    @DisplayName("234. 回文链表")
+    public void isPalindromeTest() {
+        LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(1, 2, 2, 1);
+        Assertions.assertTrue(LeetcodeListDemo.isPalindrome(head));
+
+        head = LeetcodeListDemo.buildList(1, 2);
+        Assertions.assertFalse(LeetcodeListDemo.isPalindrome(head));
+    }
+
+    @Test
     @DisplayName("141. 环形链表")
     public void hasCycleTest() {
         LeetcodeListDemo.ListNode head = LeetcodeListDemo.buildList(3, 2, 0, -4);

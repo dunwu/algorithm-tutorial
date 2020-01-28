@@ -1,9 +1,7 @@
 package io.github.dunwu.ds.list;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
@@ -18,9 +16,24 @@ public class LeetcodeListDemo {
      *
      * @see <a href="https://leetcode-cn.com/problems/palindrome-linked-list/">234. 回文链表</a>
      */
-    // public static boolean isPalindrome(ListNode head) {
-    //
-    // }
+    public static boolean isPalindrome(ListNode head) {
+        List<Integer> list = new ArrayList<>();
+        ListNode node = head;
+        while (node != null) {
+            list.add(node.val);
+            node = node.next;
+        }
+
+        int i = 0, j = list.size() - 1;
+        while (i <= j) {
+            if (!list.get(i).equals(list.get(j))) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
 
     /**
      * <code>141. 环形链表</code> 算法实现

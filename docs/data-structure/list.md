@@ -2,7 +2,7 @@
 
 链表（Linked List）是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针（Pointer）。
 
-![](https://raw.githubusercontent.com/dunwu/images/master/snap/20200126092512.png)
+![](https://raw.githubusercontent.com/dunwu/images/master/snap/20200126095433.png)
 
 由于不必须按顺序存储，链表在插入的时候可以达到 $$O(1)$$ 的复杂度，比另一种线性表 —— 顺序表快得多，但是查找一个节点或者访问特定编号的节点则需要 $$O(n)$$ 的时间，而顺序表相应的时间复杂度分别是 $$O(log N)$$ 和 $$O(1)$$。
 
@@ -179,6 +179,19 @@ public void remove(E value) {
 ```
 
 #### 查找节点
+
+```java
+public DListNode<E> find(E value) {
+    DListNode<E> node = this.head.next;
+    while (node != this.tail) {
+        if (node.value.equals(value)) {
+            return node;
+        }
+        node = node.next;
+    }
+    return null;
+}
+```
 
 ## 参考资料
 
