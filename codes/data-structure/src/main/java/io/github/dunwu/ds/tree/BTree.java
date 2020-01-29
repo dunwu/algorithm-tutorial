@@ -1,9 +1,6 @@
 package io.github.dunwu.ds.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * 二叉树
@@ -111,6 +108,48 @@ public class BTree<T extends Comparable<T>> {
     }
 
     /**
+     * 判断两颗二叉树的叶子节点是否相似
+     *
+     * @param tree1 {@link BTree}
+     * @param tree2 {@link BTree}
+     * @return true / false
+     * @see <a href="https://leetcode-cn.com/problems/leaf-similar-trees/">叶子相似的树</a>
+     */
+    public static <T extends Comparable<T>> boolean isLeafSimilar(final BTree<T> tree1, final BTree<T> tree2) {
+        List<T> leafs1 = new LinkedList<>();
+        List<T> leafs2 = new LinkedList<>();
+        getLeafNodes(tree1, leafs1);
+        getLeafNodes(tree2, leafs2);
+        return Arrays.equals(leafs1.toArray(), leafs2.toArray());
+    }
+
+    /**
+     * 获取叶子节点
+     *
+     * @param tree  {@link BTree}
+     * @param leafs [出参]叶子节点列表{@link List}
+     * @param <T>   元素类型
+     */
+    public static <T extends Comparable<T>> void getLeafNodes(BTree<T> tree, List<T> leafs) {
+        getLeafNodes(tree.root, leafs);
+    }
+
+    /**
+     * 获取叶子节点
+     *
+     * @param root  {@link TreeNode}
+     * @param leafs [出参]叶子节点列表{@link List}
+     * @param <T>   元素类型
+     */
+    private static <T extends Comparable<T>> void getLeafNodes(TreeNode<T> root, List<T> leafs) {
+        if (root == null) { return; }
+
+        if (root.left == null && root.right == null) { leafs.add(root.value); }
+        getLeafNodes(root.left, leafs);
+        getLeafNodes(root.right, leafs);
+    }
+
+    /**
      * 返回二叉树的最大深度
      *
      * @return 二叉树的最大深度
@@ -136,6 +175,36 @@ public class BTree<T extends Comparable<T>> {
         return Math.max(left, right) + 1;
     }
 
+    /**
+     * 返回二叉树的最小深度
+     *
+     * @return 二叉树的最小深度
+     */
+    public int minDepth() {
+        return minDepth(this.root);
+    }
+
+    /**
+     * 采用递归方法获取二叉树的最小深度
+     *
+     * @param root 二叉树根节点，类型：{@link BTree#root}
+     * @return 二叉树的最小深度
+     * @see <a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">二叉树的最小深度</a>
+     */
+    private int minDepth(TreeNode<T> root) {
+        if (root == null) { return 0; }
+
+        int left = minDepth(root.left);
+
+        int right = minDepth(root.right);
+
+        if (left == 0 || right == 0) {
+            return left + right + 1;
+        }
+
+        return Math.min(left, right) + 1;
+    }
+
     // ------------------------------------------------------------- 遍历元素
 
     /**
@@ -144,7 +213,7 @@ public class BTree<T extends Comparable<T>> {
      * @return {@link List<List<T>>}
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">二叉树的层次遍历 II</a>
      */
-    public List<List<T>> levelOrderList() {
+    public List<List<T>> levelOrderLists() {
         List<List<T>> lists = new ArrayList<>();
         if (root == null) { return lists; }
         Queue<TreeNode<T>> queue = new LinkedList<>();
@@ -161,6 +230,23 @@ public class BTree<T extends Comparable<T>> {
             lists.add(temp);
         }
         return lists;
+    }
+
+    public List<T> levelOrderList() {
+        List<T> list = new ArrayList<>();
+        if (root == null) { return list; }
+        Queue<TreeNode<T>> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode<T> node = queue.poll();
+                list.add(node.value);
+                if (node.left != null) { queue.offer(node.left); }
+                if (node.right != null) { queue.offer(node.right); }
+            }
+        }
+        return list;
     }
 
     static class TreeNode<T extends Comparable<T>> {
