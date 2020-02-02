@@ -1,6 +1,6 @@
 # 细说排序算法
 
-> 📓 本文已归档到：「[blog](https://github.com/dunwu/blog/tree/master/source/_posts/algorithm)」
+> 📦 本文已归档到：「[blog](https://github.com/dunwu/blog/tree/master/source/_posts/algorithm)」
 >
 > 🔁 本文中的示例代码已归档到：「[algorithm-tutorial](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java)」
 
