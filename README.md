@@ -25,7 +25,8 @@
 - [图](docs/data-structure/graph.md)
 - [堆](docs/data-structure/heap.md)
 - [散列表](docs/data-structure/hash.md)
-
+- [字典树](docs/data-structure/trie.md)
+  
 ### 算法
 
 - [排序](docs/algorithm/sort.md)

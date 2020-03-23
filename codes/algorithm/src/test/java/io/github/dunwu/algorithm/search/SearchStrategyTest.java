@@ -2,13 +2,15 @@ package io.github.dunwu.algorithm.search;
 
 import io.github.dunwu.algorithm.search.strategy.BinarySearch;
 import io.github.dunwu.algorithm.search.strategy.OrderSearch;
-import io.github.dunwu.algorithm.util.ArrayUtil;
+import io.github.dunwu.leetcode.util.ArrayUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
+
+// import io.github.dunwu.algorithm.util.ArrayUtil;
 
 /**
  * 排序算法单元测试 如果需要打印每趟排序的结果，可以修改 logback.xml 中

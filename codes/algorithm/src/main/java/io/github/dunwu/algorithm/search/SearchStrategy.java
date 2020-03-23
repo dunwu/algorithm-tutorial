@@ -1,6 +1,6 @@
 package io.github.dunwu.algorithm.search;
 
-import io.github.dunwu.algorithm.util.ArrayUtil;
+import io.github.dunwu.tool.util.ArrayUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +21,7 @@ public class SearchStrategy {
 
     public int find(Integer[] list, int key) {
         logger.info(this.search.getClass().getSimpleName() + " 查找开始：");
-        logger.info("要查找的线性表：{}", ArrayUtil.getArrayString(list, 0, list.length - 1));
+        logger.info("要查找的线性表：{}", ArrayUtil.toString(list));
         logger.info("要查找的 key：{}", key);
 
         int index = this.search.find(list, key);

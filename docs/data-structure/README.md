@@ -18,3 +18,4 @@
   - [图](graph.md)
   - [堆](heap.md)
   - [散列表](hash.md)
+  - [字典树](trie.md)

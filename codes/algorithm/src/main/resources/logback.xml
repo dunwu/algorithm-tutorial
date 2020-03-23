@@ -31,7 +31,7 @@
 
   <!-- LOGGER BEGIN -->
   <!-- 本项目的日志记录，分级打印 -->
-  <logger name="io.github.dunwu" level="INFO" additivity="false">
+  <logger name="io.github.dunwu" level="DEBUG" additivity="false">
     <appender-ref ref="ALL" />
     <appender-ref ref="STDOUT" />
   </logger>

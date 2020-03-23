@@ -2,7 +2,7 @@
 
 链表（Linked List）是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针（Pointer）。
 
-![](https://raw.githubusercontent.com/dunwu/images/master/snap/20200126095433.png)
+![img](https://raw.githubusercontent.com/dunwu/images/master/snap/20200126095433.png)
 
 由于不必须按顺序存储，链表在插入的时候可以达到 $$O(1)$$ 的复杂度，比另一种线性表 —— 顺序表快得多，但是查找一个节点或者访问特定编号的节点则需要 $$O(n)$$ 的时间，而顺序表相应的时间复杂度分别是 $$O(log N)$$ 和 $$O(1)$$。
 
@@ -18,7 +18,7 @@
 
 单链表中的每个结点不仅包含数据值，还包含一个指针，指向其后继节点。通过这种方式，单链表将所有结点按顺序组织起来。
 
-![](https://raw.githubusercontent.com/dunwu/images/master/snap/20200126095433.png)
+![img](https://raw.githubusercontent.com/dunwu/images/master/snap/20200126095433.png)
 
 与数组不同，我们无法在常量时间内访问单链表中的随机元素。 如果我们想要获得第 i 个元素，我们必须从头结点逐个遍历。 我们按 `索引` 来 `访问元素` 平均要花费 $$O(N)$$ 时间，其中 N 是链表的长度。
 
@@ -108,7 +108,7 @@ public ListNode<E> find(E value) {
 
 双链表中的每个结点不仅包含数据值，还包含两个指针，分别指向指向其前驱节点和后继节点。
 
-![](https://raw.githubusercontent.com/dunwu/images/master/snap/20200126095616.png)
+![img](https://raw.githubusercontent.com/dunwu/images/master/snap/20200126095616.png)
 
 双链表以类似的方式工作，但`还有一个引用字段`，称为`“prev”`字段。有了这个额外的字段，您就能够知道当前结点的前一个结点。
 

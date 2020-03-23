@@ -22,4 +22,12 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
   </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.github.dunwu</groupId>
+      <artifactId>data-structure</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+  </dependencies>
 </project>
