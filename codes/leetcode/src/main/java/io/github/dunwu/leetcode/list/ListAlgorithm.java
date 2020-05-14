@@ -5,9 +5,9 @@ import java.util.List;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @since 2020-01-18
+ * @since 2020-05-13
  */
-public class LeetcodeListDemo {
+public class ListAlgorithm {
 
     /**
      * <code>234. 回文链表</code> 算法实现
@@ -15,6 +15,7 @@ public class LeetcodeListDemo {
      * 判断当前单链表是否有环
      *
      * @see <a href="https://leetcode-cn.com/problems/palindrome-linked-list/">234. 回文链表</a>
+     * @see <a href="https://leetcode-cn.com/problems/palindrome-linked-list-lcci/submissions/">面试题 02.06. 回文链表</a>
      */
     public static boolean isPalindrome(ListNode head) {
         List<Integer> list = new ArrayList<>();
@@ -100,6 +101,7 @@ public class LeetcodeListDemo {
      * </pre>
      *
      * @see <a href="https://leetcode-cn.com/problems/add-two-numbers/">两数相加</a>
+     * @see <a href="https://leetcode-cn.com/problems/sum-lists-lcci/">面试题 02.05. 链表求和</a>
      */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
@@ -199,6 +201,7 @@ public class LeetcodeListDemo {
      * </pre>
      *
      * @see <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists">相交链表</a>
+     * @see <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists-lcci/">面试题 02.07. 链表相交</a>
      */
     public static ListNode getIntersectionNode(final ListNode headA, final ListNode headB) {
         if (headA == null || headB == null) return null;
@@ -209,6 +212,22 @@ public class LeetcodeListDemo {
         }
         return pA;
     }
+
+    // ----------------------------------------------------------- 添加操作
+
+    private static void addToTail(ListNode head, int val) {
+        if (head == null) {
+            return;
+        }
+        ListNode node = head;
+        while (node.next != null) {
+            node = node.next;
+        }
+        ListNode newNode = new ListNode(val);
+        node.next = newNode;
+    }
+
+    // ----------------------------------------------------------- 排序操作
 
     // ----------------------------------------------------------- 删除操作
 
@@ -256,7 +275,7 @@ public class LeetcodeListDemo {
      *
      * @see <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists">203. 移除链表元素</a>
      */
-    public static ListNode removeElements(ListNode head, int val) {
+    public static ListNode removeElementByValue(ListNode head, int val) {
         if (head == null) {
             return null;
         }
@@ -264,7 +283,7 @@ public class LeetcodeListDemo {
         ListNode root = new ListNode(-1);
         root.next = head;
         ListNode prev = root;
-        while (prev != null && prev.next != null) {
+        while (prev.next != null) {
             if (prev.next.val == val) {
                 prev.next = prev.next.next;
             } else {
@@ -272,6 +291,55 @@ public class LeetcodeListDemo {
             }
         }
         return root.next;
+    }
+
+    public static ListNode removeElementByIndex(ListNode head, int index) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode root = new ListNode(-1);
+        root.next = head;
+        ListNode node = root;
+        int pos = 0;
+        while (node.next != null && pos != index) {
+            node = node.next;
+            pos++;
+        }
+
+        if (node.next != null) {
+            node.next = node.next.next;
+        }
+
+        return root.next;
+    }
+
+    /**
+     * @see <a href="https://leetcode-cn.com/problems/remove-duplicate-node-lcci/">面试题 02.01. 移除重复节点</a>
+     */
+    public static ListNode removeDuplicateNodes(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode list = new ListNode(-1);
+        list.next = null;
+
+        ListNode node = head;
+        while (node != null) {
+            if (!exists(list, node.val)) {
+                addToTail(list, node.val);
+            }
+            node = node.next;
+        }
+        return list.next;
+    }
+
+    public static void deleteNode(ListNode head) {
+        ListNode node = head.next;
+        head.val = node.val;
+        head.next = node.next;
+        node.next = null;
     }
 
     // ----------------------------------------------------------- 查找操作
@@ -368,6 +436,50 @@ public class LeetcodeListDemo {
             head = head.next;
         }
         return sum;
+    }
+
+    private static boolean exists(ListNode head, int val) {
+        ListNode node = head;
+        while (node != null) {
+            if (node.val == val) { return true; }
+            node = node.next;
+        }
+        return false;
+    }
+
+    /**
+     * @see <a href="https://leetcode-cn.com/problems/remove-duplicate-node-lcci/">面试题 02.02. 返回倒数第 k 个节点</a>
+     */
+    public static int kthToLast(ListNode head, int k) {
+        int length = length(head);
+        if (k > length) {
+            return -1;
+        }
+        int pos = length - k;
+        ListNode node = head;
+        while (node != null && pos > 0) {
+            node = node.next;
+            pos--;
+        }
+        if (node != null) {
+            return node.val;
+        } else {
+            return -1;
+        }
+    }
+
+    public static int length(ListNode head) {
+        if (head == null) {
+            return 0;
+        }
+
+        int count = 1;
+        ListNode node = head.next;
+        while (node != null) {
+            count++;
+            node = node.next;
+        }
+        return count;
     }
 
     // ----------------------------------------------------------- 合并操作
@@ -543,6 +655,8 @@ public class LeetcodeListDemo {
         }
         return head;
     }
+
+    // ----------------------------------------------------------- 循环链表
 
     // ----------------------------------------------------------- 辅助操作
 

@@ -80,10 +80,43 @@ public class ArrayAlgorithmTest {
     }
 
     @Test
-    public void test() {
+    public void canThreePartsEqualSumTest() {
         Assertions.assertTrue(ArrayAlgorithm.canThreePartsEqualSum(new int[] { 0, 2, 1, -6, 6, -7, 9, 1, 2, 0, 1 }));
         Assertions.assertTrue(ArrayAlgorithm.canThreePartsEqualSum(new int[] { 3, 3, 6, 5, -2, 2, 5, 1, -9, 4 }));
         Assertions.assertFalse(ArrayAlgorithm.canThreePartsEqualSum(new int[] { 0, 2, 1, -6, 6, 7, 9, -1, 2, 0, 1 }));
+    }
+
+    @Test
+    public void rotateTest() {
+        int[][] array = {
+            { 1, 2, 3 },
+            { 4, 5, 6 },
+            { 7, 8, 9 }
+        };
+        int[][] array2 = {
+            { 7, 4, 1 },
+            { 8, 5, 2 },
+            { 9, 6, 3 }
+        };
+        ArrayAlgorithm.rotate(array);
+        Assertions.assertArrayEquals(array2, array);
+    }
+
+    @Test
+    public void setZeroesTest() {
+        int[][] array = {
+            { 1, 1, 1 },
+            { 1, 0, 1 },
+            { 1, 1, 1 }
+        };
+        int[][] array2 = {
+            { 1, 0, 1 },
+            { 0, 0, 0 },
+            { 1, 0, 1 }
+        };
+        ArrayAlgorithm.setZeroes(array);
+        // ArrayAlgorithm.setZeroForElement(array, 1, 1);
+        Assertions.assertArrayEquals(array2, array);
     }
 
 }

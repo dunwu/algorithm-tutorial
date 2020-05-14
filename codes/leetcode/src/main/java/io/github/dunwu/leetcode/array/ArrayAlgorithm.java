@@ -1,9 +1,6 @@
 package io.github.dunwu.leetcode.array;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
@@ -220,6 +217,103 @@ public class ArrayAlgorithm {
      */
     public static boolean canThreePartsEqualSum(int[] array) {
         return false;
+    }
+
+    public static int rob(int[] nums) {
+        if (nums == null || nums.length == 0) { return 0; }
+        if (nums.length == 1) { return nums[0]; }
+        int num1 = subRob(Arrays.copyOfRange(nums, 0, nums.length - 1));
+        int num2 = subRob(Arrays.copyOfRange(nums, 1, nums.length));
+        return Math.max(num1, num2);
+    }
+
+    private static int subRob(int[] nums) {
+        int max = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int sum = nums[i];
+            for (int j = i + 2; j < nums.length; j++) {
+                sum += nums[j];
+            }
+            if (sum > max) {
+                max = sum;
+            }
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        // System.out.println("args = " + rob(new int[] { 1, 2, 3, 1 }));
+        // System.out.println("args = " + rob(new int[] { 2, 7, 9, 3, 1 }));
+        int[][] array = {
+            { 1, 2, 3 },
+            { 4, 5, 6 },
+            { 7, 8, 9 }
+        };
+        rotate(array);
+
+        System.out.println("args = " + array);
+    }
+
+    /**
+     * @see <a href="https://leetcode-cn.com/problems/compress-string-lcci/">07. 旋转矩阵</a>
+     */
+    public static void rotate(int[][] matrix) {
+        int row = matrix.length;
+        int column = matrix[0].length;
+        int[][] array = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                array[j][row - i - 1] = matrix[i][j];
+            }
+        }
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                matrix[i][j] = array[i][j];
+            }
+        }
+    }
+
+    /**
+     * @see <a href="https://leetcode-cn.com/problems/zero-matrix-lcci/">08. 零矩阵</a>
+     */
+    public static void setZeroes(int[][] matrix) {
+        int row = matrix.length;
+        int column = matrix[0].length;
+        List<Point> list = new ArrayList<>();
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                if (matrix[i][j] == 0) {
+                    list.add(new Point(i, j));
+                }
+            }
+        }
+
+        list.forEach(p -> {
+            setZeroForElement(matrix, p.i, p.j);
+        });
+    }
+
+    public static void setZeroForElement(int[][] matrix, int x, int y) {
+        int row = matrix.length;
+        int column = matrix[0].length;
+        for (int i = 0; i < row; i++) {
+            matrix[i][y] = 0;
+        }
+        for (int j = 0; j < column; j++) {
+            matrix[x][j] = 0;
+        }
+    }
+
+    static class Point {
+
+        public int i;
+        public int j;
+
+        public Point(int i, int j) {
+            this.i = i;
+            this.j = j;
+        }
+
     }
 
 }
