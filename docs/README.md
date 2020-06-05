@@ -6,21 +6,18 @@
 
 ## 📝 知识点
 
-### [数据结构](data-structure/README.md)
+![](http://dunwu.test.upcdn.net/snap/20200605164316.png)
 
-- [数组](data-structure/array.md)
-- [栈](data-structure/stack.md)
-- [队列](data-structure/queue.md)
-- [链表](data-structure/list.md)
-- [树](data-structure/tree/README.md)
-- [图](data-structure/graph.md)
-- [堆](data-structure/heap.md)
-- [散列表](data-structure/hash.md)
-
-### [算法](algorithm/README.md)
-
+- [数组](array.md)
+- [链表](list.md)
+- [栈](stack.md)
+- [队列](queue.md)
+- [树](tree/README.md)
+- [图](graph.md)
+- [堆](heap.md)
+- [散列表](hash.md)
 - [查找算法](algorithm/search)
-- [排序算法](algorithm/sort.md)
+- [排序算法](sort.md)
 
 ## 📚 学习资源
 

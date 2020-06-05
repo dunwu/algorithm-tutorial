@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>io.github.dunwu</groupId>
-    <artifactId>algorithm-tutorial</artifactId>
-    <version>1.0.0</version>
-    <relativePath>../../</relativePath>
+    <artifactId>dunwu-parent</artifactId>
+    <version>0.5.6</version>
   </parent>
 
+  <groupId>io.github.dunwu.algorithm</groupId>
   <artifactId>algorithm</artifactId>
   <packaging>jar</packaging>
-  <name>algorithm</name>
+  <name>算法示例</name>
   <description>数据示例源码</description>
 
   <properties>
@@ -26,8 +25,21 @@
   <dependencies>
     <dependency>
       <groupId>io.github.dunwu</groupId>
-      <artifactId>data-structure</artifactId>
-      <version>1.0.0</version>
+      <artifactId>dunwu-tool-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

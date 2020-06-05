@@ -8,30 +8,47 @@
 >
 > 📖 [电子书](https://dunwu.github.io/algorithm-tutorial/) | [电子书（国内）](http://turnon.gitee.io/algorithm-tutorial/)
 
-## 原理
+## 内容
 
-### 数据结构
+[数组](docs/array.md)
 
-- 线性表
-  - [数组](docs/data-structure/array.md)
-  - [栈](docs/data-structure/stack.md)
-  - [队列](docs/data-structure/queue.md)
-  - [链表](docs/data-structure/list.md)
-- [树](docs/data-structure/tree/README.md)
-  - [二叉树](docs/data-structure/tree/binary-tree.md)
-  - [红黑树](docs/data-structure/tree/red-black-tree.md)
-  - B 树
-  - B+ 树
-- [图](docs/data-structure/graph.md)
-- [堆](docs/data-structure/heap.md)
-- [散列表](docs/data-structure/hash.md)
-- [字典树](docs/data-structure/trie.md)
-  
-### 算法
+[链表](docs/list.md)
 
-- [排序](docs/algorithm/sort.md)
-- [线性表的查找](docs/algorithm/linear-list-search.md)
-- [哈希表的查找](docs/algorithm/hash-search.md)
+[栈](docs/stack.md)
+
+[队列](docs/queue.md)
+
+递归
+
+[排序](docs/sort.md)
+
+查找
+
+跳表
+
+[散列表](docs/hash.md)
+
+[树](docs/tree/README.md)
+
+[二叉树](docs/tree/binary-tree.md)
+
+[红黑树](docs/tree/red-black-tree.md)
+
+[图](docs/graph.md)
+
+[堆](docs/heap.md)
+
+[字典树](docs/trie.md)
+
+字符串
+
+贪心算法
+
+分治算法
+
+回溯算法
+
+动态规划
 
 ## 刷题
 

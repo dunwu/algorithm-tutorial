@@ -1,6 +1,6 @@
 package io.github.dunwu.algorithm.dynamic;
 
-import io.github.dunwu.tool.util.ArrayUtil;
+import cn.hutool.core.util.ArrayUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
