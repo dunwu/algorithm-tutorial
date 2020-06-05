@@ -14,11 +14,23 @@ package io.github.dunwu.algorithm.array;
 //    必须在原数组上操作，不能拷贝额外的数组。
 //    尽量减少操作次数。
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author Zhang Peng
  * @since 2018-11-05
  */
-public class MoveZeros {
+public class 移动零 {
+
+    public static void main(String[] args) {
+        int[] nums1 = { 0, 1, 0, 3, 12 };
+        移动零.moveZeroes(nums1);
+        Assertions.assertArrayEquals(new int[] { 1, 3, 12, 0, 0 }, nums1);
+
+        int[] nums2 = { 0, 0, 1 };
+        移动零.moveZeroes(nums2);
+        Assertions.assertArrayEquals(new int[] { 1, 0, 0 }, nums2);
+    }
 
     public static void moveZeroes(int[] nums) {
         int i = 0;

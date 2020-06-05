@@ -42,11 +42,18 @@ package io.github.dunwu.algorithm.array;
 //    print(nums[i]);
 //    }
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author Zhang Peng
  * @since 2018-11-05
  */
-public class RemoveElement {
+public class 移除元素 {
+
+    public static void main(String[] args) {
+        int[] nums1 = { 3, 2, 2, 3 };
+        Assertions.assertEquals(2, 移除元素.removeElement(nums1, 3));
+    }
 
     public static int removeElement(int[] nums, int val) {
         int end = 0;

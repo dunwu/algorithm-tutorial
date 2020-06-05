@@ -4,7 +4,7 @@ package io.github.dunwu.algorithm.array;
  * @author Zhang Peng
  * @since 2018-11-04
  */
-public class TwoDimensionArray {
+public class 二维数组 {
 
     public static void main(String[] args) {
         System.out.println("Example I:");

@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.array;
 
 //    【数组拆分 I】
-
 //
 //    给定长度为 2n 的数组, 你的任务是将这些数分成 n 对, 例如 (a1, b1), (a2, b2), ..., (an, bn) ，使得从1 到 n 的 min(ai, bi) 总和最大。
 //
@@ -16,13 +15,20 @@ package io.github.dunwu.algorithm.array;
 //    n 是正整数,范围在 [1, 10000].
 //    数组中的元素范围在 [-10000, 10000].
 
+import org.junit.jupiter.api.Assertions;
+
 import java.util.Arrays;
 
 /**
  * @author Zhang Peng
  * @since 2018-11-05
  */
-public class ArrayPartition {
+public class 数组拆分1 {
+
+    public static void main(String[] args) {
+        int[] nums1 = { 1, 4, 3, 2 };
+        Assertions.assertEquals(4, 数组拆分1.arrayPairSum(nums1));
+    }
 
     public static int arrayPairSum(int[] nums) {
         Arrays.sort(nums);

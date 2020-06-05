@@ -1,5 +1,7 @@
 package io.github.dunwu.algorithm.array;
 
+import io.github.dunwu.algorithm.util.ArrayUtil;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +24,12 @@ import java.util.List;
  * @author Zhang Peng
  * @since 2018-11-05
  */
-public class PascalsTriangle2 {
+public class 杨辉三角2 {
+
+    public static void main(String[] args) {
+        List<Integer> list = 杨辉三角2.getRow(3);
+        System.out.println(ArrayUtil.getArrayString(list.toArray(), 0, list.size() - 1));
+    }
 
     public static List<Integer> getRow(int rowIndex) {
         List<List<Integer>> result = new ArrayList<>();

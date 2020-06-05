@@ -25,11 +25,25 @@ package io.github.dunwu.algorithm.array;
 //    尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
 //    要求使用空间复杂度为 O(1) 的原地算法。
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author Zhang Peng
  * @since 2018-11-05
  */
-public class RotateArray {
+public class 旋转数组 {
+
+    public static void main(String[] args) {
+        int[] nums1 = { 1, 2, 3, 4, 5, 6, 7 };
+        int[] expected1 = { 5, 6, 7, 1, 2, 3, 4 };
+        旋转数组.rotate(nums1, 3);
+        Assertions.assertArrayEquals(expected1, nums1);
+
+        int[] nums2 = { -1, -100, 3, 99 };
+        int[] expected2 = { 3, 99, -1, -100 };
+        旋转数组.rotate(nums2, 2);
+        Assertions.assertArrayEquals(expected2, nums2);
+    }
 
     public static void rotate(int[] nums, int k) {
         int i = 0;

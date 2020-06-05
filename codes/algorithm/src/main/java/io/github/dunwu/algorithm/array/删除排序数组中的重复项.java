@@ -38,11 +38,27 @@ package io.github.dunwu.algorithm.array;
 //    print(nums[i]);
 //    }
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author Zhang Peng
  * @since 2018-11-05
  */
-public class RemoveDuplicatesFromSortedArray {
+public class 删除排序数组中的重复项 {
+
+    public static void main(String[] args) {
+        int[] nums1 = { 1, 1, 2 };
+        Assertions.assertEquals(2, 删除排序数组中的重复项.removeDuplicates(nums1));
+
+        int[] nums2 = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+        Assertions.assertEquals(5, 删除排序数组中的重复项.removeDuplicates(nums2));
+
+        int[] nums3 = { 1, 2 };
+        Assertions.assertEquals(2, 删除排序数组中的重复项.removeDuplicates(nums3));
+
+        int[] nums4 = { 2, 2 };
+        Assertions.assertEquals(1, 删除排序数组中的重复项.removeDuplicates(nums4));
+    }
 
     public static int removeDuplicates(int[] nums) {
         int left = 0;

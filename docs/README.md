@@ -8,7 +8,7 @@
 
 ![](http://dunwu.test.upcdn.net/snap/20200605164316.png)
 
-- [数组](array.md)
+- [数组](array2.md)
 - [链表](list.md)
 - [栈](stack.md)
 - [队列](queue.md)

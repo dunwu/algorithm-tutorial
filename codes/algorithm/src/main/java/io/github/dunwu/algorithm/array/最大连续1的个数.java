@@ -15,11 +15,17 @@ package io.github.dunwu.algorithm.array;
 //    输入的数组只包含 0 和1。
 //    输入数组的长度是正整数，且不超过 10,000。
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author Zhang Peng
  * @since 2018-11-05
  */
-public class MaxConsecutiveOnes {
+public class 最大连续1的个数 {
+
+    public static void main(String[] args) {
+        Assertions.assertEquals(3, 最大连续1的个数.findMaxConsecutiveOnes(new int[] { 1, 1, 0, 1, 1, 1 }));
+    }
 
     public static int findMaxConsecutiveOnes(int[] nums) {
         int max = 0;

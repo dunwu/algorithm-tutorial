@@ -250,16 +250,16 @@ class BlockSearch {
 
     public static void main(String[] args) {
         int key = 85;
-        int array[] = { 8, 14, 6, 9, 10, 22, 34, 18, 19, 31, 40, 38, 54, 66, 46, 71, 78, 68, 80, 85 };
+        int array2[] = { 8, 14, 6, 9, 10, 22, 34, 18, 19, 31, 40, 38, 54, 66, 46, 71, 78, 68, 80, 85 };
         BlockSearch search = new BlockSearch();
 
         System.out.print("线性表: ");
-        search.printAll(array);
+        search.printAll(array2);
 
-        IndexType[] idxGroup = search.createIndex(array, array.length, 5);
+        IndexType[] idxGroup = search.createIndex(array2, array2.length, 5);
         search.printIDX(idxGroup);
-        int pos = search.blockSearch(idxGroup, idxGroup.length, array,
-                array.length, key);
+        int pos = search.blockSearch(idxGroup, idxGroup.length, array2,
+                array2.length, key);
         if (-1 == pos) {
             System.out.format("查找key = %d失败", key);
         } else {

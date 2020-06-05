@@ -10,7 +10,7 @@
 
 ## 内容
 
-[数组](docs/array.md)
+[数组](docs/array2.md)
 
 [链表](docs/list.md)
 
@@ -54,21 +54,30 @@
 
 ### 数组
 
-- [寻找数组的中心索引](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/FindPivotIndex.java)
-- [至少是其他数字两倍的最大数](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/LargestNumberAtLeastTwiceOfOthers.java)
-- [加一](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/PlusOne.java)
-- [对角线遍历](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/DiagonalTraverse.java)
-- [螺旋矩阵](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/SpiralMatrix.java)
-- [杨辉三角](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/PascalsTriangle.java)
-- [杨辉三角 II](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/PascalsTriangle2.java)
-- [数组拆分 I](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/ArrayPartition.java)
-- [两数之和 II - 输入有序数组](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/TwoSum2InputArrayIsSorted.java)
-- [移除元素](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/RemoveElement.java)
-- [最大连续 1 的个数](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/MaxConsecutiveOnes.java)
-- [长度最小的子数组](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/MinimumSizeSubarraySum.java)
-- [旋转数组](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/RotateArray.java)
-- [删除排序数组中的重复项](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/RemoveDuplicatesFromSortedArray.java)
-- [移动零](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/array/MoveZeros.java)
+- 三数之和
+- 两数之和
+- 二维数组
+- 删除排序数组中的重复项
+- 加一
+- 在排序数组中查找元素的第一个和最后一个位置
+- 在排序数组中查找数字 I
+- 存在重复元素
+- 对角线遍历
+- 寻找数组的中心索引
+- 将数组分成和相等的三个部分
+- 数组二分查找
+- 数组拆分 1
+- 旋转数组
+- 旋转矩阵
+- 最大连续 1 的个数
+- 杨辉三角
+- 杨辉三角 2
+- 移动零
+- 移除元素
+- 至少是其他数字两倍的最大数
+- 螺旋矩阵
+- 长度最小的子数组
+- 零矩阵
 
 ### 字符串
 

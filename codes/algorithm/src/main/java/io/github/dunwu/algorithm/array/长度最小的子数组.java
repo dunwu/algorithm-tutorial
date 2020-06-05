@@ -18,7 +18,12 @@ package io.github.dunwu.algorithm.array;
  * @author Zhang Peng
  * @since 2018-11-05
  */
-public class MinimumSizeSubarraySum {
+public class 长度最小的子数组 {
+
+    public static void main(String[] args) {
+        长度最小的子数组.minSubArrayLen(7, new int[] { 2, 3, 1, 2, 4, 3 });
+        长度最小的子数组.minSubArrayLen(11, new int[] { 2, 3, 1, 2, 4, 3 });
+    }
 
     public static int minSubArrayLen(int s, int[] nums) {
         if (nums == null || nums.length == 0) {

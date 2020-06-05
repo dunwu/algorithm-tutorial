@@ -1,7 +1,7 @@
 # algorithm-tutorial
 
 - [数据结构](data-structure/README.md)
-  - [数组](array.md)
+  - [数组](array2.md)
   - [栈](stack.md)
   - [队列](queue.md)
   - [链表](list.md)

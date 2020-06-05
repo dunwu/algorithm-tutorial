@@ -1,7 +1,8 @@
 package io.github.dunwu.algorithm.array;
 
-//    【至少是其他数字两倍的最大数】
+import org.junit.jupiter.api.Assertions;
 
+//    【至少是其他数字两倍的最大数】
 //
 //    在一个给定的数组nums中，总是存在一个最大元素 。
 //
@@ -33,7 +34,15 @@ package io.github.dunwu.algorithm.array;
  * @author Zhang Peng
  * @since 2018-11-04
  */
-public class LargestNumberAtLeastTwiceOfOthers {
+public class 至少是其他数字两倍的最大数 {
+
+    public static void main(String[] args) {
+        int[] nums1 = { 3, 6, 1, 0 };
+        int[] nums2 = { 1, 2, 3, 4 };
+
+        Assertions.assertEquals(1, 至少是其他数字两倍的最大数.dominantIndex(nums1));
+        Assertions.assertEquals(-1, 至少是其他数字两倍的最大数.dominantIndex(nums2));
+    }
 
     public static int dominantIndex(int[] nums) {
         int index = 0;

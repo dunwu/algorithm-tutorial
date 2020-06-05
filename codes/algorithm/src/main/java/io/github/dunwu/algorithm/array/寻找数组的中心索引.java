@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.array;
 
 //    【寻找数组的中心索引】
-
 //
 //    给定一个整数类型的数组 nums，请编写一个能够返回数组“中心索引”的方法。
 //
@@ -29,11 +28,18 @@ package io.github.dunwu.algorithm.array;
 //    nums 的长度范围为 [0, 10000]。
 //    任何一个 nums[i] 将会是一个范围在 [-1000, 1000]的整数。
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author Zhang Peng
  * @since 2018-11-04
  */
-public class FindPivotIndex {
+public class 寻找数组的中心索引 {
+
+    public static void main(String[] args) {
+        Assertions.assertEquals(3, 寻找数组的中心索引.pivotIndex(new int[] { 1, 7, 3, 6, 5, 6 }));
+        Assertions.assertEquals(-1, 寻找数组的中心索引.pivotIndex(new int[] { 1, 2, 3 }));
+    }
 
     public static int pivotIndex(int[] nums) {
         int result = 0;

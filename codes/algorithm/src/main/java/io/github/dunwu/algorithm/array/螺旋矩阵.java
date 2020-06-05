@@ -1,5 +1,7 @@
 package io.github.dunwu.algorithm.array;
 
+import org.junit.jupiter.api.Assertions;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,15 +32,18 @@ import java.util.List;
  * @author Zhang Peng
  * @since 2018-11-04
  */
-public class SpiralMatrix {
+public class 螺旋矩阵 {
 
     public static void main(String[] args) {
-        int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-        int[][] matrix2 = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
-        List<Integer> results = spiralOrder(matrix);
-        System.out.println();
-        System.out.println();
-        List<Integer> results2 = spiralOrder(matrix2);
+        int[] nums1 = { 1, 2, 3, 4, 5, 6, 7 };
+        int[] expected1 = { 5, 6, 7, 1, 2, 3, 4 };
+        旋转数组.rotate(nums1, 3);
+        Assertions.assertArrayEquals(expected1, nums1);
+
+        int[] nums2 = { -1, -100, 3, 99 };
+        int[] expected2 = { 3, 99, -1, -100 };
+        旋转数组.rotate(nums2, 2);
+        Assertions.assertArrayEquals(expected2, nums2);
     }
 
     public static List<Integer> spiralOrder(int[][] matrix) {

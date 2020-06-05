@@ -19,6 +19,10 @@ public class ArrayUtil {
         }
     }
 
+    public static <T> String getArrayString(T[] list) {
+        return getArrayString(list, 0, list.length);
+    }
+
     public static <T> String getArrayString(T[] list, int begin, int end) {
         StringBuilder sb = new StringBuilder();
         sb.append("\n");

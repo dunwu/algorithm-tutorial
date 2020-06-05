@@ -621,29 +621,29 @@ Donald Shell 最初建议步长选择为 N/2 并且对步长取半直到步长�
 **核心代码**
 
 ```java
-public void HeapAdjust(int[] array, int parent, int length) {
-    int temp = array[parent]; // temp保存当前父节点
+public void HeapAdjust(int[] array2, int parent, int length) {
+    int temp = array2[parent]; // temp保存当前父节点
     int child = 2 * parent + 1; // 先获得左孩子
 
     while (child < length) {
         // 如果有右孩子结点，并且右孩子结点的值大于左孩子结点，则选取右孩子结点
-        if (child + 1 < length && array[child] < array[child + 1]) {
+        if (child + 1 < length && array2[child] < array2[child + 1]) {
             child++;
         }
 
         // 如果父结点的值已经大于孩子结点的值，则直接结束
-        if (temp >= array[child])
+        if (temp >= array2[child])
             break;
 
         // 把孩子结点的值赋给父结点
-        array[parent] = array[child];
+        array2[parent] = array2[child];
 
         // 选取孩子结点的左孩子结点,继续向下筛选
         parent = child;
         child = 2 * child + 1;
     }
 
-    array[parent] = temp;
+    array2[parent] = temp;
 }
 
 public void heapSort(int[] list) {
@@ -740,7 +740,7 @@ public void heapSort(int[] list) {
 **核心代码**
 
 ```java
-public void Merge(int[] array, int low, int mid, int high) {
+public void Merge(int[] array2, int low, int mid, int high) {
     int i = low; // i是第一段序列的下标
     int j = mid + 1; // j是第二段序列的下标
     int k = 0; // k是临时存放合并序列的下标
@@ -749,12 +749,12 @@ public void Merge(int[] array, int low, int mid, int high) {
     // 扫描第一段和第二段序列，直到有一个扫描结束
     while (i <= mid && j <= high) {
         // 判断第一段和第二段取出的数哪个更小，将其存入合并序列，并继续向下扫描
-        if (array[i] <= array[j]) {
-            array2[k] = array[i];
+        if (array2[i] <= array2[j]) {
+            array2[k] = array2[i];
             i++;
             k++;
         } else {
-            array2[k] = array[j];
+            array2[k] = array2[j];
             j++;
             k++;
         }
@@ -762,21 +762,21 @@ public void Merge(int[] array, int low, int mid, int high) {
 
     // 若第一段序列还没扫描完，将其全部复制到合并序列
     while (i <= mid) {
-        array2[k] = array[i];
+        array2[k] = array2[i];
         i++;
         k++;
     }
 
     // 若第二段序列还没扫描完，将其全部复制到合并序列
     while (j <= high) {
-        array2[k] = array[j];
+        array2[k] = array2[j];
         j++;
         k++;
     }
 
     // 将合并序列复制到原始序列中
     for (k = 0, i = low; i <= high; i++, k++) {
-        array[i] = array2[k];
+        array2[i] = array2[k];
     }
 }
 ```
@@ -794,17 +794,17 @@ public void Merge(int[] array, int low, int mid, int high) {
 **核心代码**
 
 ```java
-public void MergePass(int[] array, int gap, int length) {
+public void MergePass(int[] array2, int gap, int length) {
     int i = 0;
 
     // 归并gap长度的两个相邻子表
     for (i = 0; i + 2 * gap - 1 < length; i = i + 2 * gap) {
-        Merge(array, i, i + gap - 1, i + 2 * gap - 1);
+        Merge(array2, i, i + gap - 1, i + 2 * gap - 1);
     }
 
     // 余下两个子表，后者长度小于gap
     if (i + gap - 1 < length) {
-        Merge(array, i, i + gap - 1, length - 1);
+        Merge(array2, i, i + gap - 1, length - 1);
     }
 }
 

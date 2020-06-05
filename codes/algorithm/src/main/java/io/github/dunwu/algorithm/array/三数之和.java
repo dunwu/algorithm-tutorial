@@ -1,5 +1,7 @@
 package io.github.dunwu.algorithm.array;
 
+import org.junit.jupiter.api.Assertions;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +19,7 @@ import java.util.List;
  * @see <a href="https://leetcode-cn.com/explore/featured/card/bytedance/243/array-and-sorting/1020/">三数之和</a>
  * @since 2020-01-18
  */
-public class ThreeSum {
+public class 三数之和 {
 
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
@@ -52,6 +54,12 @@ public class ThreeSum {
         }
 
         return list;
+    }
+
+    public static void main(String[] args) {
+        List<List<Integer>> list = threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
+        Assertions.assertEquals(Arrays.asList(-1, 0, 1), list.get(1));
+        Assertions.assertEquals(Arrays.asList(-1, -1, 2), list.get(0));
     }
 
 }

@@ -20,11 +20,27 @@ package io.github.dunwu.algorithm.array;
 //    输出: [4,3,2,2]
 //    解释: 输入数组表示数字 4321。
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author Zhang Peng
  * @since 2018-11-04
  */
-public class PlusOne {
+public class 加一 {
+
+    public static void main(String[] args) {
+        int[] nums1 = { 1, 2, 3 };
+        int[] nums2 = { 4, 3, 2, 1 };
+        int[] nums3 = { 9, 9, 9, 9 };
+
+        int[] expected1 = { 1, 2, 4 };
+        int[] expected2 = { 4, 3, 2, 2 };
+        int[] expected3 = { 1, 0, 0, 0, 0 };
+
+        Assertions.assertArrayEquals(expected1, 加一.plusOne(nums1));
+        Assertions.assertArrayEquals(expected2, 加一.plusOne(nums2));
+        Assertions.assertArrayEquals(expected3, 加一.plusOne(nums3));
+    }
 
     public static int[] plusOne(int[] digits) {
         int n = digits.length;

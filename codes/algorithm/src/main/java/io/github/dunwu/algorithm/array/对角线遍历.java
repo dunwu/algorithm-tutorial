@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.array;
 
 //    【对角线遍历】
-
 //
 //    给定一个含有 M x N 个元素的矩阵（M 行，N 列），请以对角线遍历的顺序返回这个矩阵中的所有元素，对角线遍历如下图所示。
 //
@@ -20,11 +19,19 @@ package io.github.dunwu.algorithm.array;
 //
 //    给定矩阵中的元素总数不会超过 100000 。
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author Zhang Peng
  * @since 2018-11-04
  */
-public class DiagonalTraverse {
+public class 对角线遍历 {
+
+    public static void main(String[] args) {
+        int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        int[] expected = { 1, 2, 4, 7, 5, 3, 6, 8, 9 };
+        Assertions.assertArrayEquals(expected, 对角线遍历.findDiagonalOrder(matrix));
+    }
 
     public static int[] findDiagonalOrder(int[][] matrix) {
         if (matrix.length == 0) {

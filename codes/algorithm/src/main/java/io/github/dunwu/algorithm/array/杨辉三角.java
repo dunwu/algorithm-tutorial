@@ -1,5 +1,7 @@
 package io.github.dunwu.algorithm.array;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,7 +28,12 @@ import java.util.List;
  * @author Zhang Peng
  * @since 2018-11-04
  */
-public class PascalsTriangle {
+public class 杨辉三角 {
+
+    public static void main(String[] args) {
+        List<List<Integer>> lists = 杨辉三角.generate(5);
+        printPascalsTriangle(lists);
+    }
 
     public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<>();
@@ -60,6 +67,17 @@ public class PascalsTriangle {
         }
 
         return result;
+    }
+
+    static void printPascalsTriangle(List<List<Integer>> lists) {
+        System.out.printf("【%d层杨辉三角】\n", lists.size());
+        for (List<Integer> list : lists) {
+            for (Integer num : list) {
+                System.out.print(num + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
 }
