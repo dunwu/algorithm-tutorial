@@ -4,7 +4,7 @@ package io.github.dunwu.algorithm.list;
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-01-26
  */
-public class DoubleLinkList<E> {
+public class 双链表示例<E> {
 
     /** 头节点 */
     private DListNode<E> head;
@@ -12,7 +12,7 @@ public class DoubleLinkList<E> {
     /** 尾节点 */
     private DListNode<E> tail;
 
-    public DoubleLinkList() {
+    public 双链表示例() {
         this.head = new DListNode<>();
         this.tail = new DListNode<>();
 
@@ -118,7 +118,7 @@ public class DoubleLinkList<E> {
     }
 
     public static void main(String[] args) {
-        DoubleLinkList<Integer> list = new DoubleLinkList<>();
+        双链表示例<Integer> list = new 双链表示例<>();
         list.addTail(2);
         list.addTail(3);
         list.addHead(1);

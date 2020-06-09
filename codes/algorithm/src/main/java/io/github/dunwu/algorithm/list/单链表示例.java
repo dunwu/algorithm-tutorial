@@ -7,16 +7,16 @@ import java.util.List;
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-01-26
  */
-public class SingleLinkList<E> {
+public class 单链表示例<E> {
 
     /** 头节点 */
     private ListNode<E> head;
 
-    public SingleLinkList() {
+    public 单链表示例() {
         this.head = new ListNode<>(null, null);
     }
 
-    public SingleLinkList(ListNode<E> head) {
+    public 单链表示例(ListNode<E> head) {
         this.head = head;
     }
 

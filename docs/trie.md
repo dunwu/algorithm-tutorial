@@ -22,7 +22,7 @@ Trie，又称前缀树或字典树，是一种有序树，用于保存关联数�
 
 （1）自动补全
 
-![img](https://raw.githubusercontent.com/dunwu/images/master/snap/20200305095300.png)
+![img](http://dunwu.test.upcdn.net/snap/20200305095300.png)
 
 （2）拼写检查
 

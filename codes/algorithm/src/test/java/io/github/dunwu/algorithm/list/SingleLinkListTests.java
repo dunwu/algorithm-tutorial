@@ -13,7 +13,7 @@ public class SingleLinkListTests {
 
     @Test
     public void addTest() {
-        SingleLinkList<Integer> list = new SingleLinkList<>();
+        单链表示例<Integer> list = new 单链表示例<>();
         list.addTail(2);
         list.addTail(3);
         list.addHead(1);
@@ -24,7 +24,7 @@ public class SingleLinkListTests {
 
     @Test
     public void removeFirstTest() {
-        SingleLinkList<Integer> list = new SingleLinkList<>();
+        单链表示例<Integer> list = new 单链表示例<>();
         list.addTail(1);
         list.addTail(1);
         list.removeFirst(1);
@@ -61,7 +61,7 @@ public class SingleLinkListTests {
 
     @Test
     public void removeAllTest() {
-        SingleLinkList<Integer> list = new SingleLinkList<>();
+        单链表示例<Integer> list = new 单链表示例<>();
         list.addTail(1);
         list.addTail(1);
         list.addTail(1);

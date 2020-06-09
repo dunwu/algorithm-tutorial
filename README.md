@@ -1,4 +1,15 @@
-# algorithm-tutorial
+<p align="center">
+    <a href="https://dunwu.github.io/algorithm-tutorial/" target="_blank" rel="noopener noreferrer">
+        <img src="http://dunwu.test.upcdn.net/common/logo/dunwu-logo.png" alt="logo" width="150px"/>
+    </a>
+</p>
+
+<p align="center">
+    <img src="https://badgen.net/github/license/dunwu/algorithm-tutorial" alt="license">
+    <img src="https://travis-ci.com/dunwu/algorithm-tutorial.svg?branch=master" alt="build">
+</p>
+
+<h1 align="center">algorithm-tutorial</h1>
 
 > 算法、数据结构这类知识点真的需要天分。本人不是算法工程师，也做不了算法工程师。总是在见识到一些算法大神的优雅实现后，感叹于自己是多么的弱智，同样是写代码，我写的是什么垃圾！
 >
@@ -10,74 +21,58 @@
 
 ## 内容
 
-[数组](docs/array2.md)
-
-[链表](docs/list.md)
-
-[栈](docs/stack.md)
-
-[队列](docs/queue.md)
-
-递归
-
-[排序](docs/sort.md)
-
-查找
-
-跳表
-
-[散列表](docs/hash.md)
-
-[树](docs/tree/README.md)
-
-[二叉树](docs/tree/binary-tree.md)
-
-[红黑树](docs/tree/red-black-tree.md)
-
-[图](docs/graph.md)
-
-[堆](docs/heap.md)
-
-[字典树](docs/trie.md)
-
-字符串
-
-贪心算法
-
-分治算法
-
-回溯算法
-
-动态规划
+- [数组](docs/array.md)
+- [链表](docs/list.md)
+- [栈](docs/stack.md)
+- [队列](docs/queue.md)
+- 递归
+- [排序](docs/sort.md)
+- 查找
+- 跳表
+- [散列表](docs/hash.md)
+- [树](docs/tree/README.md)
+- [二叉树](docs/tree/binary-tree.md)
+- [红黑树](docs/tree/red-black-tree.md)
+- [图](docs/graph.md)
+- [堆](docs/heap.md)
+- [字典树](docs/trie.md)
+- 字符串
+- 贪心算法
+- 分治算法
+- 回溯算法
+- 动态规划
 
 ## 刷题
 
 ### 数组
 
-- 三数之和
-- 两数之和
-- 二维数组
-- 删除排序数组中的重复项
-- 加一
-- 在排序数组中查找元素的第一个和最后一个位置
-- 在排序数组中查找数字 I
-- 存在重复元素
-- 对角线遍历
-- 寻找数组的中心索引
-- 将数组分成和相等的三个部分
-- 数组二分查找
-- 数组拆分 1
-- 旋转数组
-- 旋转矩阵
-- 最大连续 1 的个数
-- 杨辉三角
-- 杨辉三角 2
-- 移动零
-- 移除元素
-- 至少是其他数字两倍的最大数
-- 螺旋矩阵
-- 长度最小的子数组
-- 零矩阵
+- [ArrayDemo.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/ArrayDemo.java)
+- [三数之和.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/三数之和.java)
+- [两数之和.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/两数之和.java)
+- [二维数组.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/二维数组.java)
+- [删除排序数组中的重复项.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/删除排序数组中的重复项.java)
+- [加一.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/加一.java)
+- [在排序数组中查找元素的第一个和最后一个位置.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/在排序数组中查找元素的第一个和最后一个位置.java)
+- [在排序数组中查找数字 I.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/在排序数组中查找数字I.java)
+- [存在重复元素.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/存在重复元素.java)
+- [对角线遍历.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/对角线遍历.java)
+- [寻找数组的中心索引.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/寻找数组的中心索引.java)
+- [将数组分成和相等的三个部分.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/将数组分成和相等的三个部分.java)
+- [数组二分查找.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/数组二分查找.java)
+- [数组拆分 1.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/数组拆分1.java)
+- [旋转数组.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/旋转数组.java)
+- [旋转矩阵.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/旋转矩阵.java)
+- [最大连续 1 的个数.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/最大连续1的个数.java)
+- [杨辉三角.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/杨辉三角.java)
+- [杨辉三角 2.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/杨辉三角2.java)
+- [模拟 ArrayList1.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/模拟ArrayList1.java)
+- [模拟 ArrayList2.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/模拟ArrayList2.java)
+- [移动零.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/移动零.java)
+- [移除元素.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/移除元素.java)
+- [至少是其他数字两倍的最大数.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/至少是其他数字两倍的最大数.java)
+- [螺旋矩阵.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/螺旋矩阵.java)
+- [长度最小的子数组.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/长度最小的子数组.java)
+- [零矩阵.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/零矩阵.java)
 
 ### 字符串
 
@@ -88,7 +83,7 @@
 - [反转字符串中的单词](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString.java)
 - [反转字符串中的单词 III ](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString3.java)
 
-## 📚 学习资源
+## 📚 资料
 
 - **书籍**
   - 刷题必备
@@ -109,10 +104,11 @@
     - [《算法导论》](https://www.amazon.cn/gp/product/B00AK7BYJY/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B00AK7BYJY&linkCode=as2&tag=vastwork-23) - 是一本对算法介绍比较全面的经典书籍
     - 《Algorithms on Strings,Trees and Sequences》
     - 《Advanced Data Structures》 - 各种诡异高级的数据结构和算法 如元胞自动机、斐波纳契堆、线段树 600 块
-- 参考链接和学习网站
+- **学习网站**
   - https://github.com/TheAlgorithms/Java
   - https://github.com/nonstriater/Learn-Algorithms
   - https://github.com/trekhleb/javascript-algorithms
+  - https://github.com/wangzheng0822/algo
   - https://github.com/kdn251/interviews/blob/master/README-zh-cn.md#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84
   - [July 博客](http://blog.csdn.net/v_july_v)
     - 《数学建模十大经典算法》
@@ -133,6 +129,6 @@
   - [高级数据结构和算法](https://www.coursera.org/learn/gaoji-shuju-jiegou/) 北大教授张铭老师在 coursera 上的课程。完成这门课之时，你将掌握多维数组、广义表、Trie 树、AVL 树、伸展树等高级数据结构，并结合内排序、外排序、检索、索引有关的算法，高效地解决现实生活中一些比较复杂的应用问题。当然 coursera 上也还有很多其它算法方面的视频课程。
   - [算法设计与分析 Design and Analysis of Algorithms](https://class.coursera.org/algorithms-001/lecture) 由北大教授 Wanling Qu 在 coursera 讲授的一门算法课程。首先介绍一些与算法有关的基础知识，然后阐述经典的算法设计思想和分析技术，主要涉及的算法设计技术是：分治策略、动态规划、贪心法、回溯与分支限界等。每个视频都配有相应的讲义（pdf 文件）以便阅读和复习。
 
-## 🚪 传送门
+## 🚪 传送
 
 | [技术文档归档](https://github.com/dunwu/blog) | [算法和数据结构教程系列](https://github.com/dunwu/algorithm-tutorial) |
