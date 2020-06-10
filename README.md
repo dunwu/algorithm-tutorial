@@ -46,7 +46,6 @@
 
 ### 数组
 
-- [ArrayDemo.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/ArrayDemo.java)
 - [三数之和.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/三数之和.java)
 - [两数之和.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/两数之和.java)
 - [二维数组.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/二维数组.java)
@@ -76,11 +75,6 @@
 
 ### 链表
 
-- [LRUBaseLinkedList.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/LRUBaseLinkedList.java)
-- [LRUBasedArray.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/LRUBasedArray.java)
-- [ListNode.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/ListNode.java)
-- [ListUtil.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/ListUtil.java)
-- [SinglyLinkedList.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/SinglyLinkedList.java)
 - [两数相加.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/两数相加.java)
 - [二进制链表转整数.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/二进制链表转整数.java)
 - [删除排序链表中的重复元素.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/删除排序链表中的重复元素.java)
@@ -99,6 +93,19 @@
 - [返回倒数第 k 个节点.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/返回倒数第k个节点.java)
 - [链表的中间结点.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/链表的中间结点.java)
 
+### 栈
+
+- [三合一.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/三合一.java)
+- [基本计算器.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/基本计算器.java)
+- [最小栈.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/最小栈.java)
+- [最小栈 2.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/最小栈2.java)
+- [有效的括号.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/有效的括号.java)
+- [栈排序.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/栈排序.java)
+- [棒球比赛.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/棒球比赛.java)
+- [比较含退格的字符串.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/比较含退格的字符串.java)
+- [用栈实现队列.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/用栈实现队列.java)
+- [用队列实现栈.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/用队列实现栈.java)
+
 ### 字符串
 
 - [二进制求和](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/AddBinary.java)
@@ -106,7 +113,7 @@
 - [最长公共前缀](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/LongestCommonPrefix.java)
 - [反转字符串](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseString.java)
 - [反转字符串中的单词](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString.java)
-- [反转字符串中的单词 III ](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString3.java)
+- [反转字符串中的单词 III](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString3.java)
 
 ## 📚 资料
 
