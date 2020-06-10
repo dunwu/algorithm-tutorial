@@ -10,15 +10,22 @@ import java.util.Queue;
  * @see <a href="https://leetcode-cn.com/problems/implement-stack-using-queues/">225. 用队列实现栈</a>
  * @since 2020-01-18
  */
-public class SimpleStack<T> {
+public class 用队列实现栈<T> {
+
+    public static void main(String[] args) {
+        用队列实现栈<Integer> stack = new 用队列实现栈<>();
+        stack.push(1);
+        stack.push(2);
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+    }
 
     private Queue<T> q1 = new LinkedList<>();
 
     /**
      * Initialize your data structure here.
      */
-    public SimpleStack() {
-    }
+    public 用队列实现栈() { }
 
     /**
      * Push element x onto stack.

@@ -6,7 +6,7 @@ import java.util.LinkedList;
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-01-18
  */
-public class MinStack {
+public class 最小栈2 {
 
     // 数据栈
     private LinkedList<Integer> data;
@@ -17,7 +17,7 @@ public class MinStack {
     /**
      * initialize your data structure here.
      */
-    public MinStack() {
+    public 最小栈2() {
         data = new LinkedList<>();
         helper = new LinkedList<>();
     }
