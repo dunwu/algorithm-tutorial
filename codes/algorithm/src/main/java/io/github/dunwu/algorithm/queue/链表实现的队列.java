@@ -5,7 +5,20 @@ package io.github.dunwu.algorithm.queue;
  * <p>
  * Author: Zheng
  */
-public class QueueBasedOnLinkedList {
+public class 链表实现的队列 {
+
+    public static void main(String[] args) {
+        链表实现的队列 queue = new 链表实现的队列();
+        queue.enqueue("1");
+        queue.enqueue("2");
+        queue.enqueue("3");
+        queue.enqueue("4");
+        queue.printAll();
+        System.out.println("dequeue " + queue.dequeue());
+        queue.printAll();
+        System.out.println("dequeue " + queue.dequeue());
+        queue.printAll();
+    }
 
     // 队列的队首和队尾
     private Node head = null;
@@ -13,10 +26,9 @@ public class QueueBasedOnLinkedList {
 
     // 入队
     public void enqueue(String value) {
-        if (tail == null) {
-            Node newNode = new Node(value, null);
-            head = newNode;
-            tail = newNode;
+        if (head == null) {
+            tail = new Node(value, null);
+            head = tail;
         } else {
             tail.next = new Node(value, null);
             tail = tail.next;
@@ -25,14 +37,16 @@ public class QueueBasedOnLinkedList {
 
     // 出队
     public String dequeue() {
-        if (head == null) return null;
+        if (head == null) {
+            return null;
+        }
 
-        String value = head.data;
+        String val = head.data;
         head = head.next;
         if (head == null) {
             tail = null;
         }
-        return value;
+        return val;
     }
 
     public void printAll() {
