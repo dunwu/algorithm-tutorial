@@ -16,15 +16,15 @@ public class SearchStrategy {
     private Search search;
 
     public SearchStrategy(Search search) {
-        this.search = search;
+        search = search;
     }
 
     public int find(Integer[] list, int key) {
-        logger.info(this.search.getClass().getSimpleName() + " 查找开始：");
+        logger.info(search.getClass().getSimpleName() + " 查找开始：");
         logger.info("要查找的线性表：{}", ArrayUtil.toString(list));
         logger.info("要查找的 key：{}", key);
 
-        int index = this.search.find(list, key);
+        int index = search.find(list, key);
         logger.info("{} 的位置是：{}", key, index);
         return index;
     }
