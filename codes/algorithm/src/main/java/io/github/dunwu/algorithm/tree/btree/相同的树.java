@@ -1,4 +1,7 @@
-package io.github.dunwu.algorithm.tree;
+package io.github.dunwu.algorithm.tree.btree;
+
+import io.github.dunwu.algorithm.tree.TreeUtils;
+import io.github.dunwu.algorithm.tree.btree.TreeNode;
 
 /**
  * <code>100. 相同的树</code> 算法实现
@@ -40,25 +43,23 @@ package io.github.dunwu.algorithm.tree;
  *
  * @see <a href="https://leetcode-cn.com/problems/same-tree/">100. 相同的树</a>
  */
-public class IsSameTree {
+public class 相同的树 {
 
     public static void main(String[] args) {
-        IsSameTree demo = new IsSameTree();
-
         TreeNode tree1 = TreeUtils.buildTree(1, 2, 3);
         TreeNode tree2 = TreeUtils.buildTree(1, 2, 3);
-        System.out.println("result = " + demo.isSameTree(tree1, tree2));
+        System.out.println("result = " + isSameTree(tree1, tree2));
 
         tree1 = TreeUtils.buildTree(1, 2);
         tree2 = TreeUtils.buildTree(1, 2, 3);
-        System.out.println("result = " + demo.isSameTree(tree1, tree2));
+        System.out.println("result = " + isSameTree(tree1, tree2));
 
         tree1 = TreeUtils.buildTree(1, 2, 1);
         tree2 = TreeUtils.buildTree(1, 1, 2);
-        System.out.println("result = " + demo.isSameTree(tree1, tree2));
+        System.out.println("result = " + isSameTree(tree1, tree2));
     }
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
+    public static boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) return true;
 
         if (p == null || q == null) return false;

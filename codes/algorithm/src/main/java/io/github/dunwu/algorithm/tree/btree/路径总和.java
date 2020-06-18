@@ -1,4 +1,8 @@
-package io.github.dunwu.algorithm.tree;
+package io.github.dunwu.algorithm.tree.btree;
+
+import io.github.dunwu.algorithm.tree.TreeUtils;
+import io.github.dunwu.algorithm.tree.btree.TreeNode;
+import org.junit.jupiter.api.Assertions;
 
 /**
  * <code>路径总和</code> 算法实现
@@ -23,22 +27,19 @@ package io.github.dunwu.algorithm.tree;
  *
  * @see <a href="https://leetcode-cn.com/problems/path-sum/">路径总和</a>
  */
-public class HasPathSum {
+public class 路径总和 {
 
     public static void main(String[] args) {
-        HasPathSum demo = new HasPathSum();
-
         TreeNode tree = TreeUtils.buildTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1);
-        System.out.println("result = " + demo.hasPathSum(tree, 22));
+        Assertions.assertTrue(hasPathSum(tree, 22));
+        TreeNode tree2 = TreeUtils.buildTree(1, 2);
+        Assertions.assertFalse(hasPathSum(tree2, 1));
     }
 
-    public boolean hasPathSum(TreeNode root, int sum) {
+    public static boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) { return false; }
-
         sum -= root.val;
-
         if (root.left == null && root.right == null) { return sum == 0; }
-
         return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
     }
 

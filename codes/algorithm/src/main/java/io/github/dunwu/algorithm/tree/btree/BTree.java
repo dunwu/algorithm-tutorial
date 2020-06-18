@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.tree;
+package io.github.dunwu.algorithm.tree.btree;
 
 import java.util.*;
 

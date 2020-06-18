@@ -18,20 +18,19 @@ import java.util.List;
 //
 // 树的深度不会超过 1000。
 // 树的节点总不会超过 5000。
+public class N叉树的最大深度 {
 
-public class TreeMaxDepth {
-
-    public int maxDepth(Node root) {
+    public static int maxDepth(Node root) {
         if (root == null) return 0;
         if (root.children == null || root.children.size() == 0) return 1;
-        int subMax = 0;
+        int max = 0;
         for (Node node : root.children) {
             int temp = maxDepth(node);
-            if (temp > subMax) {
-                subMax = temp;
+            if (temp > max) {
+                max = temp;
             }
         }
-        return subMax + 1;
+        return max + 1;
     }
 
     static class Node {

@@ -1,4 +1,7 @@
-package io.github.dunwu.algorithm.tree;
+package io.github.dunwu.algorithm.tree.btree;
+
+import io.github.dunwu.algorithm.tree.TreeUtils;
+import io.github.dunwu.algorithm.tree.btree.TreeNode;
 
 /**
  * <code>翻转二叉树</code> 算法实现
@@ -28,16 +31,14 @@ package io.github.dunwu.algorithm.tree;
  *
  * @see <a href="https://leetcode-cn.com/problems/invert-binary-tree/">翻转二叉树</a>
  */
-public class InvertTree {
+public class 翻转二叉树 {
 
     public static void main(String[] args) {
-        InvertTree demo = new InvertTree();
-
         TreeNode tree = TreeUtils.buildTree(4, 2, 7, 1, 3, 6, 9);
-        System.out.println("result = " + demo.invertTree(tree));
+        System.out.println("result = " + invertTree(tree));
     }
 
-    public TreeNode invertTree(TreeNode root) {
+    public static TreeNode invertTree(TreeNode root) {
         if (root == null) { return null; }
 
         TreeNode right = invertTree(root.right);

@@ -1,4 +1,7 @@
-package io.github.dunwu.algorithm.tree;
+package io.github.dunwu.algorithm.tree.btree;
+
+import io.github.dunwu.algorithm.tree.TreeUtils;
+import io.github.dunwu.algorithm.tree.btree.TreeNode;
 
 /**
  * <code>236. 二叉树的最近公共祖先</code> 算法实现
@@ -29,47 +32,30 @@ package io.github.dunwu.algorithm.tree;
  *
  * @see <a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a>
  */
-public class LowestCommonAncestor {
+public class 二叉树的最近公共祖先 {
 
-    private TreeNode ans = null;
+    private static TreeNode ans = null;
 
     public static void main(String[] args) {
         TreeNode root = TreeUtils.buildTree(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4);
         TreeNode p = new TreeNode(5);
         TreeNode q = new TreeNode(1);
-        LowestCommonAncestor demo = new LowestCommonAncestor();
-        TreeNode treeNode = demo.lowestCommonAncestor(root, p, q);
+        TreeNode treeNode = lowestCommonAncestor(root, p, q);
         System.out.println("公共祖先节点 = " + treeNode.val);
     }
 
-    private boolean recurseTree(TreeNode currentNode, TreeNode p, TreeNode q) {
-
-        // If reached the end of a branch, return false.
-        if (currentNode == null) {
-            return false;
-        }
-
-        // Left Recursion. If left recursion returns true, set left = 1 else 0
-        int left = this.recurseTree(currentNode.left, p, q) ? 1 : 0;
-
-        // Right Recursion
-        int right = this.recurseTree(currentNode.right, p, q) ? 1 : 0;
-
-        // If the current node is one of p or q
-        int mid = (currentNode == p || currentNode == q) ? 1 : 0;
-
-        // If any two of the flags left, right or mid become True
-        if (mid + left + right >= 2) {
-            this.ans = currentNode;
-        }
-
-        // Return true if any one of the three bool values is True.
-        return (mid + left + right > 0);
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        recurseTree(root, p, q);
+        return ans;
     }
 
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        this.recurseTree(root, p, q);
-        return this.ans;
+    private static boolean recurseTree(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) return false;
+        boolean lson = recurseTree(root.left, p, q);
+        boolean rson = recurseTree(root.right, p, q);
+        boolean flag = (root.val == p.val || root.val == q.val) && (lson || rson);
+        if ((lson && rson) || ((root.val == p.val || root.val == q.val) && (lson || rson))) { ans = root; }
+        return (root.val == p.val || root.val == q.val) || (lson || rson);
     }
 
 }

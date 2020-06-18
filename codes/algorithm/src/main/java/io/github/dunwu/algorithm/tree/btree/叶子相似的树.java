@@ -1,4 +1,8 @@
-package io.github.dunwu.algorithm.tree;
+package io.github.dunwu.algorithm.tree.btree;
+
+import io.github.dunwu.algorithm.tree.TreeUtils;
+import io.github.dunwu.algorithm.tree.btree.TreeNode;
+import org.junit.jupiter.api.Assertions;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -25,17 +29,15 @@ import java.util.List;
  *
  * @see <a href="https://leetcode-cn.com/problems/leaf-similar-trees/">叶子相似的树</a>
  */
-public class LeafSimilar {
+public class 叶子相似的树 {
 
     public static void main(String[] args) {
-        LeafSimilar demo = new LeafSimilar();
-
         TreeNode tree1 = TreeUtils.buildTree(3, 5, 1, 6, 2, 9, 8, null, null, 7, 4);
         TreeNode tree2 = TreeUtils.buildTree(3, 5, 1, 6, 7, 4, 2, null, null, null, null, null, null, 9, 8);
-        System.out.println("result = " + demo.leafSimilar(tree1, tree2));
+        Assertions.assertTrue(leafSimilar(tree1, tree2));
     }
 
-    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+    public static boolean leafSimilar(TreeNode root1, TreeNode root2) {
         List<Integer> leafs1 = new LinkedList<>();
         List<Integer> leafs2 = new LinkedList<>();
         leafNodes(root1, leafs1);
@@ -43,11 +45,9 @@ public class LeafSimilar {
         return Arrays.equals(leafs1.toArray(), leafs2.toArray());
     }
 
-    public void leafNodes(TreeNode root, List<Integer> leafs) {
+    public static void leafNodes(TreeNode root, List<Integer> leafs) {
         if (root == null) { return; }
-
         if (root.left == null && root.right == null) { leafs.add(root.val); }
-
         leafNodes(root.left, leafs);
         leafNodes(root.right, leafs);
     }

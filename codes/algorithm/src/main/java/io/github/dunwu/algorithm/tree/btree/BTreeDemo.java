@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.tree;
+package io.github.dunwu.algorithm.tree.btree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -162,11 +162,11 @@ public class BTreeDemo {
 
     public static class TreeNode {
 
-        int val;
+        public int val;
 
-        TreeNode left;
+        public TreeNode left;
 
-        TreeNode right;
+        public TreeNode right;
 
         public TreeNode(int val) { this.val = val; }
 

@@ -3,6 +3,7 @@ package io.github.dunwu.algorithm.tree;
 import io.github.dunwu.algorithm.common.JavaCollectionTest;
 import io.github.dunwu.algorithm.common.TreeTest;
 import io.github.dunwu.algorithm.common.Utils;
+import io.github.dunwu.algorithm.tree.btree.BinaryTree;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
