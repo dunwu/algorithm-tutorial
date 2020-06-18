@@ -3,10 +3,8 @@
         <img src="http://dunwu.test.upcdn.net/common/logo/dunwu-logo.png" alt="logo" width="150px"/>
     </a>
 </p>
-
 <p align="center">
     <img src="https://badgen.net/github/license/dunwu/algorithm-tutorial" alt="license">
-    <img src="https://travis-ci.com/dunwu/algorithm-tutorial.svg?branch=master" alt="build">
 </p>
 
 <h1 align="center">algorithm-tutorial</h1>
@@ -31,8 +29,8 @@
 - 跳表
 - [散列表](docs/hash.md)
 - [树](docs/tree/README.md)
-- [二叉树](docs/tree/binary-tree.md)
-- [红黑树](docs/tree/red-black-tree.md)
+  - [二叉树](docs/tree/binary-tree.md)
+  - [红黑树](docs/tree/red-black-tree.md)
 - [图](docs/graph.md)
 - [堆](docs/heap.md)
 - [字典树](docs/trie.md)
@@ -46,65 +44,73 @@
 
 ### 数组
 
-- [三数之和.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/三数之和.java)
-- [两数之和.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/两数之和.java)
-- [二维数组.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/二维数组.java)
-- [删除排序数组中的重复项.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/删除排序数组中的重复项.java)
-- [加一.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/加一.java)
-- [在排序数组中查找元素的第一个和最后一个位置.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/在排序数组中查找元素的第一个和最后一个位置.java)
-- [在排序数组中查找数字 I.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/在排序数组中查找数字I.java)
-- [存在重复元素.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/存在重复元素.java)
-- [对角线遍历.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/对角线遍历.java)
-- [寻找数组的中心索引.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/寻找数组的中心索引.java)
-- [将数组分成和相等的三个部分.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/将数组分成和相等的三个部分.java)
-- [数组二分查找.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/数组二分查找.java)
-- [数组拆分 1.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/数组拆分1.java)
-- [旋转数组.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/旋转数组.java)
-- [旋转矩阵.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/旋转矩阵.java)
-- [最大连续 1 的个数.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/最大连续1的个数.java)
-- [杨辉三角.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/杨辉三角.java)
-- [杨辉三角 2.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/杨辉三角2.java)
-- [模拟 ArrayList1.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/模拟ArrayList1.java)
-- [模拟 ArrayList2.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/模拟ArrayList2.java)
-- [移动零.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/移动零.java)
-- [移除元素.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/移除元素.java)
-- [至少是其他数字两倍的最大数.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/至少是其他数字两倍的最大数.java)
-- [螺旋矩阵.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/螺旋矩阵.java)
-- [长度最小的子数组.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/长度最小的子数组.java)
-- [零矩阵.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/零矩阵.java)
+- [三数之和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/三数之和.java)
+- [两数之和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/两数之和.java)
+- [二维数组](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/二维数组.java)
+- [删除排序数组中的重复项](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/删除排序数组中的重复项.java)
+- [加一](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/加一.java)
+- [在排序数组中查找元素的第一个和最后一个位置](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/在排序数组中查找元素的第一个和最后一个位置.java)
+- [在排序数组中查找数字 I](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/在排序数组中查找数字I.java)
+- [存在重复元素](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/存在重复元素.java)
+- [对角线遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/对角线遍历.java)
+- [寻找数组的中心索引](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/寻找数组的中心索引.java)
+- [将数组分成和相等的三个部分](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/将数组分成和相等的三个部分.java)
+- [数组二分查找](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/数组二分查找.java)
+- [数组拆分 1](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/数组拆分1.java)
+- [旋转数组](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/旋转数组.java)
+- [旋转矩阵](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/旋转矩阵.java)
+- [最大连续 1 的个数](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/最大连续1的个数.java)
+- [杨辉三角](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/杨辉三角.java)
+- [杨辉三角 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/杨辉三角2.java)
+- [模拟 ArrayList1](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/模拟ArrayList1.java)
+- [模拟 ArrayList2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/模拟ArrayList2.java)
+- [移动零](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/移动零.java)
+- [移除元素](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/移除元素.java)
+- [至少是其他数字两倍的最大数](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/至少是其他数字两倍的最大数.java)
+- [螺旋矩阵](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/螺旋矩阵.java)
+- [长度最小的子数组](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/长度最小的子数组.java)
+- [零矩阵](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/零矩阵.java)
 
 ### 链表
 
-- [两数相加.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/两数相加.java)
-- [二进制链表转整数.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/二进制链表转整数.java)
-- [删除排序链表中的重复元素.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/删除排序链表中的重复元素.java)
-- [单链表示例.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/单链表示例.java)
-- [双链表示例.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/双链表示例.java)
-- [反转链表.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/反转链表.java)
-- [合并 K 个排序链表.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并K个排序链表.java)
-- [合并 K 个排序链表解法 2.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并K个排序链表解法2.java)
-- [合并两个有序链表.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并两个有序链表.java)
-- [回文链表.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/回文链表.java)
-- [排序链表.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/排序链表.java)
-- [环形链表.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/环形链表.java)
-- [相交链表.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/相交链表.java)
-- [移除重复节点.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/移除重复节点.java)
-- [移除链表元素.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/移除链表元素.java)
-- [返回倒数第 k 个节点.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/返回倒数第k个节点.java)
-- [链表的中间结点.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/链表的中间结点.java)
+- [两数相加](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/两数相加.java)
+- [二进制链表转整数](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/二进制链表转整数.java)
+- [删除排序链表中的重复元素](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/删除排序链表中的重复元素.java)
+- [单链表示例](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/单链表示例.java)
+- [双链表示例](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/双链表示例.java)
+- [反转链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/反转链表.java)
+- [合并 K 个排序链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并K个排序链表.java)
+- [合并 K 个排序链表解法 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并K个排序链表解法2.java)
+- [合并两个有序链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并两个有序链表.java)
+- [回文链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/回文链表.java)
+- [排序链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/排序链表.java)
+- [环形链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/环形链表.java)
+- [相交链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/相交链表.java)
+- [移除重复节点](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/移除重复节点.java)
+- [移除链表元素](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/移除链表元素.java)
+- [返回倒数第 k 个节点](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/返回倒数第k个节点.java)
+- [链表的中间结点](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/链表的中间结点.java)
 
 ### 栈
 
-- [三合一.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/三合一.java)
-- [基本计算器.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/基本计算器.java)
-- [最小栈.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/最小栈.java)
-- [最小栈 2.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/最小栈2.java)
-- [有效的括号.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/有效的括号.java)
-- [栈排序.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/栈排序.java)
-- [棒球比赛.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/棒球比赛.java)
-- [比较含退格的字符串.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/比较含退格的字符串.java)
-- [用栈实现队列.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/用栈实现队列.java)
-- [用队列实现栈.java](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/用队列实现栈.java)
+- [三合一](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/三合一.java)
+- [基本计算器](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/基本计算器.java)
+- [最小栈](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/最小栈.java)
+- [最小栈 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/最小栈2.java)
+- [有效的括号](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/有效的括号.java)
+- [栈排序](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/栈排序.java)
+- [棒球比赛](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/棒球比赛.java)
+- [比较含退格的字符串](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/比较含退格的字符串.java)
+- [用栈实现队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/用栈实现队列.java)
+- [用队列实现栈](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/用队列实现栈.java)
+
+### 队列
+
+- [动态扩容数组实现的队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/动态扩容数组实现的队列.java)
+- [数组实现的队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/数组实现的队列.java)
+- [最近的请求次数](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/最近的请求次数.java)
+- [设计循环队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/设计循环队列.java)
+- [链表实现的队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/链表实现的队列.java)
 
 ### 字符串
 
@@ -114,6 +120,26 @@
 - [反转字符串](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseString.java)
 - [反转字符串中的单词](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString.java)
 - [反转字符串中的单词 III](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString3.java)
+
+### 树
+
+- [N叉树的最大深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/N叉树的最大深度.java)
+
+#### 二叉树
+
+- [二叉搜索树节点最小距离](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉搜索树节点最小距离.java)
+- [二叉树的层次遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的层次遍历.java)
+- [二叉树的层次遍历 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的层次遍历2.java)
+- [二叉树的所有路径](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的所有路径.java)
+- [二叉树的最大深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最大深度.java)
+- [二叉树的最小深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最小深度.java)
+- [二叉树的最近公共祖先](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最近公共祖先.java)
+- [二叉树的锯齿形层次遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的锯齿形层次遍历.java)
+- [叶子相似的树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/叶子相似的树.java)
+- [对称二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/对称二叉树.java)
+- [相同的树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/相同的树.java)
+- [翻转二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/翻转二叉树.java)
+- [路径总和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/路径总和.java)
 
 ## 📚 资料
 
