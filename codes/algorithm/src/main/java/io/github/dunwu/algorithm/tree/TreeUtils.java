@@ -56,6 +56,13 @@ public class TreeUtils {
         }
     }
 
+    public static TreeNode find(TreeNode root, int val) {
+        if (root == null || root.val == val) { return root;}
+        TreeNode left = find(root.left, val);
+        if (left != null) return left;
+        return find(root.right, val);
+    }
+
     public static void depthOrderTraverse(TreeNode root) {
         if (root == null) {
             return;

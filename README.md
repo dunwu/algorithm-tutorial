@@ -9,9 +9,11 @@
 
 <h1 align="center">algorithm-tutorial</h1>
 
-> 算法、数据结构这类知识点真的需要天分。本人不是算法工程师，也做不了算法工程师。总是在见识到一些算法大神的优雅实现后，感叹于自己是多么的弱智，同样是写代码，我写的是什么垃圾！
+> 算法、数据结构学习要点：
 >
-> 这个项目的初衷，是将工作中经常会接触到的一些数据结构和算法整理归纳。人总是要有理想的，要想少写垃圾的代码，必须夯实算法的基础。路漫漫兮其修远，吾将上下而求索。
+> 三分学，七分练
+>
+> 坚持 + 坚持 + 坚持
 >
 > 🔁 项目同步维护在 [github](https://github.com/dunwu/algorithm-tutorial) | [gitee](https://gitee.com/turnon/algorithm-tutorial)
 >
@@ -19,6 +21,9 @@
 
 ## 内容
 
+![img](http://dunwu.test.upcdn.net/snap/20200702071922.png)
+
+- [算法概述](docs/overview.md)
 - [数组](docs/array.md)
 - [链表](docs/list.md)
 - [栈](docs/stack.md)
@@ -127,6 +132,7 @@
 
 #### 二叉树
 
+- [二叉搜索树的最近公共祖先](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉搜索树的最近公共祖先.java)
 - [二叉搜索树节点最小距离](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉搜索树节点最小距离.java)
 - [二叉树的层次遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的层次遍历.java)
 - [二叉树的层次遍历 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的层次遍历2.java)
