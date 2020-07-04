@@ -1,5 +1,7 @@
 package io.github.dunwu.algorithm.trie;
 
+import org.junit.jupiter.api.Assertions;
+
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @see <a href="https://leetcode-cn.com/problems/implement-trie-prefix-tree/">208. 实现 Trie (前缀树)</a>
@@ -10,65 +12,86 @@ public class 实现Trie_前缀树 {
     public static void main(String[] args) {
         实现Trie_前缀树 trie = new 实现Trie_前缀树();
         trie.insert("apple");
-        System.out.println(trie.search("apple")); // 返回 true
-        System.out.println(trie.search("app")); // 返回 false
-        System.out.println(trie.startsWith("app")); // 返回 true
+        Assertions.assertTrue(trie.search("apple"));
+        Assertions.assertFalse(trie.search("app"));
+        Assertions.assertTrue(trie.startsWith("app"));
+
         trie.insert("app");
-        System.out.println(trie.search("app")); // 返回 true
+        Assertions.assertTrue(trie.search("app"));
     }
 
     private TrieNode root;
+    public static final int MAX_WORD_COUNT = 26;
 
     public 实现Trie_前缀树() {
         root = new TrieNode('/');
     }
 
     public void insert(String word) {
-        TrieNode p = root;
-        for (char c : word.toCharArray()) {
-            int index = c - 'a';
-            if (p.children[index] == null) {
-                TrieNode node = new TrieNode(c);
-                p.children[index] = node;
-            }
-            p = p.children[index];
+        if (word == null || word.length() == 0) {
+            return;
         }
-        p.isEnd = true;
+
+        TrieNode node = root;
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            int index = c - 'a';
+            if (node.children[index] == null) {
+                node.children[index] = new TrieNode(c);
+            }
+            node = node.children[index];
+        }
+        node.isEnd = true;
     }
 
     public boolean search(String word) {
-        TrieNode p = root;
-        for (char c : word.toCharArray()) {
+        if (word == null || word.length() == 0) {
+            return false;
+        }
+
+        TrieNode node = root;
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
             int index = c - 'a';
-            if (p.children[index] == null) {
+            if (node.children[index] == null) {
                 return false;
             }
-            p = p.children[index];
+            node = node.children[index];
         }
-        return p.isEnd;
+        return node.isEnd;
     }
 
     public boolean startsWith(String prefix) {
-        TrieNode p = root;
-        for (char c : prefix.toCharArray()) {
+        if (prefix == null || prefix.length() == 0) {
+            return false;
+        }
+
+        TrieNode node = root;
+        for (int i = 0; i < prefix.length(); i++) {
+            char c = prefix.charAt(i);
             int index = c - 'a';
-            if (p.children[index] == null) {
+            if (node.children[index] == null) {
                 return false;
             }
-            p = p.children[index];
+            node = node.children[index];
         }
         return true;
     }
 
     public static class TrieNode {
 
-        public boolean isEnd;
-        public char data;
-        public TrieNode[] children;
+        boolean isEnd;
+        char data;
+        TrieNode[] children;
 
         public TrieNode(char data) {
+            this(data, false);
+        }
+
+        public TrieNode(char data, boolean isEnd) {
             this.data = data;
-            this.children = new TrieNode[26];
+            this.isEnd = isEnd;
+            children = new TrieNode[MAX_WORD_COUNT];
         }
 
     }

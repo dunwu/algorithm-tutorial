@@ -3,9 +3,7 @@ package io.github.dunwu.algorithm.tree.btree;
 import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
@@ -24,24 +22,27 @@ public class 二叉树的层次遍历 {
         Assertions.assertArrayEquals(expectList.toArray(), resultList.toArray());
     }
 
+    /**
+     * 基于 BFS 实现二叉树层次遍历。关键在于使用一个队列存储
+     */
     public static List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new LinkedList<>();
-        LinkedList<TreeNode> queue = new LinkedList<>();
+        List<List<Integer>> result = new ArrayList<>();
         if (root == null) return result;
+
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
-            List<Integer> list = new LinkedList<>();
+            List<Integer> list = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                if (node != null) {
-                    list.add(node.val);
-                    if (node.left != null) queue.add(node.left);
-                    if (node.right != null) queue.add(node.right);
-                }
+                if (node.left != null) queue.offer(node.left);
+                if (node.right != null) queue.offer(node.right);
+                list.add(node.val);
             }
             result.add(list);
         }
+
         return result;
     }
 
