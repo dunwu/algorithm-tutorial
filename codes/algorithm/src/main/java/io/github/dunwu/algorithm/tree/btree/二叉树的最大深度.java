@@ -14,7 +14,7 @@ import java.util.Queue;
 public class 二叉树的最大深度 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
+        TreeNode tree = TreeUtils.asTree(3, 9, 20, null, null, 15, 7);
         System.out.println("result = " + maxDepthInDFS(tree));
         Assertions.assertEquals(3, maxDepthInDFS(tree));
         Assertions.assertEquals(3, maxDepthInBFS(tree));

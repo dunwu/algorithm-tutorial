@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @see <a href="https://leetcode-cn.com/problems/sort-list/">148.排序链表</a>
  * @since 2020-06-09
  */
 public class 排序链表 {
@@ -26,25 +27,6 @@ public class 排序链表 {
         Assertions.assertArrayEquals(new Integer[] { -1, 0, 3, 4, 5 }, list.toArray(new Integer[0]));
     }
 
-    /**
-     * <code>148. 排序链表</code> 算法实现
-     * <p>
-     * 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
-     * <p>
-     * 示例 1:
-     * <pre>
-     * 输入: 4->2->1->3
-     * 输出: 1->2->3->4
-     * </pre>
-     * <p>
-     * 示例 2:
-     * <pre>
-     * 输入: -1->5->3->4->0
-     * 输出: -1->0->3->4->5
-     * </pre>
-     *
-     * @see <a href="https://leetcode-cn.com/problems/sort-list/">148.排序链表</a>
-     */
     public static ListNode sortList(ListNode head) {
         if (head == null) {return head;}
         return mergeSort(head);
@@ -73,8 +55,7 @@ public class 排序链表 {
         //递归分解右子链表,得到新链表起点
         fast = mergeSort(fast);
         //并归两个子链表
-        ListNode newHead = merge(head, fast);
-        return newHead;
+        return merge(head, fast);
     }
 
     static ListNode merge(ListNode left, ListNode right) {

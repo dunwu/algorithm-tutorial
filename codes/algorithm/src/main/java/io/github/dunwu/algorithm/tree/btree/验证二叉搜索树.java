@@ -15,9 +15,9 @@ import java.util.*;
 public class 验证二叉搜索树 {
 
     public static void main(String[] args) {
-        TreeNode root = TreeUtils.buildTree(2, 1, 3);
-        TreeNode root2 = TreeUtils.buildTree(5, 1, 4, null, null, 3, 6);
-        TreeNode root3 = TreeUtils.buildTree(1, 1);
+        TreeNode root = TreeUtils.asTree(2, 1, 3);
+        TreeNode root2 = TreeUtils.asTree(5, 1, 4, null, null, 3, 6);
+        TreeNode root3 = TreeUtils.asTree(1, 1);
 
         Assertions.assertTrue(isValidBST(root));
         Assertions.assertFalse(isValidBST(root2));

@@ -13,7 +13,7 @@ import java.util.Queue;
  */
 public class TreeUtils {
 
-    public static TreeNode buildTree(Integer... array) {
+    public static TreeNode buildTree(Integer[] array) {
         List<TreeNode> list = new ArrayList<>();
 
         for (Integer value : array) {
@@ -43,6 +43,7 @@ public class TreeUtils {
             }
             // 判断最后一个根结点：因为最后一个根结点可能没有右结点，所以单独拿出来处理
             int lastIndex = array.length / 2 - 1;
+
             // 左结点
             list.get(lastIndex).left = list.get(lastIndex * 2 + 1);
             // 右结点，如果数组的长度为奇数才有右结点
@@ -54,6 +55,10 @@ public class TreeUtils {
         } else {
             return null;
         }
+    }
+
+    public static TreeNode asTree(Integer... array) {
+        return buildTree(array);
     }
 
     public static TreeNode find(TreeNode root, int val) {
@@ -96,7 +101,7 @@ public class TreeUtils {
 
     public static void main(String[] args) {
         Integer[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        TreeNode head = TreeUtils.buildTree(array);
+        TreeNode head = TreeUtils.asTree(array);
         levelTraverse(head);
     }
 

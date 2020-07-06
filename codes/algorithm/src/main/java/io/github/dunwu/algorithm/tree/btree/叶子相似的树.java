@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeUtils;
-import io.github.dunwu.algorithm.tree.btree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.Arrays;
@@ -32,8 +31,8 @@ import java.util.List;
 public class 叶子相似的树 {
 
     public static void main(String[] args) {
-        TreeNode tree1 = TreeUtils.buildTree(3, 5, 1, 6, 2, 9, 8, null, null, 7, 4);
-        TreeNode tree2 = TreeUtils.buildTree(3, 5, 1, 6, 7, 4, 2, null, null, null, null, null, null, 9, 8);
+        TreeNode tree1 = TreeUtils.asTree(3, 5, 1, 6, 2, 9, 8, null, null, 7, 4);
+        TreeNode tree2 = TreeUtils.asTree(3, 5, 1, 6, 7, 4, 2, null, null, null, null, null, null, 9, 8);
         Assertions.assertTrue(leafSimilar(tree1, tree2));
     }
 

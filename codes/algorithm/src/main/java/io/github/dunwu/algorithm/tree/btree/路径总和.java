@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeUtils;
-import io.github.dunwu.algorithm.tree.btree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -25,14 +24,14 @@ import org.junit.jupiter.api.Assertions;
  * 返回 true, 因为存在目标和为 22 的根节点到叶子节点的路径 5->4->11->2。
  * </pre>
  *
- * @see <a href="https://leetcode-cn.com/problems/path-sum/">路径总和</a>
+ * @see <a href="https://leetcode-cn.com/problems/path-sum/">112. 路径总和</a>
  */
 public class 路径总和 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.buildTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1);
+        TreeNode tree = TreeUtils.asTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1);
         Assertions.assertTrue(hasPathSum(tree, 22));
-        TreeNode tree2 = TreeUtils.buildTree(1, 2);
+        TreeNode tree2 = TreeUtils.asTree(1, 2);
         Assertions.assertFalse(hasPathSum(tree2, 1));
     }
 

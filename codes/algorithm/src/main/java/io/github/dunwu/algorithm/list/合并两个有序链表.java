@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @see <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">合并两个有序链表</a>
  * @since 2020-06-09
  */
 public class 合并两个有序链表 {
@@ -19,33 +20,22 @@ public class 合并两个有序链表 {
         Assertions.assertArrayEquals(new Integer[] { 1, 1, 2, 3, 4, 4 }, list.toArray(new Integer[0]));
     }
 
-    /**
-     * <code>合并两个有序链表</code> 算法实现
-     *
-     * @see <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">合并两个有序链表</a>
-     */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode root = new ListNode(-1);
-
-        ListNode node = root;
+        ListNode dummy = new ListNode(-1);
+        ListNode n = dummy;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
-                node.next = l1;
+                n.next = l1;
                 l1 = l1.next;
             } else {
-                node.next = l2;
+                n.next = l2;
                 l2 = l2.next;
             }
-            node = node.next;
+            n = n.next;
         }
 
-        if (l1 == null) {
-            node.next = l2;
-        } else {
-            node.next = l1;
-        }
-
-        return root.next;
+        n.next = (l1 != null) ? l1 : l2;
+        return dummy.next;
     }
 
 }

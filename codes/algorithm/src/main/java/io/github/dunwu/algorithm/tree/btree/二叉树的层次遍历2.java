@@ -36,7 +36,7 @@ import java.util.List;
 public class 二叉树的层次遍历2 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
+        TreeNode tree = TreeUtils.asTree(3, 9, 20, null, null, 15, 7);
         List<List<Integer>> resultList = levelOrderBottom(tree);
         List<List<Integer>> expectList = new LinkedList<>();
         expectList.add(Arrays.asList(15, 7));

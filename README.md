@@ -33,9 +33,7 @@
 - 查找
 - 跳表
 - [散列表](docs/hash.md)
-- [树](docs/tree/README.md)
-  - [二叉树](docs/tree/binary-tree.md)
-  - [红黑树](docs/tree/red-black-tree.md)
+- [树](docs/tree.md)
 - [图](docs/graph.md)
 - [堆](docs/heap.md)
 - [字典树](docs/trie.md)
