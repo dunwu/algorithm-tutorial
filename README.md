@@ -126,24 +126,39 @@
 
 ### 树
 
-- [N叉树的最大深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/N叉树的最大深度.java)
+- [N 叉树的最大深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/N叉树的最大深度.java)
 
 #### 二叉树
 
-- [二叉搜索树的最近公共祖先](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉搜索树的最近公共祖先.java)
-- [二叉搜索树节点最小距离](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉搜索树节点最小距离.java)
+- [二叉树中的最大路径和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树中的最大路径和.java)
+- [二叉树的中序遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的中序遍历.java)
+- [二叉树的前序遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的前序遍历.java)
+- [二叉树的后序遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的后序遍历.java)
 - [二叉树的层次遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的层次遍历.java)
 - [二叉树的层次遍历 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的层次遍历2.java)
+- [二叉树的序列化与反序列化](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的序列化与反序列化.java)
 - [二叉树的所有路径](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的所有路径.java)
 - [二叉树的最大深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最大深度.java)
 - [二叉树的最小深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最小深度.java)
 - [二叉树的最近公共祖先](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最近公共祖先.java)
 - [二叉树的锯齿形层次遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的锯齿形层次遍历.java)
+- [从先序遍历还原二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/从先序遍历还原二叉树.java)
 - [叶子相似的树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/叶子相似的树.java)
+- [填充每个节点的下一个右侧节点指针](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/填充每个节点的下一个右侧节点指针.java)
+- [填充每个节点的下一个右侧节点指针 II](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/填充每个节点的下一个右侧节点指针II.java)
 - [对称二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/对称二叉树.java)
+- [平衡二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/平衡二叉树.java)
 - [相同的树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/相同的树.java)
 - [翻转二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/翻转二叉树.java)
 - [路径总和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/路径总和.java)
+
+#### 二叉搜索树
+
+- [二叉搜索树中的插入操作](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/二叉搜索树中的插入操作.java)
+- [二叉搜索树的最近公共祖先](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/二叉搜索树的最近公共祖先.java)
+- [二叉搜索树节点最小距离](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/二叉搜索树节点最小距离.java)
+- [将有序数组转换为二叉搜索树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/将有序数组转换为二叉搜索树.java)
+- [验证二叉搜索树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/验证二叉搜索树.java)
 
 ## 📚 资料
 

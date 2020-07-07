@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.tree.btree;
+package io.github.dunwu.algorithm.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,7 +8,7 @@ import java.util.Stack;
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-01-20
  */
-public class BTreeDemo {
+public class IntBTree {
 
     /**
      * 前序遍历递归方法

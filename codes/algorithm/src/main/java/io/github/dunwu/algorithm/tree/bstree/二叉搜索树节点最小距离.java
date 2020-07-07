@@ -1,5 +1,6 @@
-package io.github.dunwu.algorithm.tree.btree;
+package io.github.dunwu.algorithm.tree.bstree;
 
+import io.github.dunwu.algorithm.tree.TreeNode;
 import io.github.dunwu.algorithm.tree.TreeUtils;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.tree.btree;
+package io.github.dunwu.algorithm.tree;
 
 import io.github.dunwu.algorithm.common.ITree;
 

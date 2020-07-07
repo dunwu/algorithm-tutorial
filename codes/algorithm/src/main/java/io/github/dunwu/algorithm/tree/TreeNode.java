@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.tree.btree;
+package io.github.dunwu.algorithm.tree;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
