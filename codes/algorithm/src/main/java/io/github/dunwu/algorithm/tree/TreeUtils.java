@@ -77,7 +77,7 @@ public class TreeUtils {
         }
     }
 
-    public static List<TreeNode> levelTraverse(TreeNode root) {
+    public static List<TreeNode> toBfsList(TreeNode root) {
         List<TreeNode> list = new ArrayList<>();
         if (root == null) {
             return list;
@@ -88,10 +88,46 @@ public class TreeUtils {
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             list.add(node);
-            if (node.left != null) queue.add(node.left);
-            if (node.right != null) queue.add(node.right);
+            if (node == null) continue;
+            queue.add(node.left);
+            queue.add(node.right);
         }
-        return list;
+
+        // 删除队列尾部的所有 null
+        int last = list.size() - 1;
+        while (last > 0 && list.get(last) == null) {
+            last--;
+        }
+        return list.subList(0, last + 1);
+    }
+
+    public static List<Integer> toBfsValueList(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (node == null) {
+                list.add(null);
+                continue;
+            } else {
+                list.add(node.val);
+            }
+
+            queue.add(node.left);
+            queue.add(node.right);
+        }
+
+        // 删除队列尾部的所有 null
+        int last = list.size() - 1;
+        while (last > 0 && list.get(last) == null) {
+            last--;
+        }
+        return list.subList(0, last + 1);
     }
 
     public static String rserialize(TreeNode root, String str) {
@@ -171,7 +207,7 @@ public class TreeUtils {
     public static void main(String[] args) {
         Integer[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         TreeNode head = TreeUtils.asTree(array);
-        levelTraverse(head);
+        toBfsList(head);
     }
 
 }

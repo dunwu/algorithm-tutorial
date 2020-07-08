@@ -15,7 +15,7 @@ public class 二叉搜索树中的插入操作 {
     public static void main(String[] args) {
         TreeNode tree = TreeUtils.asTree(4, 2, 7, 1, 3);
         insertIntoBST(tree, 5);
-        List<TreeNode> treeNodes = TreeUtils.levelTraverse(tree);
+        List<TreeNode> treeNodes = TreeUtils.toBfsList(tree);
         System.out.println(treeNodes);
     }
 

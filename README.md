@@ -42,6 +42,7 @@
 - 分治算法
 - 回溯算法
 - 动态规划
+- [算法代码模板](docs/algorithm-template.md)
 
 ## 刷题
 
