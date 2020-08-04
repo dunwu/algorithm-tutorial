@@ -4,17 +4,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Trie {
 
-    private AtomicInteger wordCount = new AtomicInteger(0);
+    private final AtomicInteger wordCount = new AtomicInteger(0);
     private final TrieNode root = new TrieNode('/'); // 存储无意义字符
 
     // 往 Trie 树中插入一个字符串
     public void insert(char[] text) {
         TrieNode p = root;
-        for (int i = 0; i < text.length; ++i) {
-            int index = text[i] - 'a';
+        for (char c : text) {
+            int index = c - 'a';
             if (p.children[index] == null) {
-                TrieNode newNode = new TrieNode(text[i]);
-                p.children[index] = newNode;
+                p.children[index] = new TrieNode(c);
             } else {
                 p.children[index].count++;
             }

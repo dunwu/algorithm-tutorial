@@ -37,8 +37,8 @@ import org.junit.jupiter.api.Assertions;
 public class 寻找数组的中心索引 {
 
     public static void main(String[] args) {
-        Assertions.assertEquals(3, 寻找数组的中心索引.pivotIndex(new int[] { 1, 7, 3, 6, 5, 6 }));
-        Assertions.assertEquals(-1, 寻找数组的中心索引.pivotIndex(new int[] { 1, 2, 3 }));
+        Assertions.assertEquals(3, pivotIndex(new int[] { 1, 7, 3, 6, 5, 6 }));
+        Assertions.assertEquals(-1, pivotIndex(new int[] { 1, 2, 3 }));
     }
 
     public static int pivotIndex(int[] nums) {

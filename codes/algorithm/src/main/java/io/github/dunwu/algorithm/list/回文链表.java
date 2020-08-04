@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @see <a href="https://leetcode-cn.com/problems/palindrome-linked-list/">234. 回文链表</a>
+ * @see <a href="https://leetcode-cn.com/problems/palindrome-linked-list-lcci/submissions/">面试题 02.06. 回文链表</a>
  * @since 2020-06-09
  */
 public class 回文链表 {
@@ -19,14 +21,6 @@ public class 回文链表 {
         Assertions.assertFalse(isPalindrome(head));
     }
 
-    /**
-     * <code>234. 回文链表</code> 算法实现
-     * <p>
-     * 判断当前单链表是否有环
-     *
-     * @see <a href="https://leetcode-cn.com/problems/palindrome-linked-list/">234. 回文链表</a>
-     * @see <a href="https://leetcode-cn.com/problems/palindrome-linked-list-lcci/submissions/">面试题 02.06. 回文链表</a>
-     */
     public static boolean isPalindrome(ListNode head) {
         List<Integer> list = new ArrayList<>();
         ListNode node = head;
@@ -35,13 +29,11 @@ public class 回文链表 {
             node = node.next;
         }
 
-        int i = 0, j = list.size() - 1;
-        while (i <= j) {
+        // int i = 0, j = list.size() - 1;
+        for (int i = 0, j = list.size() - 1; i < j; i++, j--) {
             if (!list.get(i).equals(list.get(j))) {
                 return false;
             }
-            i++;
-            j--;
         }
         return true;
     }

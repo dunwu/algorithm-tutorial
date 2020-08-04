@@ -21,32 +21,43 @@ public class 最小栈 {
         System.out.println("pop " + stack.pop());
     }
 
-    private final LinkedList<Integer> data;
+    private final LinkedList<Integer> stack;
+    private final LinkedList<Integer> minStack;
 
     public 最小栈() {
-        this.data = new LinkedList<>();
+        stack = new LinkedList<>();
+        minStack = new LinkedList<>();
     }
 
     public void push(int x) {
-        this.data.push(x);
+        if (!minStack.isEmpty()) {
+            Integer first = minStack.getFirst();
+            if (x < first) {
+                minStack.push(x);
+            }
+            stack.push(x);
+        }
     }
 
     public int pop() {
-        return this.data.pop();
+        int top = stack.pop();
+        int val = minStack.peek() ;
+        if (val == val) {
+            minStack.pop();
+        }
+        return val;
     }
 
     public int top() {
-        return this.data.getFirst();
+        return stack.getFirst();
     }
 
     public int getMin() {
-        int min = data.get(0);
-        for (Integer i : data) {
-            if (i < min) {
-                min = i;
-            }
+        if (minStack.isEmpty()) {
+            return -1;
+        } else {
+            return minStack.getFirst();
         }
-        return min;
     }
 
 }

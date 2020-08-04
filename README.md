@@ -197,15 +197,17 @@
   - [The-Art-Of-Programming-By-July](https://github.com/julycoding/The-Art-Of-Programming-By-July)
   - [微软面试 100 题](http://blog.csdn.net/column/details/ms100.html)
   - [程序员编程艺术](http://blog.csdn.net/v_JULY_v/article/details/6460494)
-- 基本算法演示
+- **基本算法演示**
   - <http://sjjg.js.zwu.edu.cn/SFXX/sf1/sfys.html>
   - <http://www.cs.usfca.edu/\~galles/visualization/Algorithms.html>
-- 编程网站
+- **编程网站**
   - [leetcode](http://leetcode-cn.com/)
   - [openjudge](http://openjudge.cn/)
-- 其它
+- **教程**
   - [高级数据结构和算法](https://www.coursera.org/learn/gaoji-shuju-jiegou/) 北大教授张铭老师在 coursera 上的课程。完成这门课之时，你将掌握多维数组、广义表、Trie 树、AVL 树、伸展树等高级数据结构，并结合内排序、外排序、检索、索引有关的算法，高效地解决现实生活中一些比较复杂的应用问题。当然 coursera 上也还有很多其它算法方面的视频课程。
   - [算法设计与分析 Design and Analysis of Algorithms](https://class.coursera.org/algorithms-001/lecture) 由北大教授 Wanling Qu 在 coursera 讲授的一门算法课程。首先介绍一些与算法有关的基础知识，然后阐述经典的算法设计思想和分析技术，主要涉及的算法设计技术是：分治策略、动态规划、贪心法、回溯与分支限界等。每个视频都配有相应的讲义（pdf 文件）以便阅读和复习。
+  - [算法面试通关 40 讲](https://time.geekbang.org/course/intro/100019701)
+  - [数据结构与算法之美](https://time.geekbang.org/column/intro/100017301)
 
 ## 🚪 传送
 

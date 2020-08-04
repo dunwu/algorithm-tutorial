@@ -6,7 +6,7 @@
 
 ## 📝 知识点
 
-![](http://dunwu.test.upcdn.net/snap/20200605164316.png)
+![img](http://dunwu.test.upcdn.net/snap/20200605164316.png)
 
 - [数组](array2.md)
 - [链表](list.md)

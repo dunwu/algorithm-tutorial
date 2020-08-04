@@ -46,6 +46,8 @@ public class 反转链表 {
             return null;
         }
 
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null) {

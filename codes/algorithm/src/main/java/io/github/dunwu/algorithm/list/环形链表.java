@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @see <a href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a>
  * @since 2020-06-09
  */
 public class 环形链表 {
@@ -19,13 +20,6 @@ public class 环形链表 {
         Assertions.assertTrue(hasCycle(head));
     }
 
-    /**
-     * <code>141. 环形链表</code> 算法实现
-     * <p>
-     * 判断当前单链表是否有环
-     *
-     * @see <a href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a>
-     */
     public static boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;

@@ -35,7 +35,7 @@
 
 ### 几种常见时间复杂度实例分析
 
-![](http://dunwu.test.upcdn.net/snap/20200605165440.png)
+![img](http://dunwu.test.upcdn.net/snap/20200605165440.png)
 
 ### 空间复杂度分析
 
