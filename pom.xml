@@ -13,6 +13,5 @@
 
   <modules>
     <module>codes/algorithm</module>
-    <module>codes/pattern</module>
   </modules>
 </project>
