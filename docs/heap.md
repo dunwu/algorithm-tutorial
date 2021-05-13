@@ -15,6 +15,6 @@
 
 堆结构的一个常见应用是建立优先队列（Priority Queue）。
 
-![img](http://dunwu.test.upcdn.net/cs/data-structure/heap/heap.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/cs/data-structure/heap/heap.png)
 
 ## 实战

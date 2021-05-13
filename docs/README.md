@@ -1,12 +1,17 @@
 # Algorithm Ttutorial
 
-> 🔁 项目同步维护在 [github](https://github.com/dunwu/algorithm-tutorial) | [gitee](https://gitee.com/turnon/algorithm-tutorial)
+> 算法、数据结构学习要点：
 >
-> 📖 [电子书](https://dunwu.github.io/algorithm-tutorial/) | [电子书（国内）](http://turnon.gitee.io/algorithm-tutorial/)
+> 三分学，七分练
+>
+> 坚持 + 坚持 + 坚持
+>
+> - 🔁 项目同步维护：[Github](https://github.com/dunwu/algorithm-tutorial/) | [Gitee](https://gitee.com/turnon/algorithm-tutorial/)
+> - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/algorithm-tutorial/) | [Gitee Pages](http://turnon.gitee.io/algorithm-tutorial/)
 
 ## 📝 知识点
 
-![img](http://dunwu.test.upcdn.net/snap/20200605164316.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200605164316.png)
 
 - [数组](array2.md)
 - [链表](list.md)

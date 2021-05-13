@@ -1,10 +1,12 @@
 <p align="center">
     <a href="https://dunwu.github.io/algorithm-tutorial/" target="_blank" rel="noopener noreferrer">
-        <img src="http://dunwu.test.upcdn.net/common/logo/dunwu-logo.png" alt="logo" width="150px"/>
+        <img src="https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo-200.png" alt="logo" width="150px"/>
     </a>
 </p>
+
 <p align="center">
     <img src="https://badgen.net/github/license/dunwu/algorithm-tutorial" alt="license">
+    <img src="https://travis-ci.com/dunwu/algorithm-tutorial.svg?branch=master" alt="build">
 </p>
 
 <h1 align="center">algorithm-tutorial</h1>
@@ -15,13 +17,12 @@
 >
 > 坚持 + 坚持 + 坚持
 >
-> 🔁 项目同步维护在 [github](https://github.com/dunwu/algorithm-tutorial) | [gitee](https://gitee.com/turnon/algorithm-tutorial)
->
-> 📖 [电子书](https://dunwu.github.io/algorithm-tutorial/) | [电子书（国内）](http://turnon.gitee.io/algorithm-tutorial/)
+> - 🔁 项目同步维护：[Github](https://github.com/dunwu/algorithm-tutorial/) | [Gitee](https://gitee.com/turnon/algorithm-tutorial/)
+> - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/algorithm-tutorial/) | [Gitee Pages](http://turnon.gitee.io/algorithm-tutorial/)
 
 ## 内容
 
-![img](http://dunwu.test.upcdn.net/snap/20200702071922.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200702071922.png)
 
 - [算法概述](docs/overview.md)
 - [数组](docs/array.md)

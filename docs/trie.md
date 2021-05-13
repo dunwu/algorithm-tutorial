@@ -22,25 +22,25 @@ Trie，又称前缀树或字典树，是一种有序树，用于保存关联数�
 
 （1）自动补全
 
-![img](http://dunwu.test.upcdn.net/snap/20200305095300.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200305095300.png)
 
 （2）拼写检查
 
-![img](http://dunwu.test.upcdn.net/snap/20200305101637.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200305101637.png)
 
 （3）IP 路由 (最长前缀匹配)
 
-![img](http://dunwu.test.upcdn.net/snap/20200305102959.gif)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200305102959.gif)
 
 图 3. 使用 Trie 树的最长前缀匹配算法，Internet 协议（IP）路由中利用转发表选择路径。
 
 （4）T9 (九宫格) 打字预测
 
-![img](http://dunwu.test.upcdn.net/snap/20200305103047.jpg)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200305103047.jpg)
 
 （5）单词游戏
 
-![img](http://dunwu.test.upcdn.net/snap/20200305103052.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200305103052.png)
 
 图 5. Trie 树可通过剪枝搜索空间来高效解决 Boggle 单词游戏
 
@@ -60,7 +60,7 @@ Trie 树是一个有根的树，其结点具有以下字段：。
 - 本文中假定 R 为 26，小写拉丁字母的数量。
 - 布尔字段，以指定节点是对应键的结尾还是只是键前缀。
 
-![3463d9e7cb323911aa67cbd94910a34d88c9402a1ab41bbea10852cd0a74f2af-file_1562596867185](http://dunwu.test.upcdn.net/snap/20200305103530.png)
+![3463d9e7cb323911aa67cbd94910a34d88c9402a1ab41bbea10852cd0a74f2af-file_1562596867185](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200305103530.png)
 
 ```java
 class TrieNode {

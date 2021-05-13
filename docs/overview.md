@@ -30,4 +30,4 @@
 
 - $$O(n!)$$：阶乘
 
-![img](http://dunwu.test.upcdn.net/snap/20200702071922.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200702071922.png)
