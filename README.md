@@ -25,13 +25,11 @@
 ![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200702071922.png)
 
 - [算法概述](docs/overview.md)
-- [数组](docs/array.md)
-- [链表](docs/list.md)
-- [栈](docs/stack.md)
-- [队列](docs/queue.md)
+- [数组和链表](docs/数组和链表.md)
+- [线性表的查找](docs/线性表的查找.md)
+- [栈和队列](docs/栈和队列.md)
+- [线性表的排序](docs/线性表的排序.md)
 - 递归
-- [排序](docs/sort.md)
-- 查找
 - 跳表
 - [散列表](docs/hash.md)
 - [树](docs/tree.md)
