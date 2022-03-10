@@ -9,7 +9,7 @@
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/algorithm-tutorial/) | [Gitee](https://gitee.com/turnon/algorithm-tutorial/)
 > - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/algorithm-tutorial/) | [Gitee Pages](http://turnon.gitee.io/algorithm-tutorial/)
 
-## 内容
+## 📖 内容
 
 ![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200702071922.png)
 
@@ -18,14 +18,15 @@
 - [线性表的查找](线性表的查找.md)
 - [栈和队列](栈和队列.md)
 - [线性表的排序](线性表的排序.md)
+- [跳表](跳表.md)
 - [散列表](散列表.md)
-- [树](tree.md)
+- [树和二叉树](树和二叉树.md)
 - [图](graph.md)
 - [堆](heap.md)
 - [字典树](trie.md)
 - [算法代码模板](algorithm-template.md)
 
-## 刷题
+## 💻 刷题
 
 ### 数组
 

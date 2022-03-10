@@ -31,7 +31,7 @@
 - [线性表的排序](docs/线性表的排序.md)
 - [跳表](docs/跳表.md)
 - [散列表](docs/散列表.md)
-- [树](docs/tree.md)
+- [树和二叉树](docs/树和二叉树.md)
 - [图](docs/graph.md)
 - [堆](docs/heap.md)
 - [字典树](docs/trie.md)
