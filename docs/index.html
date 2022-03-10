@@ -95,7 +95,7 @@
     loadSidebar: 'sidebar.md',
     autoHeader: false,
     maxLevel: 4,
-    subMaxLevel: 2,
+    subMaxLevel: 3,
     mergeNavbar: true,
     formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}',
     search: {
@@ -104,7 +104,7 @@
     pagination: {
       previousText: '上一篇', nextText: '下一篇', crossChapter: true
     },
-    plugins: [EditOnGithubPlugin.create('https://github.com/dunwu/db-tutorial/tree/master/docs/', null, function (file) {
+    plugins: [EditOnGithubPlugin.create('https://github.com/dunwu/algorithm-tutorial/edit/master/docs/', null, function (file) {
       if (file.indexOf('en') === -1) {
         return '📝 编辑文档'
       } else {

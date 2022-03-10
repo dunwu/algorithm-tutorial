@@ -20,7 +20,7 @@
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/algorithm-tutorial/) | [Gitee](https://gitee.com/turnon/algorithm-tutorial/)
 > - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/algorithm-tutorial/) | [Gitee Pages](http://turnon.gitee.io/algorithm-tutorial/)
 
-## 内容
+## 📖 内容
 
 ![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200702071922.png)
 
@@ -29,21 +29,15 @@
 - [线性表的查找](docs/线性表的查找.md)
 - [栈和队列](docs/栈和队列.md)
 - [线性表的排序](docs/线性表的排序.md)
-- 递归
-- 跳表
-- [散列表](docs/hash.md)
+- [跳表](docs/跳表.md)
+- [散列表](docs/散列表.md)
 - [树](docs/tree.md)
 - [图](docs/graph.md)
 - [堆](docs/heap.md)
 - [字典树](docs/trie.md)
-- 字符串
-- 贪心算法
-- 分治算法
-- 回溯算法
-- 动态规划
 - [算法代码模板](docs/algorithm-template.md)
 
-## 刷题
+## 💻 刷题
 
 ### 数组
 
