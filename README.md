@@ -32,9 +32,10 @@
 - [跳表](docs/跳表.md)
 - [散列表](docs/散列表.md)
 - [树和二叉树](docs/树和二叉树.md)
+- [堆](docs/堆.md)
+- [B+树](docs/B+树.md)
+- [字典树](docs/字典树.md)
 - [图](docs/graph.md)
-- [堆](docs/heap.md)
-- [字典树](docs/trie.md)
 - [算法代码模板](docs/algorithm-template.md)
 
 ## 💻 刷题
