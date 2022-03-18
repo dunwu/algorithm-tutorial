@@ -11,11 +11,9 @@
 
 <h1 align="center">algorithm-tutorial</h1>
 
-> 算法、数据结构学习要点：
+> algorithm-tutorial 是一个数据结构与算法教程。
 >
-> 三分学，七分练
->
-> 坚持 + 坚持 + 坚持
+> 掌握数据结构与算法，你看待问题的深度，解决问题的角度就会完全不一样。
 >
 > - 🔁 项目同步维护：[Github](https://github.com/dunwu/algorithm-tutorial/) | [Gitee](https://gitee.com/turnon/algorithm-tutorial/)
 > - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/algorithm-tutorial/) | [Gitee Pages](http://turnon.gitee.io/algorithm-tutorial/)
@@ -26,8 +24,8 @@
 
 - [算法概述](docs/overview.md)
 - [数组和链表](docs/数组和链表.md)
-- [线性表的查找](docs/线性表的查找.md)
 - [栈和队列](docs/栈和队列.md)
+- [线性表的查找](docs/线性表的查找.md)
 - [线性表的排序](docs/线性表的排序.md)
 - [跳表](docs/跳表.md)
 - [散列表](docs/散列表.md)
@@ -203,6 +201,7 @@
   - [算法设计与分析 Design and Analysis of Algorithms](https://class.coursera.org/algorithms-001/lecture) 由北大教授 Wanling Qu 在 coursera 讲授的一门算法课程。首先介绍一些与算法有关的基础知识，然后阐述经典的算法设计思想和分析技术，主要涉及的算法设计技术是：分治策略、动态规划、贪心法、回溯与分支限界等。每个视频都配有相应的讲义（pdf 文件）以便阅读和复习。
   - [算法面试通关 40 讲](https://time.geekbang.org/course/intro/100019701)
   - [数据结构与算法之美](https://time.geekbang.org/column/intro/100017301)
+  - [Data Structures - Computer Science Course for Beginners](https://www.youtube.com/watch?v=zg9ih6SVACc) - 高赞 YouTube 视频教程
 
 ## 🚪 传送
 
