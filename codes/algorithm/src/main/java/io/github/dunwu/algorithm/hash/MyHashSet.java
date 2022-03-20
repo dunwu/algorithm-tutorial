@@ -1,7 +1,4 @@
-package io.github.dunwu.algorithm.hash;
-
 //    【设计哈希集合】
-
 //
 //    不使用任何内建的哈希表库设计一个哈希集合
 //
@@ -29,52 +26,65 @@ package io.github.dunwu.algorithm.hash;
 //    操作的总数目在[1, 10000]范围内。
 //    不要使用内建的哈希集合库。
 
-class DesignHashset {
+package io.github.dunwu.algorithm.hash;
 
-    private int buckets = 1000;
+import java.util.LinkedList;
 
-    private int itemsPerBucket = 1001;
+/**
+ * 实现 HashMap，使用拉链表法(基于 LinkedList 实现)决哈希冲突
+ *
+ * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @since 2022-03-20
+ */
+class MyHashSet {
 
-    private boolean[][] table;
+    private final int BUCKET_NUM = 1000;
 
-    /**
-     * Initialize your data structure here.
-     */
-    public DesignHashset() {
-        table = new boolean[buckets][];
+    private final LinkedList<Integer>[] data;
+
+    public MyHashSet() {
+        data = new LinkedList[BUCKET_NUM];
+        for (int i = 0; i < BUCKET_NUM; ++i) {
+            data[i] = new LinkedList<>();
+        }
     }
 
     public void add(int key) {
-        int hashkey = hash(key);
-
-        if (table[hashkey] == null) {
-            table[hashkey] = new boolean[itemsPerBucket];
+        int bucket = hash(key);
+        for (Integer item : data[bucket]) {
+            if (item == key) {
+                return;
+            }
         }
-        table[hashkey][pos(key)] = true;
+        data[bucket].add(key);
     }
 
     public int hash(int key) {
-        return key % buckets;
+        return key % BUCKET_NUM;
     }
 
     public int pos(int key) {
-        return key / buckets;
+        return key / BUCKET_NUM;
     }
 
     public void remove(int key) {
-        int hashkey = hash(key);
-
-        if (table[hashkey] != null) {
-            table[hashkey][pos(key)] = false;
+        int bucket = hash(key);
+        for (Integer item : data[bucket]) {
+            if (item == key) {
+                data[bucket].remove(item);
+                return;
+            }
         }
     }
 
-    /**
-     * Returns true if this set did not already contain the specified element
-     */
     public boolean contains(int key) {
-        int hashkey = hash(key);
-        return table[hashkey] != null && table[hashkey][pos(key)];
+        int bucket = hash(key);
+        for (Integer item : data[bucket]) {
+            if (item == key) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
