@@ -6,11 +6,11 @@ B+树是在二叉查找树的基础上进行了改造：树中的节点并不存
 
 
 
-![](https://raw.githubusercontent.com/dunwu/images/dev/snap/20220311092926.jpg)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20220311092926.jpg)
 
 改造之后，如果我们要求某个区间的数据。我们只需要拿区间的起始值，在树中进行查找，当查找到某个叶子节点之后，我们再顺着链表往后遍历，直到链表中的结点数据值大于区间的终止值为止。所有遍历到的数据，就是符合区间值的所有数据。
 
-![](https://raw.githubusercontent.com/dunwu/images/dev/snap/20220311092929.jpg)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20220311092929.jpg)
 
 但是，我们要为几千万、上亿的数据构建索引，如果将索引存储在内存中，尽管内存访问的速度非常快，查询的效率非常高，但是，占用的内存会非常多。
 
