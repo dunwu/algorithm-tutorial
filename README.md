@@ -1,17 +1,32 @@
 <p align="center">
     <a href="https://dunwu.github.io/algorithm-tutorial/" target="_blank" rel="noopener noreferrer">
-        <img src="https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo-200.png" alt="logo" width="150px"/>
+        <img src="https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo.png" alt="logo" width="150px"/>
     </a>
 </p>
 
 <p align="center">
-    <img src="https://badgen.net/github/license/dunwu/algorithm-tutorial" alt="license">
-    <img src="https://travis-ci.com/dunwu/algorithm-tutorial.svg?branch=master" alt="build">
+
+  <a href="https://github.com/dunwu/algorithm-tutorial">
+      <img alt="star" class="no-zoom" src="https://img.shields.io/github/stars/dunwu/algorithm-tutorial?style=for-the-badge">
+  </a>
+
+  <a href="https://github.com/dunwu/algorithm-tutorial">
+      <img alt="fork" class="no-zoom" src="https://img.shields.io/github/forks/dunwu/algorithm-tutorial?style=for-the-badge">
+  </a>
+
+  <a href="https://github.com/dunwu/algorithm-tutorial/commits/master">
+      <img alt="commit" class="no-zoom" src="https://img.shields.io/github/workflow/status/dunwu/algorithm-tutorial/CI?style=for-the-badge">
+  </a>
+
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">
+      <img alt="code style" class="no-zoom" src="https://img.shields.io/github/license/dunwu/algorithm-tutorial?style=for-the-badge">
+  </a>
+
 </p>
 
-<h1 align="center">algorithm-tutorial</h1>
+<h1 align="center">ALGORITHM-TUTORIAL</h1>
 
-> algorithm-tutorial 是一个数据结构与算法教程。
+> 💾 algorithm-tutorial 是一个数据结构与算法教程。
 >
 > 掌握数据结构与算法，你看待问题的深度，解决问题的角度就会完全不一样。
 >
@@ -22,20 +37,24 @@
 
 ![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200702071922.png)
 
-- [数据结构和算法指南](docs/数据结构和算法指南.md)
-- [复杂度分析](docs/复杂度分析.md) - 关键词：**`时间复杂度`**、**`空间复杂度`**、**`大 O 表示法`**、**`复杂度量级`**
-- [数组和链表](docs/数组和链表.md) - 关键词：**`线性表`**、**`一维数组`**、**`多维数组`**、**`随机访问`**、**`单链表`**、**`双链表`**、**`循环链表`**
-- [栈和队列](docs/栈和队列.md) - 关键词：**`先进后出`**、**`后进先出`**、**`循环队列`**
-- [线性表的查找](docs/线性表的查找.md)
-- [线性表的排序](docs/线性表的排序.md)
-- [跳表](docs/跳表.md) - 关键词：**`多级索引`**
-- [哈希表](docs/哈希表.md) - 关键词：**`哈希函数`**、**`装载因子`**、**`哈希冲突`**、**`开放寻址法`**、**`拉链法`**
-- [树和二叉树](docs/树和二叉树.md)
-- [堆](docs/堆.md)
-- [B+树](docs/B+树.md)
-- [LSM 树](docs/LSM树.md)
-- [字典树](docs/字典树.md)
-- [图](docs/图.md)
+- 综合
+  - [数据结构和算法指南](docs/01.数据结构和算法/00.综合/01.数据结构和算法指南.md)
+  - [复杂度分析](docs/01.数据结构和算法/00.综合/02.复杂度分析.md) - 关键词：**`时间复杂度`**、**`空间复杂度`**、**`大 O 表示法`**、**`复杂度量级`**
+- 线性表
+  - [数组和链表](docs/01.数据结构和算法/01.线性表/01.数组和链表.md) - 关键词：**`线性表`**、**`一维数组`**、**`多维数组`**、**`随机访问`**、**`单链表`**、**`双链表`**、**`循环链表`**
+  - [栈和队列](docs/01.数据结构和算法/01.线性表/02.栈和队列.md) - 关键词：**`先进后出`**、**`后进先出`**、**`循环队列`**
+  - [线性表的查找](docs/01.数据结构和算法/01.线性表/11.线性表的查找.md)
+  - [线性表的排序](docs/01.数据结构和算法/01.线性表/12.线性表的排序.md)
+- 树
+  - [树和二叉树](docs/01.数据结构和算法/02.树/01.树和二叉树.md)
+  - [堆](docs/01.数据结构和算法/02.树/02.堆.md)
+  - [B+树](docs/01.数据结构和算法/02.树/03.B+树.md)
+  - [LSM 树](docs/01.数据结构和算法/02.树/04.LSM树.md)
+  - [字典树](docs/01.数据结构和算法/02.树/05.字典树.md)
+  - [红黑树](docs/01.数据结构和算法/02.树/06.红黑树.md)
+- [哈希表](docs/01.数据结构和算法/03.哈希表.md) - 关键词：**`哈希函数`**、**`装载因子`**、**`哈希冲突`**、**`开放寻址法`**、**`拉链法`**
+- [跳表](docs/01.数据结构和算法/04.跳表.md) - 关键词：**`多级索引`**
+- [图](docs/01.数据结构和算法/05.图.md)
 
 ## 💻 刷题
 
