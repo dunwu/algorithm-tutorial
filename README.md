@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://dunwu.github.io/algorithm-tutorial/" target="_blank" rel="noopener noreferrer">
-        <img src="https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo.png" alt="logo" width="150px"/>
+        <img src="https://raw.githubusercontent.com/dunwu/images/master/common/dunwu-logo.png" alt="logo" width="150px"/>
     </a>
 </p>
 
@@ -35,7 +35,7 @@
 
 ## 📖 内容
 
-![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200702071922.png)
+![img](https://raw.githubusercontent.com/dunwu/images/master/snap/20200702071922.png)
 
 - 综合
   - [数据结构和算法指南](docs/01.数据结构和算法/00.综合/01.数据结构和算法指南.md)
