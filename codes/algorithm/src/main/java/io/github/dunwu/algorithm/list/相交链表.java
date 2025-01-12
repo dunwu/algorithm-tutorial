@@ -7,14 +7,39 @@ package io.github.dunwu.algorithm.list;
  */
 public class 相交链表 {
 
+    /**
+     * 时间复杂度：O(m * n)
+     */
     public static ListNode getIntersectionNode(final ListNode headA, final ListNode headB) {
-        if (headA == null || headB == null) return null;
-        ListNode pA = headA, pB = headB;
-        while (pA != pB) {
-            pA = pA == null ? headB : pA.next;
-            pB = pB == null ? headA : pB.next;
+        ListNode a = headA;
+        while (a != null) {
+            ListNode b = headB;
+            while (b != null) {
+                if (a == b) {
+                    return a;
+                }
+                b = b.next;
+            }
+            a = a.next;
         }
-        return pA;
+        return null;
+    }
+
+    public static ListNode getIntersectionNode2(final ListNode headA, final ListNode headB) {
+        ListNode a = headA, b = headB;
+        while (a != b) {
+            if (a == null) {
+                a = headB;
+            } else {
+                a = a.next;
+            }
+            if (b == null) {
+                b = headA;
+            } else {
+                b = b.next;
+            }
+        }
+        return a;
     }
 
 }

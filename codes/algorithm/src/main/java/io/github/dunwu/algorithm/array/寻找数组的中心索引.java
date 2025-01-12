@@ -44,6 +44,8 @@ package io.github.dunwu.algorithm.array;
 
 import org.junit.jupiter.api.Assertions;
 
+import java.util.Arrays;
+
 /**
  * 724. 寻找数组的中心索引
  *
@@ -56,9 +58,25 @@ public class 寻找数组的中心索引 {
         Assertions.assertEquals(3, pivotIndex(new int[] { 1, 7, 3, 6, 5, 6 }));
         Assertions.assertEquals(-1, pivotIndex(new int[] { 1, 2, 3 }));
         Assertions.assertEquals(0, pivotIndex(new int[] { 2, 1, -1 }));
+
+        Assertions.assertEquals(3, pivotIndex2(new int[] { 1, 7, 3, 6, 5, 6 }));
+        Assertions.assertEquals(-1, pivotIndex2(new int[] { 1, 2, 3 }));
+        Assertions.assertEquals(0, pivotIndex2(new int[] { 2, 1, -1 }));
     }
 
     public static int pivotIndex(int[] nums) {
+        int sum = 0;
+        int total = Arrays.stream(nums).sum();
+        for (int pos = 0; pos < nums.length; pos++) {
+            if (sum * 2 + nums[pos] == total) {
+                return pos;
+            }
+            sum += nums[pos];
+        }
+        return -1;
+    }
+
+    public static int pivotIndex2(int[] nums) {
         for (int pos = 0; pos < nums.length; pos++) {
 
             // pos 左侧所有元素累加

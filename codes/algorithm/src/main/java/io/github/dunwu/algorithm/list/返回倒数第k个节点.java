@@ -12,41 +12,30 @@ public class 返回倒数第k个节点 {
         ListNode head = ListUtil.buildList(1, 2, 3, 4, 5);
         int val = kthToLast(head, 2);
         Assertions.assertEquals(4, val);
+
+        ListNode head2 = ListUtil.buildList(1);
+        int val2 = kthToLast(head2, 1);
+        Assertions.assertEquals(1, val2);
     }
 
     /**
-     * @see <a href="https://leetcode-cn.com/problems/remove-duplicate-node-lcci/">面试题 02.02. 返回倒数第 k 个节点</a>
+     * @see <a href="https://leetcode.cn/problems/kth-node-from-end-of-list-lcci/description/">面试题 02.02. 返回倒数第 k
+     * 个节点</a>
      */
     public static int kthToLast(ListNode head, int k) {
-        int length = length(head);
-        if (k > length) {
-            return -1;
+        ListNode fast = head;
+        // fast 指针先走 k 步
+        for (int i = 0; i < k; i++) {
+            fast = fast.next;
         }
-        int pos = length - k;
-        ListNode node = head;
-        while (node != null && pos > 0) {
-            node = node.next;
-            pos--;
+        // fast、slow 同时走，直到结束
+        ListNode slow = head;
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
         }
-        if (node != null) {
-            return node.val;
-        } else {
-            return -1;
-        }
-    }
-
-    public static int length(ListNode head) {
-        if (head == null) {
-            return 0;
-        }
-
-        int count = 1;
-        ListNode node = head.next;
-        while (node != null) {
-            count++;
-            node = node.next;
-        }
-        return count;
+        // slow 现在指向第 n - k + 1 个节点，即倒数第 k 个节点
+        return slow.val;
     }
 
 }

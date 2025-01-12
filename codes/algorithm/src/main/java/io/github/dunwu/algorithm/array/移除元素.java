@@ -52,19 +52,25 @@ public class 移除元素 {
 
     public static void main(String[] args) {
         int[] nums1 = { 3, 2, 2, 3 };
-        Assertions.assertEquals(2, 移除元素.removeElement(nums1, 3));
+        Assertions.assertEquals(2, removeElement(nums1, 3));
+
+        int[] nums2 = { 0, 1, 2, 2, 3, 0, 4, 2 };
+        Assertions.assertEquals(5, removeElement(nums2, 2));
     }
 
     public static int removeElement(int[] nums, int val) {
-        int end = 0;
-        final int n = nums.length;
-        for (int i = 0; i < n; i++) {
-            if (nums[i] != val) {
-                nums[end] = nums[i];
-                end++;
-            }
+        if (nums.length == 0) {
+            return 0;
         }
-        return end;
+        int slow = 0, fast = 0;
+        while (fast < nums.length) {
+            if (nums[fast] != val) {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+            fast++;
+        }
+        return slow;
     }
 
 }

@@ -23,4 +23,35 @@ public final class ListNode {
         return Objects.hash(val, next);
     }
 
+    public static ListNode createLinkedList(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+        ListNode head = new ListNode(arr[0]);
+        ListNode cur = head;
+        for (int i = 1; i < arr.length; i++) {
+            cur.next = new ListNode(arr[i]);
+            cur = cur.next;
+        }
+        return head;
+    }
+
+    public static void addLast() {
+
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5 };
+        ListNode head = createLinkedList(arr);
+        ListNode p = head;
+        while (p.next != null) {
+            p = p.next;
+        }
+        p.next = new ListNode(6);
+        while (head != null) {
+            System.out.println(head.val);
+            head = head.next;
+        }
+    }
+
 }

@@ -48,40 +48,31 @@ public class 删除排序数组中的重复项 {
 
     public static void main(String[] args) {
         int[] nums1 = { 1, 1, 2 };
-        Assertions.assertEquals(2, 删除排序数组中的重复项.removeDuplicates(nums1));
+        Assertions.assertEquals(2, removeDuplicates(nums1));
 
         int[] nums2 = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
-        Assertions.assertEquals(5, 删除排序数组中的重复项.removeDuplicates(nums2));
+        Assertions.assertEquals(5, removeDuplicates(nums2));
 
         int[] nums3 = { 1, 2 };
-        Assertions.assertEquals(2, 删除排序数组中的重复项.removeDuplicates(nums3));
+        Assertions.assertEquals(2, removeDuplicates(nums3));
 
         int[] nums4 = { 2, 2 };
-        Assertions.assertEquals(1, 删除排序数组中的重复项.removeDuplicates(nums4));
+        Assertions.assertEquals(1, removeDuplicates(nums4));
     }
 
     public static int removeDuplicates(int[] nums) {
-        int left = 0;
-        int right = nums.length - 1;
-
-        while (left <= right) {
-            for (int i = left + 1; i <= right; i++) {
-                if (nums[i] == nums[left]) {
-                    remove(nums, i);
-                    right--;
-                    i--;
-                }
+        if (nums.length == 0) {
+            return 0;
+        }
+        int slow = 0, fast = 0;
+        while (fast < nums.length) {
+            if (nums[slow] != nums[fast]) {
+                slow++;
+                nums[slow] = nums[fast];
             }
-            left++;
+            fast++;
         }
-
-        return right + 1;
-    }
-
-    private static void remove(int[] nums, int pos) {
-        for (int i = pos; i < nums.length - 1; i++) {
-            nums[i] = nums[i + 1];
-        }
+        return slow + 1;
     }
 
 }

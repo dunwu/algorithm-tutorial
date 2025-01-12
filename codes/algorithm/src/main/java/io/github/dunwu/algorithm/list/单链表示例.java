@@ -25,7 +25,7 @@ public class 单链表示例<E> {
      *
      * @param value 数据值
      */
-    public void addHead(E value) {
+    public void addFirst(E value) {
         ListNode<E> newNode = new ListNode<>(value, null);
         newNode.next = this.head.next;
         this.head.next = newNode;
@@ -36,7 +36,7 @@ public class 单链表示例<E> {
      *
      * @param value 数据值
      */
-    public void addTail(E value) {
+    public void addLast(E value) {
         // init new node
         ListNode<E> newNode = new ListNode<>(value, null);
 
@@ -65,15 +65,15 @@ public class 单链表示例<E> {
      * 删除首个值为 value 的节点
      *
      * @param value 数据值
-     * @return {@link ListNode<E>}
+     * @return {@link io.github.dunwu.algorithm.list.单链表示例.ListNode<E>}
      */
-    public ListNode<E> removeFirst(E value) {
+    public E removeFirst(E value) {
         ListNode<E> prev = this.head;
         while (prev.next != null) {
             ListNode<E> curr = prev.next;
             if (curr.value.equals(value)) {
                 prev.next = curr.next;
-                return curr;
+                return curr.value;
             }
             prev = prev.next;
         }
@@ -124,7 +124,7 @@ public class 单链表示例<E> {
      * 从头开始查找，一旦发现有数值与查找值相等的节点，直接返回此节点。如果遍历结束，表明未找到节点，返回 null。
      *
      * @param value 数据值
-     * @return {@link ListNode}
+     * @return {@link io.github.dunwu.algorithm.list.单链表示例.ListNode}
      */
     public ListNode<E> find(E value) {
         ListNode<E> node = this.head.next;

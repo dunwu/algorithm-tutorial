@@ -58,12 +58,9 @@ public class 搜索插入位置 {
     }
 
     public static int searchInsert(int[] nums, int target) {
-        if (nums == null || nums.length == 0) return 0;
-        if (nums[0] >= target) return 0;
-        if (nums[nums.length - 1] < target) return nums.length;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] >= target) {
-                return i;
+        for (int pos = 0; pos < nums.length; pos++) {
+            if (nums[pos] >= target) {
+                return pos;
             }
         }
         return nums.length;

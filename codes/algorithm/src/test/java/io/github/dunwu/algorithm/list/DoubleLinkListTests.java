@@ -9,11 +9,11 @@ import java.util.List;
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-01-26
  */
-public class SingleLinkListTests {
+public class DoubleLinkListTests {
 
     @Test
     public void addTest() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addLast(2);
         list.addLast(3);
         list.addFirst(1);
@@ -24,7 +24,7 @@ public class SingleLinkListTests {
 
     @Test
     public void removeFirstTest() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addLast(1);
         list.addLast(1);
         list.remove(new Integer(1));
@@ -61,7 +61,7 @@ public class SingleLinkListTests {
 
     @Test
     public void removeAllTest() {
-        SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         list.addLast(1);
         list.addLast(1);
         list.addLast(1);

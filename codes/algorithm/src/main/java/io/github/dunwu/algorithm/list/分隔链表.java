@@ -29,7 +29,26 @@ public class 分隔链表 {
     }
 
     public static ListNode partition(ListNode head, int x) {
-        return null;
+        ListNode dummy1 = new ListNode(-1);
+        ListNode dummy2 = new ListNode(-1);
+        ListNode d1 = dummy1;
+        ListNode d2 = dummy2;
+        ListNode p = head;
+        while (p != null) {
+            if (p.val < x) {
+                d1.next = p;
+                d1 = d1.next;
+            } else {
+                d2.next = p;
+                d2 = d2.next;
+            }
+            ListNode temp = p.next;
+            p.next = null;
+            p = temp;
+        }
+        d1.next = dummy2.next;
+        d2.next = null;
+        return dummy1.next;
     }
 
 }

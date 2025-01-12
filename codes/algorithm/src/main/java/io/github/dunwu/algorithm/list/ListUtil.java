@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class ListUtil {
 
-    private ListUtil() {}
+    private ListUtil() { }
 
     public static ListNode buildList(int... list) {
         ListNode head = new ListNode(-1);
@@ -46,7 +46,7 @@ public class ListUtil {
         ListNode cycleBeginNode = null;
         for (int val : list) {
             ListNode item = new ListNode(val);
-            if (pos == 0) {
+            if (pos == 0 && cycleBeginNode == null) {
                 cycleBeginNode = item;
             } else {
                 pos--;
