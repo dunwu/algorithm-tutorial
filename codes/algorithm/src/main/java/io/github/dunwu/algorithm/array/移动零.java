@@ -24,33 +24,65 @@ public class 移动零 {
 
     public static void main(String[] args) {
         int[] nums1 = { 0, 1, 0, 3, 12 };
-        移动零.moveZeroes(nums1);
+        moveZeroes2(nums1);
         Assertions.assertArrayEquals(new int[] { 1, 3, 12, 0, 0 }, nums1);
 
         int[] nums2 = { 0, 0, 1 };
-        移动零.moveZeroes(nums2);
+        moveZeroes2(nums2);
         Assertions.assertArrayEquals(new int[] { 1, 0, 0 }, nums2);
+
+        int[] nums3 = { 0 };
+        moveZeroes2(nums3);
+        Assertions.assertArrayEquals(new int[] { 0 }, nums3);
     }
 
+    /**
+     * 时间复杂度：O(N^2)
+     */
     public static void moveZeroes(int[] nums) {
-        int i = 0;
-        int right = nums.length - 1;
-        while (i <= right) {
-            if (nums[i] == 0) {
-                move(nums, i);
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            if (nums[left] == 0) {
+                move(nums, left);
+                left = 0;
                 right--;
             } else {
-                i++;
+                left++;
             }
         }
     }
 
     private static void move(int[] nums, int pos) {
-        int temp = nums[pos];
         for (int i = pos; i < nums.length - 1; i++) {
+            int temp = nums[i];
             nums[i] = nums[i + 1];
+            nums[i + 1] = temp;
         }
-        nums[nums.length - 1] = temp;
+    }
+
+    /**
+     * 时间复杂度：O(N)
+     */
+    public static void moveZeroes2(int[] nums) {
+        int count = removeElement(nums, 0);
+        while (count < nums.length) {
+            nums[count++] = 0;
+        }
+    }
+
+    public static int removeElement(int[] nums, int val) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int slow = 0, fast = 0;
+        while (fast < nums.length) {
+            if (nums[fast] != val) {
+                nums[slow] = nums[fast];
+                slow++;
+            }
+            fast++;
+        }
+        return slow;
     }
 
 }

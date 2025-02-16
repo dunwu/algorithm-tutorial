@@ -3,8 +3,9 @@ package io.github.dunwu.algorithm.list;
 import org.junit.jupiter.api.Assertions;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @see <a href="https://leetcode-cn.com/problems/linked-list-cycle/">141. 环形链表</a>
  * @since 2020-06-09
  */
 public class 环形链表 {
@@ -24,13 +25,14 @@ public class 环形链表 {
     }
 
     public static boolean hasCycle(ListNode head) {
-        ListNode fast = head.next, slow = head;
+        if (head == null || head.next == null) return false;
+        ListNode slow = head, fast = head.next;
         while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-            if (fast == slow) {
+            if (slow == fast) {
                 return true;
             }
+            slow = slow.next;
+            fast = fast.next.next;
         }
         return false;
     }

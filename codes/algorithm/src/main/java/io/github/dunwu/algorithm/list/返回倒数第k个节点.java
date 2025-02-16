@@ -3,6 +3,9 @@ package io.github.dunwu.algorithm.list;
 import org.junit.jupiter.api.Assertions;
 
 /**
+ * <a href="https://leetcode.cn/problems/kth-node-from-end-of-list-lcci/description/">面试题 02. 返回倒数第 k 个节点</a>
+ * <a href="https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/description/">LCR 140. 训练计划 II</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-06-09
  */
@@ -18,10 +21,6 @@ public class 返回倒数第k个节点 {
         Assertions.assertEquals(1, val2);
     }
 
-    /**
-     * @see <a href="https://leetcode.cn/problems/kth-node-from-end-of-list-lcci/description/">面试题 02.02. 返回倒数第 k
-     * 个节点</a>
-     */
     public static int kthToLast(ListNode head, int k) {
         ListNode fast = head;
         // fast 指针先走 k 步

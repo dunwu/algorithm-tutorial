@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import java.util.List;
 
 /**
+ * <a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/">19. 删除链表的倒数第 N 个结点</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @see <a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/">删除链表的倒数第 N 个结点</a>
  * @since 2020-06-09
  */
 public class 删除链表的倒数第N个结点 {
@@ -23,26 +24,31 @@ public class 删除链表的倒数第N个结点 {
         List<Integer> list2 = ListUtil.toList(result2);
         System.out.println(list2);
         Assertions.assertArrayEquals(new Integer[] {}, list2.toArray(new Integer[0]));
+
+        ListNode head3 = ListUtil.buildList(1, 2);
+        ListNode result3 = removeNthFromEnd(head3, 1);
+        List<Integer> list3 = ListUtil.toList(result3);
+        System.out.println(list3);
+        Assertions.assertArrayEquals(new Integer[] { 1 }, list3.toArray(new Integer[0]));
     }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
 
-        if (n < 1) {
-            return head;
-        }
-
-        ListNode fast = head;
-        for (int i = 0; i < n + 1 && fast != null; i++) {
+        ListNode fast = dummy;
+        for (int i = 0; i < n + 1; i++) {
             fast = fast.next;
         }
 
-        ListNode slow = head;
+        ListNode slow = dummy;
         while (fast != null) {
             fast = fast.next;
             slow = slow.next;
         }
+
         slow.next = slow.next.next;
-        return head;
+        return dummy.next;
     }
 
 }

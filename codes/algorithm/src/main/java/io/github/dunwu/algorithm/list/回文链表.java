@@ -15,10 +15,10 @@ public class 回文链表 {
 
     public static void main(String[] args) {
         ListNode head = ListUtil.buildList(1, 2, 2, 1);
-        Assertions.assertTrue(isPalindrome(head));
+        Assertions.assertTrue(isPalindrome2(head));
 
         head = ListUtil.buildList(1, 2);
-        Assertions.assertFalse(isPalindrome(head));
+        Assertions.assertFalse(isPalindrome2(head));
     }
 
     public static boolean isPalindrome(ListNode head) {
@@ -36,6 +36,30 @@ public class 回文链表 {
             }
         }
         return true;
+    }
+
+    public static boolean isPalindrome2(ListNode head) {
+        ListNode left = head;
+        ListNode right = reverse(head);
+        while (left != null && right != null) {
+            if (left.val != right.val) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
+
+    public static ListNode reverse(ListNode head) {
+        ListNode pre = null, cur = head;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
     }
 
 }

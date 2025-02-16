@@ -15,15 +15,34 @@ public class 反转链表 {
     public static void main(String[] args) {
         ListNode head = ListUtil.buildList(1, 2, 3, 4);
         System.out.println(ListUtil.toList(head));
-        ListNode result = reverseList2(head);
+        ListNode result = reverseList3(head);
         List<Integer> list = ListUtil.toList(result);
         System.out.println(list);
         Assertions.assertArrayEquals(new Integer[] { 4, 3, 2, 1 }, list.toArray(new Integer[0]));
+
+        ListNode head2 = ListUtil.buildList(1, 2);
+        System.out.println(ListUtil.toList(head2));
+        ListNode result2 = reverseList3(head2);
+        List<Integer> list2 = ListUtil.toList(result2);
+        System.out.println(list2);
+        Assertions.assertArrayEquals(new Integer[] { 2, 1 }, list2.toArray(new Integer[0]));
+
+        ListNode head3 = ListUtil.buildList();
+        System.out.println(ListUtil.toList(head3));
+        ListNode result3 = reverseList3(head3);
+        List<Integer> list3 = ListUtil.toList(result3);
+        System.out.println(list3);
+        Assertions.assertArrayEquals(new Integer[] {}, list3.toArray(new Integer[0]));
     }
 
-    // 借助栈来实现
+    /**
+     * 借助栈来实现，时间复杂度：O(2N)
+     */
     public static ListNode reverseList(ListNode head) {
-        if (head == null) return null;
+        if (head == null) {
+            return head;
+        }
+
         Stack<ListNode> stack = new Stack<>();
         ListNode node = head;
         while (node != null) {
@@ -31,32 +50,49 @@ public class 反转链表 {
             node = node.next;
         }
 
-        ListNode dummy = new ListNode(-1);
-        node = dummy;
+        ListNode dummy = new ListNode(-5001);
+        ListNode p = dummy;
         while (!stack.isEmpty()) {
-            node.next = stack.pop();
-            node.next.next = null;
-            node = node.next;
+            ListNode top = stack.pop();
+            top.next = null;
+            p.next = top;
+            p = p.next;
         }
         return dummy.next;
     }
 
+    /**
+     * 双指针，时间复杂度：O(N)
+     */
     public static ListNode reverseList2(ListNode head) {
+
         if (head == null) {
-            return null;
+            return head;
         }
 
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
-        ListNode prev = null;
-        ListNode curr = head;
-        while (curr != null) {
-            ListNode temp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = temp;
+        ListNode pre = null, cur = head;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
-        return prev;
+        return pre;
+    }
+
+    /**
+     * 递归
+     */
+    public static ListNode reverseList3(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode last = reverseList3(head.next);
+        head.next.next = head;
+        head.next = null;
+        return last;
     }
 
 }
