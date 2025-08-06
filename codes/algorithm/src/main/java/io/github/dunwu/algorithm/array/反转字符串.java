@@ -3,7 +3,7 @@ package io.github.dunwu.algorithm.array;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * 题目：<a href="https://leetcode.cn/problems/reverse-string/description/">344. 反转字符串</a>
+ * <a href="https://leetcode.cn/problems/reverse-string/">344. 反转字符串</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-06-05

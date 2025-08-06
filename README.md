@@ -58,54 +58,75 @@
 
 ## 💻 刷题
 
-### 数组
-
-- [三数之和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/三数之和.java)
-- [两数之和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/两数之和.java)
-- [二维数组](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/二维数组.java)
-- [删除排序数组中的重复项](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/删除排序数组中的重复项.java)
-- [加一](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/加一.java)
-- [在排序数组中查找元素的第一个和最后一个位置](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/在排序数组中查找元素的第一个和最后一个位置.java)
-- [在排序数组中查找数字 I](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/在排序数组中查找数字I.java)
-- [存在重复元素](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/存在重复元素.java)
-- [对角线遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/对角线遍历.java)
-- [寻找数组的中心索引](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/寻找数组的中心索引.java)
-- [将数组分成和相等的三个部分](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/将数组分成和相等的三个部分.java)
-- [数组二分查找](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/数组二分查找.java)
-- [数组拆分 1](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/数组拆分1.java)
-- [旋转数组](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/旋转数组.java)
-- [旋转矩阵](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/旋转矩阵.java)
-- [最大连续 1 的个数](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/最大连续1的个数.java)
-- [杨辉三角](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/杨辉三角.java)
-- [杨辉三角 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/杨辉三角2.java)
-- [模拟 ArrayList1](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/模拟ArrayList1.java)
-- [模拟 ArrayList2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/模拟ArrayList2.java)
-- [移动零](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/移动零.java)
-- [移除元素](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/移除元素.java)
-- [至少是其他数字两倍的最大数](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/至少是其他数字两倍的最大数.java)
-- [螺旋矩阵](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/螺旋矩阵.java)
-- [长度最小的子数组](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/长度最小的子数组.java)
-- [零矩阵](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/array/零矩阵.java)
-
 ### 链表
 
-- [两数相加](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/两数相加.java)
-- [二进制链表转整数](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/二进制链表转整数.java)
-- [删除排序链表中的重复元素](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/删除排序链表中的重复元素.java)
-- [单链表示例](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/单链表示例.java)
-- [双链表示例](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/双链表示例.java)
-- [反转链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/反转链表.java)
-- [合并 K 个排序链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并K个排序链表.java)
-- [合并 K 个排序链表解法 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并K个排序链表解法2.java)
-- [合并两个有序链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/合并两个有序链表.java)
-- [回文链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/回文链表.java)
-- [排序链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/排序链表.java)
-- [环形链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/环形链表.java)
-- [相交链表](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/相交链表.java)
-- [移除重复节点](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/移除重复节点.java)
-- [移除链表元素](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/移除链表元素.java)
-- [返回倒数第 k 个节点](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/返回倒数第k个节点.java)
-- [链表的中间结点](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/list/链表的中间结点.java)
+#### 双指针技巧秒杀七道链表题目
+
+| 题目                                                                                                               | 掌握度 |
+| ------------------------------------------------------------------------------------------------------------------ | ------ |
+| [141. 环形链表](https://leetcode.cn/problems/linked-list-cycle/)                                                   | 已掌握 |
+| [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)                                             | 已掌握 |
+| [160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)                                    | 已掌握 |
+| [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)                    | 已掌握 |
+| [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)                                       | 已掌握 |
+| [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/)                                        | 未掌握 |
+| [86. 分隔链表](https://leetcode.cn/problems/partition-list/)                                                       | 已掌握 |
+| [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/)                                     | 已掌握 |
+| [剑指 Offer 22. 链表中倒数第 k 个节点](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/) | 已掌握 |
+
+#### 【练习】链表双指针经典习题
+
+| 题目                                                                                                   | 掌握度 |
+| ------------------------------------------------------------------------------------------------------ | ------ |
+| [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/) | 已掌握 |
+| [378. 有序矩阵中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/)  | 未掌握 |
+| [373. 查找和最小的 K 对数字](https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/)            | 未掌握 |
+| [2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)                                           | 已掌握 |
+| [445. 两数相加 II](https://leetcode.cn/problems/add-two-numbers-ii/)                                   | 已掌握 |
+
+#### 如何判断回文链表
+
+#### 单链表的花式反转方法汇总
+
+| 题目                                                         | 掌握度 |
+| ------------------------------------------------------------ | ------ |
+| [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/) | 未掌握 |
+| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/) | 不熟练 |
+| [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | 不熟练 |
+
+### 数组
+
+#### 双指针技巧秒杀七道数组题目
+
+| 题目                                                         | 掌握度 |
+| ------------------------------------------------------------ | ------ |
+| [26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/) | 已掌握 |
+| [27. 移除元素](https://leetcode.cn/problems/remove-element/) | 已掌握 |
+| [283. 移动零](https://leetcode.cn/problems/move-zeroes/)     | 已掌握 |
+| [704. 二分查找](https://leetcode.cn/problems/binary-search/) | 已掌握 |
+| [1. 两数之和](https://leetcode.cn/problems/two-sum/)         | 已掌握 |
+| [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/) | 已掌握 |
+| [LCR 179. 查找总价格为目标值的两个商品](https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/) | 已掌握 |
+| [LCR 006. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/kLl5u1/) | 已掌握 |
+| [344. 反转字符串](https://leetcode.cn/problems/reverse-string/) | 已掌握 |
+| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/) | 未掌握 |
+
+#### 二维数组的花式遍历技巧
+
+| 题目                                                         | 掌握度 |
+| ------------------------------------------------------------ | ------ |
+| [48. 旋转图像](https://leetcode.cn/problems/rotate-image/)   | 未掌握 |
+| [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)  | 未掌握 |
+| [59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/) | 未掌握 |
+
+#### 【练习】数组双指针经典习题
+
+| 题目                                                         | 掌握度 |
+| ------------------------------------------------------------ | ------ |
+| [80. 删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/) | 已掌握 |
+| [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/) | 已掌握 |
+| [75. 颜色分类](https://leetcode.cn/problems/sort-colors/)    | 已掌握 |
+| [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/) |        |
 
 ### 栈
 

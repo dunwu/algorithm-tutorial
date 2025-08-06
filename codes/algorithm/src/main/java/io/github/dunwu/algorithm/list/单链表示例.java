@@ -65,7 +65,7 @@ public class 单链表示例<E> {
      * 删除首个值为 value 的节点
      *
      * @param value 数据值
-     * @return {@link io.github.dunwu.algorithm.list.单链表示例.ListNode<E>}
+     * @return {@link ListNode<E>}
      */
     public E removeFirst(E value) {
         ListNode<E> prev = this.head;
@@ -124,7 +124,7 @@ public class 单链表示例<E> {
      * 从头开始查找，一旦发现有数值与查找值相等的节点，直接返回此节点。如果遍历结束，表明未找到节点，返回 null。
      *
      * @param value 数据值
-     * @return {@link io.github.dunwu.algorithm.list.单链表示例.ListNode}
+     * @return {@link ListNode}
      */
     public ListNode<E> find(E value) {
         ListNode<E> node = this.head.next;

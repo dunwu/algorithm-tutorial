@@ -22,6 +22,11 @@ public class 相交链表 {
         buildMetPot(listA2, listB2, 3, 1);
         ListNode result2 = getIntersectionNode(listA2, listB2);
         Assertions.assertEquals(2, result2.val);
+
+        ListNode listA3 = ListUtil.buildList(2,6,4);
+        ListNode listB3 = ListUtil.buildList(1,5);
+        ListNode result3 = getIntersectionNode(listA3, listB3);
+        Assertions.assertNull(result3);
     }
 
     public static void buildMetPot(ListNode listA, ListNode listB, int skipA, int skipB) {
@@ -37,7 +42,7 @@ public class 相交链表 {
     }
 
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) return null;
+        // pA 指向 A 链表头结点，pB 指向 B 链表头结点
         ListNode pA = headA, pB = headB;
         while (pA != pB) {
             pA = pA == null ? headB : pA.next;

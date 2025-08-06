@@ -35,7 +35,7 @@
 // nums 为无重复元素的升序排列数组
 // -104 <= target <= 104
 //
-// 来源：力扣（LeetCode）
+// 来源：LeetCode（LeetCode）
 // 链接：https://leetcode-cn.com/problems/search-insert-position
 
 package io.github.dunwu.algorithm.array;

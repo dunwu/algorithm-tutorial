@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.string;
+package io.github.dunwu.algorithm.array;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;

@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import java.util.List;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">21. 合并两个有序链表</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @see <a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/">合并两个有序链表</a>
  * @since 2020-06-09
  */
 public class 合并两个有序链表 {
@@ -22,19 +23,19 @@ public class 合并两个有序链表 {
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(-1);
-        ListNode n = dummy;
+        ListNode p = dummy;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
-                n.next = l1;
+                p.next = l1;
                 l1 = l1.next;
             } else {
-                n.next = l2;
+                p.next = l2;
                 l2 = l2.next;
             }
-            n = n.next;
+            p = p.next;
         }
 
-        n.next = (l1 != null) ? l1 : l2;
+        p.next = (l1 != null) ? l1 : l2;
         return dummy.next;
     }
 

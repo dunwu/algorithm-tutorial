@@ -2,6 +2,7 @@ package io.github.dunwu.algorithm.list;
 
 import org.junit.jupiter.api.Assertions;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -30,22 +31,49 @@ public class 两数相加II {
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        // 将两个链表倒置，方便先从低位到高位，逐次相加
-        ListNode r1 = reverse(l1);
-        ListNode r2 = reverse(l2);
-        ListNode result = 两数相加.addTwoNumbers(r1, r2);
-        return reverse(result);
+        LinkedList<Integer> list1 = reverse(l1);
+        LinkedList<Integer> list2 = reverse(l2);
+        LinkedList<Integer> list = new LinkedList<>();
+        int carry = 0;
+        while (!list1.isEmpty() && !list2.isEmpty()) {
+            int x = list1.pop();
+            int y = list2.pop();
+            int sum = x + y + carry;
+            carry = sum / 10;
+            list.push(sum % 10);
+        }
+        while (!list1.isEmpty()) {
+            int x = list1.pop();
+            int sum = x + carry;
+            carry = sum / 10;
+            list.push(sum % 10);
+        }
+        while (!list2.isEmpty()) {
+            int y = list2.pop();
+            int sum = y + carry;
+            carry = sum / 10;
+            list.push(sum % 10);
+        }
+        if (carry > 0) {
+            list.push(carry);
+        }
+        ListNode dummy = new ListNode(-1);
+        ListNode p = dummy;
+        while (!list.isEmpty()) {
+            int x = list.pop();
+            p.next = new ListNode(x);
+            p = p.next;
+        }
+        return dummy.next;
     }
 
-    public static ListNode reverse(ListNode head) {
-        ListNode pre = null, cur = head;
-        while (cur != null) {
-            ListNode next = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = next;
+    public static LinkedList<Integer> reverse(ListNode head) {
+        LinkedList<Integer> list = new LinkedList<>();
+        while (head != null) {
+            list.push(head.val);
+            head = head.next;
         }
-        return pre;
+        return list;
     }
 
 }

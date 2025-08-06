@@ -5,8 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import java.util.List;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/partition-list/">86. 分隔链表</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @see <a href="https://leetcode-cn.com/problems/partition-list/">86. 分隔链表</a>
  * @since 2020-07-06
  */
 public class 分隔链表 {
@@ -29,26 +30,23 @@ public class 分隔链表 {
     }
 
     public static ListNode partition(ListNode head, int x) {
-        ListNode dummy1 = new ListNode(-1);
-        ListNode dummy2 = new ListNode(-1);
-        ListNode d1 = dummy1;
-        ListNode d2 = dummy2;
-        ListNode p = head;
+        ListNode left = new ListNode(-1);
+        ListNode right = new ListNode(-1);
+        ListNode p = head, l = left, r = right;
         while (p != null) {
             if (p.val < x) {
-                d1.next = p;
-                d1 = d1.next;
+                l.next = p;
+                l = l.next;
             } else {
-                d2.next = p;
-                d2 = d2.next;
+                r.next = p;
+                r = r.next;
             }
             ListNode temp = p.next;
             p.next = null;
             p = temp;
         }
-        d1.next = dummy2.next;
-        d2.next = null;
-        return dummy1.next;
+        l.next = right.next;
+        return left.next;
     }
 
 }

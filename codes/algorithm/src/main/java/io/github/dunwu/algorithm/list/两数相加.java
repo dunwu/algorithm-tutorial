@@ -30,38 +30,32 @@ public class 两数相加 {
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-
-        // 如果任意一个表示数的链表为空，直接返回另一个链表
-        if (l1 == null) return l2;
-        if (l2 == null) return l1;
-
-        // 初始化
         int carry = 0;
-        ListNode x = l1;
-        ListNode y = l2;
-        ListNode dummy = new ListNode(-1);
-        ListNode p = dummy;
-
-        // 同时遍历两个操作数链表，任意操作数链表的当前位数所对应元素不为 null 则累加
-        while (x != null || y != null) {
-            int value = carry;
-
-            if (x != null) {
-                value += x.val;
-                x = x.next;
-            }
-
-            if (y != null) {
-                value += y.val;
-                y = y.next;
-            }
-
-            carry = value / 10;
-            p.next = new ListNode(value % 10);
+        ListNode dummy = new ListNode(0);
+        ListNode x = l1, y = l2, p = dummy;
+        while (x != null && y != null) {
+            int sum = x.val + y.val + carry;
+            carry = sum / 10;
+            p.next = sum >= 0 ? new ListNode(sum % 10) : new ListNode(sum);
             p = p.next;
+            x = x.next;
+            y = y.next;
         }
-
-        if (carry != 0) {
+        while (x != null) {
+            int sum = x.val + carry;
+            carry = sum / 10;
+            p.next = sum >= 0 ? new ListNode(sum % 10) : new ListNode(sum);
+            p = p.next;
+            x = x.next;
+        }
+        while (y != null) {
+            int sum = y.val + carry;
+            carry = sum / 10;
+            p.next = sum >= 0 ? new ListNode(sum % 10) : new ListNode(sum);
+            p = p.next;
+            y = y.next;
+        }
+        if (carry > 0) {
             p.next = new ListNode(carry);
         }
         return dummy.next;
