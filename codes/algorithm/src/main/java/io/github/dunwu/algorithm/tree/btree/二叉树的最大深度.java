@@ -4,52 +4,58 @@ import io.github.dunwu.algorithm.tree.TreeNode;
 import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
- * <code>104. 二叉树的最大深度</code> 算法实现
+ * <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">104. 二叉树的最大深度</a>
  *
- * @see <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">104. 二叉树的最大深度</a>
+ * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @date 2025-08-11
  */
 public class 二叉树的最大深度 {
 
     public static void main(String[] args) {
         TreeNode tree = TreeUtils.deserialize("[3,9,20,null,null,15,7]");
-        System.out.println("result = " + maxDepthInDFS(tree));
-        Assertions.assertEquals(3, maxDepthInDFS(tree));
-        Assertions.assertEquals(3, maxDepthInBFS(tree));
+        Assertions.assertEquals(3, maxDepth(tree));
+        Assertions.assertEquals(3, maxDepth2(tree));
     }
 
-    // 基于 DFS 实现
-    // 时间复杂度 O(N)
-    public static int maxDepthInDFS(TreeNode root) {
-        if (root == null) return 0;
-        return 1 + Math.max(maxDepthInDFS(root.left), maxDepthInDFS(root.right));
+    // 分解递归
+    public static int maxDepth(TreeNode root) {
+        if (root == null) { return 0; }
+
+        // 利用定义，计算左右子树的最大深度
+        int leftMax = maxDepth(root.left);
+        int rightMax = maxDepth(root.right);
+
+        // 根据左右子树的最大深度推出原二叉树的最大深度
+        // 整棵树的最大深度等于左右子树的最大深度取最大值，
+        // 然后再加上根节点自己
+        return 1 + Math.max(leftMax, rightMax);
     }
 
-    // 基于 BFS 实现
-    // 逐层扫描，只要每层有节点，层级数+1
-    // 时间复杂度 O(N)
-    public static int maxDepthInBFS(TreeNode root) {
+    // 遍历递归
 
-        if (root == null) return 0;
+    public static int depth = 0;
+    public static int max = 0;
 
-        int level = 0;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            level++;
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode node = queue.poll();
-                if (node == null) continue;
-                if (node.left != null) queue.add(node.left);
-                if (node.right != null) queue.add(node.right);
-            }
+    public static int maxDepth2(TreeNode root) {
+        traverse(root);
+        return max;
+    }
+
+    public static void traverse(TreeNode root) {
+        if (root == null) return;
+
+        // 前序遍历位置（进入节点）增加深度
+        depth++;
+        // 遍历到叶子节点时记录最大深度
+        if (root.left == null && root.right == null) {
+            System.out.println("root = " + root.val + ", depth = " + depth);
+            max = Math.max(max, depth);
         }
-
-        return level;
+        traverse(root.left);
+        traverse(root.right);
+        // 后序遍历位置（离开节点）减少深度
+        depth--;
     }
 
 }

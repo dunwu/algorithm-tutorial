@@ -69,7 +69,7 @@
 | [160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)                                    | 已掌握 |
 | [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)                    | 已掌握 |
 | [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)                                       | 已掌握 |
-| [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/)                                        | 未掌握 |
+| [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/)                                        | 已掌握 |
 | [86. 分隔链表](https://leetcode.cn/problems/partition-list/)                                                       | 已掌握 |
 | [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/)                                     | 已掌握 |
 | [剑指 Offer 22. 链表中倒数第 k 个节点](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/) | 已掌握 |
@@ -88,111 +88,166 @@
 
 #### 单链表的花式反转方法汇总
 
-| 题目                                                         | 掌握度 |
-| ------------------------------------------------------------ | ------ |
-| [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/) | 未掌握 |
-| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/) | 不熟练 |
+| 题目                                                                           | 掌握度 |
+| ------------------------------------------------------------------------------ | ------ |
+| [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)             | 未掌握 |
+| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)        | 不熟练 |
 | [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | 不熟练 |
 
 ### 数组
 
 #### 双指针技巧秒杀七道数组题目
 
-| 题目                                                         | 掌握度 |
-| ------------------------------------------------------------ | ------ |
-| [26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/) | 已掌握 |
-| [27. 移除元素](https://leetcode.cn/problems/remove-element/) | 已掌握 |
-| [283. 移动零](https://leetcode.cn/problems/move-zeroes/)     | 已掌握 |
-| [704. 二分查找](https://leetcode.cn/problems/binary-search/) | 已掌握 |
-| [1. 两数之和](https://leetcode.cn/problems/two-sum/)         | 已掌握 |
-| [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/) | 已掌握 |
+| 题目                                                                                                   | 掌握度 |
+| ------------------------------------------------------------------------------------------------------ | ------ |
+| [26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)        | 已掌握 |
+| [27. 移除元素](https://leetcode.cn/problems/remove-element/)                                           | 已掌握 |
+| [283. 移动零](https://leetcode.cn/problems/move-zeroes/)                                               | 已掌握 |
+| [704. 二分查找](https://leetcode.cn/problems/binary-search/)                                           | 已掌握 |
+| [1. 两数之和](https://leetcode.cn/problems/two-sum/)                                                   | 已掌握 |
+| [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)      | 已掌握 |
 | [LCR 179. 查找总价格为目标值的两个商品](https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/) | 已掌握 |
-| [LCR 006. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/kLl5u1/) | 已掌握 |
-| [344. 反转字符串](https://leetcode.cn/problems/reverse-string/) | 已掌握 |
-| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/) | 未掌握 |
+| [LCR 006. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/kLl5u1/)                            | 已掌握 |
+| [344. 反转字符串](https://leetcode.cn/problems/reverse-string/)                                        | 已掌握 |
+| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)                         | 未掌握 |
 
 #### 二维数组的花式遍历技巧
 
-| 题目                                                         | 掌握度 |
-| ------------------------------------------------------------ | ------ |
-| [48. 旋转图像](https://leetcode.cn/problems/rotate-image/)   | 未掌握 |
-| [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)  | 未掌握 |
+| 题目                                                              | 掌握度 |
+| ----------------------------------------------------------------- | ------ |
+| [48. 旋转图像](https://leetcode.cn/problems/rotate-image/)        | 未掌握 |
+| [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)       | 未掌握 |
 | [59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/) | 未掌握 |
 
-#### 【练习】数组双指针经典习题
+#### 数组双指针经典习题
+
+| 题目                                                                                                                       | 掌握度 |
+| -------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [80. 删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/)                      | 已掌握 |
+| [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/)                                                          | 已掌握 |
+| [75. 颜色分类](https://leetcode.cn/problems/sort-colors/)                                                                  | 已掌握 |
+| [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)                                                   | 未掌握 |
+| [977. 有序数组的平方](https://labuladong.online/algo/problem-set/array-two-pointers/#slug_squares-of-a-sorted-array)       | 已掌握 |
+| [1329. 将矩阵按对角线排序](https://labuladong.online/algo/problem-set/array-two-pointers/#slug_sort-the-matrix-diagonally) | 未掌握 |
+| [1260. 二维网格迁移](https://leetcode.cn/problems/shift-2d-grid/)                                                          |        |
+| [867. 转置矩阵](https://labuladong.online/algo/problem-set/array-two-pointers/#slug_transpose-matrix)                      | 已掌握 |
+| [14. 最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)                                                    | 已掌握 |
+
+#### 滑动窗口算法核心代码模板
+
+| 题目                                                                       | 掌握度 |
+| -------------------------------------------------------------------------- | ------ |
+| [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/) | 未掌握 |
+| [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)   |        |
+|                                                                            |        |
+
+#### 二分搜索
+
+| 题目                                                                                                   | 掌握度 |
+| ------------------------------------------------------------------------------------------------------ | ------ |
+| [875. 爱吃香蕉的珂珂](https://leetcode.cn/problems/koko-eating-bananas/)                               | 未掌握 |
+| [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/) | 未掌握 |
+| [410. 分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)                         | 未掌握 |
+
+#### 前缀和数组
+
+| 题目                                                                                           | 掌握度 |
+| ---------------------------------------------------------------------------------------------- | ------ |
+| [303. 区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/)        | 不熟练 |
+| [304. 二维区域和检索 - 矩阵不可变](https://leetcode.cn/problems/range-sum-query-2d-immutable/) | 未掌握 |
+
+#### 差分数组
+
+| 题目                                                                          | 掌握度 |
+| ----------------------------------------------------------------------------- | ------ |
+| [1094. 拼车](https://leetcode.cn/problems/car-pooling/)                       |        |
+| [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/) |        |
+| [370. 区间加法](https://leetcode.cn/problems/range-addition/)                 |        |
+
+### 栈和队列
+
+#### 队列实现栈以及栈实现队列
+
+| 题目                                                                            | 掌握度 |
+| ------------------------------------------------------------------------------- | ------ |
+| [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/) | 不熟练 |
+| [232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/) | 已掌握 |
+
+#### 栈的经典习题
+
+| 题目                                                                                    | 掌握度 |
+| --------------------------------------------------------------------------------------- | ------ |
+| [71. 简化路径](https://leetcode.cn/problems/simplify-path/)                             | 不熟练 |
+| [143. 重排链表](https://leetcode.cn/problems/reorder-list/)                             | 已掌握 |
+| [20. 有效的括号](https://leetcode.cn/problems/valid-parentheses/)                       | 已掌握 |
+| [150. 逆波兰表达式求值](https://leetcode.cn/problems/evaluate-reverse-polish-notation/) | 已掌握 |
+| [388. 文件的最长绝对路径](https://leetcode.cn/problems/longest-absolute-file-path/)     | 未掌握 |
+| [155. 最小栈](https://leetcode.cn/problems/min-stack/)                                  |        |
+| [895. 最大频率栈](https://leetcode.cn/problems/maximum-frequency-stack/)                |        |
+
+#### 队列的经典习题
+
+| 题目                                                                        | 掌握度 |
+| --------------------------------------------------------------------------- | ------ |
+| [933. 最近的请求次数](https://leetcode.cn/problems/number-of-recent-calls/) | 不熟练 |
+| [622. 设计循环队列](https://leetcode.cn/problems/design-circular-queue/)    |        |
+|                                                                             |        |
+|                                                                             |        |
+|                                                                             |        |
+|                                                                             |        |
+|                                                                             |        |
+
+#### 单调栈算法模板
+
+| 题目                                                                            | 掌握度 |
+| ------------------------------------------------------------------------------- | ------ |
+| [496. 下一个更大元素 I](https://leetcode.cn/problems/next-greater-element-i/)   |        |
+| [503. 下一个更大元素 II](https://leetcode.cn/problems/next-greater-element-ii/) |        |
+| [739. 每日温度](https://leetcode.cn/problems/daily-temperatures/)               |        |
+| [剑指 Offer II 038. 每日温度](https://leetcode.cn/problems/iIQa4I/)             |        |
+
+### 二叉树
+
+#### 二叉树系列算法核心纲领
 
 | 题目                                                         | 掌握度 |
 | ------------------------------------------------------------ | ------ |
-| [80. 删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/) | 已掌握 |
-| [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/) | 已掌握 |
-| [75. 颜色分类](https://leetcode.cn/problems/sort-colors/)    | 已掌握 |
-| [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/) |        |
+| [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/) | 已掌握 |
+| [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/) | 已掌握 |
+| [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/) |        |
+| [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/) |        |
+| [116. 填充每个节点的下一个右侧节点指针](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/) | 未掌握 |
+| [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/) | 已掌握 |
+| [105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 不熟练 |
+| [106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 不熟练 |
+| [654. 最大二叉树](https://leetcode.cn/problems/maximum-binary-tree/) | 已掌握 |
+| [889. 根据前序和后序遍历构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal/) |        |
+| [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/) | 未掌握 |
 
-### 栈
+### 动态规划
 
-- [三合一](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/三合一.java)
-- [基本计算器](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/基本计算器.java)
-- [最小栈](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/最小栈.java)
-- [最小栈 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/最小栈2.java)
-- [有效的括号](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/有效的括号.java)
-- [栈排序](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/栈排序.java)
-- [棒球比赛](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/棒球比赛.java)
-- [比较含退格的字符串](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/比较含退格的字符串.java)
-- [用栈实现队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/用栈实现队列.java)
-- [用队列实现栈](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/stack/用队列实现栈.java)
+| 题目                                                         | 掌握度 |
+| ------------------------------------------------------------ | ------ |
+| [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)   |        |
+| [509. 斐波那契数](https://leetcode.cn/problems/fibonacci-number/) |        |
+|                                                              |        |
+|                                                              |        |
+|                                                              |        |
+|                                                              |        |
+|                                                              |        |
 
-### 队列
+### 贪心算法
 
-- [动态扩容数组实现的队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/动态扩容数组实现的队列.java)
-- [数组实现的队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/数组实现的队列.java)
-- [最近的请求次数](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/最近的请求次数.java)
-- [设计循环队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/设计循环队列.java)
-- [链表实现的队列](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/queue/链表实现的队列.java)
+| 题目                                                         | 掌握度 |
+| ------------------------------------------------------------ | ------ |
+| [55. 跳跃游戏](https://leetcode.cn/problems/jump-game/)      |        |
+| [45. 跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/) |        |
 
-### 字符串
+### 分治算法
 
-- [二进制求和](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/AddBinary.java)
-- [实现 strStr()](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ImplementStrstr.java)
-- [最长公共前缀](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/LongestCommonPrefix.java)
-- [反转字符串](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseString.java)
-- [反转字符串中的单词](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString.java)
-- [反转字符串中的单词 III](https://github.com/dunwu/algorithm/blob/master/codes/data-structure/src/main/java/io/github/dunwu/ds/str/ReverseWordsInAString3.java)
-
-### 树
-
-- [N 叉树的最大深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/N叉树的最大深度.java)
-
-#### 二叉树
-
-- [二叉树中的最大路径和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树中的最大路径和.java)
-- [二叉树的中序遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的中序遍历.java)
-- [二叉树的前序遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的前序遍历.java)
-- [二叉树的后序遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的后序遍历.java)
-- [二叉树的层次遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的层次遍历.java)
-- [二叉树的层次遍历 2](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的层次遍历2.java)
-- [二叉树的序列化与反序列化](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的序列化与反序列化.java)
-- [二叉树的所有路径](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的所有路径.java)
-- [二叉树的最大深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最大深度.java)
-- [二叉树的最小深度](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最小深度.java)
-- [二叉树的最近公共祖先](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的最近公共祖先.java)
-- [二叉树的锯齿形层次遍历](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/二叉树的锯齿形层次遍历.java)
-- [从先序遍历还原二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/从先序遍历还原二叉树.java)
-- [叶子相似的树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/叶子相似的树.java)
-- [填充每个节点的下一个右侧节点指针](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/填充每个节点的下一个右侧节点指针.java)
-- [填充每个节点的下一个右侧节点指针 II](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/填充每个节点的下一个右侧节点指针II.java)
-- [对称二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/对称二叉树.java)
-- [平衡二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/平衡二叉树.java)
-- [相同的树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/相同的树.java)
-- [翻转二叉树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/翻转二叉树.java)
-- [路径总和](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/btree/路径总和.java)
-
-#### 二叉搜索树
-
-- [二叉搜索树中的插入操作](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/二叉搜索树中的插入操作.java)
-- [二叉搜索树的最近公共祖先](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/二叉搜索树的最近公共祖先.java)
-- [二叉搜索树节点最小距离](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/二叉搜索树节点最小距离.java)
-- [将有序数组转换为二叉搜索树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/将有序数组转换为二叉搜索树.java)
-- [验证二叉搜索树](https://github.com/dunwu/algorithm-tutorial/blob/master/codes/algorithm/src/main/java/io/github/dunwu/algorithm/tree/bstree/验证二叉搜索树.java)
+| 题目                                                                        | 掌握度 |
+| --------------------------------------------------------------------------- | ------ |
+| [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/) | 已掌握 |
 
 ## 📚 资料
 

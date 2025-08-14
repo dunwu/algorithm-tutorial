@@ -34,7 +34,7 @@ import java.util.Queue;
 public class 二叉树的最小深度 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.asTree(3, 9, 20, null, null, 15, 7);
+        TreeNode tree = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
         System.out.println("result = " + minDepthInDFS(tree));
         Assertions.assertEquals(2, minDepthInDFS(tree));
         Assertions.assertEquals(2, minDepthInBFS(tree));
@@ -53,27 +53,22 @@ public class 二叉树的最小深度 {
     // 时间复杂度 O(N)
     public static int minDepthInBFS(TreeNode root) {
         if (root == null) return 0;
-        int level = 0;
-        int min = -1;
+        int depth = 0;
+        int min = Integer.MAX_VALUE;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
-            level++;
+            depth++;
             int size = queue.size();
-            for (int i = 0; i < size; i++) {
+            while (size-- > 0) {
                 TreeNode node = queue.poll();
                 if (node.left == null && node.right == null) {
-                    if (min == -1) {
-                        min = level;
-                    } else {
-                        min = Math.min(min, level);
-                    }
+                    min = Math.min(min, depth);
                 }
                 if (node.left != null) queue.offer(node.left);
                 if (node.right != null) queue.offer(node.right);
             }
         }
-
         return min;
     }
 

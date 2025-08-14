@@ -36,7 +36,7 @@ import java.util.List;
 public class 二叉树的所有路径 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.asTree(1, 2, 3, 5);
+        TreeNode tree = TreeUtils.buildTree(1, 2, 3, 5);
         System.out.println("result = " + binaryTreePaths(tree));
         Assertions.assertArrayEquals(Arrays.asList("1->2->5", "1->3").toArray(),
             binaryTreePaths(tree).toArray(new String[0]));

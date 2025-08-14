@@ -13,13 +13,13 @@ public class 二叉树中的最大路径和 {
 
     public static void main(String[] args) {
         二叉树中的最大路径和 demo = new 二叉树中的最大路径和();
-        TreeNode tree = TreeUtils.asTree(1, 2, 3);
+        TreeNode tree = TreeUtils.buildTree(1, 2, 3);
         Assertions.assertEquals(6, demo.maxPathSum(tree));
-        TreeNode tree2 = TreeUtils.asTree(-10, 9, 20, null, null, 15, 7);
+        TreeNode tree2 = TreeUtils.buildTree(-10, 9, 20, null, null, 15, 7);
         Assertions.assertEquals(42, demo.maxPathSum(tree2));
-        TreeNode tree3 = TreeUtils.asTree(2, -1);
+        TreeNode tree3 = TreeUtils.buildTree(2, -1);
         Assertions.assertEquals(2, demo.maxPathSum(tree3));
-        TreeNode tree4 = TreeUtils.asTree(-2, -1);
+        TreeNode tree4 = TreeUtils.buildTree(-2, -1);
         Assertions.assertEquals(-1, demo.maxPathSum(tree4));
     }
 

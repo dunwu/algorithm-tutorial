@@ -1,37 +1,25 @@
 package io.github.dunwu.algorithm.tree.btree;
 
-import java.util.LinkedList;
-
 /**
+ * <a href="https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/">116. 填充每个节点的下一个右侧节点指针</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @since 2020-07-06
+ * @date 2025-08-11
  */
 public class 填充每个节点的下一个右侧节点指针 {
 
     public Node connect(Node root) {
         if (root == null) return null;
-        bfs(root);
+        traverse(root.left, root.right);
         return root;
     }
 
-    /**
-     * 基于 BFS 实现二叉树层次遍历。关键在于使用一个队列存储
-     */
-    public void bfs(Node root) {
-        LinkedList<Node> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 1; i < size; i++) {
-                queue.get(i - 1).next = queue.get(i);
-            }
-
-            for (int i = 0; i < size; i++) {
-                Node node = queue.poll();
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
-            }
-        }
+    public void traverse(Node n1, Node n2) {
+        if (n1 == null || n2 == null) return;
+        n1.next = n2;
+        traverse(n1.left, n1.right);
+        traverse(n2.left, n2.right);
+        traverse(n1.right, n2.left);
     }
 
     private static class Node {
@@ -57,5 +45,4 @@ public class 填充每个节点的下一个右侧节点指针 {
         }
 
     }
-
 }

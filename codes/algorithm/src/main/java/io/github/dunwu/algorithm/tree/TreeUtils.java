@@ -8,10 +8,13 @@ import java.util.*;
  */
 public class TreeUtils {
 
-    public static TreeNode buildTree(Integer[] array) {
+    static final String SEP = ",";
+    static final String NULL = "null";
+
+    public static TreeNode buildTree(Integer... arr) {
         List<TreeNode> list = new ArrayList<>();
 
-        for (Integer value : array) {
+        for (Integer value : arr) {
             // 创建结点，每一个结点的左结点和右结点为null
             TreeNode node;
             if (value == null) {
@@ -26,7 +29,7 @@ public class TreeUtils {
         // 构建二叉树
         if (list.size() > 0) {
             // i表示的是根节点的索引，从0开始
-            for (int i = 0; i < array.length / 2 - 1; i++) {
+            for (int i = 0; i < arr.length / 2 - 1; i++) {
                 if (list.get(2 * i + 1) != null) {
                     // 左结点
                     list.get(i).left = list.get(2 * i + 1);
@@ -37,13 +40,15 @@ public class TreeUtils {
                 }
             }
             // 判断最后一个根结点：因为最后一个根结点可能没有右结点，所以单独拿出来处理
-            int lastIndex = array.length / 2 - 1;
+            int lastIndex = arr.length / 2 - 1;
 
-            // 左结点
-            list.get(lastIndex).left = list.get(lastIndex * 2 + 1);
-            // 右结点，如果数组的长度为奇数才有右结点
-            if (array.length % 2 == 1) {
-                list.get(lastIndex).right = list.get(lastIndex * 2 + 2);
+            if (list.get(lastIndex) != null) {
+                // 左结点
+                list.get(lastIndex).left = list.get(lastIndex * 2 + 1);
+                // 右结点，如果数组的长度为奇数才有右结点
+                if (arr.length % 2 == 1) {
+                    list.get(lastIndex).right = list.get(lastIndex * 2 + 2);
+                }
             }
 
             return list.get(0);
@@ -52,12 +57,8 @@ public class TreeUtils {
         }
     }
 
-    public static TreeNode asTree(Integer... array) {
-        return buildTree(array);
-    }
-
     public static TreeNode find(TreeNode root, int val) {
-        if (root == null || root.val == val) { return root;}
+        if (root == null || root.val == val) { return root; }
         TreeNode left = find(root.left, val);
         if (left != null) return left;
         return find(root.right, val);
@@ -130,83 +131,55 @@ public class TreeUtils {
         return list.subList(0, last + 1);
     }
 
-    public static String rserialize(TreeNode root, String str) {
-        if (root == null) {
-            str += "null,";
-        } else {
-            str += str.valueOf(root.val) + ",";
-            str = rserialize(root.left, str);
-            str = rserialize(root.right, str);
-        }
-        return str;
-    }
-
     public static String serialize(TreeNode root) {
-        String text = rserialize(root, "");
-        while (text.endsWith("null,")) {
-            int index = text.lastIndexOf("null,");
-            text = text.substring(0, index);
+        StringBuilder sb = new StringBuilder();
+        serializePreOrder(root, sb);
+        int size = sb.length();
+        int pos = sb.lastIndexOf(SEP);
+        if (pos == size - 1) {
+            sb.deleteCharAt(pos);
         }
-        if (text.endsWith(",")) {
-            text = text.substring(0, text.length() - 1);
-        }
-        return text;
+        return sb.toString();
     }
 
-    public static TreeNode rdeserialize(List<String> list) {
-        List<TreeNode> nodes = new ArrayList<>();
-
-        for (String value : list) {
-            // 创建结点，每一个结点的左结点和右结点为null
-            TreeNode node;
-            if (value == null || value.equalsIgnoreCase("null")) {
-                node = null;
-            } else {
-                node = new TreeNode(Integer.parseInt(value), null, null);
-            }
-            // list中存着每一个结点
-            nodes.add(node);
+    static void serializePreOrder(TreeNode root, StringBuilder sb) {
+        if (root == null) {
+            sb.append(NULL).append(SEP);
+            return;
         }
 
-        // 构建二叉树
-        if (nodes.size() > 0) {
-            // i表示的是根节点的索引，从0开始
-            for (int i = 0; i < list.size() / 2 - 1; i++) {
-                if (nodes.get(2 * i + 1) != null) {
-                    // 左结点
-                    nodes.get(i).left = nodes.get(2 * i + 1);
-                }
-                if (nodes.get(2 * i + 2) != null) {
-                    // 右结点
-                    nodes.get(i).right = nodes.get(2 * i + 2);
-                }
-            }
-            // 判断最后一个根结点：因为最后一个根结点可能没有右结点，所以单独拿出来处理
-            int lastIndex = list.size() / 2 - 1;
+        // 前序处理
+        sb.append(root.val).append(SEP);
 
-            // 左结点
-            nodes.get(lastIndex).left = nodes.get(lastIndex * 2 + 1);
-            // 右结点，如果数组的长度为奇数才有右结点
-            if (list.size() % 2 == 1) {
-                nodes.get(lastIndex).right = nodes.get(lastIndex * 2 + 2);
-            }
-
-            return nodes.get(0);
-        } else {
-            return null;
-        }
+        serializePreOrder(root.left, sb);
+        serializePreOrder(root.right, sb);
     }
 
     public static TreeNode deserialize(String data) {
-        data = data.substring(1, data.length() - 1);
-        String[] nums = data.split(",");
-        List<String> list = new LinkedList<>(Arrays.asList(nums));
-        return rdeserialize(list);
+        // 将字符串转化成列表
+        LinkedList<String> nodes = new LinkedList<>();
+        for (String s : data.split(SEP)) {
+            nodes.addLast(s);
+        }
+        return deserializePreOrder(nodes);
+    }
+
+    static TreeNode deserializePreOrder(LinkedList<String> nodes) {
+        if (nodes.isEmpty()) return null;
+
+        String first = nodes.removeFirst();
+        if (first.equals(NULL)) return null;
+        TreeNode root = new TreeNode(Integer.parseInt(first));
+
+        root.left = deserializePreOrder(nodes);
+        root.right = deserializePreOrder(nodes);
+
+        return root;
     }
 
     public static void main(String[] args) {
         Integer[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        TreeNode head = TreeUtils.asTree(array);
+        TreeNode head = TreeUtils.buildTree(array);
         toBfsList(head);
     }
 

@@ -1,10 +1,9 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
+import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
@@ -13,55 +12,89 @@ import java.util.List;
 public class 二叉树的序列化与反序列化 {
 
     public static void main(String[] args) {
-        TreeNode tree = deserialize("[1,2,3,null,null,4,5]");
-        System.out.println("args = " + serialize(tree));
+        // String input = "1,2,null,4,null,null,3,null,null";
+        String input2 = "null,null,null,4,2,null,null,3,1";
+        TreeNode tree = deserialize(input2);
+        Assertions.assertEquals(input2, serialize(tree));
     }
 
-    public static String rserialize(TreeNode root, String str) {
-        if (root == null) {
-            str += "null,";
-        } else {
-            str += str.valueOf(root.val) + ",";
-            str = rserialize(root.left, str);
-            str = rserialize(root.right, str);
-        }
-        return str;
-    }
+    static final String SEP = ",";
+    static final String NULL = "null";
 
     public static String serialize(TreeNode root) {
-        String text = rserialize(root, "");
-        while (text.endsWith("null,")) {
-            int index = text.lastIndexOf("null,");
-            text = text.substring(0, index);
+        StringBuilder sb = new StringBuilder();
+        serializePostOrder(root, sb);
+        int size = sb.length();
+        int pos = sb.lastIndexOf(SEP);
+        if (pos == size - 1) {
+            sb.deleteCharAt(pos);
         }
-        if (text.endsWith(",")) {
-            text = text.substring(0, text.length() - 1);
-        }
-        return text;
+        return sb.toString();
     }
 
-    public static TreeNode rdeserialize(List<String> list) {
-        if (list == null || list.size() == 0) {
-            return null;
-        }
-        if (list.get(0).equalsIgnoreCase("null")) {
-            list.remove(0);
-            return null;
+    static void serializePreOrder(TreeNode root, StringBuilder sb) {
+        if (root == null) {
+            sb.append(NULL).append(SEP);
+            return;
         }
 
-        TreeNode root = new TreeNode(Integer.valueOf(list.get(0)));
-        list.remove(0);
-        root.left = rdeserialize(list);
-        root.right = rdeserialize(list);
+        // 前序处理
+        sb.append(root.val).append(SEP);
+
+        serializePreOrder(root.left, sb);
+        serializePreOrder(root.right, sb);
+    }
+
+    static void serializePostOrder(TreeNode root, StringBuilder sb) {
+        if (root == null) {
+            sb.append(NULL).append(SEP);
+            return;
+        }
+
+        serializePostOrder(root.left, sb);
+        serializePostOrder(root.right, sb);
+
+        // 后序处理
+        sb.append(root.val).append(SEP);
+    }
+
+    public static TreeNode deserialize(String data) {
+        // 将字符串转化成列表
+        LinkedList<String> nodes = new LinkedList<>();
+        for (String s : data.split(SEP)) {
+            nodes.addLast(s);
+        }
+        return deserializePostOrder(nodes);
+    }
+
+    static TreeNode deserializePreOrder(LinkedList<String> nodes) {
+        if (nodes.isEmpty()) return null;
+
+        // ****** 前序位置 ********
+        // 列表最左侧就是根节点
+        String first = nodes.removeFirst();
+        if (first.equals(NULL)) return null;
+        TreeNode root = new TreeNode(Integer.parseInt(first));
+
+        // *********************
+
+        root.left = deserializePreOrder(nodes);
+        root.right = deserializePreOrder(nodes);
 
         return root;
     }
 
-    public static TreeNode deserialize(String data) {
-        data = data.substring(1, data.length() - 1);
-        String[] nums = data.split(",");
-        List<String> list = new LinkedList<String>(Arrays.asList(nums));
-        return rdeserialize(list);
+    static TreeNode deserializePostOrder(LinkedList<String> nodes) {
+        if (nodes.isEmpty()) return null;
+
+        String last = nodes.removeLast();
+        if (last.equals(NULL)) return null;
+        TreeNode root = new TreeNode(Integer.parseInt(last));
+
+        root.right = deserializePostOrder(nodes);
+        root.left = deserializePostOrder(nodes);
+
+        return root;
     }
 
 }

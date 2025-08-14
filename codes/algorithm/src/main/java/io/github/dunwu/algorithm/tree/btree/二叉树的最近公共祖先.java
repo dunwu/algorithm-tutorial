@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Assertions;
 public class 二叉树的最近公共祖先 {
 
     public static void main(String[] args) {
-        TreeNode root = TreeUtils.asTree(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4);
+        TreeNode root = TreeUtils.buildTree(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4);
         TreeNode p = TreeUtils.find(root, 5);
         TreeNode q = TreeUtils.find(root, 1);
         TreeNode treeNode = lowestCommonAncestor(root, p, q);

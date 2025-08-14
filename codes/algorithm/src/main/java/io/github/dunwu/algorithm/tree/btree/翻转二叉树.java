@@ -4,49 +4,45 @@ import io.github.dunwu.algorithm.tree.TreeNode;
 import io.github.dunwu.algorithm.tree.TreeUtils;
 
 /**
- * <code>翻转二叉树</code> 算法实现
+ * <a href="https://leetcode.cn/problems/invert-binary-tree/">226. 翻转二叉树</a>
  *
- * <pre>
- * 翻转一棵二叉树。
- *
- * 示例：
- *
- * 输入：
- *
- *      4
- *    /   \
- *   2     7
- *  / \   / \
- * 1   3 6   9
- * 输出：
- *
- *      4
- *    /   \
- *   7     2
- *  / \   / \
- * 9   6 3   1
- * 备注:
- * 这个问题是受到 Max Howell 的 原问题 启发的 ：
- * </pre>
- *
- * @see <a href="https://leetcode-cn.com/problems/invert-binary-tree/">翻转二叉树</a>
+ * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @date 2025-08-11
  */
 public class 翻转二叉树 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.asTree(4, 2, 7, 1, 3, 6, 9);
-        System.out.println("result = " + invertTree(tree));
+        TreeNode tree = TreeUtils.buildTree(4, 2, 7, 1, 3, 6, 9);
+        System.out.println("result = " + invertTree2(tree));
     }
 
+    /**
+     * 分解递归
+     */
     public static TreeNode invertTree(TreeNode root) {
-        if (root == null) { return null; }
-
-        TreeNode right = invertTree(root.right);
+        if (root == null) return null;
         TreeNode left = invertTree(root.left);
-
-        root.left = right;
+        TreeNode right = invertTree(root.right);
         root.right = left;
+        root.left = right;
         return root;
+    }
+
+    /**
+     * 遍历递归
+     */
+    public static TreeNode invertTree2(TreeNode root) {
+        traverse(root);
+        return root;
+    }
+
+    public static void traverse(TreeNode root) {
+        if (root == null) return;
+        TreeNode tmp = root.left;
+        root.left = root.right;
+        root.right = tmp;
+        traverse(root.left);
+        traverse(root.right);
     }
 
 }

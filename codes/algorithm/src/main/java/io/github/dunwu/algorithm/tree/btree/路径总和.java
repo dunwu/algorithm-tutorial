@@ -31,9 +31,9 @@ public class 路径总和 {
 
     public static void main(String[] args) {
         TreeNode
-            tree = TreeUtils.asTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1);
+            tree = TreeUtils.buildTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1);
         Assertions.assertTrue(hasPathSum(tree, 22));
-        TreeNode tree2 = TreeUtils.asTree(1, 2);
+        TreeNode tree2 = TreeUtils.buildTree(1, 2);
         Assertions.assertFalse(hasPathSum(tree2, 1));
     }
 

@@ -31,10 +31,10 @@ import io.github.dunwu.algorithm.tree.TreeUtils;
 public class 对称二叉树 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.asTree(1, 2, 2, 3, 4, 4, 3);
+        TreeNode tree = TreeUtils.buildTree(1, 2, 2, 3, 4, 4, 3);
         System.out.println("result = " + isSymmetric(tree));
 
-        tree = TreeUtils.asTree(1, 2, 2, null, 3, null, 3);
+        tree = TreeUtils.buildTree(1, 2, 2, null, 3, null, 3);
         System.out.println("result = " + isSymmetric(tree));
     }
 

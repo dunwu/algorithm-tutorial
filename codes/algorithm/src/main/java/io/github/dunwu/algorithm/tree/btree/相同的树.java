@@ -46,16 +46,16 @@ import io.github.dunwu.algorithm.tree.TreeUtils;
 public class 相同的树 {
 
     public static void main(String[] args) {
-        TreeNode tree1 = TreeUtils.asTree(1, 2, 3);
-        TreeNode tree2 = TreeUtils.asTree(1, 2, 3);
+        TreeNode tree1 = TreeUtils.buildTree(1, 2, 3);
+        TreeNode tree2 = TreeUtils.buildTree(1, 2, 3);
         System.out.println("result = " + isSameTree(tree1, tree2));
 
-        tree1 = TreeUtils.asTree(1, 2);
-        tree2 = TreeUtils.asTree(1, 2, 3);
+        tree1 = TreeUtils.buildTree(1, 2);
+        tree2 = TreeUtils.buildTree(1, 2, 3);
         System.out.println("result = " + isSameTree(tree1, tree2));
 
-        tree1 = TreeUtils.asTree(1, 2, 1);
-        tree2 = TreeUtils.asTree(1, 1, 2);
+        tree1 = TreeUtils.buildTree(1, 2, 1);
+        tree2 = TreeUtils.buildTree(1, 1, 2);
         System.out.println("result = " + isSameTree(tree1, tree2));
     }
 

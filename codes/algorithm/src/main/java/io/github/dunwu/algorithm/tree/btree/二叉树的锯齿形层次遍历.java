@@ -33,7 +33,7 @@ import java.util.*;
 public class 二叉树的锯齿形层次遍历 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.asTree(3, 9, 20, null, null, 15, 7);
+        TreeNode tree = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
         List<List<Integer>> resultList = zigzagLevelOrder(tree);
         System.out.println(resultList);
         List<List<Integer>> expectList = new LinkedList<>();

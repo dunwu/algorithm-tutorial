@@ -36,7 +36,7 @@ import java.util.List;
 public class 二叉搜索树节点最小距离 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.asTree(4, 2, 6, 1, 3, null, null);
+        TreeNode tree = TreeUtils.buildTree(4, 2, 6, 1, 3, null, null);
         System.out.println("result = " + minDiffInBST2(tree));
     }
 

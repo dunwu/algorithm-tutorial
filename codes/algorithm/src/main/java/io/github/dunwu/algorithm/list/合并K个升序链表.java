@@ -18,13 +18,13 @@ public class 合并K个升序链表 {
         ListNode head2 = ListUtil.buildList(1, 3, 4);
         ListNode head3 = ListUtil.buildList(2, 6);
         ListNode[] array = new ListNode[] { head1, head2, head3 };
-        ListNode result = mergeKLists(array);
+        ListNode result = mergeKLists3(array);
         List<Integer> list = ListUtil.toList(result);
         System.out.println(list);
         Assertions.assertArrayEquals(new Integer[] { 1, 1, 2, 3, 4, 4, 5, 6 }, list.toArray(new Integer[0]));
 
         ListNode[] array2 = new ListNode[] {};
-        ListNode result2 = mergeKLists(array2);
+        ListNode result2 = mergeKLists3(array2);
         List<Integer> list2 = ListUtil.toList(result2);
         System.out.println(list2);
         Assertions.assertArrayEquals(new Integer[] {}, list2.toArray(new Integer[0]));
@@ -55,15 +55,58 @@ public class 合并K个升序链表 {
         return dummy.next;
     }
 
+    /**
+     * 效率不高
+     */
     public static ListNode mergeKLists2(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
         }
-        ListNode result = lists[0];
+        // 把 k 个有序链表都合并到 lists[0] 上
+        ListNode resList = lists[0];
         for (int i = 1; i < lists.length; i++) {
-            result = 合并两个有序链表.mergeTwoLists(result, lists[i]);
+            resList = merge2List(resList, lists[i]);
         }
-        return result;
+        return resList;
+    }
+
+    public static ListNode merge2List(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(-1);
+        ListNode p = dummy, p1 = l1, p2 = l2;
+        while (p1 != null && p2 != null) {
+            if (p1.val <= p2.val) {
+                p.next = p1;
+                p1 = p1.next;
+            } else {
+                p.next = p2;
+                p2 = p2.next;
+            }
+            p = p.next;
+        }
+        if (p1 != null) {
+            p.next = p1;
+        }
+        if (p2 != null) {
+            p.next = p2;
+        }
+        return dummy.next;
+    }
+
+    public static ListNode mergeKLists3(ListNode[] lists) {
+        if (lists == null || lists.length == 0) {
+            return null;
+        }
+        return mergeKLists3(lists, 0, lists.length - 1);
+    }
+
+    public static ListNode mergeKLists3(ListNode[] lists, int start, int end) {
+        if (start == end) {
+            return lists[start];
+        }
+        int mid = (start + end) / 2;
+        ListNode left = mergeKLists3(lists, start, mid);
+        ListNode right = mergeKLists3(lists, mid + 1, end);
+        return merge2List(left, right);
     }
 
 }

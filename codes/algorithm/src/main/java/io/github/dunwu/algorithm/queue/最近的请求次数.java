@@ -4,22 +4,35 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/number-of-recent-calls/">933. 最近的请求次数</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @see <a href="https://leetcode-cn.com/problems/number-of-recent-calls/">933. 最近的请求次数</a>
  * @since 2020-06-10
  */
 public class 最近的请求次数 {
 
-    Queue<Integer> queue;
-
-    public 最近的请求次数() {
-        queue = new LinkedList<>();
+    public static void main(String[] args) {
+        RecentCounter recentCounter = new RecentCounter();
+        recentCounter.ping(1);
+        recentCounter.ping(100);
     }
 
-    public int ping(int t) {
-        queue.add(t);
-        while (queue.peek() < t - 3000) { queue.poll(); }
-        return queue.size();
+    static class RecentCounter {
+
+        Queue<Integer> q = new LinkedList<>();
+
+        public RecentCounter() {
+
+        }
+
+        public int ping(int t) {
+            q.offer(t);
+            while (q.peek() < t - 3000) {
+                q.poll();
+            }
+            return q.size();
+        }
+
     }
 
 }

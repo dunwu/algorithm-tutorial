@@ -1,6 +1,10 @@
 package io.github.dunwu.algorithm.stack;
 
+import org.junit.jupiter.api.Assertions;
+
 import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 /**
  * @see <a href="https://leetcode-cn.com/problems/min-stack-lcci/">面试题 03.02. 栈的最小值</a>
@@ -8,56 +12,52 @@ import java.util.LinkedList;
 public class 最小栈 {
 
     public static void main(String[] args) {
-        最小栈 stack = new 最小栈();
-        stack.push(9);
-        stack.push(2);
-        stack.push(5);
-        stack.push(6);
-        stack.push(3);
-        stack.push(1);
-        System.out.println("min = " + stack.getMin());
-        System.out.println("pop " + stack.pop());
-        System.out.println("pop " + stack.pop());
-        System.out.println("pop " + stack.pop());
+        MinStack minStack = new MinStack();
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        Assertions.assertEquals(-3, minStack.getMin());
+        minStack.pop();
+        Assertions.assertEquals(0, minStack.top());
+        Assertions.assertEquals(-2, minStack.getMin());
     }
 
-    private final LinkedList<Integer> stack;
-    private final LinkedList<Integer> minStack;
+    static class MinStack {
 
-    public 最小栈() {
-        stack = new LinkedList<>();
-        minStack = new LinkedList<>();
-    }
+        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> minStack = new Stack<>();
 
-    public void push(int x) {
-        if (!minStack.isEmpty()) {
-            Integer first = minStack.getFirst();
-            if (x < first) {
-                minStack.push(x);
+        public MinStack() {
+
+        }
+
+        public void push(int val) {
+            stack.push(val);
+            if (minStack.isEmpty()) {
+                minStack.push(val);
+            } else {
+                Integer lastMin = minStack.peek();
+                if (val <= lastMin) {
+                    minStack.push(val);
+                } else {
+                    minStack.push(lastMin);
+                }
             }
-            stack.push(x);
         }
-    }
 
-    public int pop() {
-        int top = stack.pop();
-        int val = minStack.peek() ;
-        if (val == val) {
+        public int pop() {
             minStack.pop();
+            return stack.pop();
         }
-        return val;
-    }
 
-    public int top() {
-        return stack.getFirst();
-    }
-
-    public int getMin() {
-        if (minStack.isEmpty()) {
-            return -1;
-        } else {
-            return minStack.getFirst();
+        public int top() {
+            return stack.peek();
         }
+
+        public int getMin() {
+            return minStack.peek();
+        }
+
     }
 
 }
