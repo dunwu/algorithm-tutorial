@@ -3,7 +3,7 @@ package io.github.dunwu.algorithm.array;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * <a href="https://leetcode.cn/problems/ugly-number-ii/description/">264. 丑数II</a>
+ * <a href="https://leetcode.cn/problems/ugly-number-ii/">264. 丑数II</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-24

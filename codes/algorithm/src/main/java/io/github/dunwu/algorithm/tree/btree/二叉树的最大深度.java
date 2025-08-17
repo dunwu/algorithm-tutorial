@@ -13,49 +13,23 @@ import org.junit.jupiter.api.Assertions;
 public class 二叉树的最大深度 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.deserialize("[3,9,20,null,null,15,7]");
-        Assertions.assertEquals(3, maxDepth(tree));
-        Assertions.assertEquals(3, maxDepth2(tree));
+        Solution s = new Solution();
+        TreeNode root = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
+        Assertions.assertEquals(3, s.maxDepth(root));
+
+        TreeNode root2 = TreeUtils.buildTree(1, null, 2);
+        Assertions.assertEquals(2, s.maxDepth(root2));
     }
 
-    // 分解递归
-    public static int maxDepth(TreeNode root) {
-        if (root == null) { return 0; }
+    static class Solution {
 
-        // 利用定义，计算左右子树的最大深度
-        int leftMax = maxDepth(root.left);
-        int rightMax = maxDepth(root.right);
-
-        // 根据左右子树的最大深度推出原二叉树的最大深度
-        // 整棵树的最大深度等于左右子树的最大深度取最大值，
-        // 然后再加上根节点自己
-        return 1 + Math.max(leftMax, rightMax);
-    }
-
-    // 遍历递归
-
-    public static int depth = 0;
-    public static int max = 0;
-
-    public static int maxDepth2(TreeNode root) {
-        traverse(root);
-        return max;
-    }
-
-    public static void traverse(TreeNode root) {
-        if (root == null) return;
-
-        // 前序遍历位置（进入节点）增加深度
-        depth++;
-        // 遍历到叶子节点时记录最大深度
-        if (root.left == null && root.right == null) {
-            System.out.println("root = " + root.val + ", depth = " + depth);
-            max = Math.max(max, depth);
+        public int maxDepth(TreeNode root) {
+            if (root == null) { return 0; }
+            int left = maxDepth(root.left);
+            int right = maxDepth(root.right);
+            return Math.max(left, right) + 1;
         }
-        traverse(root.left);
-        traverse(root.right);
-        // 后序遍历位置（离开节点）减少深度
-        depth--;
+
     }
 
 }

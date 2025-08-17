@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import java.util.HashMap;
 
 /**
- * <a href="https://leetcode.cn/problems/minimum-window-substring/description/">76. 最小覆盖子串</a>
+ * <a href="https://leetcode.cn/problems/minimum-window-substring/">76. 最小覆盖子串</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-10

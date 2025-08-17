@@ -3,7 +3,7 @@ package io.github.dunwu.algorithm.array;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * <a href="https://leetcode.cn/problems/super-ugly-number/description/">313. 超级丑数</a>
+ * <a href="https://leetcode.cn/problems/super-ugly-number/">313. 超级丑数</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-24

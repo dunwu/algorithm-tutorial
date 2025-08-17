@@ -1,11 +1,9 @@
 package io.github.dunwu.algorithm.tree.btree;
 
-import cn.hutool.json.JSONUtil;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,11 +16,11 @@ public class 最大二叉树 {
 
     public static void main(String[] args) {
         TreeNode output = constructMaximumBinaryTree(new int[] { 3, 2, 1, 6, 0, 5 });
-        List<Integer> outputList = TreeUtils.toBfsValueList(output);
+        List<Integer> outputList = TreeUtils.toValueList(output);
         Assertions.assertArrayEquals(new Integer[] { 6, 3, 5, null, 2, 0, null, null, 1 }, outputList.toArray());
 
         TreeNode root = constructMaximumBinaryTree(new int[] { 3, 2, 1 });
-        List<Integer> list = TreeUtils.toBfsValueList(root);
+        List<Integer> list = TreeUtils.toValueList(root);
         Assertions.assertArrayEquals(new Integer[] { 3, null, 2, null, 1 }, list.toArray());
     }
 

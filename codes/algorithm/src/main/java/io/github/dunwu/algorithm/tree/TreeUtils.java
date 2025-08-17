@@ -8,53 +8,36 @@ import java.util.*;
  */
 public class TreeUtils {
 
-    static final String SEP = ",";
-    static final String NULL = "null";
+    public static TreeNode buildTree(Integer... values) {
 
-    public static TreeNode buildTree(Integer... arr) {
-        List<TreeNode> list = new ArrayList<>();
-
-        for (Integer value : arr) {
-            // 创建结点，每一个结点的左结点和右结点为null
-            TreeNode node;
-            if (value == null) {
-                node = null;
-            } else {
-                node = new TreeNode(value, null, null);
-            }
-            // list中存着每一个结点
-            list.add(node);
-        }
-
-        // 构建二叉树
-        if (list.size() > 0) {
-            // i表示的是根节点的索引，从0开始
-            for (int i = 0; i < arr.length / 2 - 1; i++) {
-                if (list.get(2 * i + 1) != null) {
-                    // 左结点
-                    list.get(i).left = list.get(2 * i + 1);
-                }
-                if (list.get(2 * i + 2) != null) {
-                    // 右结点
-                    list.get(i).right = list.get(2 * i + 2);
-                }
-            }
-            // 判断最后一个根结点：因为最后一个根结点可能没有右结点，所以单独拿出来处理
-            int lastIndex = arr.length / 2 - 1;
-
-            if (list.get(lastIndex) != null) {
-                // 左结点
-                list.get(lastIndex).left = list.get(lastIndex * 2 + 1);
-                // 右结点，如果数组的长度为奇数才有右结点
-                if (arr.length % 2 == 1) {
-                    list.get(lastIndex).right = list.get(lastIndex * 2 + 2);
-                }
-            }
-
-            return list.get(0);
-        } else {
+        if (values == null || values.length == 0 || values[0] == null) {
             return null;
         }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode root = new TreeNode(values[0]);
+        queue.offer(root);
+
+        int i = 1;
+        while (!queue.isEmpty() && i < values.length) {
+            TreeNode current = queue.poll();
+
+            // 处理左子节点
+            if (i < values.length && values[i] != null) {
+                current.left = new TreeNode(values[i]);
+                queue.offer(current.left);
+            }
+            i++;
+
+            // 处理右子节点
+            if (i < values.length && values[i] != null) {
+                current.right = new TreeNode(values[i]);
+                queue.offer(current.right);
+            }
+            i++;
+        }
+
+        return root;
     }
 
     public static TreeNode find(TreeNode root, int val) {
@@ -78,7 +61,7 @@ public class TreeUtils {
         }
     }
 
-    public static List<TreeNode> toBfsList(TreeNode root) {
+    public static List<TreeNode> toList(TreeNode root) {
         List<TreeNode> list = new ArrayList<>();
         if (root == null) {
             return list;
@@ -102,7 +85,7 @@ public class TreeUtils {
         return list.subList(0, last + 1);
     }
 
-    public static List<Integer> toBfsValueList(TreeNode root) {
+    public static List<Integer> toValueList(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         if (root == null) {
             return list;
@@ -131,9 +114,9 @@ public class TreeUtils {
         return list.subList(0, last + 1);
     }
 
-    public static String serialize(TreeNode root) {
+    public static String serialize(TreeNode root, String NULL, String SEP) {
         StringBuilder sb = new StringBuilder();
-        serializePreOrder(root, sb);
+        serializePreOrder(root, sb, NULL, SEP);
         int size = sb.length();
         int pos = sb.lastIndexOf(SEP);
         if (pos == size - 1) {
@@ -142,7 +125,7 @@ public class TreeUtils {
         return sb.toString();
     }
 
-    static void serializePreOrder(TreeNode root, StringBuilder sb) {
+    static void serializePreOrder(TreeNode root, StringBuilder sb, String NULL, String SEP) {
         if (root == null) {
             sb.append(NULL).append(SEP);
             return;
@@ -151,28 +134,28 @@ public class TreeUtils {
         // 前序处理
         sb.append(root.val).append(SEP);
 
-        serializePreOrder(root.left, sb);
-        serializePreOrder(root.right, sb);
+        serializePreOrder(root.left, sb, NULL, SEP);
+        serializePreOrder(root.right, sb, NULL, SEP);
     }
 
-    public static TreeNode deserialize(String data) {
+    public static TreeNode deserialize(String data, String SEP, String NULL) {
         // 将字符串转化成列表
         LinkedList<String> nodes = new LinkedList<>();
         for (String s : data.split(SEP)) {
             nodes.addLast(s);
         }
-        return deserializePreOrder(nodes);
+        return deserializePreOrder(nodes, NULL);
     }
 
-    static TreeNode deserializePreOrder(LinkedList<String> nodes) {
+    static TreeNode deserializePreOrder(LinkedList<String> nodes, String NULL) {
         if (nodes.isEmpty()) return null;
 
         String first = nodes.removeFirst();
         if (first.equals(NULL)) return null;
         TreeNode root = new TreeNode(Integer.parseInt(first));
 
-        root.left = deserializePreOrder(nodes);
-        root.right = deserializePreOrder(nodes);
+        root.left = deserializePreOrder(nodes, NULL);
+        root.right = deserializePreOrder(nodes, NULL);
 
         return root;
     }
@@ -180,7 +163,7 @@ public class TreeUtils {
     public static void main(String[] args) {
         Integer[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         TreeNode head = TreeUtils.buildTree(array);
-        toBfsList(head);
+        toList(head);
     }
 
 }

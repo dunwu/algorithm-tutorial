@@ -3,7 +3,7 @@ package io.github.dunwu.algorithm.list;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * <a href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">142. 环形链表 II</a>
+ * <a href="https://leetcode.cn/problems/linked-list-cycle-ii/">142. 环形链表 II</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @since 2020-07-08

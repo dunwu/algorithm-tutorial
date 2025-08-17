@@ -4,72 +4,34 @@ import io.github.dunwu.algorithm.tree.TreeNode;
 import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
- * <code>二叉树的最小深度</code> 算法实现
+ * <a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree">二叉树的最小深度</a>
  *
- * <pre>
- * 给定一个二叉树，找出其最小深度。
- *
- * 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
- *
- * 说明: 叶子节点是指没有子节点的节点。
- *
- * 示例:
- *
- * 给定二叉树 [3,9,20,null,null,15,7],
- *
- *     3
- *    / \
- *   9  20
- *     /  \
- *    15   7
- * 返回它的最小深度  2.
- * </pre>
- *
- * @see <a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree">二叉树的最小深度</a>
+ * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @date 2025-08-11
  */
 public class 二叉树的最小深度 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
-        System.out.println("result = " + minDepthInDFS(tree));
-        Assertions.assertEquals(2, minDepthInDFS(tree));
-        Assertions.assertEquals(2, minDepthInBFS(tree));
+        Solution s = new Solution();
+
+        TreeNode root = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
+        Assertions.assertEquals(2, s.minDepth(root));
+
+        TreeNode root2 = TreeUtils.buildTree(2, null, 3, null, 4, null, 5, null, 6);
+        Assertions.assertEquals(5, s.minDepth(root2));
     }
 
-    // 基于 DFS 实现
-    // 时间复杂度 O(N)
-    public static int minDepthInDFS(TreeNode root) {
-        if (root == null) return 0;
-        if (root.left == null) return 1 + minDepthInDFS(root.right);
-        if (root.right == null) return 1 + minDepthInDFS(root.left);
-        return 1 + Math.min(minDepthInDFS(root.left), minDepthInDFS(root.right));
-    }
+    static class Solution {
 
-    // 基于 BFS 实现
-    // 时间复杂度 O(N)
-    public static int minDepthInBFS(TreeNode root) {
-        if (root == null) return 0;
-        int depth = 0;
-        int min = Integer.MAX_VALUE;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            depth++;
-            int size = queue.size();
-            while (size-- > 0) {
-                TreeNode node = queue.poll();
-                if (node.left == null && node.right == null) {
-                    min = Math.min(min, depth);
-                }
-                if (node.left != null) queue.offer(node.left);
-                if (node.right != null) queue.offer(node.right);
-            }
+        public int minDepth(TreeNode root) {
+            if (root == null) { return 0; }
+            int left = minDepth(root.left);
+            int right = minDepth(root.right);
+            if (root.left == null || root.right == null) { return left + right + 1; }
+            return Math.min(left, right) + 1;
         }
-        return min;
+
     }
 
 }

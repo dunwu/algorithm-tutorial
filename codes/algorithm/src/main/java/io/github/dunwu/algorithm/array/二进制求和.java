@@ -3,7 +3,7 @@ package io.github.dunwu.algorithm.array;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * <a href="https://leetcode.cn/problems/add-binary/description/">67. 二进制求和</a>
+ * <a href="https://leetcode.cn/problems/add-binary/">67. 二进制求和</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-21

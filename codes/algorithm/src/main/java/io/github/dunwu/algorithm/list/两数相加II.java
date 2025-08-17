@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * <a href="https://leetcode.cn/problems/lMSNwu/description/">LCR 025. 两数相加II</a>
+ * <a href="https://leetcode.cn/problems/lMSNwu/">LCR 025. 两数相加II</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-21

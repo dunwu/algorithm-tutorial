@@ -19,41 +19,40 @@ import java.util.Map;
 public class 从中序与后序遍历序列构造二叉树 {
 
     public static void main(String[] args) {
-        TreeNode output1 = buildTree(new int[] { 9, 3, 15, 20, 7 }, new int[] { 9, 15, 7, 20, 3 });
-        List<Integer> list = TreeUtils.toBfsValueList(output1);
+        Solution s = new Solution();
+        TreeNode output1 = s.buildTree(new int[] { 9, 3, 15, 20, 7 }, new int[] { 9, 15, 7, 20, 3 });
+        List<Integer> list = TreeUtils.toValueList(output1);
         System.out.println(list);
         Assertions.assertArrayEquals(Arrays.asList(3, 9, 20, null, null, 15, 7).toArray(), list.toArray());
     }
 
-    static Map<Integer, Integer> map;
+    static class Solution {
 
-    public static TreeNode buildTree(int[] inorder, int[] postorder) {
-        if (inorder.length == 0 || postorder.length == 0) {
-            return null;
-        }
-        map = new HashMap<>(inorder.length);
-        for (int i = 0; i < inorder.length; i++) {
-            map.put(inorder[i], i);
-        }
-        return build(inorder, 0, inorder.length - 1,
-            postorder, 0, postorder.length - 1);
-    }
+        Map<Integer, Integer> map = new HashMap<>();
 
-    public static TreeNode build(int[] inorder, int inBegin, int inEnd,
-        int[] postorder, int postBegin, int postEnd) {
-        if (inBegin > inEnd || postBegin > postEnd) {
-            return null;
+        public TreeNode buildTree(int[] inorder, int[] postorder) {
+            if (inorder == null || postorder == null) { return null; }
+            for (int i = 0; i < inorder.length; i++) {
+                map.put(inorder[i], i);
+            }
+            return build(inorder, 0, inorder.length - 1,
+                postorder, 0, postorder.length - 1);
         }
-        int rootVal = postorder[postEnd];
-        int rootPos = map.get(rootVal);
-        int leftSize = rootPos - inBegin;
 
-        TreeNode root = new TreeNode(rootVal);
-        root.left = build(inorder, inBegin, rootPos - 1,
-            postorder, postBegin, postBegin + leftSize - 1);
-        root.right = build(inorder, rootPos + 1, inEnd,
-            postorder, postBegin + leftSize, postEnd - 1);
-        return root;
+        public TreeNode build(int[] inorder, int inBegin, int inEnd,
+            int[] postorder, int postBegin, int postEnd) {
+            if (postBegin > postEnd) { return null; }
+            int rootVal = postorder[postEnd];
+            int rootPos = map.get(rootVal);
+            int leftSize = rootPos - inBegin;
+            TreeNode root = new TreeNode(rootVal);
+            root.left = build(inorder, inBegin, rootPos - 1,
+                postorder, postBegin, postBegin + leftSize - 1);
+            root.right = build(inorder, rootPos + 1, inEnd,
+                postorder, postBegin + leftSize, postEnd - 1);
+            return root;
+        }
+
     }
 
 }

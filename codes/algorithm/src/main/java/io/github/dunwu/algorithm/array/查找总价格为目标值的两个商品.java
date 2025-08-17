@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <a href="https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/description/">LCR 179. 查找总价格为目标值的两个商品</a>
+ * <a href="https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/">LCR 179. 查找总价格为目标值的两个商品</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-13

@@ -7,57 +7,54 @@ import org.junit.jupiter.api.Assertions;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
- * <code>二叉树的所有路径</code> 算法实现
+ * <a href="https://leetcode-cn.com/problems/binary-tree-paths/">二叉树的所有路径</a>
  *
- * <pre>
- * 给定一个二叉树，返回所有从根节点到叶子节点的路径。
- *
- * 说明: 叶子节点是指没有子节点的节点。
- *
- * 示例:
- *
- * 输入:
- *
- *    1
- *  /   \
- * 2     3
- *  \
- *   5
- *
- * 输出: ["1->2->5", "1->3"]
- *
- * 解释: 所有根节点到叶子节点的路径为: 1->2->5, 1->3
- * </pre>
- *
- * @see <a href="https://leetcode-cn.com/problems/binary-tree-paths/">二叉树的所有路径</a>
+ * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @since 2025-08-15
  */
 public class 二叉树的所有路径 {
 
     public static void main(String[] args) {
+
+        Solution s = new Solution();
         TreeNode tree = TreeUtils.buildTree(1, 2, 3, 5);
-        System.out.println("result = " + binaryTreePaths(tree));
+        List<String> list = s.binaryTreePaths(tree);
         Assertions.assertArrayEquals(Arrays.asList("1->2->5", "1->3").toArray(),
-            binaryTreePaths(tree).toArray(new String[0]));
+            list.toArray(new String[0]));
     }
 
-    public static List<String> binaryTreePaths(TreeNode root) {
+    static class Solution {
+
+        LinkedList<String> nodes = new LinkedList<>();
         List<String> paths = new LinkedList<>();
-        recordPath(root, "", paths);
-        return paths;
-    }
 
-    private static void recordPath(TreeNode node, String path, List<String> paths) {
-        if (node == null) return;
-        path += node.val;
-        if (node.left == null && node.right == null) {
-            paths.add(path);
-        } else {
-            path += "->";
-            recordPath(node.left, path, paths);
-            recordPath(node.right, path, paths);
+        public List<String> binaryTreePaths(TreeNode root) {
+            traverse(root);
+            return paths;
         }
+
+        public void traverse(TreeNode root) {
+            if (root == null) {
+                return;
+            }
+
+            if (root.left == null && root.right == null) {
+                nodes.addLast(String.valueOf(root.val));
+                String path = String.join("->", nodes.toArray(new String[0]));
+                paths.add(path);
+                nodes.removeLast();
+                return;
+            }
+
+            nodes.addLast(String.valueOf(root.val));
+            traverse(root.left);
+            traverse(root.right);
+            nodes.removeLast();
+        }
+
     }
 
 }

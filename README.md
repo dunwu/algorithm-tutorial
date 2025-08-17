@@ -208,39 +208,68 @@
 
 ### 二叉树
 
-#### 二叉树系列算法核心纲领
+#### 基础
 
-| 题目                                                         | 掌握度 |
-| ------------------------------------------------------------ | ------ |
-| [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/) | 已掌握 |
-| [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/) | 已掌握 |
-| [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/) |        |
-| [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/) |        |
-| [116. 填充每个节点的下一个右侧节点指针](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/) | 未掌握 |
-| [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/) | 已掌握 |
-| [105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 不熟练 |
-| [106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 不熟练 |
-| [654. 最大二叉树](https://leetcode.cn/problems/maximum-binary-tree/) | 已掌握 |
-| [889. 根据前序和后序遍历构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal/) |        |
-| [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/) | 未掌握 |
+| 题目                                                                                                                     | 掌握度 |
+| ------------------------------------------------------------------------------------------------------------------------ | ------ |
+| [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)                                      | 已掌握 |
+| [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)                                      | 已掌握 |
+| [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)                                    | 已掌握 |
+| [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)                                      | 已掌握 |
+| [145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)                                   | 已掌握 |
+| [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)                                 | 不熟练 |
+| [107. 二叉树的层序遍历 II](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/)                           | 已掌握 |
+| [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)                                               | 未掌握 |
+| [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)                                | 已掌握 |
+| [116. 填充每个节点的下一个右侧节点指针](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)       | 已掌握 |
+| [117. 填充每个节点的下一个右侧节点指针 II](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/) | 已掌握 |
+| [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)                                                      | 已掌握 |
+| [654. 最大二叉树](https://leetcode.cn/problems/maximum-binary-tree/)                                                     | 已掌握 |
+| [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/)                     | 未掌握 |
+| [222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)                                     | 已掌握 |
+
+#### 用「遍历」思维解题
+
+| 题目                                                                                                                                            | 掌握度 |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [257. 二叉树的所有路径](https://labuladong.online/algo/problem-set/binary-tree-traverse-i/#slug_binary-tree-paths)                              | 未掌握 |
+| [129. 求根节点到叶节点数字之和](https://labuladong.online/algo/problem-set/binary-tree-traverse-i/#slug_sum-root-to-leaf-numbers)               | 已掌握 |
+| [199. 二叉树的右视图](https://leetcode.cn/problems/binary-tree-right-side-view/)                                                                | 已掌握 |
+| [988. 从叶结点开始的最小字符串](https://labuladong.online/algo/problem-set/binary-tree-traverse-i/#slug_smallest-string-starting-from-leaf)     | 已掌握 |
+| [1022. 从根到叶的二进制数之和](https://labuladong.online/algo/problem-set/binary-tree-traverse-i/#slug_sum-of-root-to-leaf-binary-numbers)      | 已掌握 |
+| [1457. 二叉树中的伪回文路径](https://labuladong.online/algo/problem-set/binary-tree-traverse-i/#slug_pseudo-palindromic-paths-in-a-binary-tree) | 已掌握 |
+| [404. 左叶子之和](https://leetcode.cn/problems/sum-of-left-leaves/)                                                                             | 已掌握 |
+| [623. 在二叉树中增加一行](https://leetcode.cn/problems/add-one-row-to-tree/)                                                                    | 已掌握 |
+
+#### 用「分解」思维解题
+
+| 题目                                                                                                                            | 掌握度 |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  | 已掌握 |
+| [106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 已掌握 |
+| [889. 根据前序和后序遍历构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | 已掌握 |
+| [331. 验证二叉树的前序序列化](https://leetcode.cn/problems/verify-preorder-serialization-of-a-binary-tree/)                     |        |
+| [894. 所有可能的真二叉树](https://leetcode.cn/problems/all-possible-full-binary-trees/)                                         |        |
+| [998. 最大二叉树 II](https://leetcode.cn/problems/maximum-binary-tree-ii/)                                                      |        |
+| [1110. 删点成林](https://leetcode.cn/problems/delete-nodes-and-return-forest/)                                                  |        |
 
 ### 动态规划
 
-| 题目                                                         | 掌握度 |
-| ------------------------------------------------------------ | ------ |
-| [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)   |        |
+| 题目                                                              | 掌握度 |
+| ----------------------------------------------------------------- | ------ |
+| [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)        |        |
 | [509. 斐波那契数](https://leetcode.cn/problems/fibonacci-number/) |        |
-|                                                              |        |
-|                                                              |        |
-|                                                              |        |
-|                                                              |        |
-|                                                              |        |
+|                                                                   |        |
+|                                                                   |        |
+|                                                                   |        |
+|                                                                   |        |
+|                                                                   |        |
 
 ### 贪心算法
 
-| 题目                                                         | 掌握度 |
-| ------------------------------------------------------------ | ------ |
-| [55. 跳跃游戏](https://leetcode.cn/problems/jump-game/)      |        |
+| 题目                                                          | 掌握度 |
+| ------------------------------------------------------------- | ------ |
+| [55. 跳跃游戏](https://leetcode.cn/problems/jump-game/)       |        |
 | [45. 跳跃游戏 II](https://leetcode.cn/problems/jump-game-ii/) |        |
 
 ### 分治算法

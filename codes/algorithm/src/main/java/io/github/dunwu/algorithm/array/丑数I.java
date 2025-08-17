@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * <a href="https://leetcode.cn/problems/ugly-number/description/">263. 丑数</a>
+ * <a href="https://leetcode.cn/problems/ugly-number/">263. 丑数</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-24

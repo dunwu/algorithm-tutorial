@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import java.util.List;
 
 /**
- * <a href="https://leetcode.cn/problems/reverse-linked-list-ii/description/">92. 反转链表 II</a>
+ * <a href="https://leetcode.cn/problems/reverse-linked-list-ii/">92. 反转链表 II</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-20

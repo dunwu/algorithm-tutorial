@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 import java.util.TreeMap;
 
 /**
- * <a href="https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/description/">373. 查找和最小的 K 对数字</a>
+ * <a href="https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/">373. 查找和最小的 K 对数字</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-01-21

@@ -7,16 +7,16 @@ import io.github.dunwu.algorithm.tree.TreeUtils;
 import java.util.LinkedList;
 
 /**
- * <a href="https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/">116. 填充每个节点的下一个右侧节点指针</a>
+ * <a href="https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/">117. 填充每个节点的下一个右侧节点指针 II</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-08-11
  */
-public class 填充每个节点的下一个右侧节点指针 {
+public class 填充每个节点的下一个右侧节点指针2 {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        TreeNode treeNode = TreeUtils.buildTree(1, 2, 3, 4, 5, 6, 7);
+        TreeNode treeNode = TreeUtils.buildTree(1, 2, 3, 4, 5, null, 7);
         Node root = JSONUtil.toBean(JSONUtil.toJsonStr(treeNode), Node.class);
         s.connect(root);
         System.out.println(root);
