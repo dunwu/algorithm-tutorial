@@ -15,36 +15,47 @@ import java.util.LinkedList;
 public class 验证二叉树的前序序列化 {
 
     public static void main(String[] args) {
-        Assertions.assertEquals(22,
-            new Solution().sumRootToLeaf(TreeUtils.buildTree(1, 0, 1, 0, 1, 0, 1)));
-        Assertions.assertEquals(0,
-            new Solution().sumRootToLeaf(TreeUtils.buildTree(0)));
+        Assertions.assertTrue(new Solution().isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
+        Assertions.assertFalse(new Solution().isValidSerialization("1,#"));
+        Assertions.assertFalse(new Solution().isValidSerialization("9,#,#,1"));
     }
 
     static class Solution {
 
-        int sum = 0;
-        LinkedList<Integer> paths = new LinkedList<>();
+        public static final String SEP = ",";
+        public static final String NULL = "#";
+        boolean isOk = true;
 
         public boolean isValidSerialization(String preorder) {
-
+            LinkedList<String> nodes = new LinkedList<>();
+            for (String s : preorder.split(SEP)) {
+                nodes.addFirst(s);
+            }
+            deserialize(nodes);
+            if (nodes.size() > 0) {
+                isOk = false;
+            }
+            return isOk;
         }
 
-        public void traverse(TreeNode root) {
-            if (root == null) { return; }
+        public TreeNode deserialize(LinkedList<String> values) {
 
-            paths.addLast(root.val);
-            if (root.left == null && root.right == null) {
-                int num = 0;
-                for (Integer value : paths) {
-                    num = num * 2 + value;
-                }
-                sum += num;
-            } else {
-                traverse(root.left);
-                traverse(root.right);
+            if (values.isEmpty()) return null;
+
+            String value = values.removeLast();
+            if (NULL.equals(value)) {
+                return null;
             }
-            paths.removeLast();
+            if (values.isEmpty() || values.size() < 2) {
+                isOk = false;
+                return null;
+            }
+            TreeNode node = new TreeNode(Integer.parseInt(value));
+
+            node.left = deserialize(values);
+            node.right = deserialize(values);
+
+            return node;
         }
 
     }
