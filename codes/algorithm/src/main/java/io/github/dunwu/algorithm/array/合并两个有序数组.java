@@ -4,7 +4,6 @@ import cn.hutool.core.util.ArrayUtil;
 import org.junit.jupiter.api.Assertions;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.PriorityQueue;
 
 /**
  * <a href="https://leetcode.cn/problems/merge-sorted-array/">88. 合并两个有序数组</a>
@@ -47,17 +46,20 @@ public class 合并两个有序数组 {
     }
 
     public static void merge2(int[] nums1, int m, int[] nums2, int n) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> a - b);
-        for (int i = 0; i < m; i++) {
-            pq.offer(nums1[i]);
+        // 两个指针分别初始化在两个数组的最后一个元素（类似拉链两端的锯齿）
+        int i = m - 1, j = n - 1;
+        // 生成排序的结果（类似拉链的拉锁）
+        int p = nums1.length - 1;
+        // 从后向前生成结果数组，类似合并两个有序链表的逻辑
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[p--] = nums1[i--];
+            } else {
+                nums1[p--] = nums2[j--];
+            }
         }
-        for (int i = 0; i < n; i++) {
-            pq.offer(nums2[i]);
-        }
-
-        int pos = 0;
-        while (!pq.isEmpty() && pos < (m + n)) {
-            nums1[pos++] = pq.poll();
+        while (j >= 0) {
+            nums1[p--] = nums2[j--];
         }
     }
 

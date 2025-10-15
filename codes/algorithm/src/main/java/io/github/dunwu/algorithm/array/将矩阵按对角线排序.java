@@ -2,11 +2,8 @@ package io.github.dunwu.algorithm.array;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.PriorityQueue;
 
 /**
  * <a href="https://leetcode.cn/problems/sort-the-matrix-diagonally/">1329. 将矩阵按对角线排序</a>
@@ -31,32 +28,29 @@ public class 将矩阵按对角线排序 {
     }
 
     public static int[][] diagonalSort(int[][] mat) {
-        Map<Integer, List<Integer>> map = new HashMap<>();
-        int m = mat.length;
-        int n = mat[0].length;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        int R = mat.length, C = mat[0].length;
+
+        // 存储所有对角线的元素列表
+        HashMap<Integer, PriorityQueue<Integer>> map = new HashMap<>();
+
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                // 横纵坐标之差可以作为一条对角线的 ID
                 int diff = i - j;
-                if (!map.containsKey(diff)) {
-                    map.put(diff, new ArrayList<>());
-                }
-                map.get(diff).add(mat[i][j]);
+                map.putIfAbsent(diff, new PriorityQueue<>((a, b) -> a - b));
+                map.get(diff).offer(mat[i][j]);
             }
         }
 
-        map.forEach((diff, list) -> {
-            Collections.sort(list);
-        });
-
-        int[][] result = new int[m][n];
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                int diff = i - j;
-                List<Integer> list = map.get(diff);
-                result[i][j] = list.remove(0);
+        // 把排序结果回填二维矩阵
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                PriorityQueue<Integer> pq = map.get(i - j);
+                mat[i][j] = pq.poll();
             }
         }
-        return result;
+
+        return mat;
     }
 
 }

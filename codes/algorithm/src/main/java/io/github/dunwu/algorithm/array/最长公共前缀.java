@@ -1,5 +1,3 @@
-
-
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -16,7 +14,7 @@ public class 最长公共前缀 {
         String output1 = longestCommonPrefix(input1);
         Assertions.assertEquals(expect1, output1);
 
-        String[] input2 = { "dog","racecar","car" };
+        String[] input2 = { "dog", "racecar", "car" };
         String expect2 = "";
         String output2 = longestCommonPrefix(input2);
         Assertions.assertEquals(expect2, output2);

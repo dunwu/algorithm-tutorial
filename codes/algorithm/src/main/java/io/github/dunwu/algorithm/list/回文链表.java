@@ -23,23 +23,26 @@ public class 回文链表 {
         Assertions.assertFalse(isPalindrome(head));
     }
 
-    public static boolean isPalindrome(ListNode head) {
-        LinkedList<Integer> l1 = new LinkedList<>();
-        LinkedList<Integer> l2 = new LinkedList<>();
-        while (head != null) {
-            l1.offerFirst(head.val);
-            l2.offerFirst(head.val);
-            head = head.next;
-        }
-
-        while (!l1.isEmpty() && !l2.isEmpty()) {
-            Integer num1 = l1.pollFirst();
-            Integer num2 = l2.pollLast();
-            if (num1 != num2) {
+    public static boolean isPalindrome(ListNode list) {
+        ListNode rlist = reverse(list);
+        ListNode p = list, q = rlist;
+        while (p != null && q != null) {
+            if (p.val != q.val) {
                 return false;
             }
+            p = p.next;
+            q = q.next;
         }
         return true;
+    }
+
+    static ListNode reverse(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode last = reverse(head.next);
+        head.next.next = head;
+        head.next = null;
+        return last;
     }
 
 }

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
-import java.util.TreeMap;
 
 /**
  * <a href="https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/">373. 查找和最小的 K 对数字</a>

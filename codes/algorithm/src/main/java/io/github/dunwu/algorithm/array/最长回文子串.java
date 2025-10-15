@@ -15,31 +15,29 @@ public class 最长回文子串 {
     }
 
     public static String longestPalindrome(String s) {
-        char[] chars = s.toCharArray();
-        String max = s.substring(0, 1);
-        for (int i = 0; i < chars.length; i++) {
-            for (int j = chars.length - 1; j > i; j--) {
-                if (check(chars, i, j)) {
-                    String temp = s.substring(i, j + 1);
-                    if (temp.length() > max.length()) {
-                        max = temp;
-                    }
-                }
-            }
+        String res = "";
+        for (int i = 0; i < s.length(); i++) {
+            // 以 s[i] 为中心的最长回文子串
+            String s1 = palindrome(s, i, i);
+            // 以 s[i] 和 s[i+1] 为中心的最长回文子串
+            String s2 = palindrome(s, i, i + 1);
+            // res = longest(res, s1, s2)
+            res = res.length() > s1.length() ? res : s1;
+            res = res.length() > s2.length() ? res : s2;
         }
-        return max;
+        return res;
     }
 
-    public static boolean check(char[] chars, int begin, int end) {
-        int left = begin, right = end;
-        while (left < right) {
-            if (chars[left] != chars[right]) {
-                return false;
-            }
-            left++;
-            right--;
+    public static String palindrome(String s, int l, int r) {
+        // 防止索引越界
+        while (l >= 0 && r < s.length()
+            && s.charAt(l) == s.charAt(r)) {
+            // 向两边展开
+            l--;
+            r++;
         }
-        return true;
+        // 此时 [l+1, r-1] 就是最长回文串
+        return s.substring(l + 1, r);
     }
 
 }

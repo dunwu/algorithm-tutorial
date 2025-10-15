@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Stack;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/reverse-linked-list/">206. 反转链表</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @see <a href="https://leetcode-cn.com/problems/reverse-linked-list/">206. 反转链表</a>
  * @since 2020-06-09
  */
 public class 反转链表 {
@@ -50,49 +51,38 @@ public class 反转链表 {
             node = node.next;
         }
 
-        ListNode dummy = new ListNode(-5001);
-        ListNode p = dummy;
+        ListNode dummy = new ListNode(5001);
+        ListNode n = dummy;
         while (!stack.isEmpty()) {
-            ListNode top = stack.pop();
-            top.next = null;
-            p.next = top;
-            p = p.next;
+            n.next = stack.pop();
+            n = n.next;
+            n.next = null;
         }
         return dummy.next;
     }
 
-    /**
-     * 双指针，时间复杂度：O(N)
-     */
     public static ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null) return head;
 
-        if (head == null) {
-            return head;
-        }
-
-        ListNode pre = null, cur = head;
+        ListNode pre = null, cur = head, next = head.next;
         while (cur != null) {
-            ListNode next = cur.next;
             cur.next = pre;
             pre = cur;
             cur = next;
+            if (next != null) {
+                next = next.next;
+            }
         }
         return pre;
     }
 
-    /**
-     * 递归
-     */
     public static ListNode reverseList3(ListNode head) {
+        if (head == null || head.next == null) return head;
 
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-        ListNode last = reverseList3(head.next);
+        ListNode reverse = reverseList3(head.next);
         head.next.next = head;
         head.next = null;
-        return last;
+        return reverse;
     }
 
 }

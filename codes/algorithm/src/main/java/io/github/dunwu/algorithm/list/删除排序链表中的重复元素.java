@@ -29,17 +29,14 @@ public class 删除排序链表中的重复元素 {
     }
 
     public static ListNode deleteDuplicates(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode slow = head, fast = head.next;
-        while (fast != null) {
-            if (slow.val == fast.val) {
-                slow.next = fast.next;
+        if (head == null || head.next == null) return head;
+        ListNode p = head;
+        while (p.next != null) {
+            if (p.val == p.next.val) {
+                p.next = p.next.next;
             } else {
-                slow = slow.next;
+                p = p.next;
             }
-            fast = fast.next;
         }
         return head;
     }

@@ -2,9 +2,6 @@ package io.github.dunwu.algorithm.array;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * <a href="https://leetcode.cn/problems/ugly-number/">263. 丑数</a>
  *
