@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -14,11 +13,11 @@ public class 二叉树的直径 {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        TreeNode root = TreeUtils.buildTree(1, 2, 3, 4, 5);
+        TreeNode root = TreeNode.buildTree(1, 2, 3, 4, 5);
         Assertions.assertEquals(3, s.diameterOfBinaryTree(root));
 
         Solution s2 = new Solution();
-        TreeNode root2 = TreeUtils.buildTree(1, 2);
+        TreeNode root2 = TreeNode.buildTree(1, 2);
         Assertions.assertEquals(1, s2.diameterOfBinaryTree(root2));
     }
 

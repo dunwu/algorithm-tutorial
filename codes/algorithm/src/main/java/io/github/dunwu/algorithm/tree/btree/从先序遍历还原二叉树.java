@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 
 import java.util.Stack;
 
@@ -13,7 +12,7 @@ public class 从先序遍历还原二叉树 {
 
     public static void main(String[] args) {
         TreeNode result = recoverFromPreorder("1-2--3--4-5--6--7");
-        System.out.println(TreeUtils.toList(result));
+        System.out.println(TreeNode.toList(result));
     }
 
     public static TreeNode recoverFromPreorder(String S) {

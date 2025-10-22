@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.List;
@@ -18,21 +17,21 @@ public class 二叉树展开为链表 {
 
         Solution s = new Solution();
 
-        TreeNode root = TreeUtils.buildTree(1, 2, 5, 3, 4, null, 6);
+        TreeNode root = TreeNode.buildTree(1, 2, 5, 3, 4, null, 6);
         s.flatten(root);
-        List<Integer> list = TreeUtils.toValueList(root);
+        List<Integer> list = TreeNode.toValueList(root);
         Assertions.assertArrayEquals(new Integer[] { 1, null, 2, null, 3, null, 4, null, 5, null, 6 },
             list.toArray(new Integer[0]));
 
-        TreeNode root2 = TreeUtils.buildTree(0);
+        TreeNode root2 = TreeNode.buildTree(0);
         s.flatten(root2);
-        List<Integer> list2 = TreeUtils.toValueList(root2);
+        List<Integer> list2 = TreeNode.toValueList(root2);
         Assertions.assertArrayEquals(new Integer[] { 0 },
             list2.toArray(new Integer[0]));
 
-        TreeNode root3 = TreeUtils.buildTree();
+        TreeNode root3 = TreeNode.buildTree();
         s.flatten(root3);
-        List<Integer> list3 = TreeUtils.toValueList(root3);
+        List<Integer> list3 = TreeNode.toValueList(root3);
         Assertions.assertArrayEquals(new Integer[] {},
             list3.toArray(new Integer[0]));
     }

@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.bstree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import io.github.dunwu.algorithm.tree.btree.二叉树的最近公共祖先;
 import org.junit.jupiter.api.Assertions;
 
@@ -14,18 +13,18 @@ import org.junit.jupiter.api.Assertions;
 public class 二叉搜索树的最近公共祖先 {
 
     public static void main(String[] args) {
-        TreeNode root = TreeUtils.buildTree(6, 2, 8, 0, 4, 7, 9, null, null, 3, 5);
-        TreeNode p = TreeUtils.find(root, 2);
-        TreeNode q = TreeUtils.find(root, 8);
+        TreeNode root = TreeNode.buildTree(6, 2, 8, 0, 4, 7, 9, null, null, 3, 5);
+        TreeNode p = TreeNode.find(root, 2);
+        TreeNode q = TreeNode.find(root, 8);
         // TreeNode treeNode = lowestCommonAncestor(root, p, q);
         TreeNode treeNode = lowestCommonAncestor2(root, p, q);
         Assertions.assertNotNull(treeNode);
         Assertions.assertEquals(6, treeNode.val);
         System.out.println("公共祖先节点 = " + treeNode.val);
 
-        TreeNode root2 = TreeUtils.buildTree(6, 2, 8, 0, 4, 7, 9, null, null, 3, 5);
-        TreeNode p2 = TreeUtils.find(root2, 2);
-        TreeNode q2 = TreeUtils.find(root2, 4);
+        TreeNode root2 = TreeNode.buildTree(6, 2, 8, 0, 4, 7, 9, null, null, 3, 5);
+        TreeNode p2 = TreeNode.find(root2, 2);
+        TreeNode q2 = TreeNode.find(root2, 4);
         // TreeNode treeNode2 = lowestCommonAncestor(root2, p2, q2);
         TreeNode treeNode2 = lowestCommonAncestor2(root2, p2, q2);
         Assertions.assertNotNull(treeNode2);

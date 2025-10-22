@@ -1,10 +1,8 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -22,19 +20,19 @@ public class 二叉树的锯齿形层次遍历 {
 
         Solution s = new Solution();
 
-        TreeNode root = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
+        TreeNode root = TreeNode.buildTree(3, 9, 20, null, null, 15, 7);
         List<List<Integer>> expect = new LinkedList<>();
         expect.add(Arrays.asList(3));
         expect.add(Arrays.asList(20, 9));
         expect.add(Arrays.asList(15, 7));
         Assertions.assertArrayEquals(expect.toArray(), s.zigzagLevelOrder(root).toArray());
 
-        TreeNode root2 = TreeUtils.buildTree(1);
+        TreeNode root2 = TreeNode.buildTree(1);
         List<List<Integer>> expect2 = new LinkedList<>();
         expect2.add(Arrays.asList(1));
         Assertions.assertArrayEquals(expect2.toArray(), s.zigzagLevelOrder(root2).toArray());
 
-        TreeNode root3 = TreeUtils.buildTree();
+        TreeNode root3 = TreeNode.buildTree();
         List<List<Integer>> expect3 = new LinkedList<>();
         Assertions.assertArrayEquals(expect3.toArray(), s.zigzagLevelOrder(root3).toArray());
     }

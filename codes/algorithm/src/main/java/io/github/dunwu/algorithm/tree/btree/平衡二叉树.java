@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -11,9 +10,9 @@ import org.junit.jupiter.api.Assertions;
 public class 平衡二叉树 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
-        TreeNode tree2 = TreeUtils.buildTree(1, 2, 2, 3, 3, null, null, 4, 4);
-        TreeNode tree3 = TreeUtils.buildTree(null);
+        TreeNode tree = TreeNode.buildTree(3, 9, 20, null, null, 15, 7);
+        TreeNode tree2 = TreeNode.buildTree(1, 2, 2, 3, 3, null, null, 4, 4);
+        TreeNode tree3 = TreeNode.buildTree(null);
         平衡二叉树 demo = new 平衡二叉树();
         Assertions.assertTrue(demo.isBalanced(tree));
         Assertions.assertFalse(demo.isBalanced(tree2));

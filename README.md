@@ -143,7 +143,7 @@
 | [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)                                                 | ❌     |
 | [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/)                     | ❌     |
 | [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)                                     | ❌     |
-| [1004. 最大连续1的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)                                        | ✔️     |
+| [1004. 最大连续 1 的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)                                      | ✔️     |
 | [424. 替换后的最长重复字符](https://leetcode.cn/problems/longest-repeating-character-replacement/)                         | ❗     |
 | [219. 存在重复元素 II](https://leetcode.cn/problems/contains-duplicate-ii/)                                                | ❗     |
 | [220. 存在重复元素 III](https://labuladong.online/algo/problem-set/sliding-window/#slug_contains-duplicate-iii)            | ❌     |
@@ -157,20 +157,15 @@
 | [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/) | ❗     |
 | [704. 二分查找](https://leetcode.cn/problems/binary-search/)                                                                            | ✔️     |
 | [LCR 172. 统计目标成绩的出现次数](https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/)                           | ✔️     |
-
-#### 索
-
-| 题目                                                                                                   | 掌握度 |
-| ------------------------------------------------------------------------------------------------------ | ------ |
-| [875. 爱吃香蕉的珂珂](https://leetcode.cn/problems/koko-eating-bananas/)                               | ❌     |
-| [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/) | ❌     |
-| [410. 分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)                         | ❌     |
+| [875. 爱吃香蕉的珂珂](https://leetcode.cn/problems/koko-eating-bananas/)                                                                | ❌     |
+| [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/)                                  | ❌     |
+| [410. 分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)                                                          | ❌     |
 
 #### 前缀和数组
 
 | 题目                                                                                           | 掌握度 |
 | ---------------------------------------------------------------------------------------------- | ------ |
-| [303. 区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/)        | ❗     |
+| [303. 区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/)        | ✔️     |
 | [304. 二维区域和检索 - 矩阵不可变](https://leetcode.cn/problems/range-sum-query-2d-immutable/) | ❌     |
 
 #### 差分数组
@@ -187,31 +182,27 @@
 
 | 题目                                                                            | 掌握度 |
 | ------------------------------------------------------------------------------- | ------ |
-| [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/) | ❗     |
+| [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/) | ✔️     |
 | [232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/) | ✔️     |
 
 #### 栈的经典习题
 
 | 题目                                                                                    | 掌握度 |
 | --------------------------------------------------------------------------------------- | ------ |
-| [71. 简化路径](https://leetcode.cn/problems/simplify-path/)                             | ❗     |
+| [71. 简化路径](https://leetcode.cn/problems/simplify-path/)                             | ✔️     |
 | [143. 重排链表](https://leetcode.cn/problems/reorder-list/)                             | ✔️     |
 | [20. 有效的括号](https://leetcode.cn/problems/valid-parentheses/)                       | ✔️     |
 | [150. 逆波兰表达式求值](https://leetcode.cn/problems/evaluate-reverse-polish-notation/) | ✔️     |
 | [388. 文件的最长绝对路径](https://leetcode.cn/problems/longest-absolute-file-path/)     | ❌     |
-| [155. 最小栈](https://leetcode.cn/problems/min-stack/)                                  |        |
-| [895. 最大频率栈](https://leetcode.cn/problems/maximum-frequency-stack/)                |        |
+| [155. 最小栈](https://leetcode.cn/problems/min-stack/)                                  | ❌     |
+| 最大频率栈](https://leetcode.cn/problems/maximum-frequency-stack/)                      | ❌     |
 
 #### 队列的经典习题
 
 | 题目                                                                        | 掌握度 |
 | --------------------------------------------------------------------------- | ------ |
 | [933. 最近的请求次数](https://leetcode.cn/problems/number-of-recent-calls/) | ❗     |
-| [622. 设计循环队列](https://leetcode.cn/problems/design-circular-queue/)    |        |
-|                                                                             |        |
-|                                                                             |        |
-|                                                                             |        |
-|                                                                             |        |
+| [622. 设计循环队列](https://leetcode.cn/problems/design-circular-queue/)    | ❌     |
 |                                                                             |        |
 
 #### 单调栈算法模板
@@ -227,23 +218,19 @@
 
 #### 基础
 
-| 题目                                                                                                                     | 掌握度 |
-| ------------------------------------------------------------------------------------------------------------------------ | ------ |
-| [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)                                      | ✔️     |
-| [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)                                      | ✔️     |
-| [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)                                    | ✔️     |
-| [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)                                      | ✔️     |
-| [145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)                                   | ✔️     |
-| [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)                                 | ❗     |
-| [107. 二叉树的层序遍历 II](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/)                           | ✔️     |
-| [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)                                               | ❌     |
-| [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)                                | ✔️     |
-| [116. 填充每个节点的下一个右侧节点指针](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)       | ✔️     |
-| [117. 填充每个节点的下一个右侧节点指针 II](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/) | ✔️     |
-| [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)                                                      | ✔️     |
-| [654. 最大二叉树](https://leetcode.cn/problems/maximum-binary-tree/)                                                     | ✔️     |
-| [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/)                     | ❌     |
-| [222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)                                     | ✔️     |
+| 题目                                                                                                 | 掌握度 |
+| ---------------------------------------------------------------------------------------------------- | ------ |
+| [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)                  | ✔️     |
+| [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)                  | ✔️     |
+| [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)                | ✔️     |
+| [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)                  | ✔️     |
+| [145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)               | ✔️     |
+| [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)                           | ❌     |
+| [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)            | ✔️     |
+| [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)                                  | ✔️     |
+| [654. 最大二叉树](https://leetcode.cn/problems/maximum-binary-tree/)                                 | ✔️     |
+| [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/) | ❌     |
+| [222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)                 | ✔️     |
 
 #### 用「遍历」思维解题
 
@@ -265,10 +252,50 @@
 | [105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)  | ✔️     |
 | [106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | ✔️     |
 | [889. 根据前序和后序遍历构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)  | ✔️     |
-| [331. 验证二叉树的前序序列化](https://leetcode.cn/problems/verify-preorder-serialization-of-a-binary-tree/)                     |        |
-| [894. 所有可能的真二叉树](https://leetcode.cn/problems/all-possible-full-binary-trees/)                                         |        |
-| [998. 最大二叉树 II](https://leetcode.cn/problems/maximum-binary-tree-ii/)                                                      |        |
-| [1110. 删点成林](https://leetcode.cn/problems/delete-nodes-and-return-forest/)                                                  |        |
+| [331. 验证二叉树的前序序列化](https://leetcode.cn/problems/verify-preorder-serialization-of-a-binary-tree/)                     | ❌     |
+| [894. 所有可能的真二叉树](https://leetcode.cn/problems/all-possible-full-binary-trees/)                                         | ❌     |
+| [998. 最大二叉树 II](https://leetcode.cn/problems/maximum-binary-tree-ii/)                                                      | ❌     |
+| [1110. 删点成林](https://leetcode.cn/problems/delete-nodes-and-return-forest/)                                                  | ❌     |
+
+#### 用「层序遍历」思维解题
+
+| 题目                                                                                                                       | 掌握度 |
+| -------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)                                   | ✔️     |
+| [107. 二叉树的层序遍历 II](https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/)                             | ✔️     |
+| [103. 二叉树的锯齿形层序遍历](https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/)                      | ✔️     |
+| [116. 填充每个节点的下一个右侧节点指针](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)         | ✔️     |
+| [117. 填充每个节点的下一个右侧节点指针 II](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/)   | ✔️     |
+| [662. 二叉树最大宽度](https://leetcode.cn/problems/maximum-width-of-binary-tree/)                                          | ✔️     |
+| [515. 在每个树行中找最大值](https://leetcode.cn/problems/find-largest-value-in-each-tree-row/)                             | ✔️     |
+| [637. 二叉树的层平均值](https://leetcode.cn/problems/average-of-levels-in-binary-tree/)                                    | ✔️     |
+| [958. 二叉树的完全性检验](https://leetcode.cn/problems/check-completeness-of-a-binary-tree/)                               | ✔️     |
+| [1161. 最大层内元素和](https://leetcode.cn/problems/maximum-level-sum-of-a-binary-tree/)                                   | ✔️     |
+| [1302. 层数最深叶子节点的和](https://leetcode.cn/problems/deepest-leaves-sum/)                                             | ✔️     |
+| [1609. 奇偶树](https://leetcode.cn/problems/even-odd-tree/)                                                                | ✔️     |
+| [429. N 叉树的层序遍历](https://leetcode.cn/problems/n-ary-tree-level-order-traversal/)                                    |        |
+| [919. 完全二叉树插入器](https://leetcode.cn/problems/complete-binary-tree-inserter/)                                       |        |
+| [剑指 Offer 32 - II. 从上到下打印二叉树 II](https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/)    |        |
+| [剑指 Offer 32 - III. 从上到下打印二叉树 III](https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/) |        |
+| [剑指 Offer 32 - I. 从上到下打印二叉树](https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/)           |        |
+
+#### 二叉搜索树
+
+| 题目                                                                                          | 掌握度 |
+| --------------------------------------------------------------------------------------------- | ------ |
+| [230. 二叉搜索树中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/) | ❗     |
+| [538. 把二叉搜索树转换为累加树](https://leetcode.cn/problems/convert-bst-to-greater-tree/)    | ✔️     |
+| [450. 删除二叉搜索树中的节点](https://leetcode.cn/problems/delete-node-in-a-bst/)             | ❌     |
+| [700. 二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/)       | ✔️     |
+| [701. 二叉搜索树中的插入操作](https://leetcode.cn/problems/insert-into-a-binary-search-tree/) | ✔️     |
+| [98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)               | ❌     |
+|                                                                                               |        |
+|                                                                                               |        |
+|                                                                                               |        |
+|                                                                                               |        |
+|                                                                                               |        |
+|                                                                                               |        |
+|                                                                                               |        |
 
 ### 动态规划
 
@@ -276,10 +303,6 @@
 | ----------------------------------------------------------------- | ------ |
 | [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)        |        |
 | [509. 斐波那契数](https://leetcode.cn/problems/fibonacci-number/) |        |
-|                                                                   |        |
-|                                                                   |        |
-|                                                                   |        |
-|                                                                   |        |
 |                                                                   |        |
 
 ### 贪心算法
@@ -301,7 +324,7 @@
   - 刷题必备
     - 《剑指 offer》
     - 《编程之美》
-    - 《编程之法:面试和算法心得》
+    - 《编程之法：面试和算法心得》
     - 《算法谜题》 都是思维题
   - 基础
     - 《[编程珠玑（第 2 版）](https://www.amazon.cn/gp/product/B00SFZH0DC/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=536&creative=3200&creativeASIN=B00SFZH0DC&linkCode=as2&tag=vastwork-23)》

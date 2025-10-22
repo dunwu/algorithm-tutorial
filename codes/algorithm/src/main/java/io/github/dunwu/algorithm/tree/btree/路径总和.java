@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -31,9 +30,9 @@ public class 路径总和 {
 
     public static void main(String[] args) {
         TreeNode
-            tree = TreeUtils.buildTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1);
+            tree = TreeNode.buildTree(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1);
         Assertions.assertTrue(hasPathSum(tree, 22));
-        TreeNode tree2 = TreeUtils.buildTree(1, 2);
+        TreeNode tree2 = TreeNode.buildTree(1, 2);
         Assertions.assertFalse(hasPathSum(tree2, 1));
     }
 

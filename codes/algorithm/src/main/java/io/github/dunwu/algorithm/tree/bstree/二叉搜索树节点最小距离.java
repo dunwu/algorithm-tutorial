@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.bstree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,7 +35,7 @@ import java.util.List;
 public class 二叉搜索树节点最小距离 {
 
     public static void main(String[] args) {
-        TreeNode tree = TreeUtils.buildTree(4, 2, 6, 1, 3, null, null);
+        TreeNode tree = TreeNode.buildTree(4, 2, 6, 1, 3, null, null);
         System.out.println("result = " + minDiffInBST2(tree));
     }
 

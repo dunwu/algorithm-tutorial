@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
@@ -17,15 +16,15 @@ public class 二叉树的中序遍历 {
 
     public static void main(String[] args) {
         Solution s1 = new Solution();
-        TreeNode root = TreeUtils.buildTree(1, null, 2, 3);
+        TreeNode root = TreeNode.buildTree(1, null, 2, 3);
         Assertions.assertArrayEquals(new Integer[] { 1, 3, 2 }, s1.inorderTraversal(root).toArray(new Integer[0]));
 
         Solution s2 = new Solution();
-        TreeNode root2 = TreeUtils.buildTree();
+        TreeNode root2 = TreeNode.buildTree();
         Assertions.assertArrayEquals(new Integer[] {}, s2.inorderTraversal(root2).toArray(new Integer[0]));
 
         Solution s3 = new Solution();
-        TreeNode root3 = TreeUtils.buildTree(1);
+        TreeNode root3 = TreeNode.buildTree(1);
         Assertions.assertArrayEquals(new Integer[] { 1 }, s3.inorderTraversal(root3).toArray(new Integer[0]));
     }
 

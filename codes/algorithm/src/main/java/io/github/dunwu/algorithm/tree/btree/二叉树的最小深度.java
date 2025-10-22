@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -15,10 +14,10 @@ public class 二叉树的最小深度 {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        TreeNode root = TreeUtils.buildTree(3, 9, 20, null, null, 15, 7);
+        TreeNode root = TreeNode.buildTree(3, 9, 20, null, null, 15, 7);
         Assertions.assertEquals(2, s.minDepth(root));
 
-        TreeNode root2 = TreeUtils.buildTree(2, null, 3, null, 4, null, 5, null, 6);
+        TreeNode root2 = TreeNode.buildTree(2, null, 3, null, 4, null, 5, null, 6);
         Assertions.assertEquals(5, s.minDepth(root2));
     }
 

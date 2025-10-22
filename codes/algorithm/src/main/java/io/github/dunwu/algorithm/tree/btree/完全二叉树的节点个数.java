@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.tree.btree;
 
 import io.github.dunwu.algorithm.tree.TreeNode;
-import io.github.dunwu.algorithm.tree.TreeUtils;
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -15,13 +14,13 @@ public class 完全二叉树的节点个数 {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        TreeNode root = TreeUtils.buildTree(1, 2, 3, 4, 5, 6);
+        TreeNode root = TreeNode.buildTree(1, 2, 3, 4, 5, 6);
         Assertions.assertEquals(6, s.countNodes(root));
 
-        TreeNode root2 = TreeUtils.buildTree();
+        TreeNode root2 = TreeNode.buildTree();
         Assertions.assertEquals(0, s.countNodes(root2));
 
-        TreeNode root3 = TreeUtils.buildTree(1);
+        TreeNode root3 = TreeNode.buildTree(1);
         Assertions.assertEquals(1, s.countNodes(root3));
     }
 
