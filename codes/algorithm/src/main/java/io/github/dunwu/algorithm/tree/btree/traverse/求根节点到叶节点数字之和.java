@@ -4,7 +4,6 @@ import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * <a href="https://leetcode.cn/problems/sum-root-to-leaf-numbers/">求根节点到叶节点数字之和</a>
@@ -15,48 +14,45 @@ import java.util.List;
 public class 求根节点到叶节点数字之和 {
 
     public static void main(String[] args) {
-        Assertions.assertEquals(25, new Solution().sumNumbers(TreeNode.buildTree(1, 2, 3)));
-        Assertions.assertEquals(1026, new Solution().sumNumbers(TreeNode.buildTree(4, 9, 0, 5, 1)));
+        Solution s = new Solution();
+        Assertions.assertEquals(25, s.sumNumbers(TreeNode.buildTree(1, 2, 3)));
+        Assertions.assertEquals(1026, s.sumNumbers(TreeNode.buildTree(4, 9, 0, 5, 1)));
     }
 
     static class Solution {
 
-        TreeNode root = null;
-        List<Integer> nums = new LinkedList<>();
-        LinkedList<TreeNode> paths = new LinkedList<>();
+        int res = 0;
+        LinkedList<Integer> paths = null;
 
         public int sumNumbers(TreeNode root) {
-            this.root = root;
+            res = 0;
+            paths = new LinkedList<>();
             traverse(root);
-            if (nums.size() == 0) { return 0; }
-            return nums.stream().mapToInt(Integer::intValue).sum();
+            return res;
         }
 
-        public void traverse(TreeNode node) {
-            if (node == null) { return; }
-            if (node.left == null && node.right == null) {
-                paths.addLast(node);
-                if (paths.getFirst() == this.root) {
-                    int num = toNum(paths);
-                    nums.add(num);
+        public void traverse(TreeNode root) {
+            // 【校验】
+            if (root == null) { return; }
+
+            // 选择
+            paths.addLast(root.val);
+            if (root.left == null && root.right == null) {
+                int num = 0;
+                for (Integer path : paths) {
+                    num = num * 10 + path;
                 }
-                paths.removeLast();
-                return;
+                res += num;
             }
 
-            paths.addLast(node);
-            traverse(node.left);
-            traverse(node.right);
+            // 【前序】
+            traverse(root.left);
+            // 【中序】
+            traverse(root.right);
+            // 【后序】
+
+            // 取消选择
             paths.removeLast();
-        }
-
-        public int toNum(List<TreeNode> paths) {
-            if (paths.size() == 0) { return 0; }
-            int num = 0;
-            for (TreeNode node : paths) {
-                num = num * 10 + node.val;
-            }
-            return num;
         }
 
     }

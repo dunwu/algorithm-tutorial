@@ -3,8 +3,6 @@ package io.github.dunwu.algorithm.tree.btree;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.List;
-
 /**
  * <a href="https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/">114. 二叉树展开为链表</a>
  *
@@ -19,42 +17,47 @@ public class 二叉树展开为链表 {
 
         TreeNode root = TreeNode.buildTree(1, 2, 5, 3, 4, null, 6);
         s.flatten(root);
-        List<Integer> list = TreeNode.toValueList(root);
         Assertions.assertArrayEquals(new Integer[] { 1, null, 2, null, 3, null, 4, null, 5, null, 6 },
-            list.toArray(new Integer[0]));
+            TreeNode.toValueList(root).toArray());
 
         TreeNode root2 = TreeNode.buildTree(0);
         s.flatten(root2);
-        List<Integer> list2 = TreeNode.toValueList(root2);
-        Assertions.assertArrayEquals(new Integer[] { 0 },
-            list2.toArray(new Integer[0]));
+        Assertions.assertArrayEquals(new Integer[] { 0 }, TreeNode.toValueList(root2).toArray());
 
         TreeNode root3 = TreeNode.buildTree();
         s.flatten(root3);
-        List<Integer> list3 = TreeNode.toValueList(root3);
-        Assertions.assertArrayEquals(new Integer[] {},
-            list3.toArray(new Integer[0]));
+        Assertions.assertArrayEquals(new Integer[] {}, TreeNode.toValueList(root3).toArray());
     }
 
     static class Solution {
 
         public void flatten(TreeNode root) {
-            traverse(root);
-        }
 
-        void traverse(TreeNode root) {
+            // 【校验】
             if (root == null) { return; }
-            traverse(root.left);
-            traverse(root.right);
-            if (root.left == null) { return; }
+
+            // 【前序】
+            // 左子树展开为链表
+            flatten(root.left);
+            // 【中序】
+            // 右子树展开为链表
+            flatten(root.right);
+            // 【后序】
+
+            // 1. 此时，左右子树已展开为链表
+            TreeNode left = root.left;
             TreeNode right = root.right;
-            root.right = root.left;
-            TreeNode p = root.left;
+
+            // 2、将左子树作为右子树
+            root.left = null;
+            root.right = left;
+
+            // 3. 将旧右子树接到新右子树末端
+            TreeNode p = root;
             while (p.right != null) {
                 p = p.right;
             }
             p.right = right;
-            root.left = null;
         }
 
     }

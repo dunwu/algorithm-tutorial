@@ -3,9 +3,7 @@ package io.github.dunwu.algorithm.tree.btree.divide;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,22 +20,19 @@ public class 从前序与中序遍历序列构造二叉树 {
         Solution s = new Solution();
 
         TreeNode output1 = s.buildTree(new int[] { 3, 9, 20, 15, 7 }, new int[] { 9, 3, 15, 20, 7 });
-        List<Integer> list = TreeNode.toValueList(output1);
-        System.out.println(list);
-        Assertions.assertArrayEquals(Arrays.asList(3, 9, 20, null, null, 15, 7).toArray(), list.toArray());
+        Assertions.assertEquals(TreeNode.buildTree(3, 9, 20, null, null, 15, 7), output1);
 
         TreeNode output2 = s.buildTree(new int[] { -1 }, new int[] { -1 });
-        List<Integer> list2 = TreeNode.toValueList(output2);
-        System.out.println(list2);
-        Assertions.assertArrayEquals(Arrays.asList(-1).toArray(), list2.toArray());
+        Assertions.assertEquals(TreeNode.buildTree(-1), output2);
     }
 
     static class Solution {
 
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = null;
 
         public TreeNode buildTree(int[] preorder, int[] inorder) {
-            if (preorder == null || inorder == null) { return null; }
+            if (inorder == null || preorder == null) { return null; }
+            map = new HashMap<>(inorder.length);
             for (int i = 0; i < inorder.length; i++) {
                 map.put(inorder[i], i);
             }
@@ -45,17 +40,16 @@ public class 从前序与中序遍历序列构造二叉树 {
                 inorder, 0, inorder.length - 1);
         }
 
-        public TreeNode build(int[] preorder, int preBegin, int preEnd,
-            int[] inorder, int inBegin, int inEnd) {
-            if (preBegin > preEnd) { return null; }
-            int rootVal = preorder[preBegin];
-            int rootPos = map.get(rootVal);
-            int leftSize = rootPos - inBegin;
-            TreeNode root = new TreeNode(rootVal);
-            root.left = build(preorder, preBegin + 1, preBegin + leftSize,
-                inorder, inBegin, rootPos - 1);
-            root.right = build(preorder, preBegin + leftSize + 1, preEnd,
-                inorder, rootPos + 1, inEnd);
+        public TreeNode build(int[] preorder, int preLow, int preHigh,
+            int[] inorder, int inLow, int inHigh) {
+            if (preLow > preHigh) { return null; }
+            int inMid = map.get(preorder[preLow]);
+            int leftLen = inMid - inLow;
+            TreeNode root = new TreeNode(preorder[preLow]);
+            root.left = build(preorder, preLow + 1, preLow + leftLen,
+                inorder, inLow, inMid - 1);
+            root.right = build(preorder, preLow + leftLen + 1, preHigh,
+                inorder, inMid + 1, inHigh);
             return root;
         }
 

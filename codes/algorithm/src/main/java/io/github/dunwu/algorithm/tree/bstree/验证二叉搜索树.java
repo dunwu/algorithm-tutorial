@@ -13,25 +13,30 @@ import org.junit.jupiter.api.Assertions;
 public class 验证二叉搜索树 {
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.buildTree(2, 1, 3);
-        TreeNode root2 = TreeNode.buildTree(5, 1, 4, null, null, 3, 6);
-        TreeNode root3 = TreeNode.buildTree(1, 1);
-
-        Assertions.assertTrue(isValidBST(root));
-        Assertions.assertFalse(isValidBST(root2));
-        Assertions.assertFalse(isValidBST(root3));
+        Solution s = new Solution();
+        Assertions.assertTrue(s.isValidBST(TreeNode.buildTree(2, 1, 3)));
+        Assertions.assertFalse(s.isValidBST(TreeNode.buildTree(5, 1, 4, null, null, 3, 6)));
+        Assertions.assertFalse(s.isValidBST(TreeNode.buildTree(2, 2, 2)));
+        Assertions.assertFalse(s.isValidBST(TreeNode.buildTree(5, 4, 6, null, null, 3, 7)));
     }
 
-    public static boolean isValidBST(TreeNode root) {
-        return isValidBST(root, null, null);
-    }
+    static class Solution {
 
-    static boolean isValidBST(TreeNode root, Integer min, Integer max) {
-        if (root == null) { return true; }
-        // BST 树中，任意节点的值应该大于所有左子树节点，小于所有右子树节点
-        if (min != null && root.val <= min) { return false; }
-        if (max != null && root.val >= max) { return false; }
-        return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
+        public boolean isValidBST(TreeNode root) {
+            return isValidBST(root, null, null);
+        }
+
+        // 限定以 root 为根的子树节点必须满足 max.val > root.val > min.val
+        boolean isValidBST(TreeNode root, TreeNode min, TreeNode max) {
+            if (root == null) { return true; }
+            // 若 root.val 不符合 max 和 min 的限制，说明不是合法 BST
+            if (min != null && root.val <= min.val) { return false; }
+            if (max != null && root.val >= max.val) { return false; }
+            // 限定左子树的最大值是 root.val，右子树的最小值是 root.val
+            return isValidBST(root.left, min, root)
+                && isValidBST(root.right, root, max);
+        }
+
     }
 
 }

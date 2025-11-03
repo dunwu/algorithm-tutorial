@@ -19,27 +19,24 @@ public class 二叉搜索树中第K小的元素 {
 
     static class Solution {
 
-        int res = 0;
-        int rank = 0;
+        private int rank = 1;
+        private int res = 0;
 
         public int kthSmallest(TreeNode root, int k) {
-            if (root == null) { return -1; }
-            rank = 0;
+            rank = 1;
             res = 0;
-            traverse(root, k);
+            dfs(root, k);
             return res;
         }
 
-        void traverse(TreeNode root, int k) {
+        void dfs(TreeNode root, int k) {
             if (root == null) { return; }
-            traverse(root.left, k);
-            rank++;
-            if (rank == k) {
-                System.out.printf("val: %s, rank: %d\n", root.val, rank);
+            dfs(root.left, k);
+            if (rank++ == k) {
                 res = root.val;
                 return;
             }
-            traverse(root.right, k);
+            dfs(root.right, k);
         }
 
     }

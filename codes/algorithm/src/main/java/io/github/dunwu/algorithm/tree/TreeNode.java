@@ -184,10 +184,4 @@ public class TreeNode {
         return list.subList(0, last + 1);
     }
 
-    static enum Order {
-        PreOrder,
-        InOrder,
-        PostOrder
-    }
-
 }

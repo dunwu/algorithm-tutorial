@@ -25,28 +25,28 @@ public class 最小栈 {
 
     static class MinStack {
 
-        private Stack<Integer> stack;
-        private Stack<Integer> min;
+        // 记录栈中的所有元素
+        Stack<Integer> stack;
+        // 阶段性记录栈中的最小元素
+        Stack<Integer> minStack;
 
         public MinStack() {
             stack = new Stack<>();
-            min = new Stack<>();
+            minStack = new Stack<>();
         }
 
         public void push(int val) {
             stack.push(val);
-            if (min.isEmpty() || val <= min.peek()) {
-                // 新插入的这个元素就是全栈最小的
-                min.push(val);
+            if (minStack.isEmpty() || val < minStack.peek()) {
+                minStack.push(val);
             } else {
-                // 插入的这个元素比较大
-                min.push(min.peek());
+                minStack.push(minStack.peek());
             }
         }
 
         public void pop() {
+            minStack.pop();
             stack.pop();
-            min.pop();
         }
 
         public int top() {
@@ -54,7 +54,7 @@ public class 最小栈 {
         }
 
         public int getMin() {
-            return min.peek();
+            return minStack.peek();
         }
 
     }

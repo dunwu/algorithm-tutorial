@@ -3,9 +3,7 @@ package io.github.dunwu.algorithm.tree.btree.divide;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,39 +16,41 @@ import java.util.Map;
 public class 根据前序和后序遍历构造二叉树 {
 
     public static void main(String[] args) {
-        TreeNode output1 = new Solution().constructFromPrePost(new int[] { 1, 2, 4, 5, 3, 6, 7 },
+
+        Solution s = new Solution();
+        TreeNode output1 = s.constructFromPrePost(new int[] { 1, 2, 4, 5, 3, 6, 7 },
             new int[] { 4, 5, 2, 6, 7, 3, 1 });
-        List<Integer> list = TreeNode.toValueList(output1);
-        // System.out.println(list);
-        Assertions.assertArrayEquals(Arrays.asList(1, 2, 3, 4, 5, 6, 7).toArray(), list.toArray());
+        Assertions.assertEquals(TreeNode.buildTree(1, 2, 3, 4, 5, 6, 7), output1);
+
+        TreeNode output2 = s.constructFromPrePost(new int[] { 1 }, new int[] { 1 });
+        Assertions.assertEquals(TreeNode.buildTree(1), output2);
     }
 
     static class Solution {
 
-        Map<Integer, Integer> postPosMap = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         public TreeNode constructFromPrePost(int[] preorder, int[] postorder) {
             if (preorder.length == 0 || postorder.length == 0) { return null; }
             for (int i = 0; i < postorder.length; i++) {
-                postPosMap.put(postorder[i], i);
+                map.put(postorder[i], i);
             }
             return build(preorder, 0, preorder.length - 1,
                 postorder, 0, postorder.length - 1);
         }
 
-        public TreeNode build(int[] preorder, int preBegin, int preEnd,
-            int[] postorder, int postBegin, int postEnd) {
-            if (preBegin > preEnd) { return null; }
-            if (preBegin == preEnd) { return new TreeNode(preorder[preBegin]); }
-            int rootVal = preorder[preBegin];
-            int nextRootVal = preorder[preBegin + 1];
-            int nextRootPos = postPosMap.get(nextRootVal);
-            int leftSize = nextRootPos - postBegin + 1;
-            TreeNode root = new TreeNode(rootVal);
-            root.left = build(preorder, preBegin + 1, preBegin + leftSize,
-                postorder, postBegin, nextRootPos);
-            root.right = build(preorder, preBegin + leftSize + 1, preEnd,
-                postorder, nextRootPos + 1, postEnd - 1);
+        public TreeNode build(int[] preorder, int preLow, int preHigh,
+            int[] postorder, int postLow, int postHigh) {
+            if (preLow > preHigh) { return null; }
+            if (preLow == preHigh) { return new TreeNode(preorder[preLow]); }
+            int leftRootVal = preorder[preLow + 1];
+            int leftPostHigh = map.get(leftRootVal);
+            int leftLen = leftPostHigh - postLow + 1;
+            TreeNode root = new TreeNode(preorder[preLow]);
+            root.left = build(preorder, preLow + 1, preLow + leftLen,
+                postorder, postLow, leftPostHigh);
+            root.right = build(preorder, preLow + leftLen + 1, preHigh,
+                postorder, leftPostHigh + 1, postHigh - 1);
             return root;
         }
 

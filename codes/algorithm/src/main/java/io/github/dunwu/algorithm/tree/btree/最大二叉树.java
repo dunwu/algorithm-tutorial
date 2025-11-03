@@ -14,37 +14,39 @@ import java.util.List;
 public class 最大二叉树 {
 
     public static void main(String[] args) {
-        TreeNode output = constructMaximumBinaryTree(new int[] { 3, 2, 1, 6, 0, 5 });
+        Solution s = new Solution();
+        TreeNode output = s.constructMaximumBinaryTree(new int[] { 3, 2, 1, 6, 0, 5 });
         List<Integer> outputList = TreeNode.toValueList(output);
         Assertions.assertArrayEquals(new Integer[] { 6, 3, 5, null, 2, 0, null, null, 1 }, outputList.toArray());
 
-        TreeNode root = constructMaximumBinaryTree(new int[] { 3, 2, 1 });
+        TreeNode root = s.constructMaximumBinaryTree(new int[] { 3, 2, 1 });
         List<Integer> list = TreeNode.toValueList(root);
         Assertions.assertArrayEquals(new Integer[] { 3, null, 2, null, 1 }, list.toArray());
     }
 
-    public static TreeNode constructMaximumBinaryTree(int[] nums) {
-        return traverse(nums, 0, nums.length - 1);
-    }
+    static class Solution {
 
-    public static TreeNode traverse(int[] nums, int left, int right) {
-        if (left > right) {
-            return null;
+        public TreeNode constructMaximumBinaryTree(int[] nums) {
+            if (nums == null || nums.length == 0) { return null; }
+            return build(nums, 0, nums.length - 1);
         }
 
-        int index = -1;
-        int max = Integer.MIN_VALUE;
-        for (int i = left; i <= right; i++) {
-            if (max < nums[i]) {
-                index = i;
-                max = nums[i];
+        public TreeNode build(int[] nums, int low, int high) {
+            if (low > high) { return null; }
+            int mid = 0;
+            int max = Integer.MIN_VALUE;
+            for (int i = low; i <= high; i++) {
+                if (nums[i] > max) {
+                    max = nums[i];
+                    mid = i;
+                }
             }
+            TreeNode root = new TreeNode(max);
+            root.left = build(nums, low, mid - 1);
+            root.right = build(nums, mid + 1, high);
+            return root;
         }
 
-        TreeNode root = new TreeNode(max);
-        root.left = traverse(nums, left, index - 1);
-        root.right = traverse(nums, index + 1, right);
-        return root;
     }
 
 }

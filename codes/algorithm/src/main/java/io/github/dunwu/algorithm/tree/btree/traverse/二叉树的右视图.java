@@ -4,6 +4,8 @@ import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,42 +18,79 @@ import java.util.List;
 public class 二叉树的右视图 {
 
     public static void main(String[] args) {
-        Assertions.assertArrayEquals(new Integer[] { 1, 3, 4 },
-            new Solution().rightSideView(TreeNode.buildTree(1, 2, 3, null, 5, null, 4)).toArray(new Integer[0]));
 
+        Solution s = new Solution();
+        Assertions.assertArrayEquals(new Integer[] { 1, 3, 4 },
+            s.rightSideView(TreeNode.buildTree(1, 2, 3, null, 5, null, 4)).toArray());
         Assertions.assertArrayEquals(new Integer[] { 1, 3, 4, 5 },
-            new Solution().rightSideView(TreeNode.buildTree(1, 2, 3, 4, null, null, null, 5)).toArray(new Integer[0]));
+            s.rightSideView(TreeNode.buildTree(1, 2, 3, 4, null, null, null, 5)).toArray());
+        Assertions.assertArrayEquals(new Integer[] { 1, 3 },
+            s.rightSideView(TreeNode.buildTree(1, null, 3)).toArray());
+        Assertions.assertArrayEquals(new Integer[] {},
+            s.rightSideView(TreeNode.buildTree()).toArray());
+
+        Solution2 s2 = new Solution2();
+        Assertions.assertArrayEquals(new Integer[] { 1, 3, 4 },
+            s2.rightSideView(TreeNode.buildTree(1, 2, 3, null, 5, null, 4)).toArray());
+        Assertions.assertArrayEquals(new Integer[] { 1, 3, 4, 5 },
+            s2.rightSideView(TreeNode.buildTree(1, 2, 3, 4, null, null, null, 5)).toArray());
+        Assertions.assertArrayEquals(new Integer[] { 1, 3 },
+            s2.rightSideView(TreeNode.buildTree(1, null, 3)).toArray());
+        Assertions.assertArrayEquals(new Integer[] {},
+            s2.rightSideView(TreeNode.buildTree()).toArray());
+
     }
 
+    // 【层序遍历】思路
     static class Solution {
 
+        LinkedList<Integer> res = null;
+
         public List<Integer> rightSideView(TreeNode root) {
-            if (root == null) {
-                return new ArrayList<>();
-            }
+            if (root == null) { return new LinkedList<>(); }
 
-            List<Integer> res = new LinkedList<>();
-            LinkedList<TreeNode> q = new LinkedList<>();
-            q.offer(root);
+            res = new LinkedList<>();
+            LinkedList<TreeNode> queue = new LinkedList<>();
+            queue.offer(root);
 
-            while (!q.isEmpty()) {
-                int size = q.size();
-                TreeNode node = null;
+            while (!queue.isEmpty()) {
+                int size = queue.size();
+                // 每层将最后一个元素加入结果集
                 for (int i = 0; i < size; i++) {
-                    node = q.poll();
-                    if (node.left != null) {
-                        q.offer(node.left);
+                    TreeNode node = queue.poll();
+                    if (node.left != null) { queue.offer(node.left); }
+                    if (node.right != null) { queue.offer(node.right); }
+                    if (i == size - 1) {
+                        res.add(node.val);
                     }
-                    if (node.right != null) {
-                        q.offer(node.right);
-                    }
-                }
-                if (node != null) {
-                    res.add(node.val);
                 }
             }
-
             return res;
+        }
+
+    }
+
+    // 【遍历递归】思路
+    static class Solution2 {
+
+        int depth = 0;
+        LinkedHashMap<Integer, Integer> map = null;
+
+        public List<Integer> rightSideView(TreeNode root) {
+            map = new LinkedHashMap<>();
+            traverse(root);
+            return new LinkedList<>(map.values());
+        }
+
+        public void traverse(TreeNode root) {
+            if (root == null) { return; }
+            depth++;
+            if (!map.containsKey(depth)) {
+                map.put(depth, root.val);
+            }
+            traverse(root.right);
+            traverse(root.left);
+            depth--;
         }
 
     }

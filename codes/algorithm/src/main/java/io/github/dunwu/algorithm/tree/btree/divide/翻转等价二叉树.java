@@ -1,0 +1,40 @@
+package io.github.dunwu.algorithm.tree.btree.divide;
+
+import io.github.dunwu.algorithm.tree.TreeNode;
+import org.junit.jupiter.api.Assertions;
+
+/**
+ * <a href="https://leetcode.cn/problems/flip-equivalent-binary-trees/">951. 翻转等价二叉树</a>
+ *
+ * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
+ * @date 2025-10-29
+ */
+public class 翻转等价二叉树 {
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        TreeNode p = TreeNode.buildTree(1, 2, 3, 4, 5, 6, null, null, null, 7, 8);
+        TreeNode q = TreeNode.buildTree(1, 3, 2, null, 6, 4, 5, null, null, null, null, 8, 7);
+        Assertions.assertTrue(s.flipEquiv(p, q));
+        Assertions.assertTrue(s.flipEquiv(TreeNode.buildTree(), TreeNode.buildTree()));
+        Assertions.assertFalse(s.flipEquiv(TreeNode.buildTree(), TreeNode.buildTree(1)));
+    }
+
+    static class Solution {
+
+        public boolean flipEquiv(TreeNode root1, TreeNode root2) {
+            if (root1 == null && root2 == null) { return true; }
+            if (root1 == null || root2 == null) { return false; }
+            if (root1.val != root2.val) { return false; }
+            return (
+                // 不翻转子树
+                flipEquiv(root1.left, root2.left) && flipEquiv(root1.right, root2.right)
+            ) || (
+                // 翻转子树
+                flipEquiv(root1.right, root2.left) && flipEquiv(root1.left, root2.right)
+            );
+        }
+
+    }
+
+}

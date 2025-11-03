@@ -23,30 +23,32 @@ public class 所有可能的真二叉树 {
 
     static class Solution {
 
-        List<TreeNode>[] memo;
+        LinkedList<TreeNode>[] memo = null;
 
         public List<TreeNode> allPossibleFBT(int n) {
-            if (n % 2 == 0) {
-                return new LinkedList<>();
-            }
-            memo = new LinkedList[n + 1];
-            return build(n);
-        }
 
-        public List<TreeNode> build(int n) {
-            List<TreeNode> res = new LinkedList<>();
-            if (n == 1) {
-                res.add(new TreeNode(0));
+            if (memo == null) {
+                memo = new LinkedList[n + 1];
+            }
+
+            LinkedList<TreeNode> res = new LinkedList<>();
+            // 根据真二叉树定义，节点数必为奇数
+            if (n % 2 == 0) {
                 return res;
             }
             if (memo[n] != null) {
                 return memo[n];
             }
-            for (int i = 1; i < n; i += 2) {
-                int j = n - i - 1;
+            if (n == 1) {
+                res.add(new TreeNode(0));
+                memo[n] = res;
+                return res;
+            }
 
-                List<TreeNode> leftSubTree = build(i);
-                List<TreeNode> rightSubTree = build(j);
+            for (int leftNum = 1; leftNum < n; leftNum += 2) {
+                int rightNum = n - leftNum - 1;
+                List<TreeNode> leftSubTree = allPossibleFBT(leftNum);
+                List<TreeNode> rightSubTree = allPossibleFBT(rightNum);
                 for (TreeNode left : leftSubTree) {
                     for (TreeNode right : rightSubTree) {
                         TreeNode node = new TreeNode(0);

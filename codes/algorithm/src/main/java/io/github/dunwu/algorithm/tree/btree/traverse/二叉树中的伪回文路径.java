@@ -16,52 +16,55 @@ import java.util.Map;
 public class 二叉树中的伪回文路径 {
 
     public static void main(String[] args) {
+        Solution s = new Solution();
         Assertions.assertEquals(2,
-            new Solution().pseudoPalindromicPaths(TreeNode.buildTree(2, 3, 1, 3, 1, null, 1)));
+            s.pseudoPalindromicPaths(TreeNode.buildTree(2, 3, 1, 3, 1, null, 1)));
         Assertions.assertEquals(1,
-            new Solution().pseudoPalindromicPaths(TreeNode.buildTree(2, 1, 1, 1, 3, null, null, null, null, null, 1)));
+            s.pseudoPalindromicPaths(TreeNode.buildTree(2, 1, 1, 1, 3, null, null, null, null, null, 1)));
+        Assertions.assertEquals(1,
+            s.pseudoPalindromicPaths(TreeNode.buildTree(9)));
     }
 
     static class Solution {
 
-        int num = 0;
-        LinkedList<Integer> paths = new LinkedList<>();
+        int res = 0;
+        // 计数数组，题目说了 1 <= root.val <= 9
+        int[] count;
 
         public int pseudoPalindromicPaths(TreeNode root) {
+            res = 0;
+            count = new int[10];
             traverse(root);
-            return num;
+            return res;
         }
 
         public void traverse(TreeNode root) {
             if (root == null) { return; }
 
-            paths.addLast(root.val);
+            // 选择
             if (root.left == null && root.right == null) {
-                // System.out.println("paths: " + paths);
-                if (isPalindromic(paths)) {
-                    num++;
+                count[root.val]++;
+                int odd = 0;
+                for (int cnt : count) {
+                    if (cnt % 2 != 0) {
+                        odd++;
+                    }
                 }
-            } else {
-                traverse(root.left);
-                traverse(root.right);
+                if (odd <= 1) {
+                    res++;
+                }
+                count[root.val]--;
+                return;
             }
-            paths.removeLast();
-        }
 
-        public boolean isPalindromic(LinkedList<Integer> paths) {
-            if (paths.isEmpty()) { return false; }
-            if (paths.size() == 1) { return true; }
-            Map<Integer, Integer> counter = new HashMap<>(paths.size());
-            for (Integer path : paths) {
-                counter.compute(path, (k, v) -> v == null ? 1 : v + 1);
-            }
-            int oddNum = 0;
-            for (Integer v : counter.values()) {
-                if (v % 2 != 0) {
-                    oddNum++;
-                }
-            }
-            return oddNum < 2;
+            // 选择
+            count[root.val]++;
+
+            traverse(root.left);
+            traverse(root.right);
+
+            // 取消选择
+            count[root.val]--;
         }
 
     }

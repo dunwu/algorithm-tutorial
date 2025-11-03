@@ -15,47 +15,57 @@ import java.util.LinkedList;
 public class 二叉树的序列化与反序列化 {
 
     public static void main(String[] args) {
+
         String input1 = "1,2,3,null,null,4,5,null,null,null,null,";
-        TreeNode tree1 = deserialize(input1);
-        Assertions.assertEquals(input1, serialize(tree1));
+        String input2 = "null,";
+        String input3 = "1,null,null,";
+        String input4 = "1,2,null,null,null,";
+
+        Solution s = new Solution();
+        Assertions.assertEquals(input1, s.serialize(s.deserialize(input1)));
+        Assertions.assertEquals(input2, s.serialize(s.deserialize(input2)));
+        Assertions.assertEquals(input3, s.serialize(s.deserialize(input3)));
+        Assertions.assertEquals(input4, s.serialize(s.deserialize(input4)));
     }
 
-    static final String SEP = ",";
-    static final String NULL = "null";
+    static class Solution {
 
-    public static String serialize(TreeNode root) {
-        StringBuilder sb = new StringBuilder();
-        doSerialize(root, sb);
-        return sb.toString();
-    }
+        public static final String SEP = ",";
+        public static final String NULL = "null";
 
-    static void doSerialize(TreeNode root, StringBuilder sb) {
-        if (root == null) {
-            sb.append(NULL).append(SEP);
-            return;
+        public String serialize(TreeNode root) {
+            StringBuilder sb = new StringBuilder();
+            serialize(root, sb);
+            return sb.toString();
         }
-        sb.append(root.val).append(SEP);
-        doSerialize(root.left, sb);
-        doSerialize(root.right, sb);
-    }
 
-    public static TreeNode deserialize(String data) {
-        LinkedList<String> nodes = new LinkedList<>(Arrays.asList(data.split(SEP)));
-        return doDeserialize(nodes);
-    }
+        void serialize(TreeNode root, StringBuilder sb) {
+            if (root == null) {
+                sb.append(NULL).append(SEP);
+                return;
+            }
+            sb.append(root.val).append(SEP);
+            serialize(root.left, sb);
+            serialize(root.right, sb);
+        }
 
-    static TreeNode doDeserialize(LinkedList<String> nodes) {
-        if (nodes.isEmpty()) return null;
+        public TreeNode deserialize(String data) {
+            LinkedList<String> values = new LinkedList<>(Arrays.asList(data.split(SEP)));
+            return deserialize(values);
+        }
 
-        // =============== 前序遍历处理 ===============
-        String val = nodes.removeFirst();
-        if (NULL.equals(val)) { return null; }
-        TreeNode root = new TreeNode(Integer.parseInt(val));
-        // ==========================================
+        public TreeNode deserialize(LinkedList<String> values) {
+            if (values == null || values.isEmpty()) { return null; }
+            String val = values.removeFirst();
+            if (val.equals(NULL)) {
+                return null;
+            }
+            TreeNode root = new TreeNode(Integer.parseInt(val));
+            root.left = deserialize(values);
+            root.right = deserialize(values);
+            return root;
+        }
 
-        root.left = doDeserialize(nodes);
-        root.right = doDeserialize(nodes);
-        return root;
     }
 
 }

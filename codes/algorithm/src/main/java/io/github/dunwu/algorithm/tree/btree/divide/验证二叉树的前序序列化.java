@@ -1,7 +1,9 @@
 package io.github.dunwu.algorithm.tree.btree.divide;
 
+import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
@@ -13,32 +15,32 @@ import java.util.LinkedList;
 public class 验证二叉树的前序序列化 {
 
     public static void main(String[] args) {
-        Assertions.assertTrue(isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
-        Assertions.assertFalse(isValidSerialization("1,#"));
-        Assertions.assertFalse(isValidSerialization("9,#,#,1"));
+        Solution s = new Solution();
+        Assertions.assertTrue(s.isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
+        Assertions.assertFalse(s.isValidSerialization("1,#"));
+        Assertions.assertFalse(s.isValidSerialization("9,#,#,1"));
     }
 
-    public static boolean isValidSerialization(String preorder) {
-        // 将字符串转化成列表
-        LinkedList<String> nodes = new LinkedList<>();
-        for (String s : preorder.split(",")) {
-            nodes.addLast(s);
+    static class Solution {
+
+        /**
+         * 参考题解：https://leetcode.cn/problems/verify-preorder-serialization-of-a-binary-tree/solutions/651132/pai-an-jiao-jue-de-liang-chong-jie-fa-zh-66nt
+         */
+        public boolean isValidSerialization(String preorder) {
+            LinkedList<String> values = new LinkedList<>(Arrays.asList(preorder.split(",")));
+            int diff = 1;
+            for (String val : values) {
+                diff -= 1;
+                if (diff < 0) {
+                    return false;
+                }
+                if (!val.equals("#")) {
+                    diff += 2;
+                }
+            }
+            return diff == 0;
         }
-        return deserialize(nodes) && nodes.isEmpty();
-    }
 
-    public static boolean deserialize(LinkedList<String> nodes) {
-        if (nodes.isEmpty()) {
-            return false;
-        }
-
-        // ***** 前序遍历位置 *****
-        // 列表最左侧就是根节点
-        String first = nodes.removeFirst();
-        if (first.equals("#")) return true;
-        // *********************
-
-        return deserialize(nodes) && deserialize(nodes);
     }
 
 }
