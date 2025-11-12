@@ -42,23 +42,20 @@ public class 所有可能的路径 {
 
         void traverse(int[][] graph, int s) {
 
-            // 添加节点 s 到路径
+            // 前序
             path.addLast(s);
 
-            int n = graph.length;
-            if (s == n - 1) {
-                // 到达终点
+            if (s == graph.length - 1) {
                 res.add(new LinkedList<>(path));
                 path.removeLast();
                 return;
             }
 
-            // 递归每个相邻节点
             for (int v : graph[s]) {
                 traverse(graph, v);
             }
 
-            // 从路径移出节点 s
+            // 后序
             path.removeLast();
         }
 

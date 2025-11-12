@@ -1,21 +1,47 @@
 package io.github.dunwu.algorithm.util;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
  * @author Zhang Peng
  */
+@Slf4j
 public class ArrayUtil {
 
-    private static final Logger logger = LoggerFactory.getLogger(ArrayUtil.class);
+    public static List<List<Integer>> toListList(int[][] arr) {
+        if (arr == null || arr.length == 0) { return new ArrayList<>(); }
+        List<List<Integer>> listlist = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            List<Integer> list = new ArrayList<>();
+            listlist.add(list);
+            for (int j = 0; j < arr[i].length; j++) {
+                list.add(arr[i][j]);
+            }
+        }
+        return listlist;
+    }
+
+    public static int[][] toMatrixArray(List<List<Integer>> listlist) {
+        if (listlist == null || listlist.size() == 0) { return new int[0][0]; }
+        int[][] arr = new int[listlist.size()][listlist.get(0).size()];
+        for (int i = 0; i < listlist.size(); i++) {
+            for (int j = 0; j < listlist.get(i).size(); j++) {
+                arr[i][j] = listlist.get(i).get(j);
+            }
+        }
+        return arr;
+    }
 
     public static <T> void debugLogArray(T[] list, int begin, int end, String tip) {
         String content = tip + getArrayString(list, begin, end);
-        if (logger.isDebugEnabled()) {
-            logger.debug(content);
+        if (log.isDebugEnabled()) {
+            log.debug(content);
         }
     }
 
