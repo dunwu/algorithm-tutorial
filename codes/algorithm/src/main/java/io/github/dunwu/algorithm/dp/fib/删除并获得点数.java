@@ -2,6 +2,8 @@ package io.github.dunwu.algorithm.dp.fib;
 
 import org.junit.jupiter.api.Assertions;
 
+import java.util.Arrays;
+
 /**
  * <a href="https://leetcode.cn/problems/delete-and-earn/">740. 删除并获得点数</a>
  *
@@ -24,26 +26,25 @@ public class 删除并获得点数 {
     static class Solution {
 
         public int deleteAndEarn(int[] nums) {
-            int max = 0;
-            for (int val : nums) {
-                max = Math.max(max, val);
-            }
-            int[] sums = new int[max + 1];
-            for (int val : nums) {
-                sums[val] += val;
+            int[] sums = new int[10001];
+            for (int num : nums) {
+                sums[num] += num;
             }
             return rob(sums);
         }
 
         public int rob(int[] sums) {
-            int N = sums.length;
-            int first = sums[0], second = Math.max(sums[0], sums[1]);
-            for (int i = 2; i < N; i++) {
-                int temp = second;
-                second = Math.max(second, first + sums[i]);
-                first = temp;
+            if (sums == null || sums.length == 0) { return 0; }
+            if (sums.length == 1) { return sums[0]; }
+            int pre1 = Math.max(sums[0], sums[1]), pre2 = sums[0];
+            int max = 0;
+            for (int i = 2; i < sums.length; i++) {
+                int tmp = Math.max(pre1, pre2 + sums[i]);
+                max = Math.max(max, tmp);
+                pre2 = pre1;
+                pre1 = tmp;
             }
-            return second;
+            return max;
         }
 
     }

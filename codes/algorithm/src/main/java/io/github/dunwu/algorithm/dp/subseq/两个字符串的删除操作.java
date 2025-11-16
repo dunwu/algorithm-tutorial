@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.dp;
+package io.github.dunwu.algorithm.dp.subseq;
 
 import org.junit.jupiter.api.Assertions;
 

@@ -14,22 +14,44 @@ public class 使用最小花费爬楼梯 {
         Solution s = new Solution();
         Assertions.assertEquals(15, s.minCostClimbingStairs(new int[] { 10, 15, 20 }));
         Assertions.assertEquals(6, s.minCostClimbingStairs(new int[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 }));
+
+        Solution2 s2 = new Solution2();
+        Assertions.assertEquals(15, s2.minCostClimbingStairs(new int[] { 10, 15, 20 }));
+        Assertions.assertEquals(6, s2.minCostClimbingStairs(new int[] { 1, 100, 1, 1, 1, 100, 1, 1, 100, 1 }));
     }
 
     static class Solution {
 
         public int minCostClimbingStairs(int[] cost) {
-            int n = cost.length;
-            int dp_i_1 = 0, dp_i_2 = 0, dp_i = 0;
-            for (int i = 2; i <= n; i++) {
-                dp_i = Math.min(
-                    dp_i_1 + cost[i - 1],
-                    dp_i_2 + cost[i - 2]
+            if (cost == null || cost.length == 0) { return 0; }
+            int N = cost.length;
+            int[] dp = new int[N + 1];
+            dp[0] = dp[1] = 0;
+            for (int i = 2; i <= N; i++) {
+                dp[i] = Math.min(
+                    dp[i - 1] + cost[i - 1],
+                    dp[i - 2] + cost[i - 2]
                 );
-                dp_i_2 = dp_i_1;
-                dp_i_1 = dp_i;
             }
-            return dp_i;
+            return dp[N];
+        }
+
+    }
+
+    static class Solution2 {
+
+        public int minCostClimbingStairs(int[] cost) {
+            if (cost == null || cost.length == 0) { return 0; }
+            int pre1 = 0, pre2 = 0;
+            for (int i = 2; i <= cost.length; i++) {
+                int tmp = Math.min(
+                    pre1 + cost[i - 1],
+                    pre2 + cost[i - 2]
+                );
+                pre2 = pre1;
+                pre1 = tmp;
+            }
+            return pre1;
         }
 
     }

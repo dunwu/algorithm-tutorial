@@ -3,11 +3,12 @@ package io.github.dunwu.algorithm.dp.state;
 import org.junit.jupiter.api.Assertions;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/">122. 买卖股票的最佳时机 II</a>
+ *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @see <a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/">122. 买卖股票的最佳时机 II</a>
  * @since 2020-07-05
  */
-public class 买卖股票的最佳时机II {
+public class 买卖股票的最佳时机2 {
 
     public static void main(String[] args) {
         int[] prices = { 7, 1, 5, 3, 6, 4 };

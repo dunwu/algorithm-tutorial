@@ -8,36 +8,40 @@ import org.junit.jupiter.api.Assertions;
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-11-10
  */
-public class 最长递增子序列 {
+public class 最长递增子序列的个数 {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        Assertions.assertEquals(4, s.lengthOfLIS(new int[] { 10, 9, 2, 5, 3, 7, 101, 18 }));
-        Assertions.assertEquals(4, s.lengthOfLIS(new int[] { 0, 1, 0, 3, 2, 3 }));
-        Assertions.assertEquals(1, s.lengthOfLIS(new int[] { 7, 7, 7, 7, 7, 7, 7 }));
+        Assertions.assertEquals(2, s.findNumberOfLIS(new int[] { 1, 3, 5, 4, 7 }));
+        Assertions.assertEquals(5, s.findNumberOfLIS(new int[] { 2, 2, 2, 2, 2 }));
     }
 
     static class Solution {
 
-        public int lengthOfLIS(int[] nums) {
+        public int findNumberOfLIS(int[] nums) {
             int n = nums.length;
             int[] dp = new int[n];
+            int[] cnt = new int[n];
             int max = 1;
             for (int i = 0; i < n; i++) {
-                dp[i] = 1;
+                dp[i] = cnt[i] = 1;
                 for (int j = 0; j < i; j++) {
-                    // 枚举区间 [0,i) 的所有数 nums[j]，如果满足 nums[j]<nums[i]，
-                    // 说明 nums[i] 可以接在 nums[j] 后面形成上升子序列
                     if (nums[j] < nums[i]) {
-                        // 满足 dp[i]<dp[j]+1：说明 dp[i] 会被 dp[j]+1 直接更新
                         if (dp[i] < dp[j] + 1) {
                             dp[i] = dp[j] + 1;
+                            cnt[i] = cnt[j];
+                        } else if (dp[i] == dp[j] + 1) {
+                            cnt[i] += cnt[j];
                         }
                     }
                 }
                 max = Math.max(max, dp[i]);
             }
-            return max;
+            int res = 0;
+            for (int i = 0; i < n; i++) {
+                if (dp[i] == max) res += cnt[i];
+            }
+            return res;
         }
 
     }

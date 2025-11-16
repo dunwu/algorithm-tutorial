@@ -42,8 +42,7 @@ public class 爬楼梯 {
         // 爬上 n−1 阶楼梯的方法数量。因为再爬1阶就能到第n阶
         // 爬上 n−2 阶楼梯的方法数量，因为再爬2阶就能到第n阶
         public int dp(int n) {
-            if (n == 0) return 1;
-            if (n == 1) return 1;
+            if (n == 0 || n == 1) return 1;
             if (memo[n] != -1) return memo[n];
             memo[n] = dp(n - 1) + dp(n - 2);
             return memo[n];
@@ -51,19 +50,18 @@ public class 爬楼梯 {
 
     }
 
+    // 空间复杂度 o(1)
     static class Solution2 {
 
         public int climbStairs(int n) {
-
             if (n == 0 || n == 1) return 1;
-
-            int[] dp = new int[n + 1];
-            dp[0] = 1;
-            dp[1] = 1;
+            int pre1 = 1, pre2 = 1;
             for (int i = 2; i <= n; i++) {
-                dp[i] = dp[i - 1] + dp[i - 2];
+                int tmp = pre1 + pre2;
+                pre2 = pre1;
+                pre1 = tmp;
             }
-            return dp[n];
+            return pre1;
         }
 
     }

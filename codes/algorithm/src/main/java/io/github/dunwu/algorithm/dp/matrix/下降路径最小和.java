@@ -2,8 +2,6 @@ package io.github.dunwu.algorithm.dp.matrix;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-
 /**
  * <a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300. 最长递增子序列</a>
  *
@@ -15,37 +13,43 @@ public class 下降路径最小和 {
     public static void main(String[] args) {
         Solution s = new Solution();
         Assertions.assertEquals(13, s.minFallingPathSum(new int[][] { { 2, 1, 3 }, { 6, 5, 4 }, { 7, 8, 9 } }));
+        Assertions.assertEquals(-59, s.minFallingPathSum(new int[][] { { -19, 57 }, { -40, -5 } }));
     }
 
     static class Solution {
 
-        int N = 0;
-        int[][] matrix = null;
-        int[][] memo = null;
-
         public int minFallingPathSum(int[][] matrix) {
-            this.matrix = matrix;
-            this.N = matrix.length;
-            int res = Integer.MAX_VALUE;
-            memo = new int[N + 1][N + 1];
-            for (int i = 0; i <= N; i++) {
-                Arrays.fill(memo[i], Integer.MAX_VALUE);
+
+            // base case
+            if (matrix == null || matrix.length == 0 || matrix[0].length == 0) { return 0; }
+            if (matrix.length == 1) { return matrix[0][0]; }
+
+            // 状态定义
+            int n = matrix.length;
+            int[][] dp = new int[n][n];
+
+            // 初始化、边界状态
+            for (int j = 0; j < n; j++) {
+                dp[0][j] = matrix[0][j];
             }
-            for (int y = 0; y < N; y++) {
-                res = Math.min(res, dp(N - 1, y));
+
+            // 状态转移
+            for (int i = 1; i < n; i++) {
+                dp[i][0] = Math.min(dp[i - 1][0], dp[i - 1][1]) + matrix[i][0];
+                for (int j = 1; j < n - 1; j++) {
+                    dp[i][j] = min(dp[i - 1][j - 1], dp[i - 1][j], dp[i - 1][j + 1]) + matrix[i][j];
+                }
+                dp[i][n - 1] = Math.min(dp[i - 1][n - 1], dp[i - 1][n - 2]) + matrix[i][n - 1];
             }
-            return res;
+
+            int min = Integer.MAX_VALUE;
+            for (int j = 0; j < n; j++) {
+                min = Math.min(min, dp[n - 1][j]);
+            }
+            return min;
         }
 
-        public int dp(int x, int y) {
-            if (y < 0 || y >= N) { return Integer.MAX_VALUE; }
-            if (x == 0) { return matrix[0][y]; }
-            if (memo[x][y] != Integer.MAX_VALUE) { return memo[x][y]; }
-            memo[x][y] = matrix[x][y] + min(dp(x - 1, y - 1), dp(x - 1, y), dp(x - 1, y + 1));
-            return memo[x][y];
-        }
-
-        int min(int a, int b, int c) {
+        public int min(int a, int b, int c) {
             return Math.min(a, Math.min(b, c));
         }
 
