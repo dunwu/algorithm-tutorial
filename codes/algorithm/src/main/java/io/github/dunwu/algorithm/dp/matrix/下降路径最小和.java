@@ -3,7 +3,7 @@ package io.github.dunwu.algorithm.dp.matrix;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * <a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300. 最长递增子序列</a>
+ * <a href="https://leetcode.cn/problems/minimum-falling-path-sum/">931. 下降路径最小和</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-11-10
@@ -28,7 +28,7 @@ public class 下降路径最小和 {
             int n = matrix.length;
             int[][] dp = new int[n][n];
 
-            // 初始化、边界状态
+            // 初始状态、边界状态
             for (int j = 0; j < n; j++) {
                 dp[0][j] = matrix[0][j];
             }

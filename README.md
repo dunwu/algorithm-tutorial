@@ -406,8 +406,8 @@
 | [1137. 第 N 个泰波那契数](https://leetcode.cn/problems/n-th-tribonacci-number/)   |  💚  |   ✔️   |
 | [70. 爬楼梯](https://leetcode.cn/problems/climbing-stairs/)                       |  💚  |   ✔️   |
 | [746. 使用最小花费爬楼梯](https://leetcode.cn/problems/min-cost-climbing-stairs/) |  💚  |   ✔️   |
-| [198. 打家劫舍](https://leetcode.cn/problems/house-robber/)                       |  💛  |   ❗   |
-| [740. 删除并获得点数](https://leetcode.cn/problems/delete-and-earn/)              |  💛  |   ❗   |
+| [198. 打家劫舍](https://leetcode.cn/problems/house-robber/)                       |  💛  |   ✔️   |
+| [740. 删除并获得点数](https://leetcode.cn/problems/delete-and-earn/)              |  💛  |   ✔️   |
 
 #### 一维
 
@@ -424,12 +424,12 @@
 
 | 题目                                                                          | 难度 | 掌握度 |
 | ----------------------------------------------------------------------------- | :--: | :----: |
-| [62. 不同路径](https://leetcode.cn/problems/unique-paths/)                    |  💛  |   ❗   |
-| [63. 不同路径 II](https://leetcode.cn/problems/unique-paths-ii/)              |  💛  |   ❗   |
+| [62. 不同路径](https://leetcode.cn/problems/unique-paths/)                    |  💛  |   ✔️   |
+| [63. 不同路径 II](https://leetcode.cn/problems/unique-paths-ii/)              |  💛  |   ✔️   |
 | [64. 最小路径和](https://leetcode.cn/problems/minimum-path-sum/)              |  💛  |   ✔️   |
-| [120. 三角形最小路径和](https://leetcode.cn/problems/triangle/)               |  💛  |   ❗   |
-| [931. 下降路径最小和](https://leetcode.cn/problems/minimum-falling-path-sum/) |  💛  |   ❗   |
-| [221. 最大正方形](https://leetcode.cn/problems/maximal-square/)               |  💛  |   ❌   |
+| [120. 三角形最小路径和](https://leetcode.cn/problems/triangle/)               |  💛  |   ✔️   |
+| [931. 下降路径最小和](https://leetcode.cn/problems/minimum-falling-path-sum/) |  💛  |   ✔️   |
+| [221. 最大正方形](https://leetcode.cn/problems/maximal-square/)               |  💛  |   ❗   |
 
 #### 字符串
 

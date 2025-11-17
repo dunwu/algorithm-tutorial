@@ -2,8 +2,6 @@ package io.github.dunwu.algorithm.dp.fib;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-
 /**
  * <a href="https://leetcode.cn/problems/delete-and-earn/">740. 删除并获得点数</a>
  *
@@ -26,25 +24,33 @@ public class 删除并获得点数 {
     static class Solution {
 
         public int deleteAndEarn(int[] nums) {
-            int[] sums = new int[10001];
+
+            if (nums == null || nums.length == 0) { return 0; }
+
+            int n = nums.length;
+            int max = Integer.MIN_VALUE;
+            for (int i = 1; i < n; i++) {
+                max = Math.max(max, nums[i]);
+            }
+
+            int[] sums = new int[max + 1];
             for (int num : nums) {
                 sums[num] += num;
             }
             return rob(sums);
         }
 
-        public int rob(int[] sums) {
-            if (sums == null || sums.length == 0) { return 0; }
-            if (sums.length == 1) { return sums[0]; }
-            int pre1 = Math.max(sums[0], sums[1]), pre2 = sums[0];
-            int max = 0;
-            for (int i = 2; i < sums.length; i++) {
-                int tmp = Math.max(pre1, pre2 + sums[i]);
-                max = Math.max(max, tmp);
-                pre2 = pre1;
-                pre1 = tmp;
+        public int rob(int[] nums) {
+            if (nums == null || nums.length == 0) { return 0; }
+            if (nums.length == 1) { return nums[0]; }
+            int N = nums.length;
+            int first = nums[0], second = Math.max(nums[0], nums[1]);
+            for (int i = 2; i < N; i++) {
+                int tmp = Math.max(second, first + nums[i]);
+                first = second;
+                second = tmp;
             }
-            return max;
+            return second;
         }
 
     }
