@@ -3,7 +3,7 @@ package io.github.dunwu.algorithm.dp.matrix;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * <a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300. 最长递增子序列</a>
+ * <a href="https://leetcode.cn/problems/maximal-square/">221. 最大正方形</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-11-10

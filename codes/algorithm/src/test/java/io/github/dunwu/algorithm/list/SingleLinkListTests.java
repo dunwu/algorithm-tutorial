@@ -1,5 +1,6 @@
 package io.github.dunwu.algorithm.list;
 
+import io.github.dunwu.algorithm.linkedlist.SinglyLinkedList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

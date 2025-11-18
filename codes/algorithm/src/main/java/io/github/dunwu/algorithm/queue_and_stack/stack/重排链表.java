@@ -1,7 +1,6 @@
 package io.github.dunwu.algorithm.queue_and_stack.stack;
 
-import io.github.dunwu.algorithm.list.ListNode;
-import io.github.dunwu.algorithm.list.ListUtil;
+import io.github.dunwu.algorithm.linkedlist.ListNode;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.List;
@@ -16,15 +15,15 @@ import java.util.Stack;
 public class 重排链表 {
 
     public static void main(String[] args) {
-        ListNode input = ListUtil.buildList(1, 2, 3, 4);
+        ListNode input = ListNode.buildList(1, 2, 3, 4);
         reorderList(input);
-        List<Integer> list = ListUtil.toList(input);
+        List<Integer> list = ListNode.toList(input);
         System.out.println(list);
         Assertions.assertArrayEquals(new Integer[] { 1, 4, 2, 3 }, list.toArray());
 
-        ListNode input2 = ListUtil.buildList(1, 2, 3, 4, 5);
+        ListNode input2 = ListNode.buildList(1, 2, 3, 4, 5);
         reorderList(input2);
-        List<Integer> list2 = ListUtil.toList(input2);
+        List<Integer> list2 = ListNode.toList(input2);
         System.out.println(list2);
         Assertions.assertArrayEquals(new Integer[] { 1, 5, 2, 4, 3 }, list2.toArray());
     }

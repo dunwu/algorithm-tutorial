@@ -60,46 +60,43 @@
 
 ### 链表
 
-#### 双指针技巧秒杀七道链表题目
+#### 双指针技巧
 
-| 题目                                                                                                               | 掌握度 |
-| ------------------------------------------------------------------------------------------------------------------ | ------ |
-| [141. 环形链表](https://leetcode.cn/problems/linked-list-cycle/)                                                   | ✔️     |
-| [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)                                             | ✔️     |
-| [160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)                                    | ✔️     |
-| [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)                    | ✔️     |
-| [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)                                       | ✔️     |
-| [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/)                                        | ✔️     |
-| [86. 分隔链表](https://leetcode.cn/problems/partition-list/)                                                       | ✔️     |
-| [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/)                                     | ✔️     |
-| [剑指 Offer 22. 链表中倒数第 k 个节点](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/) | ✔️     |
+| 题目                                                                                                   | 难度 | 掌握度 |
+| ------------------------------------------------------------------------------------------------------ | ---- | ------ |
+| [141. 环形链表](https://leetcode.cn/problems/linked-list-cycle/)                                       | 💚   | ✔️     |
+| [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)                                 | 💛   | ❗     |
+| [160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)                        | 💚   | ✔️     |
+| [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)        | 💛   | ✔️     |
+| [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)                           | 💚   | ✔️     |
+| [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/)                            | ❤️   | ✔️     |
+| [86. 分隔链表](https://leetcode.cn/problems/partition-list/)                                           | 💛   | ✔️     |
+| [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/)                         | 💚   | ✔️     |
+| [面试题 02. 返回倒数第 k 个节点](https://leetcode.cn/problems/kth-node-from-end-of-list-lcci/)         | 💚   | ✔️     |
+| [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/) | 💛   | ❗     |
+| [2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)                                           | 💛   | ✔️     |
+| [445. 两数相加 II](https://leetcode.cn/problems/add-two-numbers-ii/)                                   | 💛   | ✔️     |
 
-#### 【练习】链表双指针经典习题
+#### 单链表反转
 
-| 题目                                                                                                   | 掌握度 |
-| ------------------------------------------------------------------------------------------------------ | ------ |
-| [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/) | ✔️     |
-| [378. 有序矩阵中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/)  | ❌     |
-| [373. 查找和最小的 K 对数字](https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/)            | ❌     |
-| [2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)                                           | ✔️     |
-| [445. 两数相加 II](https://leetcode.cn/problems/add-two-numbers-ii/)                                   | ✔️     |
+| 题目                                                                           | 难度 | 掌握度 |
+| ------------------------------------------------------------------------------ | ---- | ------ |
+| [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)             | 💚 | ✔️   |
+| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)        | 💛 | ❗     |
+| [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | ❤️ | ❗     |
 
-#### 如何判断回文链表
+#### 回文链表
 
-#### 单链表的花式反转方法汇总
-
-| 题目                                                                           | 掌握度 |
-| ------------------------------------------------------------------------------ | ------ |
-| [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)             | ❌     |
-| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)        | ❗     |
-| [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | ❗     |
+| 题目                                                                  | 难度 | 掌握度 |
+| --------------------------------------------------------------------- | ---- | ------ |
+| [234. 回文链表](https://leetcode.cn/problems/palindrome-linked-list/) | 💚   | ❌     |
 
 ### 数组
 
-#### 双指针技巧秒杀七道数组题目
+#### 双指针技巧
 
 | 题目                                                                                                   | 掌握度 |
-| ------------------------------------------------------------------------------------------------------ | ------ |
+| ------------------------------------------------------------------------------------------------------ | ------ | --- |
 | [26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)        | ✔️     |
 | [27. 移除元素](https://leetcode.cn/problems/remove-element/)                                           | ✔️     |
 | [283. 移动零](https://leetcode.cn/problems/move-zeroes/)                                               | ✔️     |
@@ -110,6 +107,8 @@
 | [LCR 006. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/kLl5u1/)                            | ✔️     |
 | [344. 反转字符串](https://leetcode.cn/problems/reverse-string/)                                        | ✔️     |
 | [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)                         | ❌     |
+| [378. 有序矩阵中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/)  | 💛     | ❌  |
+| [373. 查找和最小的 K 对数字](https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/)            | 💛     | ❌  |
 
 #### 数组双指针经典习题
 
@@ -413,8 +412,8 @@
 
 | 题目                                                                                             | 难度 | 掌握度 |
 | ------------------------------------------------------------------------------------------------ | :--: | :----: |
-| [2140. 解决智力问题](https://leetcode.cn/problems/solving-questions-with-brainpower/)            |  💛  |        |
-| [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)                                       |  💛  |        |
+| [2140. 解决智力问题](https://leetcode.cn/problems/solving-questions-with-brainpower/)            |  💛  |   ❌   |
+| [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)                                       |  💛  |   ❌   |
 | [2466. 统计构造好字符串的方案数](https://leetcode.cn/problems/count-ways-to-build-good-strings/) |  💛  |        |
 | [91. 解码方法](https://leetcode.cn/problems/decode-ways/)                                        |  💛  |        |
 | [983. 最低票价](https://leetcode.cn/problems/minimum-cost-for-tickets/)                          |  💛  |        |
@@ -429,46 +428,44 @@
 | [64. 最小路径和](https://leetcode.cn/problems/minimum-path-sum/)              |  💛  |   ✔️   |
 | [120. 三角形最小路径和](https://leetcode.cn/problems/triangle/)               |  💛  |   ✔️   |
 | [931. 下降路径最小和](https://leetcode.cn/problems/minimum-falling-path-sum/) |  💛  |   ✔️   |
-| [221. 最大正方形](https://leetcode.cn/problems/maximal-square/)               |  💛  |   ❗   |
+| [221. 最大正方形](https://leetcode.cn/problems/maximal-square/)               |  💛  |   ✔️   |
 
 #### 字符串
 
-| 题目                                                                           | 难度 | 掌握度 |
-| ------------------------------------------------------------------------------ | :--: | :----: |
-| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/) |      |        |
-|                                                                                |      |        |
-|                                                                                |      |        |
-|                                                                                |      |        |
-|                                                                                |      |        |
-|                                                                                |      |        |
+| 题目                                                                                                       | 难度 | 掌握度 |
+| ---------------------------------------------------------------------------------------------------------- | :--: | :----: |
+| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)                             |  💛  |   ❌   |
+| [139. 单词拆分](https://leetcode.cn/problems/word-break/)                                                  |  💛  |   ❌   |
+| [516. 最长回文子序列](https://leetcode.cn/problems/longest-palindromic-subsequence/)                       |  💛  |   ❌   |
+| [72. 编辑距离](https://leetcode.cn/problems/edit-distance/)                                                |  💛  |   ❗   |
+| [583. 两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings/)                |  💛  |        |
+| [712. 两个字符串的最小ASCII删除和](https://leetcode.cn/problems/minimum-ascii-delete-sum-for-two-strings/) |  💛  |   ❌   |
+| [115. 不同的子序列](https://leetcode.cn/problems/distinct-subsequences/)                                   |  ❤️  |   ❌   |
 
 #### 最长递增/公共子序列
 
-| 题目                                                         | 难度 | 掌握度 |
-| ------------------------------------------------------------ | :--: | :----: |
-| [300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/) |  💛   |   ❌    |
-| [673. 最长递增子序列的个数](https://leetcode.cn/problems/number-of-longest-increasing-subsequence/) |  💛   |   ❌    |
-| [646. 最长数对链](https://leetcode.cn/problems/maximum-length-of-pair-chain/) |  💛   |   ✔️    |
-| [1218. 最长定差子序列](https://leetcode.cn/problems/longest-arithmetic-subsequence-of-given-difference/) |  💛   |   ❌    |
-| [1027. 最长等差数列](https://leetcode.cn/problems/longest-arithmetic-subsequence/) |  💛   |   ❌    |
-| [1143. 最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/) |  💛   |   ❗    |
-| [1035. 不相交的线](https://leetcode.cn/problems/uncrossed-lines/) |  💛   |   ❌    |
-| [583. 两个字符串的删除操作](https://leetcode.cn/problems/delete-operation-for-two-strings/) |  💛   |   ❌    |
-| [712. 两个字符串的最小ASCII删除和](https://leetcode.cn/problems/minimum-ascii-delete-sum-for-two-strings/) |  💛   |   ❌    |
+| 题目                                                                                                                        | 难度 | 掌握度 |
+| --------------------------------------------------------------------------------------------------------------------------- | :--: | :----: |
+| [300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/)                                         |  💛  |   ❌   |
+| [673. 最长递增子序列的个数](https://leetcode.cn/problems/number-of-longest-increasing-subsequence/)                         |  💛  |   ❌   |
+| [646. 最长数对链](https://leetcode.cn/problems/maximum-length-of-pair-chain/)                                               |  💛  |   ✔️   |
+| [1218. 最长定差子序列](https://leetcode.cn/problems/longest-arithmetic-subsequence-of-given-difference/)                    |  💛  |   ❌   |
+| [1027. 最长等差数列](https://leetcode.cn/problems/longest-arithmetic-subsequence/)                                          |  💛  |   ❌   |
+| [1143. 最长公共子序列](https://leetcode.cn/problems/longest-common-subsequence/)                                            |  💛  |   ❗   |
+| [1035. 不相交的线](https://leetcode.cn/problems/uncrossed-lines/)                                                           |  💛  |   ❌   |
+| [1312. 让字符串成为回文串的最少插入次数](https://leetcode.cn/problems/minimum-insertion-steps-to-make-a-string-palindrome/) |  ❤️  |   ❌   |
 
 #### 买卖股票的最佳时间/状态机
 
 #### 其他
 
-| 题目                                                                                                       | 难度 | 掌握度 |
-| ---------------------------------------------------------------------------------------------------------- | ---- | ------ |
-| [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)                                                 | 💛   | ❌     |
-| [300. 最长递增子序列](https://leetcode.cn/problems/longest-increasing-subsequence/)                        | 💛   | ❌     |
-| [354. 俄罗斯套娃信封问题](https://leetcode.cn/problems/russian-doll-envelopes/)                            | ❤️   |        |
-| [72. 编辑距离](https://leetcode.cn/problems/edit-distance/)                                                | 💛   | ❌     |
-| [53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/)                                         | 💛   | ❌     |
-| [416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum/)                              |      |        |
-| [518. 零钱兑换 II](https://leetcode.cn/problems/coin-change-ii/)                                           |      |        |
+| 题目                                                                            | 难度 | 掌握度 |
+| ------------------------------------------------------------------------------- | ---- | ------ |
+| [322. 零钱兑换](https://leetcode.cn/problems/coin-change/)                      | 💛   | ❌     |
+| [354. 俄罗斯套娃信封问题](https://leetcode.cn/problems/russian-doll-envelopes/) | ❤️   |        |
+| [53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/)              | 💛   | ❌     |
+| [416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum/)   |      |        |
+| [518. 零钱兑换 II](https://leetcode.cn/problems/coin-change-ii/)                |      |        |
 
 ### 贪心算法
 

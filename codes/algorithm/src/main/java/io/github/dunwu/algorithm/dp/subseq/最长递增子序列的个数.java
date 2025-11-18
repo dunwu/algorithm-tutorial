@@ -14,11 +14,13 @@ public class 最长递增子序列的个数 {
         Solution s = new Solution();
         Assertions.assertEquals(2, s.findNumberOfLIS(new int[] { 1, 3, 5, 4, 7 }));
         Assertions.assertEquals(5, s.findNumberOfLIS(new int[] { 2, 2, 2, 2, 2 }));
+        Assertions.assertEquals(3, s.findNumberOfLIS(new int[] { 1, 2, 4, 3, 5, 4, 7, 2 }));
     }
 
     static class Solution {
 
         public int findNumberOfLIS(int[] nums) {
+
             int n = nums.length;
             int[] dp = new int[n];
             int[] cnt = new int[n];
