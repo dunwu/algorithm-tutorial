@@ -3,6 +3,7 @@ package io.github.dunwu.algorithm.array.window;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode.cn/problems/permutation-in-string/">567. 字符串的排列</a>
@@ -13,63 +14,46 @@ import java.util.HashMap;
 public class 字符串的排列 {
 
     public static void main(String[] args) {
-        Assertions.assertTrue(checkInclusion("ab", "eidbaooo"));
-        Assertions.assertFalse(checkInclusion("ab", "eidboaoo"));
+        Solution s = new Solution();
+        Assertions.assertTrue(s.checkInclusion("ab", "eidbaooo"));
+        Assertions.assertFalse(s.checkInclusion("ab", "eidboaoo"));
     }
 
-    public static boolean checkInclusion(String s1, String s2) {
+    static class Solution {
 
-        // 定义 need 和 window
-        HashMap<Character, Integer> need = new HashMap<>();
-        HashMap<Character, Integer> window = new HashMap<>();
-        for (int i = 0; i < s1.length(); i++) {
-            need.put(s1.charAt(i), need.getOrDefault(s1.charAt(i), 0) + 1);
-        }
+        public boolean checkInclusion(String t, String s) {
+            Map<Character, Integer> need = new HashMap<>();
+            Map<Character, Integer> window = new HashMap<>();
+            for (char c : t.toCharArray()) need.put(c, need.getOrDefault(c, 0) + 1);
 
-        // 符合 need 排列的字符个数
-        int valid = 0;
-        // 扫描 s 的窗口游标
-        int left = 0, right = 0;
-        // 符合要求的子串窗口信息
-        int start = 0, len = Integer.MAX_VALUE;
-        while (right < s2.length()) {
-            char r = s2.charAt(right);
-            // 窗口扩展
-            right++;
-            // 窗口 window 满足 need 的一系列更新
-            if (need.containsKey(r)) {
-                window.put(r, window.getOrDefault(r, 0) + 1);
-                if (window.get(r).equals(need.get(r))) {
-                    valid++;
+            int left = 0, right = 0;
+            int valid = 0;
+            while (right < s.length()) {
+                char c = s.charAt(right);
+                right++;
+                // 进行窗口内数据的一系列更新
+                if (need.containsKey(c)) {
+                    window.put(c, window.getOrDefault(c, 0) + 1);
+                    if (window.get(c).equals(need.get(c))) { valid++; }
                 }
-            }
 
-            // 判断窗口左边界是否收缩
-            while (valid == need.size()) {
-                // 更新最小窗口信息
-                if (right - left < len) {
-                    start = left;
-                    len = right - left;
-                    System.out.format("窗口：[left: %s, right: %s), 子串：%s\n", left, right,
-                        s2.substring(start, right));
-                    if (len == s1.length()) {
-                        return true;
+                // 判断左侧窗口是否要收缩
+                while (right - left >= t.length()) {
+                    // 在这里判断是否找到了合法的子串
+                    if (valid == need.size()) { return true; }
+                    char d = s.charAt(left);
+                    left++;
+                    // 进行窗口内数据的一系列更新
+                    if (need.containsKey(d)) {
+                        if (window.get(d).equals(need.get(d))) { valid--; }
+                        window.put(d, window.get(d) - 1);
                     }
                 }
-
-                // 窗口左边界收缩
-                char l = s2.charAt(left);
-                left++;
-                if (need.containsKey(l)) {
-                    if (window.get(l).equals(need.get(l))) {
-                        valid--;
-                    }
-                    window.put(l, window.get(l) - 1);
-                }
             }
+            // 未找到符合条件的子串
+            return false;
         }
 
-        return false;
     }
 
 }

@@ -2,7 +2,8 @@ package io.github.dunwu.algorithm.array.window;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/">3. 无重复字符的最长子串</a>
@@ -13,44 +14,39 @@ import java.util.HashSet;
 public class 无重复字符的最长子串 {
 
     public static void main(String[] args) {
-        Assertions.assertEquals(3, lengthOfLongestSubstring("abcabcbb"));
-        Assertions.assertEquals(1, lengthOfLongestSubstring("bbbbb"));
-        Assertions.assertEquals(3, lengthOfLongestSubstring("pwwkew"));
-        Assertions.assertEquals(2, lengthOfLongestSubstring("aab"));
+        Solution s = new Solution();
+        Assertions.assertEquals(3, s.lengthOfLongestSubstring("abcabcbb"));
+        Assertions.assertEquals(1, s.lengthOfLongestSubstring("bbbbb"));
+        Assertions.assertEquals(3, s.lengthOfLongestSubstring("pwwkew"));
+        Assertions.assertEquals(2, s.lengthOfLongestSubstring("aab"));
     }
 
-    public static int lengthOfLongestSubstring(String s) {
-        // 【debug】
-        System.out.println("============> 原始字符串：" + s);
-        // 定义窗口
-        HashSet<Character> window = new HashSet<>();
-        // 窗口边界
-        int left = 0, right = 0;
-        int max = 0;
+    static class Solution {
 
-        while (right < s.length()) {
-            char r = s.charAt(right);
-            // 扩大边界
-            right++;
-            if (window.contains(r)) {
-                while (r != s.charAt(left)) {
-                    char l = s.charAt(left);
-                    window.remove(l);
+        public int lengthOfLongestSubstring(String s) {
+            Map<Character, Integer> window = new HashMap<>();
+
+            int left = 0, right = 0;
+            // 记录结果
+            int res = 0;
+            while (right < s.length()) {
+                char c = s.charAt(right);
+                right++;
+                // 进行窗口内数据的一系列更新
+                window.put(c, window.getOrDefault(c, 0) + 1);
+                // 判断左侧窗口是否要收缩
+                while (window.get(c) > 1) {
+                    char d = s.charAt(left);
                     left++;
+                    // 进行窗口内数据的一系列更新
+                    window.put(d, window.get(d) - 1);
                 }
-                char l = s.charAt(left);
-                left++;
-            } else {
-                window.add(r);
-                if (window.size() > max) {
-                    // 【debug】
-                    System.out.format("首个最大不重复子串：%s, Offset: [%d, %d)\n",
-                        s.substring(left, right), left, right);
-                    max = window.size();
-                }
+                // 在这里更新答案
+                res = Math.max(res, right - left);
             }
+            return res;
         }
-        return max;
+
     }
 
 }

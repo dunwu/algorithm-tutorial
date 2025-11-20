@@ -81,9 +81,10 @@
 
 | 题目                                                                           | 难度 | 掌握度 |
 | ------------------------------------------------------------------------------ | ---- | ------ |
-| [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)             | 💚 | ✔️   |
-| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)        | 💛 | ❗     |
-| [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | ❤️ | ❗     |
+| [61. 旋转链表](https://leetcode.cn/problems/rotate-list/)                      | 💛   | ✔️     |
+| [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)             | 💚   | ✔️     |
+| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)        | 💛   | ❗     |
+| [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | ❤️   | ❗     |
 
 #### 回文链表
 
@@ -95,59 +96,53 @@
 
 #### 双指针技巧
 
-| 题目                                                                                                   | 掌握度 |
-| ------------------------------------------------------------------------------------------------------ | ------ | --- |
-| [26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)        | ✔️     |
-| [27. 移除元素](https://leetcode.cn/problems/remove-element/)                                           | ✔️     |
-| [283. 移动零](https://leetcode.cn/problems/move-zeroes/)                                               | ✔️     |
-| [704. 二分查找](https://leetcode.cn/problems/binary-search/)                                           | ✔️     |
-| [1. 两数之和](https://leetcode.cn/problems/two-sum/)                                                   | ✔️     |
-| [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)      | ✔️     |
-| [LCR 179. 查找总价格为目标值的两个商品](https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/) | ✔️     |
-| [LCR 006. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/kLl5u1/)                            | ✔️     |
-| [344. 反转字符串](https://leetcode.cn/problems/reverse-string/)                                        | ✔️     |
-| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)                         | ❌     |
-| [378. 有序矩阵中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/)  | 💛     | ❌  |
-| [373. 查找和最小的 K 对数字](https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/)            | 💛     | ❌  |
+| 题目                                                                                                                                                                              | 难度 | 掌握度 |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------ |
+| [27. 移除元素](https://leetcode.cn/problems/remove-element/)                                                                                                                      | 💚   | ✔️     |
+| [283. 移动零](https://leetcode.cn/problems/move-zeroes/)                                                                                                                          | 💚   | ✔️     |
+| [LCR 179. 查找总价格为目标值的两个商品](https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/)                                                                            | 💚   | ✔️     |
+| [1. 两数之和](https://leetcode.cn/problems/two-sum/)                                                                                                                              | 💚   | ✔️     |
+| [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)<br/>[LCR 006. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/kLl5u1/) | 💛   | ✔️     |
+| [26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)                                                                                   | 💚   | ✔️     |
+| [80. 删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/)                                                                             | 💛   | ✔️     |
+| [344. 反转字符串](https://leetcode.cn/problems/reverse-string/)                                                                                                                   | 💚   | ✔️     |
+| [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/)                                                                                                                 | 💚   | ✔️     |
+| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)                                                                                                    | 💛   | ❗     |
+| [75. 颜色分类](https://leetcode.cn/problems/sort-colors/)                                                                                                                         | 💛   | ✔️     |
+| [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)                                                                                                          | 💚   | ❗     |
+| [977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array/)                                                                                                    | 💚   | ✔️     |
+| [1329. 将矩阵按对角线排序](https://leetcode.cn/problems/sort-the-matrix-diagonally/)                                                                                              | 💛   | ❗     |
+| [1260. 二维网格迁移](https://leetcode.cn/problems/shift-2d-grid/)                                                                                                                 | 💚   | ❗     |
+| [867. 转置矩阵](https://leetcode.cn/problems/transpose-matrix/)                                                                                                                   | 💚   | ✔️     |
+| [14. 最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)                                                                                                           | 💚   | ✔️     |
+| [378. 有序矩阵中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/)                                                                             | 💛   |        |
+| [373. 查找和最小的 K 对数字](https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/)                                                                                       | 💛   |        |
 
-#### 数组双指针经典习题
+#### 二维数组遍历
 
-| 题目                                                                                                  | 掌握度 |
-| ----------------------------------------------------------------------------------------------------- | ------ |
-| [80. 删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/) | ✔️     |
-| [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/)                                     | ✔️     |
-| [75. 颜色分类](https://leetcode.cn/problems/sort-colors/)                                             | ✔️     |
-| [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)                              | ❗     |
-| [977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array/)                        | ✔️     |
-| [1329. 将矩阵按对角线排序](https://leetcode.cn/problems/sort-the-matrix-diagonally/)                  | ❗     |
-| [1260. 二维网格迁移](https://leetcode.cn/problems/shift-2d-grid/)                                     | ❌     |
-| [867. 转置矩阵](https://leetcode.cn/problems/transpose-matrix/)                                       | ✔️     |
-| [14. 最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)                               | ✔️     |
-
-#### 二维数组的花式遍历技巧
-
-| 题目                                                              | 掌握度 |
-| ----------------------------------------------------------------- | ------ |
-| [48. 旋转图像](https://leetcode.cn/problems/rotate-image/)        | ❌     |
-| [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)       | ❌     |
-| [59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/) | ❌     |
+| 题目                                                                                                                                                         | 难度 | 掌握度 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- | ------ |
+| [151. 反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/)                                                                           | 💛   | ❌     |
+| [48. 旋转图像](https://leetcode.cn/problems/rotate-image/)                                                                                                   | 💛   | ❗     |
+| [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)<br/>[LCR 146. 螺旋遍历二维数组](https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/) | 💛   | ❌     |
+| [59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/)                                                                                            | 💛   | ❗     |
 
 #### 滑动窗口算法
 
-| 题目                                                                                                                       | 掌握度 |
-| -------------------------------------------------------------------------------------------------------------------------- | ------ |
-| [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)                    | ✔️     |
-| [438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)                             | ❗     |
-| [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)                                                   | ❗     |
-| [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)                                                 | ❌     |
-| [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/)                     | ❌     |
-| [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)                                     | ❌     |
-| [1004. 最大连续 1 的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)                                      | ✔️     |
-| [424. 替换后的最长重复字符](https://leetcode.cn/problems/longest-repeating-character-replacement/)                         | ❗     |
-| [219. 存在重复元素 II](https://leetcode.cn/problems/contains-duplicate-ii/)                                                | ❗     |
-| [220. 存在重复元素 III](https://leetcode.cn/problems/contains-duplicate-iii/)                                              | ❌     |
-| [209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/)                                           | ❌     |
-| [395. 至少有 K 个重复字符的最长子串](https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/) | ❌     |
+| 题目                                                                                                                       | 难度 | 掌握度 |
+| -------------------------------------------------------------------------------------------------------------------------- | ------ | ------ |
+| [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)                    |      | ❗    |
+| [438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)                             |      | ❗     |
+| [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)                                                   |      | ❗     |
+| [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)                                                 |      | ❌     |
+| [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/)                     |      | ❌     |
+| [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)                                     |      | ❌     |
+| [1004. 最大连续 1 的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)                                      |      | ✔️     |
+| [424. 替换后的最长重复字符](https://leetcode.cn/problems/longest-repeating-character-replacement/)                         |      | ❗     |
+| [219. 存在重复元素 II](https://leetcode.cn/problems/contains-duplicate-ii/)                                                |      | ❗     |
+| [220. 存在重复元素 III](https://leetcode.cn/problems/contains-duplicate-iii/)                                              |      | ❌     |
+| [209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/)                                           |      | ❌     |
+| [395. 至少有 K 个重复字符的最长子串](https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/) |      | ❌     |
 
 #### 二分查找算法
 
