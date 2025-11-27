@@ -13,33 +13,48 @@ import org.junit.jupiter.api.Assertions;
 public class 回文链表 {
 
     public static void main(String[] args) {
+        Solution s = new Solution();
         ListNode head = ListNode.buildList(1, 2, 2, 1);
-        Assertions.assertTrue(isPalindrome(head));
+        Assertions.assertTrue(s.isPalindrome(head));
 
-        head = ListNode.buildList(1, 2);
-        Assertions.assertFalse(isPalindrome(head));
+        ListNode input2 = ListNode.buildList(1, 2);
+        Assertions.assertFalse(s.isPalindrome(input2));
     }
 
-    public static boolean isPalindrome(ListNode list) {
-        ListNode rlist = reverse(list);
-        ListNode p = list, q = rlist;
-        while (p != null && q != null) {
-            if (p.val != q.val) {
-                return false;
+    static class Solution {
+
+        public boolean isPalindrome(ListNode head) {
+            ListNode slow, fast;
+            slow = fast = head;
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
             }
-            p = p.next;
-            q = q.next;
+
+            if (fast != null) { slow = slow.next; }
+
+            ListNode left = head;
+            ListNode right = reverse(slow);
+            while (right != null) {
+                if (left.val != right.val) { return false; }
+                left = left.next;
+                right = right.next;
+            }
+
+            return true;
         }
-        return true;
-    }
 
-    static ListNode reverse(ListNode head) {
-        if (head == null || head.next == null) return head;
+        ListNode reverse(ListNode head) {
+            ListNode pre = null, cur = head;
+            while (cur != null) {
+                ListNode next = cur.next;
+                cur.next = pre;
+                pre = cur;
+                cur = next;
+            }
+            return pre;
+        }
 
-        ListNode last = reverse(head.next);
-        head.next.next = head;
-        head.next = null;
-        return last;
     }
 
 }

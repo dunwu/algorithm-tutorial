@@ -3,8 +3,6 @@ package io.github.dunwu.algorithm.tree.btree;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.List;
-
 /**
  * <a href="https://leetcode.cn/problems/maximum-binary-tree/">654. 最大二叉树</a>
  *
@@ -16,34 +14,30 @@ public class 最大二叉树 {
     public static void main(String[] args) {
         Solution s = new Solution();
         TreeNode output = s.constructMaximumBinaryTree(new int[] { 3, 2, 1, 6, 0, 5 });
-        List<Integer> outputList = TreeNode.toValueList(output);
-        Assertions.assertArrayEquals(new Integer[] { 6, 3, 5, null, 2, 0, null, null, 1 }, outputList.toArray());
-
-        TreeNode root = s.constructMaximumBinaryTree(new int[] { 3, 2, 1 });
-        List<Integer> list = TreeNode.toValueList(root);
-        Assertions.assertArrayEquals(new Integer[] { 3, null, 2, null, 1 }, list.toArray());
+        Assertions.assertEquals(TreeNode.buildTree(6, 3, 5, null, 2, 0, null, null, 1), output);
+        TreeNode output2 = s.constructMaximumBinaryTree(new int[] { 3, 2, 1 });
+        Assertions.assertEquals(TreeNode.buildTree(3, null, 2, null, 1), output2);
     }
 
     static class Solution {
 
         public TreeNode constructMaximumBinaryTree(int[] nums) {
-            if (nums == null || nums.length == 0) { return null; }
-            return build(nums, 0, nums.length - 1);
+            return dfs(nums, 0, nums.length - 1);
         }
 
-        public TreeNode build(int[] nums, int low, int high) {
-            if (low > high) { return null; }
-            int mid = 0;
-            int max = Integer.MIN_VALUE;
-            for (int i = low; i <= high; i++) {
+        public TreeNode dfs(int[] nums, int start, int end) {
+            if (start > end) { return null; }
+            int max = -1;
+            int maxIndex = start;
+            for (int i = start; i <= end; i++) {
                 if (nums[i] > max) {
+                    maxIndex = i;
                     max = nums[i];
-                    mid = i;
                 }
             }
-            TreeNode root = new TreeNode(max);
-            root.left = build(nums, low, mid - 1);
-            root.right = build(nums, mid + 1, high);
+            TreeNode root = new TreeNode(nums[maxIndex]);
+            root.left = dfs(nums, start, maxIndex - 1);
+            root.right = dfs(nums, maxIndex + 1, end);
             return root;
         }
 

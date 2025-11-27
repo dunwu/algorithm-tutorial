@@ -2,10 +2,6 @@ package io.github.dunwu.algorithm.graph;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * <a href="https://leetcode.cn/problems/is-graph-bipartite/">785. 判断二分图</a>
  *

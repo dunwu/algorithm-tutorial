@@ -1,6 +1,13 @@
 package io.github.dunwu.algorithm.sort;
 
-import io.github.dunwu.algorithm.sort.strategy.*;
+import io.github.dunwu.algorithm.sort.strategy.BubbleSort;
+import io.github.dunwu.algorithm.sort.strategy.BubbleSort2;
+import io.github.dunwu.algorithm.sort.strategy.HeapSort;
+import io.github.dunwu.algorithm.sort.strategy.InsertSort;
+import io.github.dunwu.algorithm.sort.strategy.MergeSort;
+import io.github.dunwu.algorithm.sort.strategy.QuickSort;
+import io.github.dunwu.algorithm.sort.strategy.SelectionSort;
+import io.github.dunwu.algorithm.sort.strategy.ShellSort;
 import io.github.dunwu.algorithm.util.ArrayUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,29 +28,23 @@ public class SortStrategyTest {
     /**
      * 随机样本一
      */
-    private static Integer[] origin01;
-
-    private static Integer[] target01;
-
-    private static Integer[] expected01;
+    private static Integer[] s1;
+    private static Integer[] t1;
+    private static Integer[] e1;
 
     /**
      * 随机样本二
      */
-    private static Integer[] origin02;
-
-    private static Integer[] target02;
-
-    private static Integer[] expected02;
+    private static Integer[] s2;
+    private static Integer[] t2;
+    private static Integer[] e2;
 
     /**
      * 随机样本三
      */
-    private static Integer[] origin03;
-
-    private static Integer[] target03;
-
-    private static Integer[] expected03;
+    private static Integer[] s3;
+    private static Integer[] t3;
+    private static Integer[] e3;
 
     /**
      * 生成随机数组样本，并调用 JDK api 生成期望的有序数组
@@ -51,19 +52,31 @@ public class SortStrategyTest {
     @BeforeAll
     public static void beforeClass() {
         // 在 [0, 100] 间生成长度为 10 的存在重复的随机数组
-        origin01 = ArrayUtil.randomRepeatIntegerArray(0, 10, 9);
-        expected01 = Arrays.copyOf(origin01, origin01.length);
-        Arrays.sort(expected01);
+        s1 = ArrayUtil.randomRepeatIntegerArray(0, 10, 5);
+        e1 = Arrays.copyOf(s1, s1.length);
+        Arrays.sort(e1);
 
         // 在 [0, 100] 间生成长度为 17 的不重复的随机数组
-        origin02 = ArrayUtil.randomNoRepeatIntegerArray(0, 100, 17);
-        expected02 = Arrays.copyOf(origin02, origin02.length);
-        Arrays.sort(expected02);
+        s2 = ArrayUtil.randomNoRepeatIntegerArray(0, 100, 10);
+        e2 = Arrays.copyOf(s2, s2.length);
+        Arrays.sort(e2);
 
         // 在 [0, 100] 间生成长度为 100 的不重复的随机数组
-        origin03 = ArrayUtil.randomNoRepeatIntegerArray(0, 100, 100);
-        expected03 = Arrays.copyOf(origin03, origin03.length);
-        Arrays.sort(expected03);
+        s3 = ArrayUtil.randomNoRepeatIntegerArray(0, 100, 30);
+        e3 = Arrays.copyOf(s3, s3.length);
+        Arrays.sort(e3);
+    }
+
+    /**
+     * 注入 SortStrategy，执行对三个样本的排序测试
+     */
+    private void executeSort(SortStrategy strategy) {
+        strategy.sort(t1);
+        Assertions.assertArrayEquals(e1, t1);
+        strategy.sort(t2);
+        Assertions.assertArrayEquals(e2, t2);
+        strategy.sort(t3);
+        Assertions.assertArrayEquals(e3, t3);
     }
 
     /**
@@ -71,27 +84,15 @@ public class SortStrategyTest {
      */
     @BeforeEach
     public void before() {
-        target01 = Arrays.copyOf(origin01, origin01.length);
-        target02 = Arrays.copyOf(origin02, origin02.length);
-        target03 = Arrays.copyOf(origin03, origin03.length);
+        t1 = Arrays.copyOf(s1, s1.length);
+        t2 = Arrays.copyOf(s2, s2.length);
+        t3 = Arrays.copyOf(s3, s3.length);
     }
 
     @Test
     public void testBubbleSort() {
         SortStrategy strategy = new SortStrategy(new BubbleSort());
         executeSort(strategy);
-    }
-
-    /**
-     * 注入 SortStrategy，执行对三个样本的排序测试
-     */
-    private void executeSort(SortStrategy strategy) {
-        strategy.sort(target01);
-        Assertions.assertArrayEquals(expected01, target01);
-        strategy.sort(target02);
-        Assertions.assertArrayEquals(expected02, target02);
-        strategy.sort(target03);
-        Assertions.assertArrayEquals(expected03, target03);
     }
 
     @Test

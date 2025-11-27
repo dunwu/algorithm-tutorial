@@ -11,47 +11,54 @@ import org.junit.jupiter.api.Assertions;
 public class 分割数组的最大值 {
 
     public static void main(String[] args) {
-        Assertions.assertEquals(18, splitArray(new int[] { 7, 2, 5, 10, 8 }, 2));
-        Assertions.assertEquals(9, splitArray(new int[] { 1, 2, 3, 4, 5 }, 2));
-        Assertions.assertEquals(4, splitArray(new int[] { 1, 4, 4 }, 3));
+        Solution s = new Solution();
+        Assertions.assertEquals(18, s.splitArray(new int[] { 7, 2, 5, 10, 8 }, 2));
+        Assertions.assertEquals(9, s.splitArray(new int[] { 1, 2, 3, 4, 5 }, 2));
+        Assertions.assertEquals(4, s.splitArray(new int[] { 1, 4, 4 }, 3));
     }
 
-    public static int splitArray(int[] nums, int k) {
-        int left = 0;
-        int right = 0;
-        for (int w : nums) {
-            left = Math.max(left, w);
-            right += w;
-        }
+    static class Solution {
 
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (f(nums, mid) == k) {
-                right = mid - 1;
-            } else if (f(nums, mid) < k) {
-                right = mid - 1;
-            } else if (f(nums, mid) > k) {
-                left = mid + 1;
+        public int splitArray(int[] nums, int k) {
+            int left = 0;
+            int right = 1;
+            for (int w : nums) {
+                left = Math.max(left, w);
+                right += w;
             }
-        }
-        return left;
-    }
 
-    public static int f(int[] weights, int x) {
-        int days = 0;
-        for (int i = 0; i < weights.length; ) {
-            int cap = x;
-            while (i < weights.length) {
-                if (cap < weights[i]) {
-                    break;
+            int res = 0;
+            while (left <= right) {
+                int mid = left + (right - left) / 2;
+                if (f(nums, mid) <= k) {
+                    res = mid;
+                    right = mid - 1;
                 } else {
-                    cap -= weights[i];
+                    left = mid + 1;
                 }
-                i++;
             }
-            days++;
+            return res;
         }
-        return days;
+
+        public int f(int[] nums, int x) {
+            int i = 0;
+            int days = 0;
+            while (i < nums.length) {
+                // 尽可能多装货物
+                int cap = x;
+                while (i < nums.length) {
+                    if (cap < nums[i]) {
+                        break;
+                    } else {
+                        cap -= nums[i];
+                    }
+                    i++;
+                }
+                days++;
+            }
+            return days;
+        }
+
     }
 
 }

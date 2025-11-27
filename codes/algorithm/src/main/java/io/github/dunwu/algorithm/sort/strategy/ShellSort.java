@@ -27,7 +27,7 @@ public class ShellSort implements Sort {
                 list[j + gap] = temp;
             }
 
-            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("gap = %d:", gap));
+            ArrayUtil.printArray(list, 0, list.length - 1, String.format("gap = %d:", gap));
             // 减小增量
             gap = gap / 2;
         }

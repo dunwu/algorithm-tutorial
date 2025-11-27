@@ -2,8 +2,6 @@ package io.github.dunwu.algorithm.dp;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-
 /**
  * <a href="https://leetcode.cn/problems/maximum-subarray/">53. 最大子数组和</a>
  *

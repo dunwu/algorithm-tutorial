@@ -1,6 +1,8 @@
 package io.github.dunwu.algorithm.sort;
 
 /**
+ * 排序通用泛型接口
+ *
  * @author Zhang Peng
  */
 public interface Sort {

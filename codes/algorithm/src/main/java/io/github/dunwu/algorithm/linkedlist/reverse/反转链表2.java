@@ -21,36 +21,40 @@ public class 反转链表2 {
 
     static class Solution {
 
-        public ListNode reverseBetween(ListNode head, int left, int right) {
-            if (left == 1) {
-                return reverseN(head, right);
+        public ListNode reverseBetween(ListNode head, int m, int n) {
+            if (m == 1) {
+                return reverseN(head, n);
             }
-
-            // 找到第 left 个节点的前驱
+            // 找到第 m 个节点的前驱
             ListNode pre = head;
-            for (int i = 1; i < left - 1; i++) {
+            for (int i = 1; i < m - 1; i++) {
                 pre = pre.next;
             }
-
-            // 从第 left 个节点开始反转
-            int len = right - left + 1;
-            pre.next = reverseN(pre.next, len);
-            return pre;
+            // 从第 m 个节点开始反转
+            pre.next = reverseN(pre.next, n - m + 1);
+            return head;
         }
 
-        private ListNode reverseN(ListNode head, int len) {
-            if (head == null || head.next == null) { return head; }
-            ListNode pre = null, cur = head, next = cur.next;
-            while (len-- > 0) {
+        ListNode reverseN(ListNode head, int n) {
+            if (head == null || head.next == null) {
+                return head;
+            }
+            ListNode pre, cur, nxt;
+            pre = null;
+            cur = head;
+            nxt = head.next;
+            while (n > 0) {
                 cur.next = pre;
                 pre = cur;
-                cur = next;
-                if (next != null) {
-                    next = next.next;
+                cur = nxt;
+                if (nxt != null) {
+                    nxt = nxt.next;
                 }
+                n--;
             }
             // 此时的 cur 是第 n + 1 个节点，head 是反转后的尾结点
             head.next = cur;
+
             // 此时的 pre 是反转后的头结点
             return pre;
         }

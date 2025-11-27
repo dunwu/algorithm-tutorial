@@ -1,10 +1,8 @@
 package io.github.dunwu.algorithm.tree.bstree;
 
-import cn.hutool.json.JSONUtil;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;

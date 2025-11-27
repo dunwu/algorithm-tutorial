@@ -1,7 +1,7 @@
 package io.github.dunwu.algorithm.graph.template;
 
-import io.github.dunwu.algorithm.tree.Node;
 import io.github.dunwu.algorithm.graph.Vertex;
+import io.github.dunwu.algorithm.tree.Node;
 
 /**
  * DFS遍历图的所有边

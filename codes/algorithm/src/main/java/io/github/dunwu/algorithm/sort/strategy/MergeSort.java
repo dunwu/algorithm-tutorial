@@ -9,7 +9,7 @@ public class MergeSort implements Sort {
     public <T extends Comparable<T>> void sort(T[] list) {
         for (int gap = 1; gap < list.length; gap = 2 * gap) {
             mergeSort(list, gap, list.length);
-            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("gap = %d", gap));
+            ArrayUtil.printArray(list, 0, list.length - 1, String.format("gap = %d", gap));
         }
     }
 

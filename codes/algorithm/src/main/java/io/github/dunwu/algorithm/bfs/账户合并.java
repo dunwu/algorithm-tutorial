@@ -1,11 +1,8 @@
 package io.github.dunwu.algorithm.bfs;
 
-import org.junit.jupiter.api.Assertions;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * <a href="https://leetcode.cn/problems/accounts-merge/">721. 账户合并</a>

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Assertions;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * <a href="https://leetcode.cn/problems/most-frequent-subtree-sum/">508. 出现次数最多的子树元素和</a>

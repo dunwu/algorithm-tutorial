@@ -2,8 +2,6 @@ package io.github.dunwu.algorithm.array.window;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.HashMap;
-
 /**
  * <a href="https://leetcode.cn/problems/longest-repeating-character-replacement/">424. 替换后的最长重复字符</a>
  *
@@ -13,32 +11,37 @@ import java.util.HashMap;
 public class 替换后的最长重复字符 {
 
     public static void main(String[] args) {
-        Assertions.assertEquals(4, characterReplacement("ABAB", 2));
-        Assertions.assertEquals(4, characterReplacement("AABABBA", 1));
-        Assertions.assertEquals(4, characterReplacement("AAAA", 2));
+        Solution s = new Solution();
+        Assertions.assertEquals(4, s.characterReplacement("ABAB", 2));
+        Assertions.assertEquals(4, s.characterReplacement("AABABBA", 1));
+        Assertions.assertEquals(4, s.characterReplacement("AAAA", 2));
     }
 
-    public static int characterReplacement(String s, int k) {
-        int result = 0;
-        int left = 0, right = 0;
-        int windowMaxCnt = 0;
-        HashMap<Character, Integer> map = new HashMap<>(26);
-        while (right < s.length()) {
-            char r = s.charAt(right);
-            right++;
+    static class Solution {
 
-            map.put(r, map.getOrDefault(r, 0) + 1);
-            windowMaxCnt = Math.max(windowMaxCnt, map.get(r));
+        public int characterReplacement(String s, int k) {
 
-            while (right - left - windowMaxCnt > k) {
-                char l = s.charAt(left);
-                left++;
+            int res = 0;
+            int windowMaxCount = 0;
+            int left = 0, right = 0;
+            int[] windowCount = new int[26];
+            while (right < s.length()) {
+                int c = s.charAt(right) - 'A';
+                windowCount[c]++;
+                windowMaxCount = Math.max(windowMaxCount, windowCount[c]);
+                right++;
 
-                map.put(l, map.get(l) - 1);
+                while (right - left - windowMaxCount > k) {
+                    int d = s.charAt(left) - 'A';
+                    windowCount[d]--;
+                    left++;
+                }
+
+                res = Math.max(res, right - left);
             }
-            result = Math.max(result, right - left);
+            return res;
         }
-        return result;
+
     }
 
 }

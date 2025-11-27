@@ -21,8 +21,8 @@ public class 将x减到0的最小操作数 {
 
         public int minOperations(int[] nums, int x) {
             int n = nums.length, sum = 0;
-            for (int num : nums) {
-                sum += num;
+            for (int i = 0; i < n; i++) {
+                sum += nums[i];
             }
             // 滑动窗口需要寻找的子数组目标和
             int target = sum - x;

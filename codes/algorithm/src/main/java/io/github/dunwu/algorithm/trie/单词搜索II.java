@@ -2,7 +2,11 @@ package io.github.dunwu.algorithm.trie;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>

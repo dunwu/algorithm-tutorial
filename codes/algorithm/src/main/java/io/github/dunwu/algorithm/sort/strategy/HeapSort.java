@@ -27,7 +27,7 @@ public class HeapSort implements Sort {
             // 筛选 R[0] 结点，得到i-1个结点的堆
             adjustHeat(list, 0, i);
 
-            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("第 %d 趟：", list.length - i));
+            ArrayUtil.printArray(list, 0, list.length - 1, String.format("第 %02d 趟", list.length - i));
         }
     }
 

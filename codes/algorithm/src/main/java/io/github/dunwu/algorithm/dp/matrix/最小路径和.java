@@ -2,8 +2,6 @@ package io.github.dunwu.algorithm.dp.matrix;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-
 /**
  * <a href="https://leetcode.cn/problems/minimum-path-sum/">64. 最小路径和</a>
  *

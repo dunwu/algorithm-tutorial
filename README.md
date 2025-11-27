@@ -65,7 +65,7 @@
 | 题目                                                                                                   | 难度 | 掌握度 |
 | ------------------------------------------------------------------------------------------------------ | ---- | ------ |
 | [141. 环形链表](https://leetcode.cn/problems/linked-list-cycle/)                                       | 💚   | ✔️     |
-| [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)                                 | 💛   | ❗     |
+| [142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)                                 | 💛   | ✔️     |
 | [160. 相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists/)                        | 💚   | ✔️     |
 | [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/)        | 💛   | ✔️     |
 | [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)                           | 💚   | ✔️     |
@@ -73,7 +73,7 @@
 | [86. 分隔链表](https://leetcode.cn/problems/partition-list/)                                           | 💛   | ✔️     |
 | [876. 链表的中间结点](https://leetcode.cn/problems/middle-of-the-linked-list/)                         | 💚   | ✔️     |
 | [面试题 02. 返回倒数第 k 个节点](https://leetcode.cn/problems/kth-node-from-end-of-list-lcci/)         | 💚   | ✔️     |
-| [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/) | 💛   | ❗     |
+| [82. 删除排序链表中的重复元素 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/) | 💛   | ✔️     |
 | [2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)                                           | 💛   | ✔️     |
 | [445. 两数相加 II](https://leetcode.cn/problems/add-two-numbers-ii/)                                   | 💛   | ✔️     |
 
@@ -83,7 +83,7 @@
 | ------------------------------------------------------------------------------ | ---- | ------ |
 | [61. 旋转链表](https://leetcode.cn/problems/rotate-list/)                      | 💛   | ✔️     |
 | [206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/)             | 💚   | ✔️     |
-| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)        | 💛   | ❗     |
+| [92. 反转链表 II](https://leetcode.cn/problems/reverse-linked-list-ii/)        | 💛   | ✔️     |
 | [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/) | ❤️   | ❗     |
 
 #### 回文链表
@@ -109,10 +109,10 @@
 | [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/)                                                                                                                 | 💚   | ✔️     |
 | [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)                                                                                                    | 💛   | ❗     |
 | [75. 颜色分类](https://leetcode.cn/problems/sort-colors/)                                                                                                                         | 💛   | ✔️     |
-| [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)                                                                                                          | 💚   | ❗     |
+| [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)                                                                                                          | 💚   | ✔️     |
 | [977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array/)                                                                                                    | 💚   | ✔️     |
-| [1329. 将矩阵按对角线排序](https://leetcode.cn/problems/sort-the-matrix-diagonally/)                                                                                              | 💛   | ❗     |
-| [1260. 二维网格迁移](https://leetcode.cn/problems/shift-2d-grid/)                                                                                                                 | 💚   | ❗     |
+| [1329. 将矩阵按对角线排序](https://leetcode.cn/problems/sort-the-matrix-diagonally/)                                                                                              | 💛   | ✔️     |
+| [1260. 二维网格迁移](https://leetcode.cn/problems/shift-2d-grid/)                                                                                                                 | 💚   | ✔️     |
 | [867. 转置矩阵](https://leetcode.cn/problems/transpose-matrix/)                                                                                                                   | 💚   | ✔️     |
 | [14. 最长公共前缀](https://leetcode.cn/problems/longest-common-prefix/)                                                                                                           | 💚   | ✔️     |
 | [378. 有序矩阵中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/)                                                                             | 💛   |        |
@@ -122,106 +122,122 @@
 
 | 题目                                                                                                                                                         | 难度 | 掌握度 |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- | ------ |
-| [151. 反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/)                                                                           | 💛   | ❌     |
-| [48. 旋转图像](https://leetcode.cn/problems/rotate-image/)                                                                                                   | 💛   | ❗     |
-| [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)<br/>[LCR 146. 螺旋遍历二维数组](https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/) | 💛   | ❌     |
-| [59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/)                                                                                            | 💛   | ❗     |
+| [151. 反转字符串中的单词](https://leetcode.cn/problems/reverse-words-in-a-string/)                                                                           | 💛   | ❗     |
+| [48. 旋转图像](https://leetcode.cn/problems/rotate-image/)                                                                                                   | 💛   | ✔️     |
+| [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/)<br/>[LCR 146. 螺旋遍历二维数组](https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/) | 💛   | ❗     |
+| [59. 螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/)                                                                                            | 💛   | ✔️     |
 
 #### 滑动窗口算法
 
 | 题目                                                                                                                       | 难度 | 掌握度 |
-| -------------------------------------------------------------------------------------------------------------------------- | ------ | ------ |
-| [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)                    |      | ❗    |
-| [438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)                             |      | ❗     |
-| [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)                                                   |      | ❗     |
-| [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)                                                 |      | ❌     |
-| [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/)                     |      | ❌     |
-| [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)                                     |      | ❌     |
-| [1004. 最大连续 1 的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)                                      |      | ✔️     |
-| [424. 替换后的最长重复字符](https://leetcode.cn/problems/longest-repeating-character-replacement/)                         |      | ❗     |
-| [219. 存在重复元素 II](https://leetcode.cn/problems/contains-duplicate-ii/)                                                |      | ❗     |
-| [220. 存在重复元素 III](https://leetcode.cn/problems/contains-duplicate-iii/)                                              |      | ❌     |
-| [209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/)                                           |      | ❌     |
-| [395. 至少有 K 个重复字符的最长子串](https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/) |      | ❌     |
+| -------------------------------------------------------------------------------------------------------------------------- | ---- | ------ |
+| [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)                    | 💛   | ✔️     |
+| [438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)                             | 💛   | ✔️     |
+| [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)                                                   | 💛   | ✔️     |
+| [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)                                                 | ❤️   | ❗     |
+| [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/)                     | 💛   | ❌     |
+| [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)                                     | 💛   | ❗     |
+| [1004. 最大连续 1 的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)                                      | 💛   | ✔️     |
+| [424. 替换后的最长重复字符](https://leetcode.cn/problems/longest-repeating-character-replacement/)                         | 💛   | ❗     |
+| [217. 存在重复元素](https://leetcode.cn/problems/contains-duplicate/)                                                      | 💚   | ✔️     |
+| [219. 存在重复元素 II](https://leetcode.cn/problems/contains-duplicate-ii/)                                                | 💛   | ❗     |
+| [220. 存在重复元素 III](https://leetcode.cn/problems/contains-duplicate-iii/)                                              | 💛   | ❌     |
+| [209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/)                                           | 💛   | ✔️     |
+| [395. 至少有 K 个重复字符的最长子串](https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters/) | 💛   | ❌     |
 
 #### 二分查找算法
 
-| 题目                                                                                                                                    | 掌握度 |
-| :-------------------------------------------------------------------------------------------------------------------------------------- | :----- |
-| [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/) | ❗     |
-| [704. 二分查找](https://leetcode.cn/problems/binary-search/)                                                                            | ✔️     |
-| [LCR 172. 统计目标成绩的出现次数](https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/)                           | ✔️     |
-| [875. 爱吃香蕉的珂珂](https://leetcode.cn/problems/koko-eating-bananas/)                                                                | ❌     |
-| [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/)                                  | ❌     |
-| [410. 分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)                                                          | ❌     |
+| 题目                                                                                                                                    | 难度 | 掌握度 |
+| :-------------------------------------------------------------------------------------------------------------------------------------- | :--- | ------ |
+| [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/) | 💛   | ✔️     |
+| [704. 二分查找](https://leetcode.cn/problems/binary-search/)                                                                            | 💚   | ✔️     |
+| [LCR 172. 统计目标成绩的出现次数](https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/)                           | 💚   | ✔️     |
+| [875. 爱吃香蕉的珂珂](https://leetcode.cn/problems/koko-eating-bananas/)                                                                | 💛   | ❌     |
+| [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/)                                  | 💛   | ❌     |
+| [410. 分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)                                                          | 💛   | ❌     |
 
 #### 前缀和数组
 
-| 题目                                                                                           | 掌握度 |
-| ---------------------------------------------------------------------------------------------- | ------ |
-| [303. 区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/)        | ✔️     |
-| [304. 二维区域和检索 - 矩阵不可变](https://leetcode.cn/problems/range-sum-query-2d-immutable/) | ❌     |
+| 题目                                                                                           | 难度 | 掌握度 |
+| ---------------------------------------------------------------------------------------------- | ---- | ------ |
+| [303. 区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/)        | 💚   | ✔️     |
+| [304. 二维区域和检索 - 矩阵不可变](https://leetcode.cn/problems/range-sum-query-2d-immutable/) | 💛   | ❌     |
 
 #### 差分数组
 
-| 题目                                                                          | 掌握度 |
-| ----------------------------------------------------------------------------- | ------ |
-| [1094. 拼车](https://leetcode.cn/problems/car-pooling/)                       |        |
-| [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/) |        |
-| [370. 区间加法](https://leetcode.cn/problems/range-addition/)                 |        |
+| 题目                                                                          | 难度 | 掌握度 |
+| ----------------------------------------------------------------------------- | ---- | ------ |
+| [1094. 拼车](https://leetcode.cn/problems/car-pooling/)                       | 💛   | ❗     |
+| [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/) | 💛   | ❌     |
 
 ### 栈和队列
 
-#### 队列实现栈以及栈实现队列
+#### 队列
 
-| 题目                                                                            | 掌握度 |
-| ------------------------------------------------------------------------------- | ------ |
-| [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/) | ✔️     |
-| [232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/) | ✔️     |
+| 题目                                                                                 | 难度 | 掌握度 |
+| ------------------------------------------------------------------------------------ | ---- | ------ |
+| [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/)      | 💚   | ✔️     |
+| [933. 最近的请求次数](https://leetcode.cn/problems/number-of-recent-calls/)          | 💚   | ❗     |
+| [622. 设计循环队列](https://leetcode.cn/problems/design-circular-queue/)             | 💛   | ❌     |
+| [641. 设计循环双端队列](https://leetcode.cn/problems/design-circular-deque/)         | 💛   |        |
+| [1670. 设计前中后队列](https://leetcode.cn/problems/design-front-middle-back-queue/) | 💛   |        |
+| [2073. 买票需要的时间](https://leetcode.cn/problems/time-needed-to-buy-tickets/)     | 💚   | ✔️     |
 
-#### 栈的经典习题
+#### 栈
 
-| 题目                                                                                    | 掌握度 |
-| --------------------------------------------------------------------------------------- | ------ |
-| [71. 简化路径](https://leetcode.cn/problems/simplify-path/)                             | ✔️     |
-| [143. 重排链表](https://leetcode.cn/problems/reorder-list/)                             | ✔️     |
-| [20. 有效的括号](https://leetcode.cn/problems/valid-parentheses/)                       | ✔️     |
-| [150. 逆波兰表达式求值](https://leetcode.cn/problems/evaluate-reverse-polish-notation/) | ✔️     |
-| [388. 文件的最长绝对路径](https://leetcode.cn/problems/longest-absolute-file-path/)     | ❌     |
-| [155. 最小栈](https://leetcode.cn/problems/min-stack/)                                  | ✔️     |
-| 最大频率栈](https://leetcode.cn/problems/maximum-frequency-stack/)                      | ❌     |
+| 题目                                                                                    | 难度 | 掌握度 |
+| --------------------------------------------------------------------------------------- | ---- | ------ |
+| [20. 有效的括号](https://leetcode.cn/problems/valid-parentheses/)                       | 💚   | ✔️     |
+| [232. 用栈实现队列](https://leetcode.cn/problems/implement-queue-using-stacks/)         | 💚   | ✔️     |
+| [682. 棒球比赛](https://leetcode.cn/problems/baseball-game/)                            | 💚   | ✔️     |
+| [844. 比较含退格的字符串](https://leetcode.cn/problems/backspace-string-compare/)       | 💚   | ✔️     |
+| [71. 简化路径](https://leetcode.cn/problems/simplify-path/)                             | 💛   | ✔️     |
+| [143. 重排链表](https://leetcode.cn/problems/reorder-list/)                             | 💛   | ✔️     |
+| [150. 逆波兰表达式求值](https://leetcode.cn/problems/evaluate-reverse-polish-notation/) | 💛   | ✔️     |
+| [388. 文件的最长绝对路径](https://leetcode.cn/problems/longest-absolute-file-path/)     | 💛   | ❌     |
+| [155. 最小栈](https://leetcode.cn/problems/min-stack/)                                  | 💛   | ✔️     |
+| [面试题 03.05. 栈排序](https://leetcode.cn/problems/sort-of-stacks-lcci/)               | 💛   | ✔️     |
+| [895. 最大频率栈](https://leetcode.cn/problems/maximum-frequency-stack/)                | ❤️   | ❌     |
 
-#### 队列的经典习题
+#### 单调栈
 
-| 题目                                                                        | 掌握度 |
-| --------------------------------------------------------------------------- | ------ |
-| [933. 最近的请求次数](https://leetcode.cn/problems/number-of-recent-calls/) | ❗     |
-| [622. 设计循环队列](https://leetcode.cn/problems/design-circular-queue/)    | ❌     |
-|                                                                             |        |
+| 题目                                                                                                                                      | 难度 | 掌握度 |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------ |
+| [496. 下一个更大元素 I](https://leetcode.cn/problems/next-greater-element-i/)                                                             | 💚   | ❗     |
+| [503. 下一个更大元素 II](https://leetcode.cn/problems/next-greater-element-ii/)                                                           | 💛   | ❗     |
+| [739. 每日温度](https://leetcode.cn/problems/daily-temperatures/)<br/>[剑指 Offer II 038. 每日温度](https://leetcode.cn/problems/iIQa4I/) | 💛   | ✔️     |
+| [1019. 链表中的下一个更大节点](https://leetcode.cn/problems/next-greater-node-in-linked-list/)                                            | 💛   | ✔️ |
+| [1944. 队列中可以看到的人数](https://leetcode.cn/problems/number-of-visible-people-in-a-queue/)                                           | ❤️   |        |
+| [1475. 商品折扣后的最终价格](https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/)                                | 💛   | ✔️ |
+| [901. 股票价格跨度](https://leetcode.cn/problems/online-stock-span/)                                                                      | 💛   | ❌ |
+| [402. 移掉 K 位数字](https://leetcode.cn/problems/remove-k-digits/)                                                                       | 💛   | ❌ |
+| [853. 车队](https://leetcode.cn/problems/car-fleet/)                                                                                      | 💛   | ❌ |
+| [581. 最短无序连续子数组](https://leetcode.cn/problems/shortest-unsorted-continuous-subarray/)                                            | 💛   | ❌ |
 
-#### 单调栈算法模板
+#### 单调队列
 
-| 题目                                                                            | 掌握度 |
-| ------------------------------------------------------------------------------- | ------ |
-| [496. 下一个更大元素 I](https://leetcode.cn/problems/next-greater-element-i/)   |        |
-| [503. 下一个更大元素 II](https://leetcode.cn/problems/next-greater-element-ii/) |        |
-| [739. 每日温度](https://leetcode.cn/problems/daily-temperatures/)               |        |
-| [剑指 Offer II 038. 每日温度](https://leetcode.cn/problems/iIQa4I/)             |        |
+| 题目                                                                                                                                               | 难度 | 掌握度 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------ |
+| [LCR 184. 设计自助结算系统](https://leetcode.cn/problems/dui-lie-de-zui-da-zhi-lcof/)                                                              | 💛   |        |
+| [239. 滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/)                                                                        | ❤️   | ❌     |
+| [1438. 绝对差不超过限制的最长连续子数组](https://leetcode.cn/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) | 💛   |        |
+| [862. 和至少为 K 的最短子数组](https://leetcode.cn/problems/shortest-subarray-with-sum-at-least-k/)                                                | ❤️   |        |
+| [918. 环形子数组的最大和](https://labuladong.online/algo/problem-set/monotonic-queue/#slug_maximum-sum-circular-subarray)                          | 💛   |        |
 
 ### 二叉树
 
 #### 基础
 
-| 题目                                                                                                 | 掌握度 |
-| ---------------------------------------------------------------------------------------------------- | ------ |
-| [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)                  | ✔️     |
-| [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)                  | ✔️     |
-| [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)                           | ❌     |
-| [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)            | ❗     |
-| [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)                                  | ✔️     |
-| [654. 最大二叉树](https://leetcode.cn/problems/maximum-binary-tree/)                                 | ✔️     |
-| [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/) | ❌     |
-| [222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)                 | ✔️     |
+| 题目                                                                                                 | 难度 | 掌握度 |
+| ---------------------------------------------------------------------------------------------------- | ------ | ------ |
+| [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)                  | 💚   | ✔️     |
+| [111. 二叉树的最小深度](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)                  | 💚   | ✔️     |
+| [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)                           | 💚   | ❌     |
+| [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)            | 💛   | ✔️   |
+| [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)                                  | 💚   | ✔️     |
+| [654. 最大二叉树](https://leetcode.cn/problems/maximum-binary-tree/)                                 | 💛   | ✔️     |
+| [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/) | ❤️   | ❗    |
+| [222. 完全二叉树的节点个数](https://leetcode.cn/problems/count-complete-tree-nodes/)                 | 💚   | ✔️     |
 
 #### DFS
 

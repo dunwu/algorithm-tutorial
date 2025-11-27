@@ -23,8 +23,7 @@ public class BubbleSort implements Sort {
                     list[j] = temp;
                 }
             }
-
-            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("第 %d 趟：", i + 1));
+            ArrayUtil.printArray(list, 0, list.length - 1, String.format("第 %02d 趟", i + 1));
         }
     }
 

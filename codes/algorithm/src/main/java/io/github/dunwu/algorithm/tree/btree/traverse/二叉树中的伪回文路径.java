@@ -3,10 +3,6 @@ package io.github.dunwu.algorithm.tree.btree.traverse;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-
 /**
  * <a href="https://leetcode.cn/problems/pseudo-palindromic-paths-in-a-binary-tree/">1457. 二叉树中的伪回文路径</a>
  *

@@ -3,8 +3,6 @@ package io.github.dunwu.algorithm.tree.btree.divide;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.List;
-
 /**
  * <a href="https://leetcode.cn/problems/maximum-binary-tree-ii/">998. 最大二叉树 II</a>
  *

@@ -2,9 +2,7 @@ package io.github.dunwu.algorithm.bfs;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.Set;
 
 /**
  * <a href="https://leetcode.cn/problems/nearest-exit-from-entrance-in-maze/">1926. 迷宫中离入口最近的出口</a>

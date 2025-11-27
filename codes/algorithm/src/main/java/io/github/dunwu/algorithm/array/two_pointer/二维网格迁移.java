@@ -1,6 +1,5 @@
 package io.github.dunwu.algorithm.array.two_pointer;
 
-import cn.hutool.json.JSONUtil;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
@@ -39,6 +38,10 @@ public class 二维网格迁移 {
         Assertions.assertArrayEquals(new Integer[] { 1, 2, 3 }, res3.get(0).toArray(new Integer[0]));
         Assertions.assertArrayEquals(new Integer[] { 4, 5, 6 }, res3.get(1).toArray(new Integer[0]));
         Assertions.assertArrayEquals(new Integer[] { 7, 8, 9 }, res3.get(2).toArray(new Integer[0]));
+
+        int[][] grid4 = new int[][] { { 1 }, { 2 }, { 3 }, { 4 }, { 7 }, { 6 }, { 5 } };
+        List<List<Integer>> res4 = s.shiftGrid(grid4, 23);
+        Assertions.assertNotNull(res4);
     }
 
     static class Solution {
@@ -46,15 +49,16 @@ public class 二维网格迁移 {
         public List<List<Integer>> shiftGrid(int[][] grid, int k) {
             for (int i = 0; i < k; i++) {
                 shift(grid);
-                // System.out.println("grid = " + JSONUtil.toJsonPrettyStr(grid));
             }
+
+            int m = grid.length, n = grid[0].length;
             List<List<Integer>> res = new ArrayList<>();
-            for (int i = 0; i < grid.length; i++) {
+            for (int i = 0; i < m; i++) {
                 List<Integer> list = new ArrayList<>();
-                for (int j = 0; j < grid[0].length; j++) {
+                res.add(list);
+                for (int j = 0; j < n; j++) {
                     list.add(grid[i][j]);
                 }
-                res.add(list);
             }
             return res;
         }
@@ -69,18 +73,18 @@ public class 二维网格迁移 {
             set(grid, 0, last);
         }
 
-        public void set(int[][] grid, int index, int val) {
-            int m = grid.length, n = grid[0].length;
-            int i = index / n;
-            int j = index % n;
-            grid[i][j] = val;
-        }
-
         public int get(int[][] grid, int index) {
-            int m = grid.length, n = grid[0].length;
+            int n = grid[0].length;
             int i = index / n;
             int j = index % n;
             return grid[i][j];
+        }
+
+        public void set(int[][] grid, int index, int val) {
+            int n = grid[0].length;
+            int i = index / n;
+            int j = index % n;
+            grid[i][j] = val;
         }
 
     }

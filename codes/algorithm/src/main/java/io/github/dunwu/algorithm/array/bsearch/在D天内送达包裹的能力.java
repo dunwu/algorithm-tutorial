@@ -2,9 +2,6 @@ package io.github.dunwu.algorithm.array.bsearch;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
-
 /**
  * <a href="https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/">1011. 在 D 天内送达包裹的能力</a>
  *
@@ -13,53 +10,59 @@ import java.util.Arrays;
  */
 public class 在D天内送达包裹的能力 {
 
-    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
-
-        // Assertions.assertEquals(5, f(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 15));
-        // Assertions.assertEquals(3, f(new int[] { 3, 2, 2, 4, 1, 4 }, 6));
-        // Assertions.assertEquals(4, f(new int[] { 1, 2, 3, 1, 1 }, 3));
-
-        Assertions.assertEquals(15, shipWithinDays(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 5));
-        Assertions.assertEquals(6, shipWithinDays(new int[] { 3, 2, 2, 4, 1, 4 }, 3));
-        Assertions.assertEquals(3, shipWithinDays(new int[] { 1, 2, 3, 1, 1 }, 4));
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        Assertions.assertEquals(15, s.shipWithinDays(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 5));
+        Assertions.assertEquals(6, s.shipWithinDays(new int[] { 3, 2, 2, 4, 1, 4 }, 3));
+        Assertions.assertEquals(3, s.shipWithinDays(new int[] { 1, 2, 3, 1, 1 }, 4));
     }
 
-    public static int shipWithinDays(int[] weights, int days) {
-        int left = 0;
-        int right = 0;
-        for (int w : weights) {
-            left = Math.max(left, w);
-            right += w;
-        }
+    static class Solution {
 
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (f(weights, mid) == days) {
-                right = mid - 1;
-            } else if (f(weights, mid) < days) {
-                right = mid - 1;
-            } else if (f(weights, mid) > days) {
-                left = mid + 1;
+        public int shipWithinDays(int[] weights, int days) {
+            int left = 0;
+            // 注意，right 是开区间，所以额外加一
+            int right = 1;
+            for (int w : weights) {
+                left = Math.max(left, w);
+                right += w;
             }
-        }
-        return left;
-    }
 
-    public static int f(int[] weights, int x) {
-        int days = 0;
-        for (int i = 0; i < weights.length; ) {
-            int cap = x;
-            while (i < weights.length) {
-                if (cap < weights[i]) {
-                    break;
-                } else {
-                    cap -= weights[i];
+            while (left < right) {
+                int mid = left + (right - left) / 2;
+                if (f(weights, mid) == days) {
+                    // 搜索左侧边界，则需要收缩右侧边界
+                    right = mid;
+                } else if (f(weights, mid) < days) {
+                    // 需要让 f(x) 的返回值大一些
+                    right = mid;
+                } else if (f(weights, mid) > days) {
+                    // 需要让 f(x) 的返回值小一些
+                    left = mid + 1;
                 }
-                i++;
             }
-            days++;
+            return left;
         }
-        return days;
+
+        // 定义：当运载能力为 x 时，需要 f(x) 天运完所有货物
+        // f(x) 随着 x 的增加单调递减
+        int f(int[] weights, int x) {
+            int days = 0;
+            for (int i = 0; i < weights.length; ) {
+                int cap = x;
+                while (i < weights.length) {
+                    if (cap < weights[i]) {
+                        break;
+                    } else {
+                        cap -= weights[i];
+                    }
+                    i++;
+                }
+                days++;
+            }
+            return days;
+        }
+
     }
 
 }

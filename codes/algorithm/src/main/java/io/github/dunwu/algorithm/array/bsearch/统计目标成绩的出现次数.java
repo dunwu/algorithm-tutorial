@@ -11,37 +11,42 @@ import org.junit.jupiter.api.Assertions;
 public class 统计目标成绩的出现次数 {
 
     public static void main(String[] args) {
-        Assertions.assertEquals(3, countTarget(new int[] { 2, 2, 3, 4, 4, 4, 5, 6, 6, 8 }, 4));
-        Assertions.assertEquals(0, countTarget(new int[] { 1, 2, 3, 5, 7, 9 }, 6));
+        Solution s = new Solution();
+        Assertions.assertEquals(3, s.countTarget(new int[] { 2, 2, 3, 4, 4, 4, 5, 6, 6, 8 }, 4));
+        Assertions.assertEquals(0, s.countTarget(new int[] { 1, 2, 3, 5, 7, 9 }, 6));
     }
 
-    public static int countTarget(int[] scores, int target) {
-        int result = search(scores, 0, scores.length - 1, target);
-        return result == -1 ? 0 : result;
-    }
+    static class Solution {
 
-    static int search(int[] scores, int left, int right, int target) {
-        if (left > right) {
-            return -1;
-        }
-        int mid = left + (right - left) / 2;
-        if (scores[mid] == target) {
-            int lcnt = search(scores, left, mid - 1, target);
-            int rcnt = search(scores, mid + 1, right, target);
+        public int countTarget(int[] scores, int target) {
+            int leftBound = searchLeft(scores, target);
+            if (leftBound == -1) { return 0; }
             int cnt = 1;
-            if (lcnt > 0) {
-                cnt += lcnt;
-            }
-            if (rcnt > 0) {
-                cnt += rcnt;
+            for (int i = leftBound + 1; i < scores.length; i++) {
+                if (scores[i] == target) {
+                    cnt++;
+                }
             }
             return cnt;
-        } else if (scores[mid] < target) {
-            return search(scores, mid + 1, right, target);
-        } else if (scores[mid] > target) {
-            return search(scores, left, mid - 1, target);
         }
-        return -1;
+
+        public int searchLeft(int[] nums, int target) {
+            int res = -1;
+            int left = 0, right = nums.length - 1;
+            while (left <= right) {
+                int mid = left + (right - left) / 2;
+                if (nums[mid] < target) {
+                    left = mid + 1;
+                } else if (nums[mid] > target) {
+                    right = mid - 1;
+                } else if (nums[mid] == target) {
+                    right = mid - 1;
+                    res = mid;
+                }
+            }
+            return res;
+        }
+
     }
 
 }

@@ -42,7 +42,7 @@ public class QuickSort implements Sort {
             // 对数组进行分割，取出下次分割的基准标号
             int base = division(list, left, right);
 
-            ArrayUtil.debugLogArray(list, left, right, String.format("base = %d: ", list[base]));
+            ArrayUtil.printArray(list, left, right, String.format("base = %d: ", list[base]));
 
             // 对“基准标号“左侧的一组数值进行递归的切割，以至于将这些数值完整的排序
             quickSort(list, left, base - 1);

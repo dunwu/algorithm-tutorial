@@ -2,8 +2,6 @@ package io.github.dunwu.algorithm.dp;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-
 /**
  * <a href="https://leetcode.cn/problems/coin-change-ii/">518. 零钱兑换 II</a>
  *

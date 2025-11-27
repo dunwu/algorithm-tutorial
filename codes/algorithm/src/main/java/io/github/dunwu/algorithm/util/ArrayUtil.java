@@ -1,8 +1,6 @@
 package io.github.dunwu.algorithm.util;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,49 +36,24 @@ public class ArrayUtil {
         return arr;
     }
 
-    public static <T> void debugLogArray(T[] list, int begin, int end, String tip) {
-        String content = tip + getArrayString(list, begin, end);
-        if (log.isDebugEnabled()) {
-            log.debug(content);
-        }
+    public static <T> void printArray(T[] arr, int begin, int end, String tip) {
+        System.out.printf("%s -> %s\n", tip, getArrayString(arr, begin, end));
     }
 
-    public static <T> String getArrayString(T[] list) {
-        return getArrayString(list, 0, list.length);
+    public static <T> String getArrayString(T[] arr) {
+        return getArrayString(arr, 0, arr.length);
     }
 
-    public static <T> String getArrayString(T[] list, int begin, int end) {
+    public static <T> String getArrayString(T[] arr, int begin, int end) {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n");
-        for (int i = 0; i < begin; i++) {
-            sb.append("\t");
-        }
         int count = 0;
         for (int i = begin; i <= end; i++) {
-            sb.append(list[i] + "\t");
-            if (++count == 10) {
+            if (count != 0 && count % 10 == 0) {
                 sb.append("\n");
-                count = 0;
             }
+            sb.append("\t" + arr[i]);
+            count++;
         }
-
-        return sb.toString();
-    }
-
-    public static String getArrayString(int[] list, int begin, int end) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < begin; i++) {
-            sb.append("\t");
-        }
-        int count = 0;
-        for (int i = begin; i < end; i++) {
-            sb.append(list[i] + "\t");
-            if (++count == 10) {
-                sb.append("\n");
-                count = 0;
-            }
-        }
-        sb.append(list[end]);
 
         return sb.toString();
     }

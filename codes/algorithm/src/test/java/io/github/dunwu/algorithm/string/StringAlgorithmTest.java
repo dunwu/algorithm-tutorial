@@ -1,5 +1,6 @@
 package io.github.dunwu.algorithm.string;
 
+import io.github.dunwu.algorithm.str.StringAlgorithm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

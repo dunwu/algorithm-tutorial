@@ -3,10 +3,6 @@ package io.github.dunwu.algorithm.tree.bstree;
 import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * <a href="https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes">二叉搜索树结点最小距离</a>
  *

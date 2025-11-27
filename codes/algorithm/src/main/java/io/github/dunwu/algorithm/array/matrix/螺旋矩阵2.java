@@ -3,7 +3,7 @@ package io.github.dunwu.algorithm.array.matrix;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * <a href="https://leetcode.cn/problems/spiral-matrix/">54. 螺旋矩阵</a>
+ * <a href="https://leetcode.cn/problems/spiral-matrix-ii/">54. 螺旋矩阵</a>
  *
  * @author Zhang Peng
  * @since 2018-11-04
@@ -21,35 +21,42 @@ public class 螺旋矩阵2 {
     static class Solution {
 
         public int[][] generateMatrix(int n) {
-
             int cnt = 0;
-            int up = 0, down = n - 1;
-            int left = 0, right = n - 1;
             int[][] res = new int[n][n];
+            int left = 0, right = n - 1, top = 0, bottom = n - 1;
             while (cnt < n * n) {
+
                 // 向右
-                for (int i = left; i <= right; i++) {
-                    res[up][i] = ++cnt;
+                if (top <= bottom) {
+                    for (int i = left; i <= right; i++) {
+                        res[top][i] = ++cnt;
+                    }
+                    top++;
                 }
-                up++;
 
                 // 向下
-                for (int i = up; i <= down; i++) {
-                    res[i][right] = ++cnt;
+                if (left <= right) {
+                    for (int i = top; i <= bottom; i++) {
+                        res[i][right] = ++cnt;
+                    }
+                    right--;
                 }
-                right--;
 
                 // 向左
-                for (int i = right; i >= left; i--) {
-                    res[down][i] = ++cnt;
+                if (top <= bottom) {
+                    for (int i = right; i >= left; i--) {
+                        res[bottom][i] = ++cnt;
+                    }
+                    bottom--;
                 }
-                down--;
 
                 // 向上
-                for (int i = down; i >= up; i--) {
-                    res[i][left] = ++cnt;
+                if (left <= right) {
+                    for (int i = bottom; i >= top; i--) {
+                        res[i][left] = ++cnt;
+                    }
+                    left++;
                 }
-                left++;
             }
             return res;
         }

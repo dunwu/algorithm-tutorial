@@ -12,9 +12,6 @@ public class InsertSort implements Sort {
 
     @Override
     public <T extends Comparable<T>> void sort(T[] list) {
-        // 打印第一个元素
-        ArrayUtil.debugLogArray(list, 0, 0, String.format("i = %d:\t", 0));
-
         // 第1个数肯定是有序的，从第2个数开始遍历，依次插入有序序列
         for (int i = 1; i < list.length; i++) {
             int j = 0;
@@ -27,7 +24,7 @@ public class InsertSort implements Sort {
             }
             list[j + 1] = temp;
 
-            ArrayUtil.debugLogArray(list, 0, list.length - 1, String.format("i = %d:\t", i));
+            ArrayUtil.printArray(list, 0, list.length - 1, String.format("第 %02d 趟", i));
         }
     }
 
