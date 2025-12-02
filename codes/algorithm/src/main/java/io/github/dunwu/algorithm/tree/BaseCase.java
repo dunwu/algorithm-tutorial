@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class BaseCase {
 
-    public static class Node extends NAryTree<Node> {
+    public static class Node extends NTree<Node> {
 
         public Node(int val) {
             super(val);

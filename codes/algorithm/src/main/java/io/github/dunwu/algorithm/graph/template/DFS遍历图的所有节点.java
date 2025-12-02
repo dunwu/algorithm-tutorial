@@ -15,13 +15,9 @@ public class DFS遍历图的所有节点 {
     // 遍历图的所有节点
     void traverse(Graph graph, int s, boolean[] visited) {
         // base case
-        if (s < 0 || s >= graph.size()) {
-            return;
-        }
-        if (visited[s]) {
-            // 防止死循环
-            return;
-        }
+        if (s < 0 || s >= graph.size()) { return; }
+        // 防止死循环
+        if (visited[s]) { return; }
         // 前序位置
         visited[s] = true;
         System.out.println("visit " + s);
@@ -34,19 +30,15 @@ public class DFS遍历图的所有节点 {
     // 图的遍历框架
     // 需要一个 visited 数组记录被遍历过的节点
     // 避免走回头路陷入死循环
-    void traverse(Vertex s, boolean[] visited) {
+    void traverse(Vertex v, boolean[] visited) {
         // base case
-        if (s == null) {
-            return;
-        }
-        if (visited[s.id]) {
-            // 防止死循环
-            return;
-        }
+        if (v == null) { return; }
+        // 防止死循环
+        if (visited[v.id]) { return; }
         // 前序位置
-        visited[s.id] = true;
-        System.out.println("visit " + s.id);
-        for (Vertex neighbor : s.neighbors) {
+        visited[v.id] = true;
+        System.out.println("visit " + v.id);
+        for (Vertex neighbor : v.neighbors) {
             traverse(neighbor, visited);
         }
         // 后序位置

@@ -1,5 +1,6 @@
-package io.github.dunwu.algorithm.graph;
+package io.github.dunwu.algorithm.graph.dfs;
 
+import cn.hutool.core.collection.CollectionUtil;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.Arrays;
@@ -26,36 +27,40 @@ public class 所有可能的路径 {
         for (int i = 0; i < expect.size(); i++) {
             Assertions.assertArrayEquals(expect.get(i).toArray(), output.get(i).toArray());
         }
-        System.out.println("v = " + output);
+        // System.out.println("v = " + output);
     }
 
     static class Solution {
-
-        LinkedList<List<Integer>> res = new LinkedList<>();
+        // 记录所有路径
+        List<List<Integer>> res = new LinkedList<>();
         LinkedList<Integer> path = new LinkedList<>();
 
         public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-            if (graph == null || graph.length == 0) return res;
-            traverse(graph, 0);
+            dfs(graph, 0);
             return res;
         }
 
-        void traverse(int[][] graph, int s) {
+        // 图的遍历框架
+        void dfs(int[][] graph, int s) {
 
-            // 前序
+            // 添加节点 s 到路径
             path.addLast(s);
 
-            if (s == graph.length - 1) {
+            int n = graph.length;
+            if (s == n - 1) {
+                // 到达终点
+                System.out.println("find path: " + CollectionUtil.join(path, "->"));
                 res.add(new LinkedList<>(path));
                 path.removeLast();
                 return;
             }
 
+            // 递归每个相邻节点
             for (int v : graph[s]) {
-                traverse(graph, v);
+                dfs(graph, v);
             }
 
-            // 后序
+            // 从路径移出节点 s
             path.removeLast();
         }
 

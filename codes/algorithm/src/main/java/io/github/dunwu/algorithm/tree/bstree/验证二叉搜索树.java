@@ -4,10 +4,9 @@ import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
 /**
- * <code>98. 验证二叉搜索树</code> 算法实现
+ * <a href="https://leetcode-cn.com/problems/validate-binary-search-tree/">98. 验证二叉搜索树</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
- * @see <a href="https://leetcode-cn.com/problems/validate-binary-search-tree/">98. 验证二叉搜索树</a>
  * @since 2020-07-02
  */
 public class 验证二叉搜索树 {
@@ -28,13 +27,13 @@ public class 验证二叉搜索树 {
 
         // 限定以 root 为根的子树节点必须满足 max.val > root.val > min.val
         boolean isValidBST(TreeNode root, TreeNode min, TreeNode max) {
-            if (root == null) { return true; }
+            // base case
+            if (root == null) return true;
             // 若 root.val 不符合 max 和 min 的限制，说明不是合法 BST
-            if (min != null && root.val <= min.val) { return false; }
-            if (max != null && root.val >= max.val) { return false; }
+            if (min != null && root.val <= min.val) return false;
+            if (max != null && root.val >= max.val) return false;
             // 限定左子树的最大值是 root.val，右子树的最小值是 root.val
-            return isValidBST(root.left, min, root)
-                && isValidBST(root.right, root, max);
+            return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
         }
 
     }

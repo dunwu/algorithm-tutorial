@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.linkedlist;
+package io.github.dunwu.algorithm.linkedlist.demo;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,17 +6,22 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DoublyLinkedList<E> {
+public class SinglyLinkedList<E> {
 
     private int size = 0;
     private Node<E> first = null;
-    private Node<E> last = null;
 
-    public DoublyLinkedList() {
-        first = new Node<>(null);
-        last = new Node<>(null);
-        first.next = last;
-        last.prev = first;
+    public SinglyLinkedList() {
+        this.size = 0;
+        this.first = new Node<>(null);
+    }
+
+    public SinglyLinkedList(E[] elementArray) {
+        this.size = 0;
+        this.first = new Node<>(null);
+        for (E element : elementArray) {
+            addLast(element);
+        }
     }
 
     public int size() {
@@ -29,7 +34,6 @@ public class DoublyLinkedList<E> {
 
     public int indexOf(E element) {
         int pos = 0;
-
         Node<E> p = first.next;
         while (p != null) {
             if (p.element.equals(element)) {
@@ -48,7 +52,6 @@ public class DoublyLinkedList<E> {
 
     Node<E> node(int index) {
         int i = 0;
-
         Node<E> p = first;
         while (p != null && i != index) {
             p = p.next;
@@ -58,49 +61,69 @@ public class DoublyLinkedList<E> {
     }
 
     public void addFirst(E element) {
-
         Node<E> node = new Node<>(element);
-        Node<E> temp = first.next;
-
-        node.next = temp;
-        temp.prev = node;
-
-        node.prev = first;
+        node.next = first.next;
         first.next = node;
-
         size++;
     }
 
     public void addLast(E element) {
-
         Node<E> node = new Node<>(element);
-        Node<E> temp = last.prev;
-
-        temp.next = node;
-        node.prev = temp;
-
-        last.prev = node;
-        node.next = last;
-
+        Node<E> p = first;
+        while (p.next != null) {
+            p = p.next;
+        }
+        p.next = node;
         size++;
     }
 
     public boolean add(int index, E element) {
+
+        checkPositionIndex(index);
 
         if (index == 0) {
             addFirst(element);
             return true;
         }
 
-        Node<E> p = node(index);
+        Node<E> p = node(index - 1);
         Node<E> node = new Node<>(element);
         node.next = p.next;
-        p.next.prev = node;
-
-        node.prev = p;
         p.next = node;
-
         size++;
+        return true;
+    }
+
+    public void removeFirst() {
+        first = first.next;
+        size--;
+    }
+
+    public void removeLast() {
+        Node<E> p = first;
+        while (p.next.next != null) {
+            p = p.next;
+        }
+        p.next = null;
+        size--;
+    }
+
+    public boolean remove(int index) {
+
+        checkElementIndex(index);
+
+        if (index == 0) {
+            removeFirst();
+        }
+
+        int pos = 0;
+        Node<E> p = first;
+        while (pos < index - 1) {
+            p = p.next;
+            pos++;
+        }
+        p.next = p.next.next;
+        size--;
         return true;
     }
 
@@ -118,9 +141,9 @@ public class DoublyLinkedList<E> {
             }
         } else {
             Node<E> p = first;
-            while (p != null && p.next != null) {
+            while (p.next != null) {
                 Node<E> x = p.next;
-                if (e.equals(x.element)) {
+                if (x.element.equals(e)) {
                     p.next = x.next;
                     size--;
                     return true;
@@ -150,7 +173,7 @@ public class DoublyLinkedList<E> {
         } else {
             Node<E> p = first;
             while (p != null && p.next != null) {
-                if (e.equals(p.next.element)) {
+                if (p.next.element.equals(e)) {
                     p.next = p.next.next;
                     size--;
                 } else {
@@ -162,16 +185,25 @@ public class DoublyLinkedList<E> {
     }
 
     public void clear() {
-        first.next = last;
-        last.prev = first;
+        first.next = null;
         size = 0;
     }
 
+    private void checkElementIndex(int index) {
+        if (index >= 0 && index < size) { return; }
+        throw new RuntimeException("超出边界！");
+    }
+
+    private void checkPositionIndex(int index) {
+        if (index >= 0 && index <= size) { return; }
+        throw new RuntimeException("超出边界！");
+    }
+
     public void printAll() {
-        Node<E> p = first;
-        while (p.next != null && p.next != last) {
-            p = p.next;
+        Node<E> p = first.next;
+        while (p != null) {
             System.out.print(p.element + " ");
+            p = p.next;
         }
         System.out.println();
     }
@@ -179,7 +211,7 @@ public class DoublyLinkedList<E> {
     public List<E> toList() {
         List<E> list = new ArrayList<>();
         Node<E> node = first.next;
-        while (node != null && node != last) {
+        while (node != null) {
             list.add(node.element);
             node = node.next;
         }
@@ -188,32 +220,29 @@ public class DoublyLinkedList<E> {
 
     @Getter
     @Setter
-    public static class Node<E> {
+    private static class Node<E> {
 
         private E element;
         private Node<E> next;
-        private Node<E> prev;
 
         public Node(E element) {
             this.element = element;
             this.next = null;
-            this.prev = null;
         }
 
-        public Node(E element, Node<E> prev, Node<E> next) {
+        public Node(E element, Node<E> next) {
             this.element = element;
-            this.prev = prev;
             this.next = next;
         }
 
     }
 
     public static void main(String[] args) {
-        int[] nums = { 1, 2, 3, 4, 5 };
-        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-        DoublyLinkedList<Integer> reverseList = new DoublyLinkedList<>();
+
+        Integer[] nums = { 1, 2, 3, 4, 5 };
+        SinglyLinkedList<Integer> list = new SinglyLinkedList<>(nums);
+        SinglyLinkedList<Integer> reverseList = new SinglyLinkedList<>();
         for (int num : nums) {
-            list.addLast(num);
             reverseList.addFirst(num);
         }
 
@@ -222,9 +251,14 @@ public class DoublyLinkedList<E> {
         list.printAll();
         System.out.println("【队头写入链表】");
         reverseList.printAll();
-        list.printAll();
         System.out.println("999 在队列中的位置：" + list.indexOf(999));
         System.out.println("队列中位置 5 的元素值：" + list.get(5));
+
+        System.out.println("【删除指定位置元素】");
+        list.removeLast();
+        list.printAll();
+        list.remove(new Integer(999));
+        list.printAll();
     }
 
 }

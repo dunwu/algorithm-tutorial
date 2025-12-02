@@ -13,26 +13,6 @@ import java.util.List;
  */
 public class 邻接矩阵实现图 {
 
-    public static void main(String[] args) {
-        WeightedDigraph graph = new WeightedDigraph(3);
-        graph.addEdge(0, 1, 1);
-        graph.addEdge(1, 2, 2);
-        graph.addEdge(2, 0, 3);
-        graph.addEdge(2, 1, 4);
-
-        System.out.println(graph.hasEdge(0, 1)); // true
-        System.out.println(graph.hasEdge(1, 0)); // false
-
-        graph.neighbors(2).forEach(edge -> {
-            System.out.println(2 + " -> " + edge.to + ", wight: " + edge.weight);
-        });
-        // 2 -> 0, wight: 3
-        // 2 -> 1, wight: 4
-
-        graph.removeEdge(0, 1);
-        System.out.println(graph.hasEdge(0, 1)); // false
-    }    // 存储相邻节点及边的权重
-
     // 加权有向图的通用实现（邻接矩阵）
     static class WeightedDigraph {
 
@@ -73,6 +53,26 @@ public class 邻接矩阵实现图 {
                 }
             }
             return res;
+        }
+
+        public static void main(String[] args) {
+            WeightedDigraph graph = new WeightedDigraph(3);
+            graph.addEdge(0, 1, 1);
+            graph.addEdge(1, 2, 2);
+            graph.addEdge(2, 0, 3);
+            graph.addEdge(2, 1, 4);
+
+            System.out.println(graph.hasEdge(0, 1)); // true
+            System.out.println(graph.hasEdge(1, 0)); // false
+
+            graph.neighbors(2).forEach(edge -> {
+                System.out.println(2 + " -> " + edge.to + ", wight: " + edge.weight);
+            });
+            // 2 -> 0, wight: 3
+            // 2 -> 1, wight: 4
+
+            graph.removeEdge(0, 1);
+            System.out.println(graph.hasEdge(0, 1)); // false
         }
 
     }

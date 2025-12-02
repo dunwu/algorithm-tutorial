@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Queue;
 
 /**
@@ -27,7 +28,7 @@ public class BTree<T extends Comparable<T>> {
         this.root = root;
     }
 
-    public static <T extends Comparable<T>> BTree<T> buildTree(T... array) {
+    public static <T extends Comparable<T>> BTree<T> build(T... array) {
         BTree<T> tree = new BTree<>();
         List<TreeNode<T>> list = new ArrayList<>();
 
@@ -83,32 +84,7 @@ public class BTree<T extends Comparable<T>> {
      * @return true / false
      */
     public static <T extends Comparable<T>> boolean isEquals(final BTree<T> tree1, final BTree<T> tree2) {
-        return isEquals(tree1.root, tree2.root);
-    }
-
-    /**
-     * 判断两颗二叉树是否完全一致
-     *
-     * @param root1 二叉树根节点，类型：{@link BTree#root}
-     * @param root2 二叉树根节点，类型：{@link BTree#root}
-     * @param <T>   元素类型
-     * @return true / false
-     * @see <a href="https://leetcode-cn.com/problems/same-tree/">相同的树</a>
-     */
-    private static <T extends Comparable<T>> boolean isEquals(TreeNode<T> root1, TreeNode<T> root2) {
-        if (root1 == null && root2 == null) {
-            return true;
-        }
-
-        if (root1 == null || root2 == null) {
-            return false;
-        }
-
-        if (!root1.value.equals(root2.value)) {
-            return false;
-        }
-
-        return isEquals(root1.left, root2.left) && isEquals(root1.right, root2.right);
+        return TreeNode.isEquals(tree1.root, tree2.root);
     }
 
     /**
@@ -120,37 +96,16 @@ public class BTree<T extends Comparable<T>> {
      * @see <a href="https://leetcode-cn.com/problems/leaf-similar-trees/">叶子相似的树</a>
      */
     public static <T extends Comparable<T>> boolean isLeafSimilar(final BTree<T> tree1, final BTree<T> tree2) {
-        List<T> leafs1 = new LinkedList<>();
-        List<T> leafs2 = new LinkedList<>();
-        getLeafNodes(tree1, leafs1);
-        getLeafNodes(tree2, leafs2);
+        List<T> leafs1 = TreeNode.getLeafNodes(tree1.root);
+        List<T> leafs2 = TreeNode.getLeafNodes(tree2.root);
         return Arrays.equals(leafs1.toArray(), leafs2.toArray());
     }
 
     /**
      * 获取叶子节点
-     *
-     * @param tree  {@link BTree}
-     * @param leafs [出参]叶子节点列表{@link List}
-     * @param <T>   元素类型
      */
-    public static <T extends Comparable<T>> void getLeafNodes(BTree<T> tree, List<T> leafs) {
-        getLeafNodes(tree.root, leafs);
-    }
-
-    /**
-     * 获取叶子节点
-     *
-     * @param root  {@link TreeNode}
-     * @param leafs [出参]叶子节点列表{@link List}
-     * @param <T>   元素类型
-     */
-    private static <T extends Comparable<T>> void getLeafNodes(TreeNode<T> root, List<T> leafs) {
-        if (root == null) { return; }
-
-        if (root.left == null && root.right == null) { leafs.add(root.value); }
-        getLeafNodes(root.left, leafs);
-        getLeafNodes(root.right, leafs);
+    public List<T> getLeafNodes() {
+        return TreeNode.getLeafNodes(this.root);
     }
 
     /**
@@ -159,24 +114,7 @@ public class BTree<T extends Comparable<T>> {
      * @return 二叉树的最大深度
      */
     public int maxDepth() {
-        return maxDepth(this.root);
-    }
-
-    /**
-     * 采用递归方法获取二叉树的最大深度
-     *
-     * @param root 二叉树根节点，类型：{@link BTree#root}
-     * @return 二叉树的最大深度
-     * @see <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">二叉树的最大深度</a>
-     */
-    private int maxDepth(TreeNode<T> root) {
-        if (root == null) return 0;
-
-        int left = maxDepth(root.left);
-
-        int right = maxDepth(root.right);
-
-        return Math.max(left, right) + 1;
+        return TreeNode.maxDepth(this.root);
     }
 
     /**
@@ -185,28 +123,7 @@ public class BTree<T extends Comparable<T>> {
      * @return 二叉树的最小深度
      */
     public int minDepth() {
-        return minDepth(this.root);
-    }
-
-    /**
-     * 采用递归方法获取二叉树的最小深度
-     *
-     * @param root 二叉树根节点，类型：{@link BTree#root}
-     * @return 二叉树的最小深度
-     * @see <a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">二叉树的最小深度</a>
-     */
-    private int minDepth(TreeNode<T> root) {
-        if (root == null) { return 0; }
-
-        int left = minDepth(root.left);
-
-        int right = minDepth(root.right);
-
-        if (left == 0 || right == 0) {
-            return left + right + 1;
-        }
-
-        return Math.min(left, right) + 1;
+        return TreeNode.minDepth(this.root);
     }
 
     // ------------------------------------------------------------- 遍历元素
@@ -215,56 +132,237 @@ public class BTree<T extends Comparable<T>> {
      * 将二叉树按层次遍历顺序转换为列表，即广度优先搜索（BFS）
      *
      * @return {@link List<List<T>>}
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">二叉树的层次遍历 II</a>
      */
     public List<List<T>> levelOrderLists() {
-        List<List<T>> lists = new ArrayList<>();
-        if (root == null) { return lists; }
-        Queue<TreeNode<T>> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            List<T> temp = new ArrayList<>();
-            for (int i = 0; i < size; i++) {
-                TreeNode<T> node = queue.poll();
-                temp.add(node.value);
-                if (node.left != null) { queue.offer(node.left); }
-                if (node.right != null) { queue.offer(node.right); }
-            }
-            lists.add(temp);
-        }
-        return lists;
+        return TreeNode.levelOrderLists(this.root);
     }
 
-    public List<T> levelOrderList() {
-        List<T> list = new ArrayList<>();
-        if (root == null) { return list; }
-        Queue<TreeNode<T>> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode<T> node = queue.poll();
-                list.add(node.value);
-                if (node.left != null) { queue.offer(node.left); }
-                if (node.right != null) { queue.offer(node.right); }
-            }
-        }
-        return list;
-    }
+    public static class TreeNode<T extends Comparable<T>> {
 
-    static class TreeNode<T extends Comparable<T>> {
-
-        T value;
+        T val;
 
         TreeNode<T> left;
 
         TreeNode<T> right;
 
-        public TreeNode(T value, TreeNode<T> left, TreeNode<T> right) {
-            this.value = value;
+        public TreeNode(T val) {
+            this.val = val;
+        }
+
+        public TreeNode(T val, TreeNode<T> left, TreeNode<T> right) {
+            this.val = val;
             this.left = left;
             this.right = right;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(val);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof TreeNode)) return false;
+            TreeNode treeNode = (TreeNode) o;
+            return Objects.equals(val, treeNode.val) &&
+                Objects.equals(left, treeNode.left) &&
+                Objects.equals(right, treeNode.right);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(val, left, right);
+        }
+
+        public static <T extends Comparable<T>> TreeNode<T> build(T... values) {
+
+            if (values == null || values.length == 0 || values[0] == null) {
+                return null;
+            }
+
+            Queue<TreeNode<T>> queue = new LinkedList<>();
+            TreeNode<T> root = new TreeNode<>(values[0]);
+            queue.offer(root);
+
+            int i = 1;
+            while (!queue.isEmpty()) {
+                TreeNode<T> current = queue.poll();
+
+                // 处理左子节点
+                if (i < values.length && values[i] != null) {
+                    current.left = new TreeNode<T>(values[i]);
+                    queue.offer(current.left);
+                }
+                i++;
+
+                // 处理右子节点
+                if (i < values.length && values[i] != null) {
+                    current.right = new TreeNode<T>(values[i]);
+                    queue.offer(current.right);
+                }
+                i++;
+            }
+
+            return root;
+        }
+
+        public static <T extends Comparable<T>> TreeNode<T> find(TreeNode<T> root, T val) {
+            if (root == null || Objects.equals(root.val, val)) { return root; }
+            TreeNode<T> left = find(root.left, val);
+            if (left != null) return left;
+            return find(root.right, val);
+        }
+
+        public static <T extends Comparable<T>> List<TreeNode<T>> toList(TreeNode<T> root) {
+            List<TreeNode<T>> list = new ArrayList<>();
+            if (root == null) {
+                return list;
+            }
+
+            Queue<TreeNode<T>> queue = new LinkedList<>();
+            queue.add(root);
+            while (!queue.isEmpty()) {
+                TreeNode<T> node = queue.poll();
+                list.add(node);
+                if (node == null) continue;
+                queue.add(node.left);
+                queue.add(node.right);
+            }
+
+            // 删除队列尾部的所有 null
+            int last = list.size() - 1;
+            while (last > 0 && list.get(last) == null) {
+                last--;
+            }
+            return list.subList(0, last + 1);
+        }
+
+        public static <T extends Comparable<T>> List<T> toValueList(TreeNode<T> root) {
+            List<T> list = new ArrayList<>();
+            if (root == null) {
+                return list;
+            }
+
+            Queue<TreeNode<T>> queue = new LinkedList<>();
+            queue.add(root);
+            while (!queue.isEmpty()) {
+                TreeNode<T> node = queue.poll();
+                if (node == null) {
+                    list.add(null);
+                    continue;
+                } else {
+                    list.add(node.val);
+                }
+
+                queue.add(node.left);
+                queue.add(node.right);
+            }
+
+            // 删除队列尾部的所有 null
+            int last = list.size() - 1;
+            while (last > 0 && list.get(last) == null) {
+                last--;
+            }
+            return list.subList(0, last + 1);
+        }
+
+        /**
+         * 判断两颗二叉树是否完全一致
+         *
+         * @param root1 二叉树根节点，类型：{@link BTree#root}
+         * @param root2 二叉树根节点，类型：{@link BTree#root}
+         * @param <T>   元素类型
+         * @return true / false
+         * @see <a href="https://leetcode-cn.com/problems/same-tree/">相同的树</a>
+         */
+        private static <T extends Comparable<T>> boolean isEquals(TreeNode<T> root1, TreeNode<T> root2) {
+            if (root1 == null && root2 == null) { return true; }
+            if (root1 == null || root2 == null) { return false; }
+            if (!root1.val.equals(root2.val)) { return false; }
+            return isEquals(root1.left, root2.left) && isEquals(root1.right, root2.right);
+        }
+
+        /**
+         * 获取叶子节点
+         *
+         * @param root {@link TreeNode}
+         * @param <T>  元素类型
+         */
+        public static <T extends Comparable<T>> List<T> getLeafNodes(TreeNode<T> root) {
+            List<T> res = new ArrayList<>();
+            getLeafNodes(root, res);
+            return res;
+        }
+
+        /**
+         * 获取叶子节点
+         *
+         * @param root  {@link TreeNode}
+         * @param leafs [出参]叶子节点列表{@link List}
+         * @param <T>   元素类型
+         */
+        private static <T extends Comparable<T>> void getLeafNodes(TreeNode<T> root, List<T> leafs) {
+            if (root == null) { return; }
+            if (root.left == null && root.right == null) { leafs.add(root.val); }
+            getLeafNodes(root.left, leafs);
+            getLeafNodes(root.right, leafs);
+        }
+
+        /**
+         * 采用递归方法获取二叉树的最大深度
+         *
+         * @param root 二叉树根节点，类型：{@link BTree#root}
+         * @return 二叉树的最大深度
+         * @see <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">二叉树的最大深度</a>
+         */
+        public static <T extends Comparable<T>> int maxDepth(TreeNode<T> root) {
+            if (root == null) { return 0; }
+            int left = maxDepth(root.left);
+            int right = maxDepth(root.right);
+            return Math.max(left, right) + 1;
+        }
+
+        /**
+         * 采用递归方法获取二叉树的最小深度
+         *
+         * @param root 二叉树根节点，类型：{@link BTree#root}
+         * @return 二叉树的最小深度
+         * @see <a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">二叉树的最小深度</a>
+         */
+        public static <T extends Comparable<T>> int minDepth(TreeNode<T> root) {
+            if (root == null) { return 0; }
+            int left = minDepth(root.left);
+            int right = minDepth(root.right);
+            if (left == 0 || right == 0) {
+                return left + right + 1;
+            }
+            return Math.min(left, right) + 1;
+        }
+
+        /**
+         * 将二叉树按层次遍历顺序转换为列表，即广度优先搜索（BFS）
+         *
+         * @return {@link List<List<T>>}
+         * @see <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">二叉树的层次遍历 II</a>
+         */
+        public static <T extends Comparable<T>> List<List<T>> levelOrderLists(TreeNode<T> root) {
+            List<List<T>> lists = new ArrayList<>();
+            if (root == null) { return lists; }
+            Queue<TreeNode<T>> queue = new LinkedList<>();
+            queue.offer(root);
+            while (!queue.isEmpty()) {
+                int size = queue.size();
+                List<T> list = new ArrayList<>();
+                for (int i = 0; i < size; i++) {
+                    TreeNode<T> node = queue.poll();
+                    list.add(node.val);
+                    if (node.left != null) { queue.offer(node.left); }
+                    if (node.right != null) { queue.offer(node.right); }
+                }
+                lists.add(list);
+            }
+            return lists;
         }
 
     }

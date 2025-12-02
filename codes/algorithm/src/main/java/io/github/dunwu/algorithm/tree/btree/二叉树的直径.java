@@ -21,20 +21,21 @@ public class 二叉树的直径 {
 
     static class Solution {
 
-        int res = 0;
+        private int max = 0;
 
         public int diameterOfBinaryTree(TreeNode root) {
-            res = 0;
-            dfs(root);
-            return res;
+            max = 0;
+            depth(root);
+            return max;
         }
 
-        public int dfs(TreeNode root) {
-            if (root == null) { return -1; }
-            int left = dfs(root.left) + 1;
-            int right = dfs(root.right) + 1;
-            res = Math.max(res, left + right);
-            return Math.max(left, right);
+        public int depth(TreeNode root) {
+            if (root == null) { return 0; }
+            int left = depth(root.left);
+            int right = depth(root.right);
+            int depth = Math.max(left, right) + 1;
+            max = Math.max(max, left + right);
+            return depth;
         }
 
     }

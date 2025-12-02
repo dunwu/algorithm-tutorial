@@ -45,24 +45,31 @@ public class 不同的二叉搜索树2 {
 
     static class Solution {
 
+        // 主函数
         public List<TreeNode> generateTrees(int n) {
             if (n == 0) return new LinkedList<>();
-            return recursion(1, n);
+            // 构造闭区间 [1, n] 组成的 BST
+            return build(1, n);
         }
 
-        public List<TreeNode> recursion(int begin, int end) {
-
+        // 构造闭区间 [lo, hi] 组成的 BST
+        List<TreeNode> build(int lo, int hi) {
             List<TreeNode> res = new LinkedList<>();
-            if (begin > end) {
+            // base case
+            if (lo > hi) {
                 res.add(null);
                 return res;
             }
 
-            for (int i = begin; i <= end; i++) {
-                List<TreeNode> leftTrees = recursion(begin, i - 1);
-                List<TreeNode> rightTrees = recursion(i + 1, end);
-                for (TreeNode left : leftTrees) {
-                    for (TreeNode right : rightTrees) {
+            // 1、穷举 root 节点的所有可能。
+            for (int i = lo; i <= hi; i++) {
+                // 2、递归构造出左右子树的所有合法 BST。
+                List<TreeNode> leftTree = build(lo, i - 1);
+                List<TreeNode> rightTree = build(i + 1, hi);
+                // 3、给 root 节点穷举所有左右子树的组合。
+                for (TreeNode left : leftTree) {
+                    for (TreeNode right : rightTree) {
+                        // i 作为根节点 root 的值
                         TreeNode root = new TreeNode(i);
                         root.left = left;
                         root.right = right;

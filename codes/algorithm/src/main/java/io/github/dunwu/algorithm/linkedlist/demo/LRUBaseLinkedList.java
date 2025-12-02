@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.linkedlist;
+package io.github.dunwu.algorithm.linkedlist.demo;
 
 import java.util.Scanner;
 

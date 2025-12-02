@@ -30,13 +30,17 @@ public class 二叉搜索树的最近公共祖先 {
 
         public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
             if (root == null) { return null; }
-            if (root == p || root == q) { return root; }
-
-            TreeNode left = lowestCommonAncestor(root.left, p, q);
-            TreeNode right = lowestCommonAncestor(root.right, p, q);
-            if (left != null && right != null) { return root; }
-            if (left == null && right == null) { return null; }
-            return left == null ? right : left;
+            if (p.val > q.val) {
+                return lowestCommonAncestor(root, q, p);
+            }
+            if (p.val <= root.val && root.val <= q.val) {
+                return root;
+            }
+            if (root.val > q.val) {
+                return lowestCommonAncestor(root.left, p, q);
+            } else {
+                return lowestCommonAncestor(root.right, p, q);
+            }
         }
 
     }

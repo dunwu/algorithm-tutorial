@@ -20,23 +20,32 @@ public class 不同的二叉搜索树 {
 
     static class Solution {
 
-        public int numTrees(int n) {
-            int[][] memo = new int[n + 1][n + 1];
-            return recursion(1, n, memo);
+        // 备忘录
+        int[][] memo;
+
+        int numTrees(int n) {
+            // 备忘录的值初始化为 0
+            memo = new int[n + 1][n + 1];
+            return count(1, n);
         }
 
-        public int recursion(int begin, int end, int[][] memo) {
-            if (begin > end) { return 1; }
-
-            if (memo[begin][end] != 0) { return memo[begin][end]; }
+        // 定义：返回 [begin, end] 范围内构造的不同 BST 的数量
+        int count(int begin, int end) {
+            if (begin >= end) return 1;
+            // 查备忘录
+            if (memo[begin][end] != 0) {
+                return memo[begin][end];
+            }
 
             int res = 0;
-            for (int i = begin; i <= end; i++) {
-                int left = recursion(begin, i - 1, memo);
-                int right = recursion(i + 1, end, memo);
+            for (int mid = begin; mid <= end; mid++) {
+                int left = count(begin, mid - 1);
+                int right = count(mid + 1, end);
                 res += left * right;
             }
+            // 将结果存入备忘录
             memo[begin][end] = res;
+
             return res;
         }
 

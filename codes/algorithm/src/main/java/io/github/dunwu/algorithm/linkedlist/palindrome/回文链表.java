@@ -3,6 +3,9 @@ package io.github.dunwu.algorithm.linkedlist.palindrome;
 import io.github.dunwu.algorithm.linkedlist.ListNode;
 import org.junit.jupiter.api.Assertions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/palindrome-linked-list/">234. 回文链表</a>
  * <a href="https://leetcode-cn.com/problems/palindrome-linked-list-lcci/submissions/">面试题 02.06. 回文链表</a>
@@ -14,9 +17,8 @@ public class 回文链表 {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        ListNode head = ListNode.buildList(1, 2, 2, 1);
-        Assertions.assertTrue(s.isPalindrome(head));
-
+        ListNode input = ListNode.buildList(1, 2, 2, 1);
+        Assertions.assertTrue(s.isPalindrome(input));
         ListNode input2 = ListNode.buildList(1, 2);
         Assertions.assertFalse(s.isPalindrome(input2));
     }
@@ -24,35 +26,22 @@ public class 回文链表 {
     static class Solution {
 
         public boolean isPalindrome(ListNode head) {
-            ListNode slow, fast;
-            slow = fast = head;
-            while (fast != null && fast.next != null) {
-                slow = slow.next;
-                fast = fast.next.next;
+            List<Integer> list = new ArrayList<>();
+            ListNode p = head;
+            while (p != null) {
+                list.add(p.val);
+                p = p.next;
             }
 
-            if (fast != null) { slow = slow.next; }
-
-            ListNode left = head;
-            ListNode right = reverse(slow);
-            while (right != null) {
-                if (left.val != right.val) { return false; }
-                left = left.next;
-                right = right.next;
+            int left = 0, right = list.size() - 1;
+            while (left < right) {
+                if (!list.get(left).equals(list.get(right))) {
+                    return false;
+                }
+                left++;
+                right--;
             }
-
             return true;
-        }
-
-        ListNode reverse(ListNode head) {
-            ListNode pre = null, cur = head;
-            while (cur != null) {
-                ListNode next = cur.next;
-                cur.next = pre;
-                pre = cur;
-                cur = next;
-            }
-            return pre;
         }
 
     }

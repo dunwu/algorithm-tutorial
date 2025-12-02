@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.linkedlist;
+package io.github.dunwu.algorithm.linkedlist.demo;
 
 /**
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>

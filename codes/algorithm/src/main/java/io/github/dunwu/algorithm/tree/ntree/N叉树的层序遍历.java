@@ -1,5 +1,8 @@
-package io.github.dunwu.algorithm.tree.btree.bfs;
+package io.github.dunwu.algorithm.tree.ntree;
 
+import io.github.dunwu.algorithm.tree.Node;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,54 +30,30 @@ public class N叉树的层序遍历 {
     static class Solution {
 
         public List<List<Integer>> levelOrder(Node root) {
-            if (root == null) { return new LinkedList<>(); }
-
-            int depth = 1;
-            LinkedList<List<Integer>> res = new LinkedList<>();
+            List<List<Integer>> res = new ArrayList<>();
             LinkedList<Node> queue = new LinkedList<>();
-            queue.addLast(root);
+            queue.offer(root);
+
             while (!queue.isEmpty()) {
                 int size = queue.size();
-                List<Integer> list = new LinkedList<>();
+                LinkedList<Integer> list = new LinkedList<>();
                 for (int i = 0; i < size; i++) {
-                    Node node = queue.removeFirst();
+                    Node node = queue.poll();
                     if (node == null) {
                         continue;
                     }
                     list.add(node.val);
-                    if (node.children != null && node.children.size() > 0) {
+                    if (!node.children.isEmpty()) {
                         for (Node child : node.children) {
-                            queue.addLast(child);
+                            queue.offer(child);
                         }
                     }
                 }
-                System.out.printf("[depth: %d]nodes: %s\n", depth, list);
-                res.add(list);
-                depth++;
+                if (!list.isEmpty()) {
+                    res.add(list);
+                }
             }
             return res;
-        }
-
-    }
-
-    static class Node {
-
-        public int val;
-        public List<Node> children;
-
-        public Node() {
-            val = -1;
-            children = new LinkedList<>();
-        }
-
-        public Node(int val) {
-            this.val = val;
-            this.children = new LinkedList<>();
-        }
-
-        public Node(int val, List<Node> children) {
-            this.val = val;
-            this.children = children;
         }
 
     }

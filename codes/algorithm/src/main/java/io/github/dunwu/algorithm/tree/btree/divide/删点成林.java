@@ -4,7 +4,6 @@ import io.github.dunwu.algorithm.tree.TreeNode;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -39,28 +38,34 @@ public class 删点成林 {
 
     static class Solution {
 
-        private Set<Integer> set = null;
-        private List<TreeNode> res = null;
+        Set<Integer> delSet;
+        // 记录森林的根节点
+        List<TreeNode> res;
 
         public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
-            if (root == null) { return new ArrayList<>(); }
-            set = new HashSet<>();
-            res = new LinkedList<>();
-            for (int val : to_delete) {
-                set.add(val);
+            if (root == null) return new LinkedList<>();
+            for (int d : to_delete) {
+                delSet.add(d);
             }
-            traverse(root, false);
+            doDelete(root, false);
             return res;
         }
 
-        public TreeNode traverse(TreeNode root, boolean hasParent) {
-            if (root == null) { return null; }
-            boolean deleted = set.contains(root.val);
+        // 定义：输入一棵二叉树，删除 delSet 中的节点，返回删除完成后的根节点
+        private TreeNode doDelete(TreeNode root, boolean hasParent) {
+            if (root == null) {
+                return null;
+            }
+            // 判断是否需要被删除
+            boolean deleted = delSet.contains(root.val);
             if (!deleted && !hasParent) {
+                // 没有父节点且不需要被删除，就是一个新的根节点
                 res.add(root);
             }
-            root.left = traverse(root.left, !deleted);
-            root.right = traverse(root.right, !deleted);
+            // 去左右子树进行删除
+            root.left = doDelete(root.left, !deleted);
+            root.right = doDelete(root.right, !deleted);
+            // 如果需要被删除，返回 null 给父节点
             return deleted ? null : root;
         }
 
