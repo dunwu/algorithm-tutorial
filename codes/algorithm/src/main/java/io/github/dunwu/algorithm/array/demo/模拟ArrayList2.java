@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.array;
+package io.github.dunwu.algorithm.array.demo;
 
 public class 模拟ArrayList2<T> {
 

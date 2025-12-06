@@ -3,7 +3,6 @@ package io.github.dunwu.algorithm.array.window;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.HashSet;
-import java.util.Set;
 
 /**
  * <a href="https://leetcode.cn/problems/contains-duplicate-ii/">219. 存在重复元素 II</a>
@@ -24,17 +23,22 @@ public class 存在重复元素2 {
     static class Solution {
 
         public boolean containsNearbyDuplicate(int[] nums, int k) {
+
+            // base case
+            if (nums == null || nums.length < 2) { return false; }
+
             int left = 0, right = 0;
-            Set<Integer> set = new HashSet<>();
+            HashSet<Integer> window = new HashSet<>();
+            // 滑动窗口算法框架，维护一个大小为 k 的窗口
             while (right < nums.length) {
-                if (set.contains(nums[right])) {
-                    return true;
-                }
-                set.add(nums[right]);
+                // 扩大窗口
+                if (window.contains(nums[right])) { return true; }
+                window.add(nums[right]);
                 right++;
 
                 if (right - left > k) {
-                    set.remove(nums[left]);
+                    // 当窗口的大小大于 k 时，缩小窗口
+                    window.remove(nums[left]);
                     left++;
                 }
             }

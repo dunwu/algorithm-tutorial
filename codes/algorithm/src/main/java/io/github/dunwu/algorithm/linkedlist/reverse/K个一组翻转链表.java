@@ -22,36 +22,28 @@ public class K个一组翻转链表 {
     static class Solution {
 
         public ListNode reverseKGroup(ListNode head, int k) {
-            if (head == null) { return null; }
-            // 区间 [a, b) 包含 k 个待反转元素
-            ListNode a = head, b = head;
+            if (head == null || head.next == null) { return head; }
+            ListNode p = head;
             for (int i = 0; i < k; i++) {
-                // 不足 k 个，不需要反转了
-                if (b == null) { return head; }
-                b = b.next;
+                if (p == null) { return head; }
+                p = p.next;
             }
-            // 反转前 k 个元素
-            ListNode newHead = reverseN(a, k);
-            // 此时 b 指向下一组待反转的头结点
-            // 递归反转后续链表并连接起来
-            a.next = reverseKGroup(b, k);
+            ListNode newHead = reverseN(head, k);
+            head.next = reverseKGroup(p, k);
             return newHead;
         }
 
-        private ListNode reverseN(ListNode head, int len) {
-            if (head == null || head.next == null) { return head; }
-            ListNode pre = null, cur = head, next = cur.next;
-            while (len-- > 0) {
+        public ListNode reverseN(ListNode head, int len) {
+            if (head == null) { return null; }
+            ListNode pre = null, cur = head;
+            for (int i = 0; i < len; i++) {
+                if (cur == null) { break; }
+                ListNode next = cur.next;
                 cur.next = pre;
                 pre = cur;
                 cur = next;
-                if (next != null) {
-                    next = next.next;
-                }
             }
-            // 此时的 cur 是第 n + 1 个节点，head 是反转后的尾结点
             head.next = cur;
-            // 此时的 pre 是反转后的头结点
             return pre;
         }
 

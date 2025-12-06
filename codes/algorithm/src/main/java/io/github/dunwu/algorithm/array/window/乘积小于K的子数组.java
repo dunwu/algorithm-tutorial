@@ -41,6 +41,7 @@ public class 乘积小于K的子数组 {
                 // 所以我们需要把 [3], [2,3], [1,2,3] 这 right - left 个子数组都加上
                 count += right - left;
             }
+
             return count;
         }
 

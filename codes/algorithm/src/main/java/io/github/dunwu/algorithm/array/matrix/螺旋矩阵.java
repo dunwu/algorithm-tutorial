@@ -29,8 +29,7 @@ public class 螺旋矩阵 {
             }
 
             int m = matrix.length, n = matrix[0].length;
-            int up = 0, down = m - 1;
-            int left = 0, right = n - 1;
+            int up = 0, down = m - 1, left = 0, right = n - 1;
             List<Integer> res = new LinkedList<>();
             while (res.size() < m * n) {
                 // 向右

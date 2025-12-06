@@ -3,7 +3,6 @@ package io.github.dunwu.algorithm.tree.btree.divide;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.LinkedList;
-import java.util.Stack;
 
 /**
  * <a href="https://leetcode.cn/problems/verify-preorder-serialization-of-a-binary-tree/">331. 验证二叉树的前序序列化</a>

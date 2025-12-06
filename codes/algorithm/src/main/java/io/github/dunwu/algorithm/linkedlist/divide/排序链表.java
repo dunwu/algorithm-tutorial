@@ -27,12 +27,12 @@ public class 排序链表 {
             }
             // 找到中间节点 head2，并断开 head2 与其前一个节点的连接
             // 比如 head=[4,2,1,3]，那么 middleNode 调用结束后 head=[4,2] head2=[1,3]
-            ListNode head2 = middleNode(head);
+            ListNode mid = middleNode(head);
             // 分治
             head = sortList(head);
-            head2 = sortList(head2);
+            mid = sortList(mid);
             // 合并
-            return mergeTwoLists(head, head2);
+            return mergeTwoLists(head, mid);
         }
 
         // 876. 链表的中间结点（快慢指针）

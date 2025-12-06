@@ -2,31 +2,36 @@ package io.github.dunwu.algorithm.graph.topological_sort;
 
 import org.junit.jupiter.api.Assertions;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 /**
- * <a href="https://leetcode.cn/problems/course-schedule/">207. 课程表</a>
+ * <a href="https://leetcode.cn/problems/course-schedule-ii/">210. 课程表 II</a>
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-11-03
  */
-public class 课程表 {
+public class 课程表2 {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        Assertions.assertTrue(s.canFinish(2, new int[][] { { 1, 0 } }));
-        Assertions.assertFalse(s.canFinish(2, new int[][] { { 1, 0 }, { 0, 1 } }));
+        Assertions.assertArrayEquals(new int[] { 0, 1 }, s.findOrder(2, new int[][] { { 1, 0 } }));
+        Assertions.assertArrayEquals(new int[] { 0, 2, 1, 3 },
+            s.findOrder(4, new int[][] { { 1, 0 }, { 2, 0 }, { 3, 1 }, { 3, 2 } }));
 
         Solution2 s2 = new Solution2();
-        Assertions.assertTrue(s2.canFinish(2, new int[][] { { 1, 0 } }));
-        Assertions.assertFalse(s2.canFinish(2, new int[][] { { 1, 0 }, { 0, 1 } }));
+        Assertions.assertArrayEquals(new int[] { 0, 1 }, s2.findOrder(2, new int[][] { { 1, 0 } }));
+        Assertions.assertArrayEquals(new int[] { 0, 1, 2, 3 },
+            s2.findOrder(4, new int[][] { { 1, 0 }, { 2, 0 }, { 3, 1 }, { 3, 2 } }));
     }
 
-    // 环检测算法（DFS 版本）
+    // 拓扑排序算法（DFS 版本）
     static class Solution {
 
+        // 记录后序遍历结果
+        private List<Integer> preorder;
         // 记录一次递归堆栈中的节点
         boolean[] onPath;
         // 记录节点是否被遍历过
@@ -34,17 +39,26 @@ public class 课程表 {
         // 记录图中是否有环
         boolean hasCycle = false;
 
-        public boolean canFinish(int numCourses, int[][] prerequisites) {
+        public int[] findOrder(int numCourses, int[][] prerequisites) {
             List<Integer>[] graph = buildGraph(numCourses, prerequisites);
+            preorder = new LinkedList<>();
             visited = new boolean[numCourses];
             onPath = new boolean[numCourses];
 
-            // 遍历图中的所有节点
             for (int i = 0; i < numCourses; i++) {
                 dfs(graph, i);
             }
-            // 只要没有循环依赖可以完成所有课程
-            return !hasCycle;
+
+            // 有环图无法进行拓扑排序
+            if (hasCycle) { return new int[0]; }
+
+            // 逆后序遍历结果即为拓扑排序结果
+            Collections.reverse(preorder);
+            int[] order = new int[numCourses];
+            for (int i = 0; i < numCourses; i++) {
+                order[i] = preorder.get(i);
+            }
+            return order;
         }
 
         public void dfs(List<Integer>[] graph, int s) {
@@ -59,6 +73,7 @@ public class 课程表 {
                 dfs(graph, t);
             }
             // 【后序】
+            preorder.add(s);
             onPath[s] = false;
         }
 
@@ -77,48 +92,50 @@ public class 课程表 {
 
     }
 
-    // 环检测算法（BFS 版本）
+    // 拓扑排序算法（BFS 版本）
     static class Solution2 {
 
-        public boolean canFinish(int numCourses, int[][] prerequisites) {
-            // 建图，有向边代表「被依赖」关系
+        public int[] findOrder(int numCourses, int[][] prerequisites) {
+            // 建图，和环检测算法相同
             List<Integer>[] graph = buildGraph(numCourses, prerequisites);
-            // 构建入度数组
+            // 计算入度，和环检测算法相同
             int[] indegree = new int[numCourses];
             for (int[] edge : prerequisites) {
                 int from = edge[1], to = edge[0];
-                // 节点 to 的入度加一
                 indegree[to]++;
             }
 
-            // 根据入度初始化队列中节点
+            // 根据入度初始化队列中的节点，和环检测算法相同
             Queue<Integer> q = new LinkedList<>();
             for (int i = 0; i < numCourses; i++) {
                 if (indegree[i] == 0) {
-                    // 节点 i 没有入度，即没有依赖的节点
-                    // 可以作为拓扑排序的起点，加入队列
                     q.offer(i);
                 }
             }
 
-            // 记录遍历的节点个数
+            // 记录拓扑排序结果
+            int[] res = new int[numCourses];
+            // 记录遍历节点的顺序（索引）
             int count = 0;
-            // 开始执行 BFS 遍历
+            // 开始执行 BFS 算法
             while (!q.isEmpty()) {
-                // 弹出节点 cur，并将它指向的节点的入度减一
                 int cur = q.poll();
+                // 弹出节点的顺序即为拓扑排序结果
+                res[count] = cur;
                 count++;
                 for (int next : graph[cur]) {
                     indegree[next]--;
                     if (indegree[next] == 0) {
-                        // 如果入度变为 0，说明 next 依赖的节点都已被遍历
                         q.offer(next);
                     }
                 }
             }
 
-            // 如果所有节点都被遍历过，说明不成环
-            return count == numCourses;
+            // 存在环，拓扑排序不存在
+            if (count != numCourses) {
+                return new int[0];
+            }
+            return res;
         }
 
         public List<Integer>[] buildGraph(int n, int[][] data) {

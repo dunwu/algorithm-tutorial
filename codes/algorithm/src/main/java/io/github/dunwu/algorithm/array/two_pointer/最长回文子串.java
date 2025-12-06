@@ -18,7 +18,7 @@ public class 最长回文子串 {
         Assertions.assertEquals("bb", s.longestPalindrome("bb"));
 
         Solution2 s2 = new Solution2();
-        Assertions.assertEquals("bab", s2.longestPalindrome("babad"));
+        Assertions.assertEquals("aba", s2.longestPalindrome("babad"));
         Assertions.assertEquals("bb", s2.longestPalindrome("cbbd"));
         Assertions.assertEquals("a", s2.longestPalindrome("a"));
         Assertions.assertEquals("bb", s2.longestPalindrome("bb"));
@@ -64,19 +64,22 @@ public class 最长回文子串 {
             for (int i = 0; i < s.length(); i++) {
                 String s1 = palindrome(s, i, i);
                 String s2 = palindrome(s, i, i + 1);
-                res = s1.length() > res.length() ? s1 : res;
-                res = s2.length() > res.length() ? s2 : res;
+                res = res.length() > s1.length() ? res : s1;
+                res = res.length() > s2.length() ? res : s2;
             }
             return res;
         }
 
-        public String palindrome(String s, int i, int j) {
-            if (i < 0 || j >= s.length() || i > j) return "";
-            while (i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j)) {
-                i--;
-                j++;
+        public String palindrome(String s, int l, int r) {
+            // 防止索引越界
+            while (l >= 0 && r < s.length()
+                && s.charAt(l) == s.charAt(r)) {
+                // 双指针向两边展开
+                l--;
+                r++;
             }
-            return s.substring(i + 1, j);
+            // 此时 s[l+1..r-1] 就是最长回文串
+            return s.substring(l + 1, r);
         }
 
     }

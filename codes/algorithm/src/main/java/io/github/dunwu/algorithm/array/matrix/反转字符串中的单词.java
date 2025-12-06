@@ -26,18 +26,15 @@ public class 反转字符串中的单词 {
     static class Solution {
 
         public String reverseWords(String s) {
-            String[] strs = s.split(" ");
+            String[] arr = s.trim().split(" ");
             StringBuilder sb = new StringBuilder();
-            for (int i = strs.length - 1; i >= 0; i--) {
-                if (strs[i].equals("")) {
+            for (int i = arr.length - 1; i >= 0; i--) {
+                if (arr[i].equals("")) {
                     continue;
                 }
-                sb.append(strs[i]).append(" ");
+                sb.append(arr[i]).append(" ");
             }
-            if (sb.lastIndexOf(" ") == sb.length() - 1) {
-                return sb.substring(0, sb.length() - 1);
-            }
-            return sb.toString();
+            return sb.toString().trim();
         }
 
     }
@@ -48,19 +45,18 @@ public class 反转字符串中的单词 {
         public String reverseWords(String s) {
             // 删除首尾空格
             s = s.trim();
-            int i = s.length() - 1, j = i;
+            int l = s.length() - 1, r = l;
             StringBuilder res = new StringBuilder();
-            while (i >= 0) {
-                // 搜索首个空格
-                while (i >= 0 && s.charAt(i) != ' ') { i--; }
+            while (l >= 0) {
+                // 左指针偏移，直到遇到空格
+                while (l >= 0 && s.charAt(l) != ' ') { l--; }
                 // 添加单词
-                res.append(s.substring(i + 1, j + 1)).append(" ");
-                // 跳过单词间空格
-                while (i >= 0 && s.charAt(i) == ' ') { i--; }
-                // j 指向下个单词的尾字符
-                j = i;
+                res.append(s.substring(l + 1, r + 1)).append(' ');
+                // 左指针偏移，直到遇到非空格
+                while (l >= 0 && s.charAt(l) == ' ') { l--; }
+                // 右指针对齐左指针
+                r = l;
             }
-            // 转化为字符串并返回
             return res.toString().trim();
         }
 
