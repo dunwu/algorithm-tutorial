@@ -26,38 +26,28 @@ public class 爱吃香蕉的珂珂 {
     static class Solution {
 
         public int minEatingSpeed(int[] piles, int h) {
-            final int rightBound = 1_000_000_001;
-            int left = 1, right = rightBound;
-            while (left < right) {
+            int left = 1, right = 1_000_000_000;
+
+            // right 是闭区间，所以这里改成 <=
+            while (left <= right) {
                 int mid = left + (right - left) / 2;
-                if (f(piles, mid) == h) {
-                    // 搜索左侧边界，则需要收缩右侧边界
-                    right = mid ;
-                } else if (f(piles, mid) < h) {
-                    // 需要让 f(x) 的返回值大一些
-                    right = mid ;
+                if (f(piles, mid) <= h) {
+                    // right 是闭区间，所以这里用 mid - 1
+                    right = mid - 1;
                 } else if (f(piles, mid) > h) {
-                    // 需要让 f(x) 的返回值小一些
                     left = mid + 1;
                 }
             }
-            if (left < 0 || left > rightBound) { return -1; }
             return left;
         }
 
-        public int f(int[] nums, int x) {
-            int res = 0;
+        long f(int[] nums, int x) {
+            long h = 0;
             for (int num : nums) {
-                if (num <= x) {
-                    res++;
-                } else {
-                    res += num / x;
-                    if (num % x != 0) {
-                        res++;
-                    }
-                }
+                h += num / x;
+                if (num % x > 0) { h++; }
             }
-            return res;
+            return h;
         }
 
     }

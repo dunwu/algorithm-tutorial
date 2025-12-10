@@ -71,14 +71,11 @@ public class 最长回文子串 {
         }
 
         public String palindrome(String s, int l, int r) {
-            // 防止索引越界
             while (l >= 0 && r < s.length()
                 && s.charAt(l) == s.charAt(r)) {
-                // 双指针向两边展开
                 l--;
                 r++;
             }
-            // 此时 s[l+1..r-1] 就是最长回文串
             return s.substring(l + 1, r);
         }
 

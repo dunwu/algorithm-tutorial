@@ -16,6 +16,8 @@ public class 拼车 {
         Assertions.assertFalse(s.carPooling(input, 3));
         int[][] input2 = { { 1, 2, 10 }, { 2, 2, 15 } };
         Assertions.assertTrue(s.carPooling(input2, 5));
+        int[][] input3 = { { 2, 1, 5 }, { 3, 5, 7 } };
+        Assertions.assertTrue(s.carPooling(input3, 3));
     }
 
     static class Solution {
@@ -50,10 +52,10 @@ public class 拼车 {
         }
 
         // 差分数组工具类
-        static class Difference {
+        class Difference {
 
             // 差分数组
-            private final int[] diff;
+            private int[] diff;
 
             // 输入一个初始数组，区间操作将在这个数组上进行
             public Difference(int[] nums) {

@@ -2,9 +2,6 @@ package io.github.dunwu.algorithm.array.matrix;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * <a href="https://leetcode.cn/problems/diagonal-traverse/">498. 对角线遍历</a>
  *
@@ -33,30 +30,31 @@ public class 对角线遍历 {
 
     static class Solution {
 
+        // 1. 同一对角线上的元素，满足 i + j = k
+        // 2. k 的大小，满足递增，从 0 到 m + n - 2
+        // 3. 由于，i + j = k -> i = k - j
+        // i = m - 1 时最大，j 最小；而 k - (m - 1) 必须大于 0 => minJ = max(0, k - (m - 1))
+        // i = 0 时最小，j 最大，但不能超过 n - 1 => maxJ = Math.max(k, n -1)
         public int[] findDiagonalOrder(int[][] mat) {
 
             // base case
             if (mat == null || mat.length == 0) { return new int[0]; }
 
+            int idx = 0;
             int m = mat.length, n = mat[0].length;
-            List<Integer> list = new LinkedList<>();
-            for (int step = 0; step <= m + n - 2; step++) {
-                int min = Math.max(step - (m - 1), 0);
-                int max = Math.min(step, n - 1);
-                if (step % 2 == 0) {
-                    for (int i = max; i >= min; i--) {
-                        list.add(mat[i][step - i]);
+            int[] res = new int[m * n];
+            for (int k = 0; k < m + n - 1; k++) {
+                int minJ = Math.max(k - (m - 1), 0);
+                int maxJ = Math.min(k, n - 1);
+                if (k % 2 == 0) {
+                    for (int j = minJ; j <= maxJ; j++) {
+                        res[idx++] = mat[k - j][j];
                     }
                 } else {
-                    for (int i = min; i <= max; i++) {
-                        list.add(mat[i][step - i]);
+                    for (int j = maxJ; j >= minJ; j--) {
+                        res[idx++] = mat[k - j][j];
                     }
                 }
-            }
-
-            int[] res = new int[list.size()];
-            for (int k = 0; k < list.size(); k++) {
-                res[k] = list.get(k);
             }
             return res;
         }

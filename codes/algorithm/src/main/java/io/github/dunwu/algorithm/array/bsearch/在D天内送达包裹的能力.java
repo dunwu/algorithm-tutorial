@@ -20,22 +20,18 @@ public class 在D天内送达包裹的能力 {
     static class Solution {
 
         public int shipWithinDays(int[] weights, int days) {
-            int left = 0;
-            // 注意，right 是开区间，所以额外加一
-            int right = 1;
-            for (int w : weights) {
-                left = Math.max(left, w);
-                right += w;
+            int max = 0, sum = 0;
+            for (int weight : weights) {
+                max = Math.max(max, weight);
+                sum += weight;
             }
 
-            while (left < right) {
+            int left = max, right = sum;
+            while (left <= right) {
                 int mid = left + (right - left) / 2;
-                if (f(weights, mid) == days) {
-                    // 搜索左侧边界，则需要收缩右侧边界
-                    right = mid;
-                } else if (f(weights, mid) < days) {
+                if (f(weights, mid) <= days) {
                     // 需要让 f(x) 的返回值大一些
-                    right = mid;
+                    right = mid - 1;
                 } else if (f(weights, mid) > days) {
                     // 需要让 f(x) 的返回值小一些
                     left = mid + 1;
@@ -49,13 +45,11 @@ public class 在D天内送达包裹的能力 {
         int f(int[] weights, int x) {
             int days = 0;
             for (int i = 0; i < weights.length; ) {
+                // 尽可能多装货物
                 int cap = x;
                 while (i < weights.length) {
-                    if (cap < weights[i]) {
-                        break;
-                    } else {
-                        cap -= weights[i];
-                    }
+                    if (cap < weights[i]) break;
+                    else cap -= weights[i];
                     i++;
                 }
                 days++;

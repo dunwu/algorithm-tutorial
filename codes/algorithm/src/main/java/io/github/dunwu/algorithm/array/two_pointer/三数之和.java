@@ -28,29 +28,33 @@ public class 三数之和 {
 
         public List<List<Integer>> threeSum(int[] nums) {
             if (nums == null || nums.length < 3) { return new ArrayList<>(); }
+
+            // 数组排序
             Arrays.sort(nums);
+
             List<List<Integer>> res = new ArrayList<>();
             for (int i = 0; i < nums.length; i++) {
+
                 // 跳过重复元素
-                if (i > 0 && nums[i] == nums[i - 1]) continue;
+                if (i > 0 && nums[i] == nums[i - 1]) { continue; }
 
                 // 双指针，目标是找到 nums[l] + nums[r] = -nums[i]
-                int left = i + 1, right = nums.length - 1;
                 int target = -nums[i];
+                int l = i + 1, r = nums.length - 1;
 
-                while (left < right) {
-                    int sum = nums[left] + nums[right];
+                while (l < r) {
+                    int sum = nums[l] + nums[r];
                     if (sum == target) {
-                        res.add(Arrays.asList(nums[i], nums[left], nums[right]));
-                        left++;
-                        right--;
+                        res.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                        l++;
+                        r--;
                         // 跳过重复元素
-                        while (left < right && nums[left] == nums[left - 1]) left++;
-                        while (left < right && nums[right] == nums[right + 1]) right--;
+                        while (l < r && nums[l] == nums[l - 1]) l++;
+                        while (l < r && nums[r] == nums[r + 1]) r--;
+                    } else if (sum > target) {
+                        r--;
                     } else if (sum < target) {
-                        left++;
-                    } else {
-                        right--;
+                        l++;
                     }
                 }
             }

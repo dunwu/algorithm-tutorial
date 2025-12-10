@@ -24,13 +24,14 @@ public class 至少有K个重复字符的最长子串 {
             int len = 0;
             for (int i = 1; i <= 26; i++) {
                 // 限制窗口中只能有 i 种不同字符
-                len = Math.max(len, logestKLetterSubstr(s, k, i));
+                len = Math.max(len, longestKLetterSubstring(s, k, i));
             }
             return len;
         }
 
         // 寻找 s 中含有 count 种字符，且每种字符出现次数都大于 k 的子串
-        int logestKLetterSubstr(String s, int k, int count) {
+        public int longestKLetterSubstring(String s, int k, int count) {
+
             // 记录答案
             int res = 0;
             // 快慢指针维护滑动窗口，左闭右开区间
@@ -44,13 +45,13 @@ public class 至少有K个重复字符的最长子串 {
             // 滑动窗口代码模板
             while (right < s.length()) {
                 // 移入字符，扩大窗口
-                char c = s.charAt(right);
-                if (windowCount[c - 'a'] == 0) {
+                int c = s.charAt(right) - 'a';
+                if (windowCount[c] == 0) {
                     // 窗口中新增了一种字符
                     windowUniqueCount++;
                 }
-                windowCount[c - 'a']++;
-                if (windowCount[c - 'a'] == k) {
+                windowCount[c]++;
+                if (windowCount[c] == k) {
                     // 窗口中新增了一种达标的字符
                     windowValidCount++;
                 }
@@ -59,13 +60,13 @@ public class 至少有K个重复字符的最长子串 {
                 // 当窗口中字符种类大于 count 时，缩小窗口
                 while (windowUniqueCount > count) {
                     // 移出字符，缩小窗口
-                    char d = s.charAt(left);
-                    if (windowCount[d - 'a'] == k) {
+                    int d = s.charAt(left) - 'a';
+                    if (windowCount[d] == k) {
                         // 窗口中减少了一种达标的字符
                         windowValidCount--;
                     }
-                    windowCount[d - 'a']--;
-                    if (windowCount[d - 'a'] == 0) {
+                    windowCount[d]--;
+                    if (windowCount[d] == 0) {
                         // 窗口中减少了一种字符
                         windowUniqueCount--;
                     }

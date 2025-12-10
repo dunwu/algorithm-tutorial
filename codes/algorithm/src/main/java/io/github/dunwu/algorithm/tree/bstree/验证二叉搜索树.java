@@ -17,6 +17,7 @@ public class 验证二叉搜索树 {
         Assertions.assertFalse(s.isValidBST(TreeNode.buildTree(5, 1, 4, null, null, 3, 6)));
         Assertions.assertFalse(s.isValidBST(TreeNode.buildTree(2, 2, 2)));
         Assertions.assertFalse(s.isValidBST(TreeNode.buildTree(5, 4, 6, null, null, 3, 7)));
+        Assertions.assertTrue(s.isValidBST(TreeNode.buildTree(3, 1, 5, 0, 2, 4, 6)));
     }
 
     static class Solution {
@@ -33,7 +34,8 @@ public class 验证二叉搜索树 {
             if (min != null && root.val <= min.val) return false;
             if (max != null && root.val >= max.val) return false;
             // 限定左子树的最大值是 root.val，右子树的最小值是 root.val
-            return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
+            return isValidBST(root.left, min, root)
+                && isValidBST(root.right, root, max);
         }
 
     }

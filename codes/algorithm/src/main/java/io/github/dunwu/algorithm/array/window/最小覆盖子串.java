@@ -31,9 +31,8 @@ public class 最小覆盖子串 {
                 need.put(c, need.getOrDefault(c, 0) + 1);
             }
 
-            int left = 0, right = 0;
-
             int valid = 0;
+            int left = 0, right = 0;
             // 记录最小覆盖子串的起始索引及长度
             int start = 0, len = Integer.MAX_VALUE;
             while (right < s.length()) {
