@@ -28,17 +28,19 @@ public class 最大二叉树2 {
     static class Solution {
 
         public TreeNode insertIntoMaxTree(TreeNode root, int val) {
-
             if (root == null) { return new TreeNode(val); }
-
-            if (val > root.val) {
-                TreeNode temp = root;
-                root = new TreeNode(val);
-                root.left = temp;
+            if (root.val < val) {
+                // 如果 val 是整棵树最大的，那么原来的这棵树应该是 val 节点的左子树，
+                // 因为 val 节点是接在原始数组 a 的最后一个元素
+                TreeNode node = new TreeNode(val);
+                node.left = root;
+                return node;
             } else {
+                // 如果 val 不是最大的，那么就应该在右子树上，
+                // 因为 val 节点是接在原始数组 a 的最后一个元素
                 root.right = insertIntoMaxTree(root.right, val);
+                return root;
             }
-            return root;
         }
 
     }

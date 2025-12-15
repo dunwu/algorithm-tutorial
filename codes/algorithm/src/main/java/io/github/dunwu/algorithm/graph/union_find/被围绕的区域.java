@@ -33,56 +33,58 @@ public class 被围绕的区域 {
 
         private int m;
         private int n;
+        int[][] direct = new int[][] { { 1, 0 }, { 0, 1 }, { 0, -1 }, { -1, 0 } };
 
         public void solve(char[][] board) {
-            if (board == null || board.length == 0 || board[0].length == 0) { return; }
 
+            if (board == null || board.length == 0) return;
             m = board.length;
             n = board[0].length;
 
-            int dummy = m * n;
+            // 给 dummy 留一个额外位置
             UF uf = new UF(m * n + 1);
+            int dummy = m * n;
 
+            // 将首列和末列的 O 与 dummy 连通
             for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    // 遇到 O 进行并查集合并操作
+                if (board[i][0] == 'O') { uf.union(index(i, 0), dummy); }
+                if (board[i][n - 1] == 'O') { uf.union(index(i, n - 1), dummy); }
+            }
+
+            // 将首行和末行的 O 与 dummy 连通
+            for (int j = 0; j < n; j++) {
+                if (board[0][j] == 'O') { uf.union(index(0, j), dummy); }
+                if (board[m - 1][j] == 'O') { uf.union(index(m - 1, j), dummy); }
+            }
+
+            // 方向数组 d 是上下左右搜索的常用手法
+            for (int i = 1; i < m - 1; i++) {
+                for (int j = 1; j < n - 1; j++) {
                     if (board[i][j] == 'O') {
-                        if (i == 0 || i == m - 1 || j == 0 || j == n - 1) {
-                            // 边界上的 O,把它和 dummy 合并成一个连通区域.
-                            uf.union(node(i, j), dummy);
-                        } else {
-                            // 和上下左右合并成一个连通区域
-                            if (i > 0 && board[i - 1][j] == 'O') {
-                                uf.union(node(i, j), node(i - 1, j));
-                            }
-                            if (i < m - 1 && board[i + 1][j] == 'O') {
-                                uf.union(node(i, j), node(i + 1, j));
-                            }
-                            if (j > 0 && board[i][j - 1] == 'O') {
-                                uf.union(node(i, j), node(i, j - 1));
-                            }
-                            if (j < n - 1 && board[i][j + 1] == 'O') {
-                                uf.union(node(i, j), node(i, j + 1));
+                        // 将此 O 与上下左右的 O 连通
+                        for (int[] d : direct) {
+                            int x = i + d[0], y = j + d[1];
+                            if (board[x][y] == 'O') {
+                                uf.union(index(x, y), index(i, j));
                             }
                         }
                     }
                 }
             }
 
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (uf.connected(node(i, j), dummy)) {
-                        // 和 dummy 在一个连通区域的，那么就是 O
-                        board[i][j] = 'O';
-                    } else {
+            // 所有不和 dummy 连通的 O，都要被替换
+            for (int i = 1; i < m - 1; i++) {
+                for (int j = 1; j < n - 1; j++) {
+                    int index = index(i, j);
+                    if (!uf.connected(index, dummy)) {
                         board[i][j] = 'X';
                     }
                 }
             }
         }
 
-        int node(int i, int j) {
-            return i * n + j;
+        public int index(int row, int col) {
+            return row * n + col;
         }
 
         static class UF {

@@ -3,6 +3,7 @@ package io.github.dunwu.algorithm.graph.bipartite;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * <a href="https://leetcode.cn/problems/is-graph-bipartite/">785. 判断二分图</a>
@@ -105,7 +106,7 @@ public class 判断二分图 {
 
         // 从 start 节点开始进行 BFS 遍历
         private void bfs(int[][] graph, int start) {
-            LinkedList<Integer> q = new LinkedList<>();
+            Queue<Integer> q = new LinkedList<>();
             visited[start] = true;
             q.offer(start);
 

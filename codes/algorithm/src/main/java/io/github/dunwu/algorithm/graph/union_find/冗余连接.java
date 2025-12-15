@@ -21,15 +21,13 @@ public class 冗余连接 {
     static class Solution {
 
         public int[] findRedundantConnection(int[][] edges) {
-            int n = edges.length;
-            UF uf = new UF(n + 1);
-            for (int i = 0; i < n; i++) {
-                int u = edges[i][0];
-                int v = edges[i][1];
-                if (uf.find(u) == uf.find(v)) {
-                    return new int[] { u, v };
+            UF uf = new UF(edges.length + 1);
+            for (int[] edge : edges) {
+                int p = edge[0], q = edge[1];
+                if (uf.connected(p, q)) {
+                    return new int[] { p, q };
                 } else {
-                    uf.union(u, v);
+                    uf.union(p, q);
                 }
             }
             return new int[0];

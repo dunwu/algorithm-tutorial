@@ -1,6 +1,5 @@
 package io.github.dunwu.algorithm.graph.dfs;
 
-import cn.hutool.core.collection.CollectionUtil;
 import org.junit.jupiter.api.Assertions;
 
 import java.util.Arrays;
@@ -31,11 +30,13 @@ public class 所有可能的路径 {
     }
 
     static class Solution {
-        // 记录所有路径
-        List<List<Integer>> res = new LinkedList<>();
-        LinkedList<Integer> path = new LinkedList<>();
+
+        private List<Integer> path;
+        private List<List<Integer>> res;
 
         public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+            path = new LinkedList<>();
+            res = new LinkedList<>();
             dfs(graph, 0);
             return res;
         }
@@ -44,14 +45,13 @@ public class 所有可能的路径 {
         void dfs(int[][] graph, int s) {
 
             // 添加节点 s 到路径
-            path.addLast(s);
+            path.add(s);
 
             int n = graph.length;
             if (s == n - 1) {
                 // 到达终点
-                System.out.println("find path: " + CollectionUtil.join(path, "->"));
                 res.add(new LinkedList<>(path));
-                path.removeLast();
+                path.remove(path.size() - 1);
                 return;
             }
 
@@ -61,7 +61,7 @@ public class 所有可能的路径 {
             }
 
             // 从路径移出节点 s
-            path.removeLast();
+            path.remove(path.size() - 1);
         }
 
     }

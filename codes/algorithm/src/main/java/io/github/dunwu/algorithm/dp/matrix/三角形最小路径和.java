@@ -15,9 +15,9 @@ public class 三角形最小路径和 {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        List<List<Integer>> input = ArrayUtil.toListList(new int[][] { { 2 }, { 3, 4 }, { 6, 5, 7 }, { 4, 1, 8, 3 } });
+        List<List<Integer>> input = ArrayUtil.toIntMatrixList(new int[][] { { 2 }, { 3, 4 }, { 6, 5, 7 }, { 4, 1, 8, 3 } });
         Assertions.assertEquals(11, s.minimumTotal(input));
-        List<List<Integer>> input2 = ArrayUtil.toListList(new int[][] { { -10 } });
+        List<List<Integer>> input2 = ArrayUtil.toIntMatrixList(new int[][] { { -10 } });
         Assertions.assertEquals(-10, s.minimumTotal(input2));
     }
 

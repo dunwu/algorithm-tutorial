@@ -24,7 +24,7 @@ public class 二叉搜索子树的最大键值和 {
     static class Solution {
 
         // 记录 BST 最大节点之和
-        int maxSum = 0;
+        private int maxSum = 0;
 
         public int maxSumBST(TreeNode root) {
             maxSum = 0;
@@ -67,7 +67,6 @@ public class 二叉搜索子树的最大键值和 {
                 res[0] = 0;
                 // 其他的值都没必要计算了，因为用不到
             }
-            // ************************
 
             return res;
         }

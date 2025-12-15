@@ -23,7 +23,7 @@ public class 课程表2 {
 
         Solution2 s2 = new Solution2();
         Assertions.assertArrayEquals(new int[] { 0, 1 }, s2.findOrder(2, new int[][] { { 1, 0 } }));
-        Assertions.assertArrayEquals(new int[] { 0, 1, 2, 3 },
+        Assertions.assertArrayEquals(new int[] { 0, 2, 1, 3 },
             s2.findOrder(4, new int[][] { { 1, 0 }, { 2, 0 }, { 3, 1 }, { 3, 2 } }));
     }
 

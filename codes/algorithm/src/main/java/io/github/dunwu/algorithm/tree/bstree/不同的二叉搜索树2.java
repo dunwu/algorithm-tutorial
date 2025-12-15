@@ -52,20 +52,20 @@ public class 不同的二叉搜索树2 {
             return build(1, n);
         }
 
-        // 构造闭区间 [lo, hi] 组成的 BST
-        List<TreeNode> build(int lo, int hi) {
+        // 构造闭区间 [low, high] 组成的 BST
+        List<TreeNode> build(int low, int high) {
             List<TreeNode> res = new LinkedList<>();
             // base case
-            if (lo > hi) {
+            if (low > high) {
                 res.add(null);
                 return res;
             }
 
             // 1、穷举 root 节点的所有可能。
-            for (int i = lo; i <= hi; i++) {
+            for (int i = low; i <= high; i++) {
                 // 2、递归构造出左右子树的所有合法 BST。
-                List<TreeNode> leftTree = build(lo, i - 1);
-                List<TreeNode> rightTree = build(i + 1, hi);
+                List<TreeNode> leftTree = build(low, i - 1);
+                List<TreeNode> rightTree = build(i + 1, high);
                 // 3、给 root 节点穷举所有左右子树的组合。
                 for (TreeNode left : leftTree) {
                     for (TreeNode right : rightTree) {

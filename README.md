@@ -130,7 +130,7 @@
 | [80. 删除有序数组中的重复项 II](https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/)                                                                             | 💛   | ✔️     |
 | [344. 反转字符串](https://leetcode.cn/problems/reverse-string/)                                                                                                                   | 💚   | ✔️     |
 | [125. 验证回文串](https://leetcode.cn/problems/valid-palindrome/)                                                                                                                 | 💚   | ✔️     |
-| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)                                                                                                    | 💛   | ✔️   |
+| [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)                                                                                                    | 💛   | ✔️     |
 | [75. 颜色分类](https://leetcode.cn/problems/sort-colors/)                                                                                                                         | 💛   | ✔️     |
 | [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)                                                                                                          | 💚   | ✔️     |
 | [977. 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array/)                                                                                                    | 💚   | ✔️     |
@@ -159,11 +159,11 @@
 | [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)                    | 💛   | ✔️     |
 | [438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)                             | 💛   | ✔️     |
 | [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)                                                   | 💛   | ✔️     |
-| [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)                                                 | ❤️   | ✔️   |
-| [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/)                     | 💛   | ✔️   |
+| [76. 最小覆盖子串](https://leetcode.cn/problems/minimum-window-substring/)                                                 | ❤️   | ✔️     |
+| [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/)                     | 💛   | ✔️     |
 | [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)                                     | 💛   | ✔️     |
 | [1004. 最大连续 1 的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/)                                      | 💛   | ✔️     |
-| [424. 替换后的最长重复字符](https://leetcode.cn/problems/longest-repeating-character-replacement/)                         | 💛   | ✔️   |
+| [424. 替换后的最长重复字符](https://leetcode.cn/problems/longest-repeating-character-replacement/)                         | 💛   | ✔️     |
 | [217. 存在重复元素](https://leetcode.cn/problems/contains-duplicate/)                                                      | 💚   | ✔️     |
 | [219. 存在重复元素 II](https://leetcode.cn/problems/contains-duplicate-ii/)                                                | 💛   | ✔️     |
 | [220. 存在重复元素 III](https://leetcode.cn/problems/contains-duplicate-iii/)                                              | ❤️   | ❌     |
@@ -178,9 +178,9 @@
 | [35. 搜索插入位置](https://leetcode.cn/problems/search-insert-position/)                                                                | 💚   | ✔️     |
 | [704. 二分查找](https://leetcode.cn/problems/binary-search/)                                                                            | 💚   | ✔️     |
 | [LCR 172. 统计目标成绩的出现次数](https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/)                           | 💚   | ✔️     |
-| [875. 爱吃香蕉的珂珂](https://leetcode.cn/problems/koko-eating-bananas/)                                                                | 💛   | ❗    |
-| [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/)                                  | 💛   | ✔️   |
-| [410. 分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)                                                          | ❤️ | ❌     |
+| [875. 爱吃香蕉的珂珂](https://leetcode.cn/problems/koko-eating-bananas/)                                                                | 💛   | ❗     |
+| [1011. 在 D 天内送达包裹的能力](https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/)                                  | 💛   | ✔️     |
+| [410. 分割数组的最大值](https://leetcode.cn/problems/split-array-largest-sum/)                                                          | ❤️   | ❌     |
 
 #### 前缀和数组
 
@@ -195,23 +195,23 @@
 
 | 题目                                                                          | 难度 | 掌握度 |
 | ----------------------------------------------------------------------------- | ---- | ------ |
-| [1094. 拼车](https://leetcode.cn/problems/car-pooling/)                       | 💛   | ✔️   |
-| [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/) | 💛   | ✔️   |
+| [1094. 拼车](https://leetcode.cn/problems/car-pooling/)                       | 💛   | ✔️     |
+| [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/) | 💛   | ✔️     |
 
 ### 栈和队列
 
 #### 队列
 
-| 题目                                                                                        | 难度 | 掌握度 |
-| ------------------------------------------------------------------------------------------- | ---- | ------ |
-| [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/)             | 💚   | ✔️     |
-| [933. 最近的请求次数](https://leetcode.cn/problems/number-of-recent-calls/)                 | 💚   | ❗     |
-| [622. 设计循环队列](https://leetcode.cn/problems/design-circular-queue/)                    | 💛   | ❌     |
-| [641. 设计循环双端队列](https://leetcode.cn/problems/design-circular-deque/)                | 💛   |        |
-| [1670. 设计前中后队列](https://leetcode.cn/problems/design-front-middle-back-queue/)        | 💛   |        |
-| [2073. 买票需要的时间](https://leetcode.cn/problems/time-needed-to-buy-tickets/)            | 💚   | ✔️     |
-| [373. 查找和最小的 K 对数字](https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/) | 💛   |        |
-| [378. 有序矩阵中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/) | 💛 | ❌ |
+| 题目                                                                                                  | 难度 | 掌握度 |
+| ----------------------------------------------------------------------------------------------------- | ---- | ------ |
+| [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/)                       | 💚   | ✔️     |
+| [933. 最近的请求次数](https://leetcode.cn/problems/number-of-recent-calls/)                           | 💚   | ❗     |
+| [622. 设计循环队列](https://leetcode.cn/problems/design-circular-queue/)                              | 💛   | ❌     |
+| [641. 设计循环双端队列](https://leetcode.cn/problems/design-circular-deque/)                          | 💛   |        |
+| [1670. 设计前中后队列](https://leetcode.cn/problems/design-front-middle-back-queue/)                  | 💛   |        |
+| [2073. 买票需要的时间](https://leetcode.cn/problems/time-needed-to-buy-tickets/)                      | 💚   | ✔️     |
+| [373. 查找和最小的 K 对数字](https://leetcode.cn/problems/find-k-pairs-with-smallest-sums/)           | 💛   |        |
+| [378. 有序矩阵中第 K 小的元素](https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/) | 💛   | ❌     |
 
 #### 栈
 
@@ -308,8 +308,9 @@
 | [1110. 删点成林](https://leetcode.cn/problems/delete-nodes-and-return-forest/)                                                  | 💛   | ❌     |
 | [100. 相同的树](https://leetcode.cn/problems/same-tree/)                                                                        | 💛   | ✔️     |
 | [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/)                                                                 | 💛   | ✔️     |
-| [951. 翻转等价二叉树](https://leetcode.cn/problems/flip-equivalent-binary-trees/)                                               | 💛   | ❌     |
+| [951. 翻转等价二叉树](https://leetcode.cn/problems/flip-equivalent-binary-trees/)                                               | 💛   | ✔️     |
 | [124. 二叉树中的最大路径和](https://leetcode.cn/problems/binary-tree-maximum-path-sum/)                                         | ❤️   | ❌     |
+| [236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)                              | 💛   | ❌     |
 
 #### 用「层序遍历」思维解题
 
@@ -343,11 +344,11 @@
 | [450. 删除二叉搜索树中的节点](https://leetcode.cn/problems/delete-node-in-a-bst/)                             | 💛   | ✔️     |
 | [700. 二叉搜索树中的搜索](https://leetcode.cn/problems/search-in-a-binary-search-tree/)                       | 💚   | ✔️     |
 | [701. 二叉搜索树中的插入操作](https://leetcode.cn/problems/insert-into-a-binary-search-tree/)                 | 💛   | ✔️     |
-| [98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)                               | 💛   | ✔️   |
+| [98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)                               | 💛   | ✔️     |
 | [96. 不同的二叉搜索树](https://leetcode.cn/problems/unique-binary-search-trees/)                              | 💛   | ❌     |
 | [95. 不同的二叉搜索树 II](https://leetcode.cn/problems/unique-binary-search-trees-ii/)                        | 💛   | ❌     |
 | [108. 将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)   | 💚   | ✔️     |
-| [783. 二叉搜索树节点最小距离](https://leetcode.cn/problems/minimum-distance-between-bst-nodes/)               | 💚   | ❌     |
+| [783. 二叉搜索树节点最小距离](https://leetcode.cn/problems/minimum-distance-between-bst-nodes/)               | 💚   | ✔️     |
 | [235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/) | 💛   | ❌     |
 | [1373. 二叉搜索子树的最大键值和](https://leetcode.cn/problems/maximum-sum-bst-in-binary-tree/)                | ❤️   | ❌     |
 
@@ -366,7 +367,7 @@
 
 | 题目                                                                                 | 难度 | 掌握度 |
 | ------------------------------------------------------------------------------------ | ---- | ------ |
-| [797. 所有可能的路径](https://leetcode.cn/problems/all-paths-from-source-to-target/) | 💛   | ❌     |
+| [797. 所有可能的路径](https://leetcode.cn/problems/all-paths-from-source-to-target/) | 💛   | ❗     |
 
 #### 环检测及拓扑排序算法
 
@@ -380,15 +381,15 @@
 | 题目                                                                                                                                | 难度 | 掌握度 |
 | :---------------------------------------------------------------------------------------------------------------------------------- | ---- | ------ |
 | [785. 判断二分图](https://leetcode.cn/problems/is-graph-bipartite/)<br/>[LCR 106. 判断二分图](https://leetcode.cn/problems/vEAB3K/) | 💛   | ❌     |
-| [886. 可能的二分法](https://leetcode.cn/problems/possible-bipartition/)                                                             | 💛   | ❌     |
+| [886. 可能的二分法](https://leetcode.cn/problems/possible-bipartition/)                                                             | 💛   | ❗     |
 
 #### 并查集算法
 
 | 题目                                                                                          | 难度 | 掌握度 |
 | :-------------------------------------------------------------------------------------------- | ---- | ------ |
 | [130. 被围绕的区域](https://leetcode.cn/problems/surrounded-regions/)                         | 💛   | ❌     |
-| [684. 冗余连接](https://leetcode.cn/problems/redundant-connection/)                           | 💛   | ❗     |
-| [990. 等式方程的可满足性](https://leetcode.cn/problems/satisfiability-of-equality-equations/) | 💛   | ❗     |
+| [684. 冗余连接](https://leetcode.cn/problems/redundant-connection/)                           | 💛   | ✔️     |
+| [990. 等式方程的可满足性](https://leetcode.cn/problems/satisfiability-of-equality-equations/) | 💛   | ✔️     |
 
 #### Dijkstra 算法
 
@@ -400,53 +401,55 @@
 | [787. K 站中转内最便宜的航班](https://leetcode.cn/problems/cheapest-flights-within-k-stops/)                                       | 💛   | ❌     |
 | [1368. 使网格图至少有一条有效路径的最小代价](https://leetcode.cn/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/) | ❤️   | ❌     |
 
-### DFS
-
-子集、组合、排列相关问题，都可以考虑使用回溯算法求解。
-
-#### 数独、N 皇后问题
-
-| 题目                                                      | 掌握度 |
-| :-------------------------------------------------------- | ------ |
-| [37. 解数独](https://leetcode.cn/problems/sudoku-solver/) |        |
-| [51. N 皇后](https://leetcode.cn/problems/n-queens/)      |        |
-| [52. N皇后 II](https://leetcode.cn/problems/n-queens-ii/) |        |
+### DFS / 回溯算法
 
 #### 排列、组合、子集问题
 
-| 题目                                                                   | 掌握度 |
-| :--------------------------------------------------------------------- | ------ |
-| [77. 组合](https://leetcode.cn/problems/combinations/)                 | ❌     |
-| [78. 子集](https://leetcode.cn/problems/subsets/)                      | ❌     |
-| [90. 子集 II](https://leetcode.cn/problems/subsets-ii/)                | ❌     |
-| [39. 组合总和](https://leetcode.cn/problems/combination-sum/)          | ❌     |
-| [40. 组合总和 II](https://leetcode.cn/problems/combination-sum-ii/)    | ❌     |
-| [216. 组合总和 III](https://leetcode.cn/problems/combination-sum-iii/) | ❌     |
-| [46. 全排列](https://leetcode.cn/problems/permutations/)               | ❌     |
-| [47. 全排列 II](https://leetcode.cn/problems/permutations-ii/)         | ❌     |
+子集、组合、排列相关问题，都可以考虑使用回溯算法求解。
+
+| 题目                                                                   | 难度 | 掌握度 |
+| :--------------------------------------------------------------------- | ---- | ------ |
+| [46. 全排列](https://leetcode.cn/problems/permutations/)               | 💛   | ❗     |
+| [47. 全排列 II](https://leetcode.cn/problems/permutations-ii/)         | 💛   | ❗     |
+| [78. 子集](https://leetcode.cn/problems/subsets/)                      | 💛   | ❗     |
+| [90. 子集 II](https://leetcode.cn/problems/subsets-ii/)                | 💛   | ❗     |
+| [77. 组合](https://leetcode.cn/problems/combinations/)                 | 💛   | ❗     |
+| [39. 组合总和](https://leetcode.cn/problems/combination-sum/)          | 💛   | ❗     |
+| [40. 组合总和 II](https://leetcode.cn/problems/combination-sum-ii/)    | 💛   | ❗     |
+| [216. 组合总和 III](https://leetcode.cn/problems/combination-sum-iii/) | 💛   | ❗     |
 
 #### 岛屿问题
 
-| 题目                                                                               | 掌握度 |
-| :--------------------------------------------------------------------------------- | ------ |
-| [1020. 飞地的数量](https://leetcode.cn/problems/number-of-enclaves/)               | ❌     |
-| [1254. 统计封闭岛屿的数目](https://leetcode.cn/problems/number-of-closed-islands/) | ❌     |
-| [1905. 统计子岛屿](https://leetcode.cn/problems/count-sub-islands/)                | ❌     |
-| [200. 岛屿数量](https://leetcode.cn/problems/number-of-islands/)                   | ❌     |
-| [695. 岛屿的最大面积](https://leetcode.cn/problems/max-area-of-island/)            | ❌     |
-| [694. 不同岛屿的数量](https://leetcode.cn/problems/number-of-distinct-islands/)🔒  |        |
+| 题目                                                                               | 难度 | 掌握度 |
+| :--------------------------------------------------------------------------------- | ---- | ------ |
+| [1020. 飞地的数量](https://leetcode.cn/problems/number-of-enclaves/)               | 💛   | ❌     |
+| [1254. 统计封闭岛屿的数目](https://leetcode.cn/problems/number-of-closed-islands/) | 💛   | ❌     |
+| [1905. 统计子岛屿](https://leetcode.cn/problems/count-sub-islands/)                | 💛   | ❌     |
+| [200. 岛屿数量](https://leetcode.cn/problems/number-of-islands/)                   | 💛   | ❌     |
+| [695. 岛屿的最大面积](https://leetcode.cn/problems/max-area-of-island/)            | 💛   | ❌     |
+
+#### 数独、N 皇后问题
+
+| 题目                                                      | 难度 | 掌握度 |
+| :-------------------------------------------------------- | ---- | ------ |
+| [37. 解数独](https://leetcode.cn/problems/sudoku-solver/) | ❤️   | ❌     |
+| [51. N 皇后](https://leetcode.cn/problems/n-queens/)      | ❤️   | ❌     |
+| [52. N皇后 II](https://leetcode.cn/problems/n-queens-ii/) | ❤️   | ❌     |
 
 #### 练习
 
-| 题目                                                                                             | 掌握度 |
-| :----------------------------------------------------------------------------------------------- | ------ |
-| [967. 连续差相同的数字](https://leetcode.cn/problems/numbers-with-same-consecutive-differences/) | ❌     |
-| [491. 递增子序列](https://leetcode.cn/problems/non-decreasing-subsequences/)                     |        |
-| [980. 不同路径 III](https://leetcode.cn/problems/unique-paths-iii/)                              |        |
-| [131. 分割回文串](https://leetcode.cn/problems/palindrome-partitioning/)                         |        |
-| [93. 复原 IP 地址](https://leetcode.cn/problems/restore-ip-addresses/)                           |        |
-| [17. 电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/)    | ❌     |
-| [79. 单词搜索](https://leetcode.cn/problems/word-search/)                                        |        |
+| 题目                                                                                             | 难度 | 掌握度 |
+| :----------------------------------------------------------------------------------------------- | ---- | ------ |
+| [967. 连续差相同的数字](https://leetcode.cn/problems/numbers-with-same-consecutive-differences/) | 💛   | ❌     |
+| [491. 非递减子序列](https://leetcode.cn/problems/non-decreasing-subsequences/)                   | 💛   | ❌     |
+| [980. 不同路径 III](https://leetcode.cn/problems/unique-paths-iii/)                              | ❤️   | ❌     |
+| [526. 优美的排列](https://leetcode.cn/problems/beautiful-arrangement/)                           | 💛   | ❌     |
+| [131. 分割回文串](https://leetcode.cn/problems/palindrome-partitioning/)                         | 💛   | ❌     |
+| [93. 复原 IP 地址](https://leetcode.cn/problems/restore-ip-addresses/)                           | 💛   | ❌     |
+| [89. 格雷编码](https://leetcode.cn/problems/gray-code/)                                          | 💛   | ❌     |
+| [17. 电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/)    | 💛   | ❌     |
+| [79. 单词搜索](https://leetcode.cn/problems/word-search/)                                        | 💛   | ❌     |
+| [473. 火柴拼正方形](https://leetcode.cn/problems/matchsticks-to-square/)                         | 💛   | ❌     |
 
 ### BFS
 

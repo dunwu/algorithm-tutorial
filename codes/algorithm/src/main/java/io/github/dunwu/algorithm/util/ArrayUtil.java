@@ -7,12 +7,23 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * 数组工具类
+ *
  * @author Zhang Peng
  */
 @Slf4j
 public class ArrayUtil {
 
-    public static List<List<Integer>> toListList(int[][] arr) {
+    public static int[] toIntArray(List<Integer> list) {
+        if (list == null || list.isEmpty()) { return new int[0]; }
+        int[] res = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static List<List<Integer>> toIntMatrixList(int[][] arr) {
         if (arr == null || arr.length == 0) { return new ArrayList<>(); }
         List<List<Integer>> listlist = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
@@ -25,15 +36,31 @@ public class ArrayUtil {
         return listlist;
     }
 
-    public static int[][] toMatrixArray(List<List<Integer>> listlist) {
+    public static int[][] toIntMatrixArray(List<List<Integer>> listlist) {
         if (listlist == null || listlist.size() == 0) { return new int[0][0]; }
-        int[][] arr = new int[listlist.size()][listlist.get(0).size()];
-        for (int i = 0; i < listlist.size(); i++) {
-            for (int j = 0; j < listlist.get(i).size(); j++) {
-                arr[i][j] = listlist.get(i).get(j);
-            }
+        List<int[]> arrList = new ArrayList<>();
+        for (List<Integer> list : listlist) {
+            arrList.add(toIntArray(list));
         }
-        return arr;
+        return arrList.toArray(new int[listlist.size()][]);
+    }
+
+    public static String[] toStringArray(List<String> list) {
+        if (list == null || list.isEmpty()) { return new String[0]; }
+        String[] res = new String[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static String[][] toStringMatrixArray(List<List<String>> listlist) {
+        if (listlist == null || listlist.size() == 0) { return new String[0][0]; }
+        List<String[]> arrList = new ArrayList<>();
+        for (List<String> list : listlist) {
+            arrList.add(toStringArray(list));
+        }
+        return arrList.toArray(new String[listlist.size()][]);
     }
 
     public static <T> void printArray(T[] arr, int begin, int end, String tip) {

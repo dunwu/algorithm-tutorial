@@ -19,35 +19,31 @@ public class 二叉搜索树节点最小距离 {
 
     static class Solution {
 
+        private int pre;
         private int res;
 
         public int minDiffInBST(TreeNode root) {
-            res = 0;
-            int rightMin = getMin(root.right);
-            int leftMax = getMax(root.left);
-            res = min(root.val, rightMin, leftMax);
+            pre = -1;
+            res = Integer.MAX_VALUE;
+            dfs(root);
             return res;
         }
 
-        public int getMin(TreeNode root) {
-            if (root.left != null) {
-                return getMin(root.left);
-            }
-            return root.val;
-        }
+        public void dfs(TreeNode root) {
+            // base case
+            if (root == null) { return; }
 
-        public int getMax(TreeNode root) {
-            if (root.right != null) {
-                return getMax(root.right);
-            }
-            return root.val;
-        }
+            // 【前序】
+            dfs(root.left);
 
-        public int min(int a, int b, int c) {
-            int min = 0;
-            min = Math.min(Math.abs(a - b), Math.abs(a - c));
-            min = Math.min(min, Math.abs(b - c));
-            return min;
+            // 【中序】中序保证递增有序
+            if (pre != -1) {
+                res = Math.min(res, Math.abs(root.val - pre));
+            }
+            pre = root.val;
+
+            // 【后序】
+            dfs(root.right);
         }
 
     }
