@@ -2,8 +2,6 @@ package io.github.dunwu.algorithm.dp.array;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.Arrays;
-
 /**
  * <a href="https://leetcode.cn/problems/count-ways-to-build-good-strings/">2466. 统计构造好字符串的方案数</a>
  *
@@ -20,25 +18,19 @@ public class 统计构造好字符串的方案数 {
 
     static class Solution {
 
-        int[] memo = null;
-        private static final int MOD = 1_000_000_007;
-
         public int countGoodStrings(int low, int high, int zero, int one) {
-            memo = new int[high + 1];
-            Arrays.fill(memo, -1);
+            final int MOD = 1_000_000_007;
             int res = 0;
-            for (int i = low; i <= high; i++) {
-                res = (res + dp(i, zero, one)) % MOD;
+            // dp[i] 表示构造长为 i 的字符串的方案数
+            int[] dp = new int[high + 1];
+            // 构造空串的方案数为 1
+            dp[0] = 1;
+            for (int i = 1; i <= high; i++) {
+                if (i >= zero) dp[i] = dp[i - zero];
+                if (i >= one) dp[i] = (dp[i] + dp[i - one]) % MOD;
+                if (i >= low) res = (res + dp[i]) % MOD;
             }
             return res;
-        }
-
-        public int dp(int i, int zero, int one) {
-            if (i < 0) { return 0; }
-            if (i == 0) { return 1; }
-            if (memo[i] != -1) { return memo[i]; }
-            memo[i] = (dp(i - zero, zero, one) + dp(i - one, zero, one)) % MOD;
-            return memo[i];
         }
 
     }

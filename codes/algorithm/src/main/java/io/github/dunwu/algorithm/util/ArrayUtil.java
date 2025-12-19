@@ -3,6 +3,7 @@ package io.github.dunwu.algorithm.util;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -52,6 +53,17 @@ public class ArrayUtil {
             res[i] = list.get(i);
         }
         return res;
+    }
+
+    public static List<List<String>> toStringMatrixList(String[][] arr) {
+        if (arr == null || arr.length == 0) { return new ArrayList<>(); }
+        List<List<String>> listlist = new ArrayList<>();
+        for (String[] strings : arr) {
+            List<String> list = new ArrayList<>();
+            listlist.add(list);
+            Collections.addAll(list, strings);
+        }
+        return listlist;
     }
 
     public static String[][] toStringMatrixArray(List<List<String>> listlist) {

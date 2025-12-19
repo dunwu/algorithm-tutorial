@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 
 /**
  * <a href="https://leetcode.cn/problems/number-of-enclaves/">1020. 飞地的数量/a>
- * <p>
- * 元素不可重复，不可复选
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-11-04
@@ -15,7 +13,7 @@ public class 飞地的数量 {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        int[][] input = new int[][] {
+        int[][] input = {
             { 0, 0, 0, 0 },
             { 1, 0, 1, 0 },
             { 0, 1, 1, 0 },
@@ -23,7 +21,7 @@ public class 飞地的数量 {
         };
         Assertions.assertEquals(3, s.numEnclaves(input));
 
-        int[][] input2 = new int[][] {
+        int[][] input2 = {
             { 0, 1, 1, 0 },
             { 0, 0, 1, 0 },
             { 0, 0, 1, 0 },
@@ -34,45 +32,47 @@ public class 飞地的数量 {
 
     static class Solution {
 
+        private final int[][] directions = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
+
         public int numEnclaves(int[][] grid) {
 
-            int M = grid.length, N = grid[0].length;
-            for (int i = 0; i < M; i++) {
-                dfs(grid, i, 0);
-                dfs(grid, i, N - 1);
+            // base case
+            if (grid == null || grid.length == 0) { return 0; }
+
+            int m = grid.length, n = grid[0].length;
+            for (int j = 0; j < n; j++) {
+                dfs(grid, 0, j);
+                dfs(grid, m - 1, j);
             }
-            for (int i = 0; i < N; i++) {
-                dfs(grid, 0, i);
-                dfs(grid, M - 1, i);
+            for (int i = 0; i < m; i++) {
+                dfs(grid, i, 0);
+                dfs(grid, i, n - 1);
             }
 
             int res = 0;
-            for (int i = 0; i < M; i++) {
-                for (int j = 0; j < N; j++) {
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
                     if (grid[i][j] == 1) {
-                        res++;
+                        res += dfs(grid, i, j);
                     }
                 }
             }
             return res;
         }
 
-        public void dfs(int[][] grid, int row, int column) {
+        // 淹没与 (x, y) 相邻的陆地，并返回淹没的陆地面积
+        public int dfs(int[][] grid, int x, int y) {
+            int m = grid.length, n = grid[0].length;
+            if (x < 0 || x >= m || y < 0 || y >= n) { return 0; }
+            if (grid[x][y] == 0) { return 0; }
 
-            // 坐标超过边界，无效
-            int M = grid.length, N = grid[0].length;
-            if (row < 0 || row >= M || column < 0 || column >= N) { return; }
-
-            // 已经是海水了
-            if (grid[row][column] == 0) { return; }
-            // 将 (row, column) 变成海水
-            grid[row][column] = 0;
-
-            // 淹没上下左右的陆地
-            dfs(grid, row - 1, column);
-            dfs(grid, row + 1, column);
-            dfs(grid, row, column - 1);
-            dfs(grid, row, column + 1);
+            int cnt = 1;
+            grid[x][y] = 0;
+            for (int[] d : directions) {
+                int i = x + d[0], j = y + d[1];
+                cnt += dfs(grid, i, j);
+            }
+            return cnt;
         }
 
     }

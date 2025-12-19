@@ -21,15 +21,18 @@ public class 下一个更大元素2 {
     static class Solution {
 
         public int[] nextGreaterElements(int[] nums) {
-            int[] res = new int[nums.length];
-            Stack<Integer> stack = new Stack<>();
-            for (int index = 2 * nums.length - 1; index >= 0; index--) {
-                int i = index % nums.length;
-                while (!stack.isEmpty() && stack.peek() <= nums[i]) {
-                    stack.pop();
+            int n = nums.length;
+            int[] res = new int[n];
+            Stack<Integer> s = new Stack<>();
+            for (int i = 2 * n - 1; i >= 0; i--) {
+                int index = i % n;
+                // 遍历栈，将小于当前元素的值都踢了
+                while (!s.isEmpty() && s.peek() <= nums[index]) {
+                    s.pop();
                 }
-                res[i] = stack.empty() ? -1 : stack.peek();
-                stack.push(nums[i]);
+                // nums[i] 下一个更大元素在栈顶
+                res[index] = s.isEmpty() ? -1 : s.peek();
+                s.push(nums[index]);
             }
             return res;
         }

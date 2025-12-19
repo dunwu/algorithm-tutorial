@@ -30,27 +30,27 @@ public class 钥匙和房间 {
     static class Solution {
 
         public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+            // base case
+            if (rooms == null || rooms.size() == 0) { return true; }
 
+            // 记录访问过的房间
             Set<Integer> visited = new HashSet<>();
             LinkedList<Integer> queue = new LinkedList<>();
+            // 在队列中加入起点，启动 BFS
             queue.offer(0);
-
             while (!queue.isEmpty()) {
-                Integer cur = queue.poll();
-                if (visited.contains(cur)) {
-                    continue;
-                }
-                visited.add(cur);
-                if (visited.size() == rooms.size()) {
-                    return true;
-                }
-
-                for (Integer room : rooms.get(cur)) {
-                    queue.offer(room);
+                int size = queue.size();
+                for (int i = 0; i < size; i++) {
+                    Integer cur = queue.poll();
+                    if (!visited.contains(cur)) {
+                        visited.add(cur);
+                        for (int room : rooms.get(cur)) {
+                            queue.offer(room);
+                        }
+                    }
                 }
             }
-
-            return false;
+            return visited.size() == rooms.size();
         }
 
     }

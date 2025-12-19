@@ -1,4 +1,4 @@
-package io.github.dunwu.algorithm.dp.array;
+package io.github.dunwu.algorithm.queue;
 
 import org.junit.jupiter.api.Assertions;
 
@@ -33,13 +33,13 @@ public class 超级丑数 {
             set.add(1L);
             queue.add(1L);
             for (int i = 1; i <= n; i++) {
-                long x = queue.poll();
-                if (i == n) { return (int) x; }
-                for (int num : primes) {
-                    long val = num * x;
-                    if (!set.contains(val)) {
-                        set.add(val);
-                        queue.add(val);
+                long curVal = queue.poll();
+                if (i == n) { return (int) curVal; }
+                for (int prime : primes) {
+                    long nextVal = curVal * prime;
+                    if (!set.contains(nextVal)) {
+                        set.add(nextVal);
+                        queue.add(nextVal);
                     }
                 }
             }

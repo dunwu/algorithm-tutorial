@@ -23,46 +23,44 @@ public class 完全二叉树插入器 {
     static class CBTInserter {
 
         private final TreeNode root;
-        private final LinkedList<TreeNode> candidate;
+        // 这个队列只记录完全二叉树底部可以进行插入的节点
+        private final LinkedList<TreeNode> queue;
 
         public CBTInserter(TreeNode root) {
             this.root = root;
-            this.candidate = new LinkedList<>();
-
-            LinkedList<TreeNode> queue = new LinkedList<>();
-            queue.offer(root);
-            while (!queue.isEmpty()) {
-                int size = queue.size();
+            this.queue = new LinkedList<>();
+            LinkedList<TreeNode> tmp = new LinkedList<>();
+            tmp.offer(root);
+            while (!tmp.isEmpty()) {
+                int size = tmp.size();
                 for (int i = 0; i < size; i++) {
-                    TreeNode node = queue.poll();
-                    if (node.left != null) {
-                        queue.offer(node.left);
-                    }
-                    if (node.right != null) {
-                        queue.offer(node.right);
-                    }
+                    TreeNode node = tmp.poll();
+                    if (node == null) { continue; }
+                    if (node.left != null) { tmp.offer(node.left); }
+                    if (node.right != null) { tmp.offer(node.right); }
                     if (node.left == null || node.right == null) {
-                        candidate.offer(node);
+                        // 找到完全二叉树底部可以进行插入的节点
+                        queue.offer(node);
                     }
                 }
             }
         }
 
         public int insert(int val) {
-            TreeNode child = new TreeNode(val);
-            TreeNode node = candidate.peek();
-            if (node.left == null) {
-                node.left = child;
-            } else {
-                node.right = child;
-                candidate.poll();
+            TreeNode node = new TreeNode(val);
+            TreeNode cur = queue.peek();
+            queue.offer(node);
+            if (cur.left == null) {
+                cur.left = node;
+            } else if (cur.right == null) {
+                cur.right = node;
+                queue.poll();
             }
-            candidate.offer(child);
-            return node.val;
+            return cur.val;
         }
 
         public TreeNode get_root() {
-            return root;
+            return this.root;
         }
 
     }

@@ -3,8 +3,6 @@ package io.github.dunwu.algorithm.linkedlist.two_pointer;
 import io.github.dunwu.algorithm.linkedlist.ListNode;
 import org.junit.jupiter.api.Assertions;
 
-import java.util.List;
-
 /**
  * <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list">83. 删除排序链表中的重复元素</a>
  *
@@ -14,32 +12,25 @@ import java.util.List;
 public class 删除排序链表中的重复元素 {
 
     public static void main(String[] args) {
-        ListNode head = ListNode.buildList(1, 1, 2);
-        System.out.println(ListNode.toList(head));
-        ListNode result = deleteDuplicates(head);
-        List<Integer> list = ListNode.toList(result);
-        System.out.println(list);
-        Assertions.assertArrayEquals(new Integer[] { 1, 2 }, list.toArray(new Integer[0]));
-
-        ListNode head2 = ListNode.buildList(1, 1, 2, 3, 3);
-        System.out.println(ListNode.toList(head2));
-        ListNode result2 = deleteDuplicates(head2);
-        List<Integer> list2 = ListNode.toList(result2);
-        System.out.println(list2);
-        Assertions.assertArrayEquals(new Integer[] { 1, 2, 3 }, list2.toArray(new Integer[0]));
+        Solution s = new Solution();
+        ListNode input = ListNode.buildList(1, 1, 2);
+        Assertions.assertEquals(ListNode.buildList(1, 2), s.deleteDuplicates(input));
+        ListNode input2 = ListNode.buildList(1, 1, 2, 3, 3);
+        Assertions.assertEquals(ListNode.buildList(1, 2, 3), s.deleteDuplicates(input2));
     }
 
-    public static ListNode deleteDuplicates(ListNode head) {
-        if (head == null || head.next == null) return head;
-        ListNode p = head;
-        while (p.next != null) {
-            if (p.val == p.next.val) {
-                p.next = p.next.next;
-            } else {
-                p = p.next;
+    static class Solution {
+
+        public ListNode deleteDuplicates(ListNode head) {
+            ListNode pre = head, cur = head.next;
+            while (cur != null) {
+                pre.next = cur.next;
+                pre = cur;
+                cur = cur.next;
             }
+            return head;
         }
-        return head;
+
     }
 
 }

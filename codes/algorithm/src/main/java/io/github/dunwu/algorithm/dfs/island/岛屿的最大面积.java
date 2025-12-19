@@ -13,7 +13,7 @@ public class 岛屿的最大面积 {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        int[][] input = new int[][] {
+        int[][] input = {
             { 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
             { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
             { 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -25,43 +25,45 @@ public class 岛屿的最大面积 {
         };
         Assertions.assertEquals(6, s.maxAreaOfIsland(input));
 
-        int[][] input2 = new int[][] {
-            { 0, 0, 0, 0, 0, 0, 0, 0 }
-        };
+        int[][] input2 = { { 0, 0, 0, 0, 0, 0, 0, 0 } };
         Assertions.assertEquals(0, s.maxAreaOfIsland(input2));
     }
 
     static class Solution {
 
-        public int maxAreaOfIsland(int[][] grid) {
-            if (grid == null || grid.length == 0 || grid[0].length == 0) { return 0; }
+        private final int[][] directions = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
 
-            int max = 0;
-            int M = grid.length, N = grid[0].length;
-            for (int row = 0; row < M; row++) {
-                for (int column = 0; column < N; column++) {
-                    max = Math.max(max, dfs(grid, row, column));
+        public int maxAreaOfIsland(int[][] grid) {
+
+            // base case
+            if (grid == null || grid.length == 0) return 0;
+
+            int res = 0;
+            int m = grid.length, n = grid[0].length;
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (grid[i][j] == 1) {
+                        int size = dfs(grid, i, j);
+                        res = Math.max(res, size);
+                    }
                 }
             }
-            return max;
+            return res;
         }
 
-        public int dfs(int[][] grid, int row, int column) {
+        // 淹没与 (x, y) 相邻的陆地，并返回淹没的陆地面积
+        public int dfs(int[][] grid, int x, int y) {
+            int m = grid.length, n = grid[0].length;
+            if (x < 0 || x >= m || y < 0 || y >= n) { return 0; }
+            if (grid[x][y] == 0) { return 0; }
 
-            // 坐标超过边界，无效
-            int M = grid.length, N = grid[0].length;
-            if (row < 0 || row >= M || column < 0 || column >= N) { return 0; }
-
-            // 已经是海水了
-            if (grid[row][column] == 0) { return 0; }
-            // 将 (row, column) 变成海水
-            grid[row][column] = 0;
-
-            // 淹没上下左右的陆地
-            return 1 + dfs(grid, row - 1, column)
-                + dfs(grid, row + 1, column)
-                + dfs(grid, row, column - 1)
-                + dfs(grid, row, column + 1);
+            int cnt = 1;
+            grid[x][y] = 0;
+            for (int[] d : directions) {
+                int i = x + d[0], j = y + d[1];
+                cnt += dfs(grid, i, j);
+            }
+            return cnt;
         }
 
     }

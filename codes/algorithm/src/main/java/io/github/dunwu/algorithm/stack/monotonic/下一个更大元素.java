@@ -22,24 +22,25 @@ public class 下一个更大元素 {
         Assertions.assertArrayEquals(new int[] { 3, -1 }, output2);
     }
 
+    // 采用单调栈解决问题，算法复杂度：O(n)
     static class Solution {
 
         public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-            Stack<Integer> s = new Stack<>();
+            Stack<Integer> stack = new Stack<>();
             Map<Integer, Integer> map = new HashMap<>();
             for (int i = nums2.length - 1; i >= 0; i--) {
-                while (!s.isEmpty() && s.peek() < nums2[i]) {
-                    s.pop();
+                while (!stack.isEmpty() && stack.peek() <= nums2[i]) {
+                    stack.pop();
                 }
-                map.put(nums2[i], s.empty() ? -1 : s.peek());
-                s.push(nums2[i]);
+                int largerVal = stack.isEmpty() ? -1 : stack.peek();
+                map.put(nums2[i], largerVal);
+                stack.push(nums2[i]);
             }
 
-            int[] res = new int[nums1.length];
             for (int i = 0; i < nums1.length; i++) {
-                res[i] = map.getOrDefault(nums1[i], -1);
+                nums1[i] = map.get(nums1[i]);
             }
-            return res;
+            return nums1;
         }
 
     }

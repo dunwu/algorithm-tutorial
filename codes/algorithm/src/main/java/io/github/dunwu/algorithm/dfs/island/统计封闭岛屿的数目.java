@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 
 /**
  * <a href="https://leetcode.cn/problems/number-of-closed-islands/">1254. 统计封闭岛屿的数目</a>
- * <p>
- * 元素不可重复，不可复选
  *
  * @author <a href="mailto:forbreak@163.com">Zhang Peng</a>
  * @date 2025-11-04
@@ -15,7 +13,7 @@ public class 统计封闭岛屿的数目 {
     public static void main(String[] args) {
         Solution s = new Solution();
 
-        int[][] input = new int[][] {
+        int[][] input = {
             { 1, 1, 1, 1, 1, 1, 1, 0 },
             { 1, 0, 0, 0, 0, 1, 1, 0 },
             { 1, 0, 1, 0, 1, 1, 1, 0 },
@@ -24,7 +22,7 @@ public class 统计封闭岛屿的数目 {
         };
         Assertions.assertEquals(2, s.closedIsland(input));
 
-        int[][] input2 = new int[][] {
+        int[][] input2 = {
             { 1, 1, 1, 1, 1, 1, 1 },
             { 1, 0, 0, 0, 0, 0, 1 },
             { 1, 0, 1, 1, 1, 0, 1 },
@@ -38,53 +36,49 @@ public class 统计封闭岛屿的数目 {
 
     static class Solution {
 
+        private final int[][] directions = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
+
         public int closedIsland(int[][] grid) {
 
-            if (grid == null || grid.length == 0 || grid[0].length == 0) { return 0; }
+            // base case
+            if (grid == null || grid.length == 0) { return 0; }
 
-            int M = grid.length, N = grid[0].length;
-
-            for (int column = 0; column < N; column++) {
-                dfs(grid, 0, column);
-                dfs(grid, M - 1, column);
+            // 将靠边的岛屿淹没
+            int m = grid.length, n = grid[0].length;
+            for (int j = 0; j < n; j++) {
+                dfs(grid, 0, j);
+                dfs(grid, m - 1, j);
+            }
+            for (int i = 0; i < m; i++) {
+                dfs(grid, i, 0);
+                dfs(grid, i, n - 1);
             }
 
-            for (int row = 0; row < M; row++) {
-                dfs(grid, row, 0);
-                dfs(grid, row, N - 1);
-            }
-
-            // 遍历 grid
             int res = 0;
-            for (int row = 0; row < M; row++) {
-                for (int column = 0; column < N; column++) {
-                    if (grid[row][column] == 0) {
-                        // 每发现一个岛屿，岛屿数量加一
+            // 遍历 grid，剩下的岛屿都是封闭岛屿
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (grid[i][j] == 0) {
                         res++;
-                        // 然后使用 dfs 将岛屿淹了
-                        dfs(grid, row, column);
+                        dfs(grid, i, j);
                     }
                 }
             }
             return res;
         }
 
-        public void dfs(int[][] grid, int row, int column) {
+        // 淹没与 (x, y) 相邻的陆地，并返回淹没的陆地面积
+        public void dfs(int[][] grid, int x, int y) {
+            // base case
+            int m = grid.length, n = grid[0].length;
+            if (x < 0 || x >= m || y < 0 || y >= n) { return; }
+            if (grid[x][y] == 1) { return; }
 
-            // 坐标超过边界，无效
-            int M = grid.length, N = grid[0].length;
-            if (row < 0 || row >= M || column < 0 || column >= N) { return; }
-
-            // 已经是海水了
-            if (grid[row][column] == 1) { return; }
-            // 将 (row, column) 变成海水
-            grid[row][column] = 1;
-
-            // 淹没上下左右的陆地
-            dfs(grid, row - 1, column);
-            dfs(grid, row + 1, column);
-            dfs(grid, row, column - 1);
-            dfs(grid, row, column + 1);
+            grid[x][y] = 1;
+            for (int[] d : directions) {
+                int i = x + d[0], j = y + d[1];
+                dfs(grid, i, j);
+            }
         }
 
     }

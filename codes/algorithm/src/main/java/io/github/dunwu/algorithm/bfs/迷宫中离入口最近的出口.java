@@ -16,26 +16,26 @@ public class 迷宫中离入口最近的出口 {
 
         Solution s = new Solution();
 
-        char[][] maze1 = new char[][] { { '+', '+', '.', '+' }, { '.', '.', '.', '+' }, { '+', '+', '+', '.' } };
-        int[] entrance1 = new int[] { 1, 2 };
+        char[][] maze1 = { { '+', '+', '.', '+' }, { '.', '.', '.', '+' }, { '+', '+', '+', '.' } };
+        int[] entrance1 = { 1, 2 };
         Assertions.assertEquals(1, s.nearestExit(maze1, entrance1));
 
-        char[][] maze2 = new char[][] { { '+', '+', '+' }, { '.', '.', '.' }, { '+', '+', '+' } };
-        int[] entrance2 = new int[] { 1, 0 };
+        char[][] maze2 = { { '+', '+', '+' }, { '.', '.', '.' }, { '+', '+', '+' } };
+        int[] entrance2 = { 1, 0 };
         Assertions.assertEquals(2, s.nearestExit(maze2, entrance2));
 
-        char[][] maze3 = new char[][] { { '.', '+' } };
-        int[] entrance3 = new int[] { 0, 0 };
+        char[][] maze3 = { { '.', '+' } };
+        int[] entrance3 = { 0, 0 };
         Assertions.assertEquals(-1, s.nearestExit(maze3, entrance3));
 
-        char[][] maze4 = new char[][] {
+        char[][] maze4 = {
             { '+', '.', '+', '+', '+', '+', '+' },
             { '+', '.', '+', '.', '.', '.', '+' },
             { '+', '.', '+', '.', '+', '.', '+' },
             { '+', '.', '.', '.', '+', '.', '+' },
             { '+', '+', '+', '+', '+', '+', '.' }
         };
-        int[] entrance4 = new int[] { 0, 1 };
+        int[] entrance4 = { 0, 1 };
         Assertions.assertEquals(-1, s.nearestExit(maze4, entrance4));
     }
 
@@ -43,44 +43,31 @@ public class 迷宫中离入口最近的出口 {
 
         public int nearestExit(char[][] maze, int[] entrance) {
 
-            int M = maze.length, N = maze[0].length;
-            int[][] dirs = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
+            int m = maze.length, n = maze[0].length;
+            final int[][] directions = { { 0, 1 }, { 0, -1 }, { 1, 0 }, { -1, 0 } };
 
-            int step = 0;
-            boolean[][] visited = new boolean[M][N];
-            visited[entrance[0]][entrance[1]] = true;
+            // BFS 算法的队列和 visited 数组
             LinkedList<int[]> queue = new LinkedList<>();
+            boolean[][] visited = new boolean[m][n];
             queue.offer(entrance);
+            visited[entrance[0]][entrance[1]] = true;
+            // 启动 BFS 算法从 entrance 开始像四周扩散
+            int step = 0;
             while (!queue.isEmpty()) {
                 int size = queue.size();
                 step++;
                 // 扩散当前队列中的所有节点
                 for (int i = 0; i < size; i++) {
-                    int[] cur = queue.poll();
+                    int[] point = queue.poll();
                     // 每个节点都会尝试向上下左右四个方向扩展一步
-                    for (int[] dir : dirs) {
-
-                        int row = cur[0] + dir[0];
-                        int column = cur[1] + dir[1];
-
-                        // 无效路径，返回
-                        if (row < 0 || row >= M || column < 0 || column >= N) {
-                            continue;
-                        }
-                        if (visited[row][column]) {
-                            continue;
-                        }
-                        if (maze[row][column] == '+') {
-                            continue;
-                        }
-
-                        // 找到出口，退出
-                        if (row == 0 || row == M - 1 || column == 0 || column == N - 1) {
-                            return step;
-                        }
-
-                        visited[row][column] = true;
-                        queue.offer(new int[] { row, column });
+                    for (int[] d : directions) {
+                        int x = point[0] + d[0], y = point[1] + d[1];
+                        if (x < 0 || x >= m || y < 0 || y >= n) { continue; }
+                        if (visited[x][y] || maze[x][y] == '+') { continue; }
+                        // 走到边界（出口）
+                        if (x == 0 || x == m - 1 || y == 0 || y == n - 1) { return step; }
+                        visited[x][y] = true;
+                        queue.offer(new int[] { x, y });
                     }
                 }
             }

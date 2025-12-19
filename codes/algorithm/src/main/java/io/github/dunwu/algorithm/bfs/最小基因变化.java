@@ -34,41 +34,27 @@ public class 最小基因变化 {
 
     static class Solution {
 
-        final char[] options = new char[] { 'A', 'C', 'G', 'T' };
+        final char[] AGCT = new char[] { 'A', 'C', 'G', 'T' };
 
         public int minMutation(String startGene, String endGene, String[] bank) {
-            return bfs(startGene, endGene, bank);
-        }
+            if (startGene.equals(endGene)) { return 0; }
 
-        public int bfs(String startGene, String endGene, String[] bank) {
-
-            Set<String> bankSet = new HashSet<>(Arrays.asList(bank));
-            // 最终结果不在有效基因集合中，直接返回
-            if (!bankSet.contains(endGene)) {
-                return -1;
-            }
-
+            int step = 0;
+            Set<String> banks = new HashSet<>(Arrays.asList(bank));
             Set<String> visited = new HashSet<>();
             LinkedList<String> queue = new LinkedList<>();
             queue.offer(startGene);
 
-            int step = 0;
             while (!queue.isEmpty()) {
                 int size = queue.size();
                 for (int i = 0; i < size; i++) {
-                    String cur = queue.poll();
-                    if (cur.equals(endGene)) {
-                        return step;
-                    }
-
-                    List<String> neighbors = getNeighbors(cur, bankSet);
-                    System.out.printf("%s 的邻居：%s\n", cur, neighbors);
-                    for (String str : neighbors) {
-                        if (visited.contains(str)) {
-                            continue;
+                    String curGene = queue.poll();
+                    if (curGene.equals(endGene)) { return step; }
+                    for (String newGene : neighbours(curGene)) {
+                        if (!visited.contains(newGene) && banks.contains(newGene)) {
+                            queue.offer(newGene);
+                            visited.add(newGene);
                         }
-                        visited.add(str);
-                        queue.offer(str);
                     }
                 }
                 step++;
@@ -76,23 +62,19 @@ public class 最小基因变化 {
             return -1;
         }
 
-        public List<String> getNeighbors(String s, Set<String> bankSet) {
-            List<String> list = new LinkedList<>();
-            char[] ch = s.toCharArray();
+        // 当前基因的每个位置都可以变异为 A/G/C/T，穷举所有可能的结构
+        public List<String> neighbours(String gene) {
+            List<String> res = new LinkedList<>();
+            char[] ch = gene.toCharArray();
             for (int i = 0; i < ch.length; i++) {
-                char oldChar = ch[i];
-                for (char newChar : options) {
-                    if (oldChar != newChar) {
-                        ch[i] = newChar;
-                        String str = new String(ch);
-                        if (bankSet.contains(str)) {
-                            list.add(str);
-                        }
-                    }
+                char c = ch[i];
+                for (char option : AGCT) {
+                    ch[i] = option;
+                    res.add(new String(ch));
                 }
-                ch[i] = oldChar;
+                ch[i] = c;
             }
-            return list;
+            return res;
         }
 
     }

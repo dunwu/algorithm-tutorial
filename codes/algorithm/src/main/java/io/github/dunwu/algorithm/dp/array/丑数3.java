@@ -21,15 +21,14 @@ public class 丑数3 {
 
         public int nthUglyNumber(int n, int a, int b, int c) {
             int[] dp = new int[n + 1];
-            int pa = 0, pb = 0, pc = 0;
+            int pa = 1, pb = 1, pc = 1;
+            dp[0] = 1;
             for (int i = 1; i <= n; i++) {
-                int numA = dp[pa] + a;
-                int numB = dp[pb] + b;
-                int numC = dp[pc] + c;
-                dp[i] = min(numA, numB, numC);
-                if (dp[i] == numA) { pa = i; }
-                if (dp[i] == numB) { pb = i; }
-                if (dp[i] == numC) { pc = i; }
+                int na = pa * a, nb = pb * b, nc = pc * c;
+                dp[i] = min(na, nb, nc);
+                if (dp[i] == na) { pa++; }
+                if (dp[i] == nb) { pb++; }
+                if (dp[i] == nc) { pc++; }
             }
             return dp[n];
         }
